@@ -55,7 +55,7 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
   if (type.name === `MarkdownRemark`) {
     return {
       vocabularyWords: {
-        type: GraphQLList(VocabularyWordType),
+        type: new GraphQLList(VocabularyWordType),
         resolve: (node, _fieldArgs) => {
           const source = node.rawMarkdownBody || ""
           const words = getMatches(source, vocabularyWordRegex, 1).map(res => {

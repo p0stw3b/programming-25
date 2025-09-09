@@ -51,10 +51,15 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
   if (type.name === `MarkdownRemark`) {
     return {
       moocfiExercises: {
-        type: GraphQLList(ExerciseType),
+        type: new GraphQLList(ExerciseType),
         resolve: (node, _fieldArgs) => {
-          // nuke commented text
-          const source = (node.rawMarkdownBody || "").replace(commentRegex, "")
+          // nuke commented text - apply repeatedly to handle nested/overlapping patterns
+          let source = node.rawMarkdownBody || "";
+          let previousSource;
+          do {
+            previousSource = source;
+            source = source.replace(commentRegex, "");
+          } while (source !== previousSource);
           const quizzes = getMatches(source, quizRegex, 1).map(res => {
             return {
               id: res.match,

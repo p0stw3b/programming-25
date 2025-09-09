@@ -6,7 +6,7 @@ import { Motion, spring } from "react-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons"
 import { trackElementHeight } from "../../util/trackHeight"
-import GatsbyLink from "gatsby-link"
+import { Link as GatsbyLink } from "gatsby"
 import { Location } from "@reach/router"
 import Avatar from "@material-ui/core/Avatar"
 import Chip from "@material-ui/core/Chip"
@@ -14,6 +14,7 @@ import Divider from "@material-ui/core/Divider"
 
 import { faUnlockAlt as icon } from "@fortawesome/free-solid-svg-icons"
 import withSimpleErrorBoundary from "../../util/withSimpleErrorBoundary"
+import useLanguagePath from "../../hooks/useLanguagePath"
 
 const ChildrenList = styled.ul`
   height: calc(var(--open-ratio) * var(--calculated-height) * 1px);
@@ -222,13 +223,21 @@ class TreeViewItem extends React.Component {
 }
 
 function LinkWrapper(props) {
+  const getLanguagePath = useLanguagePath()
+  const languageAwarePath = getLanguagePath(props.to)
+
+  const updatedProps = {
+    ...props,
+    to: languageAwarePath,
+  }
+
   if (props.disabled) {
     if (process.env.NODE_ENV === "production") {
-      return <DisabledItem {...props} />
+      return <DisabledItem {...updatedProps} />
     }
-    return <DisabledItemWithLink {...props} />
+    return <DisabledItemWithLink {...updatedProps} />
   }
-  return <NavigationLink {...props} />
+  return <NavigationLink {...updatedProps} />
 }
 
 export default withSimpleErrorBoundary(TreeViewItem)

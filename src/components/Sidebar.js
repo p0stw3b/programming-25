@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { graphql, StaticQuery } from "gatsby"
 import { Button } from "@material-ui/core"
 import CourseSettings from "../../course-settings"
+import { useTranslation } from "react-i18next"
 
 import Logo from "./Logo"
 import TreeView from "./TreeView"
@@ -115,11 +116,27 @@ const MobileWrapperOrFragment = (props) => {
 }
 
 const Sidebar = (props) => {
+  const { i18n } = useTranslation()
+  const currentLang = i18n.language || "en"
+
   let edges =
     props.data?.allMarkdownRemark?.edges.map((o) => o.node?.frontmatter) || []
   if (process.env.NODE_ENV === "production") {
     edges = edges.filter((o) => !o.hidden)
   }
+
+  // Filter pages by current language
+  edges = edges.filter((o) => {
+    if (!o.path) return false
+
+    // Check if path matches current language
+    if (currentLang === "ru") {
+      return o.path.startsWith("/ru/")
+    } else {
+      // For English (default), exclude pages with language prefixes
+      return !o.path.startsWith("/ru/")
+    }
+  })
 
   edges = edges
     .filter((o) => !o.hide_in_sidebar)
@@ -203,8 +220,12 @@ const Sidebar = (props) => {
 const query = graphql`
   query {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/index.md|data/[^/]+/*.md/" } }
-      sort: { fields: [frontmatter___path] }
+      filter: { 
+        fileAbsolutePath: { 
+          regex: "/index.md|data/[^/]+\\.md$|data/[^/]+/index.md$|data/ru/[^/]+\\.md$|data/ru/part-[^/]+/index.md$|data/part-[^/]+/index.md$/" 
+        } 
+      }
+      sort: { frontmatter: { path: ASC } }
     ) {
       edges {
         node {

@@ -28,7 +28,17 @@ class ExerciseList extends React.Component {
     const value = this.context
     const currentPath = value.current.frontmatter.path
     let sectionPath = currentPath
-    const sectionSeparator = nthIndex(currentPath, "/", 2)
+
+    // Check if the path starts with a language prefix
+    const languagePrefixes = ["/ru/", "/fi/"]
+    const hasLanguagePrefix = languagePrefixes.some((prefix) =>
+      currentPath.startsWith(prefix),
+    )
+
+    // Use 3rd "/" for language-prefixed paths, 2nd "/" for regular paths
+    const separatorIndex = hasLanguagePrefix ? 3 : 2
+    const sectionSeparator = nthIndex(currentPath, "/", separatorIndex)
+
     if (sectionSeparator !== -1) {
       sectionPath = currentPath.substr(0, sectionSeparator)
     }

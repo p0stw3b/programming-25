@@ -19,7 +19,8 @@ const ContentWrapper = styled.article``
 export default class CourseInfoTemplate extends React.Component {
   render() {
     const { data } = this.props
-    const { frontmatter, htmlAst } = data.page
+
+    const { frontmatter = {}, htmlAst } = data.page || {}
     const allPages = data.allPages.edges.map((o) => {
       const res = o.node?.frontmatter
       res.exercises = o.node?.moocfiExercises
@@ -31,10 +32,12 @@ export default class CourseInfoTemplate extends React.Component {
       components: partials,
     }).Compiler
 
-    const filePath = data.page.fileAbsolutePath.substring(
-      data.page.fileAbsolutePath.lastIndexOf("/data/"),
-      data.page.fileAbsolutePath.length,
-    )
+    const filePath = data.page?.fileAbsolutePath
+      ? data.page.fileAbsolutePath.substring(
+          data.page.fileAbsolutePath.lastIndexOf("/data/"),
+          data.page.fileAbsolutePath.length,
+        )
+      : ""
     return (
       <Fragment>
         <Helmet title={frontmatter.title} />
@@ -50,8 +53,8 @@ export default class CourseInfoTemplate extends React.Component {
                 {frontmatter.banner && <Banner />}
                 <Container>
                   <ContentWrapper>
-                    <h1>{frontmatter.title}</h1>
-                    {renderAst(htmlAst)}
+                    <h1>{frontmatter.title || "Content Loading..."}</h1>
+                    {htmlAst && renderAst(htmlAst)}
                   </ContentWrapper>
                 </Container>
               </Fragment>

@@ -33,7 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
   const query = `
   {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___path] }
+      sort: { frontmatter: { path: DESC } }
       limit: 1000${
         process.env.NODE_ENV === "production"
           ? `, filter: { frontmatter: { hidden: { ne: true } } }`
@@ -90,7 +90,9 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: template,
-        context: {}, // additional data can be passed via context
+        context: {
+          path: node.frontmatter.path
+        },
       })
     })
   })

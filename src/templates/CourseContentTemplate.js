@@ -76,7 +76,8 @@ export default class CourseContentTemplate extends React.Component {
 
   render() {
     const { data } = this.props
-    const { frontmatter, htmlAst } = data.page
+
+    const { frontmatter = { path: "" }, htmlAst } = data.page || {}
     const allPages = data.allPages.edges.map((o) => o.node?.frontmatter)
     const partials = getNamedPartials()
     const renderAst = new rehypeReact({
@@ -84,15 +85,21 @@ export default class CourseContentTemplate extends React.Component {
       components: partials,
     }).Compiler
 
-    const parentSectionName = capitalizeFirstLetter(
-      `${frontmatter.path.split(/\//g)[1].replace(/-/g, " ")}`,
-    )
-    const parentSectionPath = `/${frontmatter.path.split(/\//g)[1]}`
+    const parentSectionName = frontmatter.path
+      ? capitalizeFirstLetter(
+          `${frontmatter.path.split(/\//g)[1]?.replace(/-/g, " ") || ""}`,
+        )
+      : ""
+    const parentSectionPath = frontmatter.path
+      ? `/${frontmatter.path.split(/\//g)[1] || ""}`
+      : ""
 
-    const filePath = data.page.fileAbsolutePath.substring(
-      data.page.fileAbsolutePath.lastIndexOf("/data/"),
-      data.page.fileAbsolutePath.length,
-    )
+    const filePath = data.page?.fileAbsolutePath
+      ? data.page.fileAbsolutePath.substring(
+          data.page.fileAbsolutePath.lastIndexOf("/data/"),
+          data.page.fileAbsolutePath.length,
+        )
+      : ""
     return (
       <Fragment>
         <Helmet title={frontmatter.title} />
@@ -111,8 +118,8 @@ export default class CourseContentTemplate extends React.Component {
                       <StyledIcon icon={icon} />
                       {parentSectionName}
                     </UpLink>
-                    <h1>{frontmatter.title}</h1>
-                    {renderAst(htmlAst)}
+                    <h1>{frontmatter.title || "Content Loading..."}</h1>
+                    {htmlAst && renderAst(htmlAst)}
                     <EndOfSubSection />
                   </ContentWrapper>
                 </Container>

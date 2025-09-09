@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import LoginControls from "./LoginControls"
+import LanguageSwitcher from "./LanguageSwitcher"
 import withSimpleErrorBoundary from "../util/withSimpleErrorBoundary"
 import LoginStateContext, {
   withLoginStateContext,
@@ -36,6 +37,7 @@ class TopBar extends React.Component {
             Pisteet
           </Button>
         )}
+        <LanguageSwitcher />
         <LoginControls />
       </TopBarContainer>
     )

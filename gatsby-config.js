@@ -4,6 +4,7 @@ const blue = require("@material-ui/core/colors/red").default
 const CourseSettings = require('./course-settings')
 
 module.exports = {
+  pathPrefix: "/programming-25",
   siteMetadata: {
     title: CourseSettings.name,
     siteUrl: CourseSettings.siteUrl,
@@ -127,7 +128,7 @@ module.exports = {
         // Exclude specific pages or groups of pages using glob parameters
         // See: https://github.com/isaacs/minimatch
         // The example below will exclude the single `path/to/page` and all routes beginning with `category`
-        exclude: ["/missing-info", "/profile", "/sign-in", "/sign-out", "/sign-up", "/404"],
+        excludes: ["/missing-info", "/profile", "/sign-in", "/sign-out", "/sign-up", "/404"],
         query: `
         {
           site {
@@ -137,10 +138,8 @@ module.exports = {
           }
 
           allSitePage {
-            edges {
-              node {
-                path
-              }
+            nodes {
+              path
             }
           }
       }`
@@ -153,9 +152,10 @@ module.exports = {
       resolve: "gatsby-transformer-vocabulary"
     },
     `gatsby-plugin-top-layout`,
-    {
-      resolve: 'gatsby-plugin-material-ui',
-    },
+    // Commented out due to Gatsby 5 incompatibility
+    // {
+    //   resolve: 'gatsby-plugin-material-ui',
+    // },
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ]
 };

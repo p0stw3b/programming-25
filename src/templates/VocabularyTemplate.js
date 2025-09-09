@@ -26,7 +26,8 @@ export default class VocabularyTemplate extends React.Component {
 
   render() {
     const { data } = this.props
-    const { frontmatter, htmlAst } = data.page
+
+    const { frontmatter = {}, htmlAst } = data.page || {}
     const allPages = data.allPages.edges.map((o) => {
       const res = o.node?.frontmatter
       res.words = o.node?.vocabularyWords
@@ -38,10 +39,12 @@ export default class VocabularyTemplate extends React.Component {
       components: partials,
     }).Compiler
 
-    const filePath = data.page.fileAbsolutePath.substring(
-      data.page.fileAbsolutePath.lastIndexOf("/data/"),
-      data.page.fileAbsolutePath.length,
-    )
+    const filePath = data.page?.fileAbsolutePath
+      ? data.page.fileAbsolutePath.substring(
+          data.page.fileAbsolutePath.lastIndexOf("/data/"),
+          data.page.fileAbsolutePath.length,
+        )
+      : ""
 
     return (
       <PagesContext.Provider
@@ -56,8 +59,8 @@ export default class VocabularyTemplate extends React.Component {
             <Fragment>
               <Container>
                 <ContentWrapper>
-                  <Title>{frontmatter.title}</Title>
-                  {renderAst(htmlAst)}
+                  <Title>{frontmatter.title || "Content Loading..."}</Title>
+                  {htmlAst && renderAst(htmlAst)}
                 </ContentWrapper>
               </Container>
             </Fragment>
@@ -80,7 +83,7 @@ export const pageQuery = graphql`
       fileAbsolutePath
     }
     allPages: allMarkdownRemark(
-      sort: { order: ASC, fields: frontmatter___path }
+      sort: { frontmatter: { path: ASC } }
       limit: 1000
       filter: {
         frontmatter: { hidden: { ne: true } }

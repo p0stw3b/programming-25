@@ -46,7 +46,7 @@ export default class CoursePartOverviewTemplate extends React.Component {
 
   render() {
     const { data } = this.props
-    const { frontmatter, htmlAst } = data.page
+    const { frontmatter = {}, htmlAst } = data.page || {}
     const allPages = data.allPages.edges.map((o) => {
       const res = o.node?.frontmatter
       res.exercises = o.node?.moocfiExercises
@@ -58,10 +58,12 @@ export default class CoursePartOverviewTemplate extends React.Component {
       components: partials,
     }).Compiler
 
-    const filePath = data.page.fileAbsolutePath.substring(
-      data.page.fileAbsolutePath.lastIndexOf("/data/"),
-      data.page.fileAbsolutePath.length,
-    )
+    const filePath = data.page?.fileAbsolutePath
+      ? data.page.fileAbsolutePath.substring(
+          data.page.fileAbsolutePath.lastIndexOf("/data/"),
+          data.page.fileAbsolutePath.length,
+        )
+      : ""
     return (
       <PagesContext.Provider
         value={{
@@ -75,8 +77,8 @@ export default class CoursePartOverviewTemplate extends React.Component {
             <Fragment>
               <Container>
                 <ContentWrapper>
-                  <Title>{frontmatter.title}</Title>
-                  {renderAst(htmlAst)}
+                  <Title>{frontmatter.title || "Content Loading..."}</Title>
+                  {htmlAst && renderAst(htmlAst)}
                 </ContentWrapper>
               </Container>
             </Fragment>

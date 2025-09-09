@@ -1,8 +1,7 @@
 import React from "react"
 import withSimpleErrorBoundary from "../../util/withSimpleErrorBoundary"
 
-import { useQuery } from "@apollo/react-hooks"
-import { gql } from "apollo-boost"
+import { useQuery, gql } from "@apollo/client"
 import { Button } from "@material-ui/core"
 import OverallPoints from "./OverallPoints"
 
