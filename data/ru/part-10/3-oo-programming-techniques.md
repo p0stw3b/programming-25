@@ -23,7 +23,7 @@ class Product:
         self.__price = price
 
     def __str__(self):
-        return f"{self.__name} (цена {self.__price})"
+        return f"{self.__name} (price {self.__price})"
 
     def product_on_sale(self):
         on_sale = Product(self.__name, self.__price * 0.75)
@@ -31,7 +31,7 @@ class Product:
 ```
 
 ```python
-apple1 = Product("Яблоко", 2.99)
+apple1 = Product("Apple", 2.99)
 apple2 = apple1.product_on_sale()
 print(apple1)
 print(apple2)
@@ -39,8 +39,8 @@ print(apple2)
 
 <sample-output>
 
-Яблоко (цена 2.99)
-Яблоко (цена 2.2425)
+Apple (price 2.99)
+Apple (price 2.2425)
 
 </sample-output>
 
@@ -53,7 +53,7 @@ class Product:
         self.__price = price
 
     def __str__(self):
-        return f"{self.__name} (цена {self.__price})"
+        return f"{self.__name} (price {self.__price})"
 
     @property
     def price(self):
@@ -67,9 +67,9 @@ class Product:
 ```
 
 ```python
-apple = Product("Яблоко", 2.99)
-orange = Product("Апельсин", 3.95)
-banana = Product("Банан", 5.25)
+apple = Product("Apple", 2.99)
+orange = Product("Orange", 3.95)
+banana = Product("Banana", 5.25)
 
 print(orange.cheaper(apple))
 print(orange.cheaper(banana))
@@ -77,8 +77,8 @@ print(orange.cheaper(banana))
 
 <sample-output>
 
-Яблоко (2.99)
-Апельсин (3.95)
+Apple (2.99)
+Orange (3.95)
 
 </sample-output>
 
@@ -97,7 +97,7 @@ class Product:
         self.__price = price
 
     def __str__(self):
-        return f"{self.__name} (цена {self.__price})"
+        return f"{self.__name} (price {self.__price})"
 
     @property
     def price(self):
@@ -112,18 +112,18 @@ class Product:
 Теперь оператор сравнения `>` доступен для использования с объектами типа Product:
 
 ```python
-orange = Product("Апельсин", 2.90)
-apple = Product("Яблоко", 3.95)
+orange = Product("Orange", 2.90)
+apple = Product("Apple", 3.95)
 
 if orange > apple:
-    print("Апельсин больше")
+    print("Orange is greater")
 else:
-    print("Яблоко больше")
+    print("Apple is greater")
 ```
 
 <sample-output>
 
-Яблоко больше
+Apple is greater
 
 </sample-output>
 
@@ -136,7 +136,7 @@ class Product:
         self.__price = price
 
     def __str__(self):
-        return f"{self.__name} (цена {self.__price})"
+        return f"{self.__name} (price {self.__price})"
 
     @property
     def price(self):
@@ -151,18 +151,18 @@ class Product:
 ```
 
 ```python
-Orange = Product("Апельсин", 4.90)
-Apple = Product("Яблоко", 3.95)
+Orange = Product("Orange", 4.90)
+Apple = Product("Apple", 3.95)
 
 if Orange > Apple:
-    print("Апельсин больше")
+    print("Orange is greater")
 else:
-    print("Яблоко больше")
+    print("Apple is greater")
 ```
 
 <sample-output>
 
-Апельсин больше
+Orange is greater
 
 </sample-output>
 
@@ -207,25 +207,25 @@ class Note:
         return f"{self.entry_date}: {self.entry}"
 
     def __add__(self, another):
-        # Дата новой заметки — текущее время
+        # The date of the new note is the current time
         new_note = Note(datetime.now(), "")
-        new_note.entry = self.entry + " и " + another.entry
+        new_note.entry = self.entry + " and " + another.entry
         return new_note
 ```
         
 ```python
-entry1 = Note(datetime(2016, 12, 17), "Не забыть купить подарки")
-entry2 = Note(datetime(2016, 12, 23), "Не забыть взять елку")
+entry1 = Note(datetime(2016, 12, 17), "Remember to buy presents")
+entry2 = Note(datetime(2016, 12, 23), "Remember to get a tree")
 
-# Эти заметки можно сложить оператором +
-# Это вызывает метод __add__ в классе Note
+# These notes can be added together with the + operator
+# This calls the  __add__ method in the Note class
 both = entry1 + entry2
 print(both)
 ```
 
 <sample-output>
 
-2020-09-09 14:13:02.163170: Не забыть купить подарки и Не забыть взять елку
+2020-09-09 14:13:02.163170: Remember to buy presents and Remember to get a tree
 
 </sample-output>
 
@@ -254,8 +254,8 @@ print(person2)
 
 <sample-output>
 
-Person('Анна', 25)
-Person('Петр', 99)
+Person('Anna', 25)
+Person('Peter', 99)
 
 </sample-output>
 
@@ -273,7 +273,7 @@ class Person:
         return f"Person({repr(self.name)}, {self.age})"
 
     def __str__(self):
-        return f"{self.name} ({self.age} лет)"
+        return f"{self.name} ({self.age} years)"
 ```
 
 ```python3
@@ -284,8 +284,8 @@ print(repr(Person))
 
 <sample-output>
 
-Анна (25 лет)
-Person('Анна', 25)
+Anna (25 years)
+Person('Anna', 25)
 
 </sample-output>
 
@@ -301,7 +301,7 @@ print(persons)
 
 <sample-output>
 
-[Person('Анна', 25), Person('Петр', 99), Person('Мария', 55)]
+[Person('Anna', 25), Person('Peter', 99), Person('Mary', 55)]
 
 </sample-output>
 
@@ -315,7 +315,7 @@ print(persons)
 
 ```python
 e1 = Money(4, 10)
-e2 = Money(2, 5)  # два евро и пять центов
+e2 = Money(2, 5)  # two euros and five cents
 
 print(e1)
 print(e2)
@@ -411,8 +411,8 @@ Traceback (most recent call last):
   File "money.py", line 416, in <module>
     e5 = e2-e1
   File "money.py", line 404, in __sub__
-    raise ValueError(f"отрицательный результат не допускается")
-ValueError: отрицательный результат не допускается
+    raise ValueError(f"a negative result is not allowed")
+ValueError: a negative result is not allowed
 
 </sample-output>
 
@@ -560,26 +560,26 @@ class Bookshelf:
     def add_book(self, book: Book):
         self._books.append(book)
 
-    # Это метод инициализации итератора
-    # Итерационные переменные должны быть инициализированы здесь
+    # This is the iterator initialization method
+    # The iteration variable(s) should be initialized here
     def __iter__(self):
         self.n = 0
-        # метод возвращает ссылку на сам объект, поскольку 
-        # итератор реализован внутри того же определения класса
+        # the method returns a reference to the object itself as 
+        # the iterator is implemented within the same class definition
         return self
 
-    # Этот метод возвращает следующий элемент внутри объекта
-    # Если все элементы пройдены, возбуждается событие StopIteration
+    # This method returns the next item within the object
+    # If all items have been traversed, the StopIteration event is raised
     def __next__(self):
         if self.n < len(self._books):
-            # Выбрать текущий элемент из списка внутри объекта
+            # Select the current item from the list within the object
             book = self._books[self.n]
-            # увеличить счетчик (т.е. итерационную переменную) на один
+            # increase the counter (i.e. iteration variable) by one
             self.n += 1
-            # вернуть текущий элемент
+            # return the current item
             return book
         else:
-            # Все книги пройдены
+            # All books have been traversed
             raise StopIteration
 ```
 
@@ -591,25 +591,25 @@ class Bookshelf:
 
 ```python
 if __name__ == "__main__":
-    b1 = Book("Жизнь Python", "Монтегю Питон", 123)
-    b2 = Book("Старик и C", "Эрнест Хемингджавай", 204)
-    b3 = Book("Хорошая чашка Java", "Каффи Кодер", 997)
+    b1 = Book("The Life of Python", "Montague Python", 123)
+    b2 = Book("The Old Man and the C", "Ernest Hemingjavay", 204)
+    b3 = Book("A Good Cup of Java", "Caffee Coder", 997)
 
     shelf = Bookshelf()
     shelf.add_book(b1)
     shelf.add_book(b2)
     shelf.add_book(b3)
 
-    # Вывести названия всех книг
+    # Print the names of all the books
     for book in shelf:
         print(book.name)
 ```
 
 <sample-output>
 
-Жизнь Python
-Старик и C
-Хорошая чашка Java
+The Life of Python
+The Old Man and the C
+A Good Cup of Java
 
 </sample-output>
 
@@ -620,19 +620,19 @@ if __name__ == "__main__":
 
 ```python
 shopping_list = ShoppingList()
-shopping_list.add("бананы", 10)
-shopping_list.add("яблоки", 5)
-shopping_list.add("ананас", 1)
+shopping_list.add("bananas", 10)
+shopping_list.add("apples", 5)
+shopping_list.add("pineapple", 1)
 
 for product in shopping_list:
-    print(f"{product[0]}: {product[1]} единиц")
+    print(f"{product[0]}: {product[1]} units")
 ```
 
 <sample-output>
 
-бананы: 10 единиц
-яблоки: 5 единиц
-ананас: 1 единиц
+bananas: 10 units
+apples: 5 units
+pineapple: 1 units
 
 </sample-output>
 

@@ -34,8 +34,8 @@ class SavingsAccount:
         self.__interest_rate = interest_rate
 
     def add_interest(self):
-        # Общая процентная ставка равна 
-        # общей ставке + процентной ставке счета
+        # The total interest rate equals 
+        # the general rate + the interest rate of the account
         total_interest = SavingsAccount.general_rate + self.__interest_rate
         self.__balance += self.__balance * total_interest
 
@@ -49,18 +49,18 @@ class SavingsAccount:
 К переменной класса обращаются через имя класса, например, так:
 
 ```python
-# Общая ставка существует независимо от любых экземпляров объектов
-print("Общая процентная ставка составляет", SavingsAccount.general_rate)
+# The general rate exists independently of any object instances
+print("The general interest rate is", SavingsAccount.general_rate)
 
 account = SavingsAccount("12345", 1000, 0.05)
-# Добавляем общий накопленный процент к балансу счета
+# Add the total interest accrued to the balance on the account
 account.add_interest()
 print(account.balance)
 ```
 
 <sample-output>
 
-Общая процентная ставка составляет 0.03
+The general interest rate is 0.03
 1080.0
 
 </sample-output>
@@ -79,8 +79,8 @@ class SavingsAccount:
         self.__interest_rate = interest_rate
 
     def add_interest(self):
-        # Общая процентная ставка равна 
-        # общей ставке + процентной ставке счета
+        # The total interest rate equals 
+        # the general rate + the interest rate of the account
         total_interest = SavingsAccount.general_rate + self.__interest_rate
         self.__balance += self.__balance * total_interest
 
@@ -97,24 +97,24 @@ class SavingsAccount:
 account1 = SavingsAccount("12345", 100, 0.03)
 account2 = SavingsAccount("54321", 200, 0.06)
 
-print("Общая процентная ставка:", SavingsAccount.general_rate)
+print("General interest rate:", SavingsAccount.general_rate)
 print(account1.total_interest)
 print(account2.total_interest)
 
-# Общая ставка процента теперь 10 процентов
+# The general rate of interest is now 10 percent
 SavingsAccount.general_rate = 0.10
 
-print("Общая процентная ставка:", SavingsAccount.general_rate)
+print("General interest rate:", SavingsAccount.general_rate)
 print(account1.total_interest)
 print(account2.total_interest)
 ```
 
 <sample-output>
 
-Общая процентная ставка: 0.03
+General interest rate: 0.03
 0.06
 0.09
-Общая процентная ставка: 0.1
+General interest rate: 0.1
 0.13
 0.16
 
@@ -135,13 +135,13 @@ class PhoneNumber:
 
     @property
     def phone_number(self):
-        # Когда добавляется префикс кода страны 
-        # начальный ноль удаляется из номера телефона
+        # When the country code prefix is added 
+        # the initial zero is removed from the phone number
         return PhoneNumber.country_codes[self.__country] + " " + self.__phone_number[1:]
 ```
 
 ```python
-paulas_no = PhoneNumber("Паула Питонс", "050 1234 567", "Finland")
+paulas_no = PhoneNumber("Paula Pythons", "050 1234 567", "Finland")
 print(paulas_no.phone_number)
 ```
 
@@ -161,27 +161,27 @@ class PhoneNumber:
 
     def __init__(self, name: str, phone_number: str, country: str):
         self.__name = name
-        # Это вызов метода phone_number.setter
+        # This is a call to the phone_number.setter method
         self.phone_number = phone_number
-        # Это вызов метода country.setter
+        # This is a call to the country.setter method
         self.country = country
 
-    # метод getter для phone_number объединяет код страны 
-    # и атрибут phone_number
+    # the getter method for phone_number combines the country code 
+    # and the attribute phone_number
     @property
     def phone_number(self):
-        # начальный ноль удаляется, поскольку код страны префиксируется
+        # the initial zero is removed as the country code is prefixed
         return PhoneNumber.country_codes[self.__country] + " " + self.__phone_number[1:]
 
     @phone_number.setter
     def phone_number(self, number):
-        # Убеждаемся, что номер содержит только цифры и символы пробела
+        # Making sure the number contains only numbers and space characters
         for character in number:
             if character not in "1234567890 ":
-                raise ValueError("Номер телефона может содержать только цифры и пробелы")
+                raise ValueError("A phone number can only contain numbers and spaces")
         self.__phone_number = number
 
-    # getter только для самого номера без кода страны
+    # a getter for only the number itself without the country code
     @property
     def local_number(self):
         return self.__phone_number
@@ -192,9 +192,9 @@ class PhoneNumber:
 
     @country.setter
     def country(self, country):
-        # Убеждаемся, что страна является ключом в словаре кодов стран
+        # Making sure the country is a key in the dictionary of country codes
         if country not in PhoneNumber.country_codes:
-            raise ValueError("Эта страна не в списке.")
+            raise ValueError("This country is not on the list.")
         self.__country = country
 
     @property
@@ -211,7 +211,7 @@ class PhoneNumber:
 
 ```python
 if __name__ == "__main__":
-    pn = PhoneNumber("Петр Питонс", "040 111 1111", "Sweden")
+    pn = PhoneNumber("Peter Pythons", "040 111 1111", "Sweden")
     print(pn)
     print(pn.phone_number)
     print(pn.local_number)
@@ -219,7 +219,7 @@ if __name__ == "__main__":
 
 <sample-output>
 
-+46 40 111 1111 (Петр Питонс)
++46 40 111 1111 (Peter Pythons)
 +46 40 111 1111
 040 111 1111
 
@@ -260,7 +260,7 @@ class Registration:
         self.__make = make
         self.__year = year
 
-        # Вызов метода license_plate.setter
+        # Call the license_plate.setter method
         self.license_plate = license_plate
 
     @property
@@ -272,23 +272,23 @@ class Registration:
         if Registration.license_plate_valid(plate):
             self.__license_plate = plate
         else:
-            raise ValueError("Номерной знак недействителен")
+            raise ValueError("The license plate is not valid")
 
-    # Метод класса для валидации номерного знака
+    # A class method for validating the license plate
     @classmethod
     def license_plate_valid(cls, plate: str):
         if len(plate) < 3 or "-" not in plate:
             return False
 
-        # Проверяем начальную и конечную секции знака отдельно
+        # Check the beginning and end sections of the plate separately
         letters, numbers = plate.split("-")
 
-        # начальная секция может содержать только буквы
+        # the beginning section can have only letters
         for character in letters:
-            if character.lower() not in "abcdefghijklmnopqrstuvwxyzåäöабвгдеёжзийклмнопрстуфхцчшщъыьэюя":
+            if character.lower() not in "abcdefghijklmnopqrstuvwxyzåäö":
                 return False
 
-        # конечная секция может содержать только цифры
+        # the end section can have only numbers
         for character in numbers:
             if character not in "1234567890":
                 return False
@@ -297,15 +297,15 @@ class Registration:
 ```
 
 ```python
-registration = Registration("Мария Моторист", "Volvo", "1992", "abc-123")
+registration = Registration("Mary Motorist", "Volvo", "1992", "abc-123")
 
 if Registration.license_plate_valid("xyz-789"):
-    print("Это действительный номерной знак!")
+    print("This is a valid license plate!")
 ```
 
 <sample-output>
 
-Это действительный номерной знак!
+This is a valid license plate!
 
 </sample-output>
 

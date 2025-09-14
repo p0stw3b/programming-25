@@ -27,16 +27,16 @@ import re
 words = ["Python", "Pantone", "Pontoon", "Pollute", "Pantheon"]
 
 for word in words:
-    # строка должна начинаться с "P" и заканчиваться на "on"
+    # the string should begin with "P" and end with "on"
     if re.search("^P.*on$", word):
-        print(word, "найдено!")
+        print(word, "found!")
 ```
 
 <sample-output>
 
-Python найдено!
-Pontoon найдено!
-Pantheon найдено!
+Python found!
+Pontoon found!
+Pantheon found!
 
 </sample-output>
 
@@ -71,16 +71,16 @@ for number in numbers:
 ```python
 import re
 
-expression = input("Введите выражение: ")
+expression = input("Please type in an expression: ")
 
 while True:
-    input_string = input("Введите строку: ")
+    input_string = input("Please type in a string: ")
     if input_string == "":
         break
     if re.search(expression, input_string):
-        print("Найдено!")
+        print("Found!")
     else:
-        print("Не найдено.")
+        print("Not found.")
 ```
 
 ### Альтернативные подстроки
@@ -91,17 +91,17 @@ while True:
 
 <sample-output>
 
-Введите выражение: **aa|ee|ii**
-Введите строку: **aardvark**
-Найдено!
-Введите строку: **feelings**
-Найдено!
-Введите строку: **radii**
-Найдено!
-Введите строку: **smooch**
-Не найдено.
-Введите строку: **continuum**
-Не найдено.
+Please type in an expression: **aa|ee|ii**
+Please type in a string: **aardvark**
+Found!
+Please type in a string: **feelings**
+Found!
+Please type in a string: **radii**
+Found!
+Please type in a string: **smooch**
+Not found.
+Please type in a string: **continuum**
+Not found.
 
 </sample-output>
 
@@ -118,19 +118,19 @@ while True:
 
 <sample-output>
 
-Введите выражение: **[C-FRSO]**
-Введите строку: **C**
-Найдено!
-Введите строку: **E**
-Найдено!
-Введите строку: **G**
-Не найдено.
-Введите строку: **R**
-Найдено!
-Введите строку: **O**
-Найдено!
-Введите строку: **T**
-Не найдено.
+Please type in an expression: **[C-FRSO]**
+Please type in a string: **C**
+Found!
+Please type in a string: **E**
+Found!
+Please type in a string: **G**
+Not found.
+Please type in a string: **R**
+Found!
+Please type in a string: **O**
+Found!
+Please type in a string: **T**
+Not found.
 
 </sample-output>
 
@@ -148,19 +148,19 @@ while True:
 
 <sample-output>
 
-Введите выражение: **1[234]\*5**
-Введите строку: **15**
-Найдено!
-Введите строку: **125**
-Найдено!
-Введите строку: **145**
-Найдено!
-Введите строку: **12342345**
-Найдено!
-Введите строку: **126**
-Не найдено.
-Введите строку: **165**
-Не найдено.
+Please type in an expression: **1[234]\*5**
+Please type in a string: **15**
+Found!
+Please type in a string: **125**
+Found!
+Please type in a string: **145**
+Found!
+Please type in a string: **12342345**
+Found!
+Please type in a string: **126**
+Not found.
+Please type in a string: **165**
+Not found.
 
 </sample-output>
 
@@ -173,13 +173,13 @@ while True:
 
 <sample-output>
 
-Введите выражение: **\^[123]\*$**
-Введите строку: **4**
-Не найдено.
-Введите строку: **1221**
-Найдено!
-Введите строку: **333333333**
-Найдено!
+Please type in an expression: **\^[123]\*$**
+Please type in a string: **4**
+Not found.
+Please type in a string: **1221**
+Found!
+Please type in a string: **333333333**
+Found!
 
 </sample-output>
 
@@ -187,13 +187,13 @@ while True:
 
 <sample-output>
 
-Введите выражение: **^\\\***
-Введите строку: **moi\***
-Не найдено.
-Введите строку: **m\*o\*i**
-Не найдено.
-Введите строку: **\*moi**
-Найдено!
+Please type in an expression: **^\\\***
+Please type in a string: **moi\***
+Not found.
+Please type in a string: **m\*o\*i**
+Not found.
+Please type in a string: **\*moi**
+Found!
 
 </sample-output>
 
@@ -201,15 +201,15 @@ while True:
 
 <sample-output>
 
-Введите выражение: **^(jabba).\*(hut)$**
-Введите строку: **jabba the hut**
-Найдено!
-Введите строку: **jabba a hut**
-Найдено!
-Введите строку: **jarjar the hut**
-Не найдено.
-Введите строку: **jabba the smut**
-Не найдено.
+Please type in an expression: **^(jabba).\*(hut)$**
+Please type in a string: **jabba the hut**
+Found!
+Please type in a string: **jabba a hut**
+Found!
+Please type in a string: **jarjar the hut**
+Not found.
+Please type in a string: **jabba the smut**
+Not found.
 
 </sample-output>
 
@@ -321,26 +321,26 @@ False
 
 <sample-output>
 
-имя файла: **partial.json**
-прочитаны данные 14 игроков
+file name: **partial.json**
+read the data of 14 players
 
-команды:
-0 выйти
-1 поиск игрока
-2 команды
-3 страны
-4 игроки в команде
-5 игроки из страны
-6 больше всего очков
-7 больше всего голов
+commands:
+0 quit
+1 search for player
+2 teams
+3 countries
+4 players in team
+5 players from country
+6 most points
+7 most goals
 
-команда: **1**
-имя: **Travis Zajac**
+command: **1**
+name: **Travis Zajac**
 <pre>
-Travis Zajac         NJD   9 + 16 =  25
+Travis Zajac         NJD   9 + 16 =  25
 </pre>
 
-команда: **2**
+command: **2**
 BUF
 CGY
 DAL
@@ -351,14 +351,14 @@ PIT
 WPG
 WSH
 
-команда: **3**
+command: **3**
 CAN
 CHE
 CZE
 SWE
 USA
 
-команда: **0**
+command: **0**
 
 </sample-output>
 
@@ -369,7 +369,7 @@ USA
 <pre>
 Leon Draisaitl       EDM  43 + 67 = 110
 Connor McDavid       EDM  34 + 63 =  97
-Travis Zajac         NJD   9 + 16 =  25
+Travis Zajac         NJD   9 + 16 =  25
 Mike Green           EDM   3 +  8 =  11
 Markus Granlund      EDM   3 +  1 =   4
 123456789012345678901234567890123456789
@@ -394,28 +394,28 @@ F-строки — вероятно, самый простой способ до
 
 <sample-output>
 
-имя файла: **partial.json**
-прочитаны данные 14 игроков
+file name: **partial.json**
+read the data of 14 players
 
-команды:
-0 выйти
-1 поиск игрока
-2 команды
-3 страны
-4 игроки в команде
-5 игроки из страны
-6 больше всего очков
-7 больше всего голов
+commands:
+0 quit
+1 search for player
+2 teams
+3 countries
+4 players in team
+5 players from country
+6 most points
+7 most goals
 
-команда: **4**
-команда: **OTT**
+command: **4**
+team: **OTT**
 <pre>
 Drake Batherson      OTT   3 +  7 =  10
 Jonathan Davidsson   OTT   0 +  1 =   1
 </pre>
 
-команда: **5**
-страна: **CAN**
+command: **5**
+country: **CAN**
 <pre>
 Jared McCann         PIT  14 + 21 =  35
 Travis Zajac         NJD   9 + 16 =  25
@@ -424,7 +424,7 @@ Mark Jankowski       CGY   5 +  2 =   7
 Logan Shaw           WPG   3 +  2 =   5
 </pre>
 
-команда: **0**
+command: **0**
 
 </sample-output>
 
@@ -441,28 +441,28 @@ Logan Shaw           WPG   3 +  2 =   5
 
 <sample-output>
 
-имя файла: **partial.json**
-прочитаны данные 14 игроков
+file name: **partial.json**
+read the data of 14 players
 
-команды:
-0 выйти
-1 поиск игрока
-2 команды
-3 страны
-4 игроки в команде
-5 игроки из страны
-6 больше всего очков
-7 больше всего голов
+commands:
+0 quit
+1 search for player
+2 teams
+3 countries
+4 players in team
+5 players from country
+6 most points
+7 most goals
 
-команда: **6**
-сколько: **2**
+command: **6**
+how many: **2**
 <pre>
 Jakub Vrana          WSH  25 + 27 =  52
 Jared McCann         PIT  14 + 21 =  35
 </pre>
 
-команда: **6**
-сколько: **5**
+command: **6**
+how many: **5**
 
 <pre>
 Jakub Vrana          WSH  25 + 27 =  52
@@ -472,8 +472,8 @@ Travis Zajac         NJD   9 + 16 =  25
 Conor Sheary         BUF  10 + 13 =  23
 </pre>
 
-команда: **7**
-сколько: **6**
+command: **7**
+how many: **6**
 
 <pre>
 Jakub Vrana          WSH  25 + 27 =  52
@@ -484,7 +484,7 @@ John Klingberg       DAL   6 + 26 =  32
 Mark Jankowski       CGY   5 +  2 =   7
 </pre>
 
-команда: **0**
+command: **0**
 
 </sample-output>
 

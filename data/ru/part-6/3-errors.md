@@ -38,24 +38,24 @@ hidden: false
 К счастью, мы как программисты можем подготовиться к большинству ошибок. Давайте посмотрим на программу, которая спрашивает у пользователя его возраст и убеждается, что это приемлемое число (в данном случае от 0 до 150):
 
 ```python
-age = int(input("Пожалуйста, введите свой возраст: "))
+age = int(input("Please type in your age: "))
 if age >= 0 and age <= 150:
-    print("Это хороший возраст")
+    print("That is a fine age")
 else:
-    print("Это неверный возраст")
+    print("This is not a valid age")
 ```
 
 <sample-output>
 
-Пожалуйста, введите свой возраст: **25**
-Это хороший возраст
+Please type in your age: **25**
+That is a fine age
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите свой возраст: **-3**
-Это неверный возраст
+Please type in your age: **-3**
+This is not a valid age
 
 </sample-output>
 
@@ -63,8 +63,8 @@ else:
 
 <sample-output>
 
-Пожалуйста, введите свой возраст: **двадцать три**
-ValueError: invalid literal for int() with base 10: 'двадцать три'
+Please type in your age: **twenty-three**
+ValueError: invalid literal for int() with base 10: 'twenty-three'
 
 </sample-output>
 
@@ -80,20 +80,20 @@ ValueError: invalid literal for int() with base 10: 'двадцать три'
 
 ```python
 try:
-    age = int(input("Пожалуйста, введите свой возраст: "))
+    age = int(input("Please type in your age: "))
 except ValueError:
     age = -1
 
 if age >= 0 and age <= 150:
-    print("Это хороший возраст")
+    print("That is a fine age")
 else:
-    print("Это неверный возраст")
+    print("This is not a valid age")
 ```
 
 <sample-output>
 
-Пожалуйста, введите свой возраст: **двадцать три**
-Это неверный возраст
+Please type in your age: **twenty-three**
+This is not a valid age
 
 </sample-output>
 
@@ -107,25 +107,25 @@ else:
 def read_integer():
     while True:
         try:
-            input_str = input("Пожалуйста, введите целое число: ")
+            input_str = input("Please type in an integer: ")
             return int(input_str)
         except ValueError:
-            print("Этот ввод неверен")
+            print("This input is invalid")
 
 number = read_integer()
-print("Спасибо!")
-print(number, "в кубе равно", number**3)
+print("Thank you!")
+print(number, "to the power of three is", number**3)
 ```
 
 <sample-output>
 
-Пожалуйста, введите целое число: **три**
-Этот ввод неверен
-Пожалуйста, введите целое число: **текст**
-Этот ввод неверен
-Пожалуйста, введите целое число: **5**
-Спасибо!
-5 в кубе равно 125
+Please type in an integer: **three**
+This input is invalid
+Please type in an integer: **aybabtu**
+This input is invalid
+Please type in an integer: **5**
+Thank you!
+5 to the power of three is 125
 
 </sample-output>
 
@@ -137,28 +137,28 @@ print(number, "в кубе равно", number**3)
 def read_small_integer():
     while True:
         try:
-            input_str = input("Пожалуйста, введите целое число: ")
+            input_str = input("Please type in an integer: ")
             number = int(input_str)
             if number < 100:
                 return number
         except ValueError:
-            pass # эта команда на самом деле ничего не делает
+            pass # this command doesn't actually do anything
 
-        print("Этот ввод неверен")
+        print("This input is invalid")
 
 number = read_small_integer()
-print(number, "в кубе равно", number**3)
+print(number, "to the power of three is", number**3)
 ```
 
 <sample-output>
 
-Пожалуйста, введите целое число: **три**
-Этот ввод неверен
-Пожалуйста, введите целое число: **1000**
-Этот ввод неверен
-Пожалуйста, введите целое число: **5**
-Спасибо!
-5 в кубе равно 125
+Please type in an integer: **three**
+This input is invalid
+Please type in an integer: **1000**
+This input is invalid
+Please type in an integer: **5**
+Thank you!
+5 to the power of three is 125
 
 </sample-output>
 
@@ -171,18 +171,18 @@ print(number, "в кубе равно", number**3)
 Пример работы функции:
 
 ```python
-number = read_input("Пожалуйста, введите число: ", 5, 10)
-print("Вы ввели:", number)
+number = read_input("Please type in a number: ", 5, 10)
+print("You typed in:", number)
 ```
 
 <sample-output>
 
-Пожалуйста, введите число: **семь**
-Вы должны ввести целое число между 5 и 10
-Пожалуйста, введите число: **-3**
-Вы должны ввести целое число между 5 и 10
-Пожалуйста, введите число: **8**
-Вы ввели: 8
+Please type in a number: **seven**
+You must type in an integer between 5 and 10
+Please type in a number: **-3**
+You must type in an integer between 5 and 10
+Please type in a number: **8**
+You typed in: 8
 
 </sample-output>
 
@@ -222,9 +222,9 @@ try:
         for line in my_file:
             print(line)
 except FileNotFoundError:
-    print("Файл example.txt не найден")
+    print("The file example.txt was not found")
 except PermissionError:
-    print("Нет разрешения для доступа к файлу example.txt")
+    print("No permission to access the file example.txt")
 ```
 
 Иногда не нужно указывать ошибку, к которой готовится программа. Особенно при работе с файлами часто достаточно знать, что произошла ошибка, и безопасно выйти из программы. Не всегда необходимо знать _почему_ произошла ошибка. Если нам нужно покрыть все возможные исключения, мы можем использовать блок `except` без указания ошибки:
@@ -236,7 +236,7 @@ try:
         for line in my_file:
             print(line)
 except:
-    print("Произошла ошибка при чтении файла.")
+    print("There was an error when reading the file.")
 
 ```
 
@@ -250,7 +250,7 @@ try:
         for line in myfile:
             print(line)
 except:
-    print("Произошла ошибка при чтении файла.")
+    print("There was an error when reading the file.")
 ```
 
 Блок `except` может скрыть реальную ошибку: проблема здесь была вызвана не обработкой файла как таковой, а именем переменной, которое было написано неправильно. Без блока `except` была бы показана выброшенная ошибка, и причину можно было бы найти легче. Поэтому обычно хорошей идеей является использование только блоков `except`, специально объявленных для определенных типов ошибок.
@@ -266,16 +266,16 @@ def testing(x):
     print(int(x) + 1)
 
 try:
-    number = input("Пожалуйста, введите число: ")
+    number = input("Please type in a number: ")
     testing(number)
 except:
-    print("Что-то пошло не так")
+    print("Something went wrong")
 ```
 
 <sample-output>
 
-Пожалуйста, введите число: **три**
-Что-то пошло не так
+Please type in a number: **three**
+Something went wrong
 
 </sample-output>
 
@@ -290,7 +290,7 @@ except:
 ```python
 def factorial(n):
     if n < 0:
-        raise ValueError("Ввод был отрицательным: " + str(n))
+        raise ValueError("The input was negative: " + str(n))
     k = 1
     for i in range(2, n + 1):
         k *= i
@@ -309,8 +309,8 @@ Traceback (most recent call last):
   File "test.py", line 11, in <module>
     print(factorial(-1))
   File "test.py", line 3, in factorial
-    raise ValueError("Ввод был отрицательным: " + str(n))
-ValueError: Ввод был отрицательным: -1
+    raise ValueError("The input was negative: " + str(n))
+ValueError: The input was negative: -1
 
 </sample-output>
 

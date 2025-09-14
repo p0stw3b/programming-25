@@ -29,7 +29,7 @@ def hello_many_times(name : str, times : int):
 ```python
 def hello(name : str):
     print("Hello", name)
-    hello(name) # функция вызывает саму себя
+    hello(name) # function calls itself
 ```
 
 привела бы к новому виду ошибки:
@@ -37,7 +37,6 @@ def hello(name : str):
 <sample-output>
 
 RecursionError: maximum recursion depth exceeded
-Ошибка рекурсии: превышена максимальная глубина рекурсии
 
 </sample-output>
 
@@ -49,10 +48,10 @@ _Рекурсия_, упомянутая в ошибке выше, относи�
 
 ```python
 def fill_list(numbers: list):
-    """ Если длина списка меньше 10, добавить элементы в список """
+    """ If the length of the list is less than 10, add items to the list """
     if len(numbers) < 10:
         numbers.append(0)
-        # вызвать функцию снова
+        # call the function again
         fill_list(numbers)
 
 
@@ -72,7 +71,7 @@ if __name__ == "__main__":
 
 ```python
 def fill_list(numbers: list):
-    """ Если длина списка меньше 10, добавить элементы в список """
+    """ If the length of the list is less than 10, add items to the list """
     while len(numbers) < 10:
         numbers.append(0)
 
@@ -119,29 +118,29 @@ print(numbers)
 ```python
 
 def factorial(n: int):
-    """ Функция вычисляет факториал n! для n >= 0 """
+    """ The function calculates the factorial n! for n >= 0 """
     if n < 2:
-        # Факториал для 0 и 1 равен 1
+        # The factorial for 0 and 1 is 1
         return 1
 
-    # Вызвать функцию снова с аргументом, который на единицу меньше
+    # Call the function again with an argument that is one smaller
     return n * factorial(n - 1)
 
 if __name__ == "__main__":
-    # Тестирование нашей функции
+    # Tesing our function
     for i in range(1, 7):
-        print(f"Факториал {i} равен {factorial(i)}")
+        print(f"The factorial of {i} is {factorial(i)}")
 
 ```
 
 <sample-output>
 
-Факториал 1 равен 1
-Факториал 2 равен 2
-Факториал 3 равен 6
-Факториал 4 равен 24
-Факториал 5 равен 120
-Факториал 6 равен 720
+The factorial of 1 is 1
+The factorial of 2 is 2
+The factorial of 3 is 6
+The factorial of 4 is 24
+The factorial of 5 is 120
+The factorial of 6 is 720
 
 </sample-output>
 
@@ -179,33 +178,33 @@ factorial(5)
 
 ```python
 def fibonacci(n: int):
-    """ Функция возвращает n-ое число в последовательности Фибоначчи (1, 1, 2, 3, 5, 8 и т.д.); n > 0"""
+    """ The function returns the nth number in the Fibonacci sequence (1, 1, 2, 3, 5, 8 etc.); n > 0"""
 
     if n <= 2:
-        # первые два - единицы
+        # the first two are ones
         return 1
 
-    # Все другие числа равны сумме двух предшествующих чисел в последовательности
+    # All other numbers equal the sum of the two preceding numbers in the sequence
     return fibonacci(n - 1) + fibonacci(n - 2)
 
-# Проверить, что всё работает
+# Test that everything works
 if __name__ == "__main__":
     for i in range(1, 11):
-        print(f"{i}. число в последовательности Фибоначчи равно {fibonacci(i)}")
+        print(f"The {i}. number in the Fibonacci sequence is {fibonacci(i)}")
 ```
 
 <sample-output>
 
-1. число в последовательности Фибоначчи равно 1
-2. число в последовательности Фибоначчи равно 1
-3. число в последовательности Фибоначчи равно 2
-4. число в последовательности Фибоначчи равно 3
-5. число в последовательности Фибоначчи равно 5
-6. число в последовательности Фибоначчи равно 8
-7. число в последовательности Фибоначчи равно 13
-8. число в последовательности Фибоначчи равно 21
-9. число в последовательности Фибоначчи равно 34
-10. число в последовательности Фибоначчи равно 55
+The 1. number in the Fibonacci sequence is 1
+The 2. number in the Fibonacci sequence is 1
+The 3. number in the Fibonacci sequence is 2
+The 4. number in the Fibonacci sequence is 3
+The 5. number in the Fibonacci sequence is 5
+The 6. number in the Fibonacci sequence is 8
+The 7. number in the Fibonacci sequence is 13
+The 8. number in the Fibonacci sequence is 21
+The 9. number in the Fibonacci sequence is 34
+The 10. number in the Fibonacci sequence is 55
 
 </sample-output>
 
@@ -231,11 +230,11 @@ if __name__ == "__main__":
 
 ```python
 def recursive_sum(number: int):
-    # если число 1, больше нечего добавлять
+    # if the number is 1, there is nothing else to add
     if number <= 1:
         return number
 
-    # заполнить остальную часть функции
+    # fill in the rest of the function
 ```
 
 Несколько примеров:
@@ -269,21 +268,21 @@ def balanced_brackets(my_string: str):
     if not (my_string[0] == '(' and my_string[-1] == ')'):
         return False
 
-    # удалить первый и последний символ
+    # remove first and last character
     return balanced_brackets(my_string[1:-1])
 
 ok = balanced_brackets("(((())))")
 print(ok)
 
-# здесь есть одна лишняя закрывающая скобка, поэтому это производит False
+# there is one closing bracket too many, so this produces False
 ok = balanced_brackets("()())")
 print(ok)
 
-# это начинается с закрывающей скобки, снова False
+# this one starts with a closing bracket, False again
 ok = balanced_brackets(")()")
 print(ok)
 
-# это производит False, потому что функция обрабатывает только полностью вложенные скобки
+# this produces False because the function only handles entirely nested brackets
 ok = balanced_brackets("()(())")
 print(ok)
 ```
@@ -308,11 +307,11 @@ print(ok)
 ok = balanced_brackets("(python version [3.7]) please use this one!")
 print(ok)
 
-# это нехорошо, закрывающая скобка не совпадает
+# this is no good, the closing bracket doesn't match
 ok = balanced_brackets("(()]")
 print(ok)
 
-# различные типы скобок не сопоставлены
+# different types of brackets are mismatched
 ok = balanced_brackets("([bad egg)]")
 print(ok)
 ```
@@ -350,28 +349,28 @@ False
 
 ```python
 def binary_search(target: list, item: int, left : int, right : int):
-    """ Функция возвращает True, если элемент содержится в целевом списке, False в противном случае """
-    # Если область поиска пуста, элемент не найден
+    """ The function returns True if the item is contained in the target list, False otherwise """
+    # If the search area is empty, item was not found
     if left > right:
         return False
 
-    # Вычислить центр области поиска, целый результат
+    # Calculate the centre of the search area, integer result
     centre = (left+right)//2
 
-    # Если элемент найден в центре, вернуть
+    # If the item is found at the centre, return
     if target[centre] == item:
         return True
 
-    # Если элемент больше, искать в большей половине
+    # If the item is greater, search the greater half
     if target[centre] < item:
         return binary_search(target, item, centre+1, right)
-    # Иначе элемент меньше, искать в меньшей половине
+    # Else the item is smaller, search the smaller half
     else:
         return binary_search(target, item, left, centre-1)
 
 
 if __name__ == "__main__":
-    # Протестировать вашу функцию
+    # Test your function
     target = [1, 2, 4, 5, 7, 8, 11, 13, 14, 18]
     print(binary_search(target, 2, 0, len(target)-1))
     print(binary_search(target, 13, 0, len(target)-1))

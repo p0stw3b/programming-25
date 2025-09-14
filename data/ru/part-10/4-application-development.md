@@ -89,7 +89,7 @@ class PhoneBook:
 
     def add_number(self, name: str, number: str):
         if not name in self.__persons:
-            # добавить новую запись в словарь с пустым списком для номеров
+            # add a new dictionary entry with an empty list for the numbers
             self.__persons[name] = []
 
         self.__persons[name].append(number)
@@ -100,7 +100,7 @@ class PhoneBook:
 
         return self.__persons[name]
 
-# код для тестирования
+# code for testing
 phonebook = PhoneBook()
 phonebook.add_number("Eric", "02-123456")
 print(phonebook.get_numbers("Eric"))
@@ -193,7 +193,7 @@ class PhoneBookApplication:
         print("0 exit")
         print("1 add entry")
 
-    # разделение ответственности в действии: новый метод для добавления записи
+    # separation of concerns in action: a new method for adding an entry
     def add_entry(self):
         name = input("name: ")
         number = input("number: ")
@@ -362,12 +362,12 @@ class PhoneBookApplication:
         self.__phonebook = PhoneBook()
         self.__filehandler = FileHandler("phonebook.txt")
 
-        # добавить имена и номера из файла в телефонную книгу
+        # add the names and numbers from the file to the phone book
         for name, numbers in self.__filehandler.load_file().items():
             for number in numbers:
                 self.__phonebook.add_number(name, number)
 
-    # остальная часть программы
+    # the rest of the program
 ```
 
 Эта функциональность также должна быть протестирована. Как только мы убедимся, что содержимое файла доступно через пользовательский интерфейс нашего приложения, мы можем перейти к следующему этапу.
@@ -385,7 +385,7 @@ class PhoneBook:
 
     # ...
 
-    # вернуть все записи (в формате словаря)
+    # return all entries (in dictionary format)
     def all_entries(self):
         return self.__persons
 ```
@@ -412,9 +412,9 @@ class FileHandler():
 ```python
 
 class PhoneBookApplication:
-    # остальная часть кода для пользовательского интерфейса
+    # the rest of the code for the user interface
 
-    # метод, который выполняется при выходе из программы
+    # a method which gets executed as the program exits
     def exit(self):
         self.__filehandler.save_file(self.__phonebook.all_entries())
 
@@ -504,11 +504,11 @@ while True:
     if len(name) == 0:
         break
 
-    # создать новый объект, если его еще не существует
+    # create a new object if it doesn't exist yet
     if not name in students:
         students[name] = ExerciseCounter()
 
-    # добавить новое выполненное упражнение в счетчик
+    # add a new done exercise to the counter
     students[name].done()
 
 print()
@@ -703,7 +703,7 @@ credits: **5**
 
 command: **2**
 course: **ItP**
-ItP (5 cr) grade 3
+ItP (5 cr) grade 3
 
 command: **1**
 course: **ItP**
@@ -712,7 +712,7 @@ credits: **5**
 
 command: **2**
 course: **ItP**
-ItP (5 cr) grade 5
+ItP (5 cr) grade 5
 
 command: **1**
 course: **ItP**
@@ -721,7 +721,7 @@ credits: **5**
 
 command: **2**
 course: **ItP**
-ItP (5 cr) grade 5
+ItP (5 cr) grade 5
 
 command: **2**
 course: **Introduction to Java**
@@ -777,7 +777,7 @@ class PhoneBookApplication:
         self.__phonebook = PhoneBook()
         self.__filehandler = FileHandler("phonebook.txt")
 
-    # остальная часть программы
+    # the rest of the program
 
 application = PhoneBookApplication()
 application.execute()
@@ -793,11 +793,11 @@ class PhoneBookApplication:
         self.__phonebook = PhoneBook()
         self.__storage_service = storage_service
 
-    # остальная часть пользовательского интерфейса
+    # the rest of the user interface
 
-# создать FileHandler
+# create a FileHandler
 storage_service = FileHandler("phonebook.txt")
-# передать его как аргумент конструктору PhoneBookApplication
+# pass it as an argument to PhoneBookApplication's constructor
 application = PhoneBookApplication(storage_service)
 application.execute()
 ```
@@ -810,9 +810,9 @@ class PhoneBookApplication:
         self.__phonebook = PhoneBook()
         self.__filename = filename
 
-    # остальная часть пользовательского интерфейса
+    # the rest of the user interface
 
-# использовать другое имя файла
+# use a different filename
 storage_service = FileHandler("new_phonebook.txt")
 application = PhoneBookApplication(storage_service)
 application.execute()
@@ -824,8 +824,8 @@ application.execute()
 
 ```python
 class CloudHandler:
-    # код для сохранения содержимого телефонной книги
-    # в облачном сервисе в интернете
+    # code for saving the contents of the phone book
+    # in a cloud service on the internet
 
 storage_service = CloudHandler("amazon-cloud", "username", "passwrd")
 application = PhoneBookApplication(storage_service)

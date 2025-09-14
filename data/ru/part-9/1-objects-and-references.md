@@ -27,36 +27,36 @@ class CompletedCourse:
 
 
 if __name__ == "__main__":
-    # Здесь мы создаем несколько завершенных курсов и добавляем их в список 
+    # Here we create some completed courses and add these to a list 
     completed = []
 
-    maths1 = CompletedCourse("Математика 1", 5, date(2020, 3, 11))
-    prog1 = CompletedCourse("Программирование 1", 6, date(2019, 12, 17))
+    maths1 = CompletedCourse("Mathematics 1", 5, date(2020, 3, 11))
+    prog1 = CompletedCourse("Programming 1", 6, date(2019, 12, 17))
 
     completed.append(maths1)
     completed.append(prog1)
 
-    # Добавим еще пару курсов прямо в список
-    completed.append(CompletedCourse("Физика 2", 4, date(2019, 11, 10)))
-    completed.append(CompletedCourse("Программирование 2", 5, date(2020, 5, 19)))
+    # Let's add a couple more straight to the list
+    completed.append(CompletedCourse("Physics 2", 4, date(2019, 11, 10)))
+    completed.append(CompletedCourse("Programming 2", 5, date(2020, 5, 19)))
 
-    # Проходим по всем завершенным курсам, выводим их названия 
-    # и суммируем полученные кредиты
+    # Go through all the completed courses, print out their names 
+    # and sum up the credits received
     credits = 0
     for course in completed:
         print(course.name)
         credits += course.credits
 
-    print("Всего получено кредитов:", credits)
+    print("Total credits received:", credits)
 ```
 
 <sample-output>
 
-Математика 1
-Программирование 1
-Физика 2
-Программирование 2
-Всего получено кредитов: 20
+Mathematics 1
+Programming 1
+Physics 2
+Programming 2
+Total credits received: 20
 
 </sample-output>
 
@@ -118,6 +118,74 @@ ExamSubmission (examinee: Pippa, points: 19)
 ExamSubmission (examinee: Paul, points: 15)
 ExamSubmission (examinee: Persephone, points: 17)
 
+</programming-exercise>
+
+You may remember that lists do not contain any objects themselves. They contain _references to objects_. The exact same object can appear multiple times in a single list, and it can be referred to multiple times within the list or outside it. Let's have a look at an example:
+
+```python
+class Product:
+    def __init__(self, name: str, unit: str):
+        self.name = name
+        self.unit = unit
+
+
+if __name__ == "__main__":
+    shopping_list = []
+    milk = Product("Milk", "litre")
+
+    shopping_list.append(milk)
+    shopping_list.append(milk)
+    shopping_list.append(Product("Cucumber", "piece"))
+```
+
+<img src="9_1_1.png">
+
+If there is more than one reference to the same object, it makes no difference which one of the references is used:
+
+```python
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+dogs = []
+fluffy = Dog("Fluffy")
+dogs.append(fluffy)
+dogs.append(fluffy)
+dogs.append(Dog("Fluffy"))
+
+print("Dogs initially:")
+for dog in dogs:
+    print(dog)
+
+print("The dog at index 0 is renamed:")
+dogs[0].name = "Pooch"
+for dog in dogs:
+    print(dog)
+
+print("The dog at index 2 is renamed:")
+dogs[2].name = "Fifi"
+for dog in dogs:
+    print(dog)
+```
+
+<sample-output>
+
+Dogs initially:
+Fluffy
+Fluffy
+Fluffy
+The dog at index 0 is renamed:
+Pooch
+Pooch
+Fluffy
+The dog at index 2 is renamed:
+Pooch
+Pooch
+Fifi
+
 </sample-output>
 
 </programming-exercise>
@@ -133,11 +201,11 @@ class Product:
 
 if __name__ == "__main__":
     shopping_list = []
-    milk = Product("Молоко", "литр")
+    milk = Product("Milk", "litre")
 
     shopping_list.append(milk)
     shopping_list.append(milk)
-    shopping_list.append(Product("Огурец", "штука"))
+    shopping_list.append(Product("Cucumber", "piece"))
 ```
 
 <img src="../../part-9/9_1_1.png">
@@ -153,40 +221,35 @@ class Dog:
         return self.name
 
 dogs = []
-fluffy = Dog("Пушистый")
+fluffy = Dog("Fluffy")
 dogs.append(fluffy)
 dogs.append(fluffy)
-dogs.append(Dog("Пушистый"))
+dogs.append(Dog("Fluffy"))
 
-print("Собаки изначально:")
+print("Dogs initially:")
 for dog in dogs:
     print(dog)
 
-print("Собака с индексом 0 переименована:")
-dogs[0].name = "Дружок"
+print("The dog at index 0 is renamed:")
+dogs[0].name = "Pooch"
 for dog in dogs:
     print(dog)
 
-print("Собака с индексом 2 переименована:")
-dogs[2].name = "Фифи"
+print("The dog at index 2 is renamed:")
+dogs[2].name = "Fifi"
 for dog in dogs:
     print(dog)
 ```
 
 <sample-output>
 
-Собаки изначально:
-Пушистый
-Пушистый
-Пушистый
-Собака с индексом 0 переименована:
-Дружок
-Дружок
-Пушистый
-Собака с индексом 2 переименована:
-Дружок
-Дружок
-Фифи
+False
+True
+False
+
+True
+True
+True
 
 </sample-output>
 
@@ -212,13 +275,10 @@ print(list2 == list3)
 
 <sample-output>
 
-False
-True
-False
-
-True
-True
-True
+nerd
+object
+object-oriented programming
+python
 
 </sample-output>
 
@@ -231,11 +291,11 @@ class Student:
         self.cr = cr
 
 if __name__ == "__main__":
-    # Ключом в этом словаре является номер студента, 
-    # а значением является объект типа Student
+    # The key in this dictionary is the student number, 
+    # and the value is an object of type Student
     students = {}
-    students["12345"] = Student("Сол Студент", 10)
-    students["54321"] = Student("Салли Студент", 67)
+    students["12345"] = Student("Saul Student", 10)
+    students["54321"] = Student("Sally Student", 67)
 ```
 
 [Инструмент визуализации](http://www.pythontutor.com/visualize.html#mode=edit) может помочь в понимании приведенного выше примера:
@@ -274,10 +334,8 @@ vocab.print_vocabulary()
 
 <sample-output>
 
-nerd
-object
-object-oriented programming
-python
+Steve Student (12345)
+Saul Student (12345)
 
 </sample-output>
 
@@ -295,7 +353,7 @@ class Vocabulary:
     # ...
 
     def longest_word(self):
-        # определяем две вспомогательные переменные
+        # define two helper variables
         self.longest = ""
         self.length_of_longest = 0
 
@@ -317,7 +375,7 @@ class Vocabulary:
     # ...
 
     def longest_word(self):
-        # определяем две вспомогательные переменные
+        # define two helper variables
         self.helper = ""
         self.helper2 = 0
 
@@ -339,7 +397,7 @@ class Vocabulary:
 class Vocabulary:
     def __init__(self):
         self.words = []
-        # определяем вспомогательные переменные
+        # define helper variables
         self.helper = ""
         self.helper2 = ""
         self.helper3 = ""
@@ -349,8 +407,8 @@ class Vocabulary:
 
     def longest_word(self):
         for word in self.words:
-            # выше вспомогательным переменным были присвоены строковые значения
-            # следующее не будет работать, потому что тип helper2 неверен
+            # above the helper variables were all assigned string values
+            # the following will not work because the type of helper2 is wrong
             if len(word) > self.helper2:
                 self.helper2 = len(word)
                 self.helper = word
@@ -370,8 +428,8 @@ class Vocabulary:
     # ...
 
     def longest_word(self):
-        # правильный способ объявления вспомогательных переменных 
-        # для использования внутри одного метода
+        # the correct way of declaring helper variables 
+        # for use within a single method
         longest = ""
         length_of_longest = 0
 
@@ -400,12 +458,12 @@ class Student:
     def __str__(self):
         return f"{self.name} ({self.student_number})"
 
-# подсказка типа здесь использует имя класса, определенного выше
+# the type hint here uses the name of the class defined above
 def change_name(student: Student):
-    student.name = "Сол Студент"
+    student.name = "Saul Student"
 
-# создаем объект Student
-steve = Student("Стив Студент", "12345")
+# create a Student object
+steve = Student("Steve Student", "12345")
 
 print(steve)
 change_name(steve)
@@ -414,8 +472,11 @@ print(steve)
 
 <sample-output>
 
-Стив Студент (12345)
-Сол Студент (12345)
+Mary Rusty (78218)
+Mindy Rusty (80068)
+Mike Pythons (70396)
+Mark Javanese (83307)
+Mary Pythons (45149)
 
 </sample-output>
 
@@ -432,28 +493,28 @@ class Student:
     def __str__(self):
         return f"{self.name} ({self.student_number})"
 
-# Эта функция создает и возвращает новый объект Student.
-# Она случайно выбирает значения для имени и номера студента.
+# This function creates and returns a new Student object.
+# It randomly selects values for the name and the student number.
 def new_student():
-    first_names = ["Марк","Минди","Мария","Майк"]
-    last_names = ["Яванский", "Растиков", "Скриптов", "Питонов"]
+    first_names = ["Mark","Mindy","Mary","Mike"]
+    last_names = ["Javanese", "Rusty", "Scriptor", "Pythons"]
 
-    # случайно определяем имя
+    # randomly determine the name
     name = choice(first_names) + " " + choice(last_names)
 
-    # случайно определяем номер студента
+    # randomly determine the student number
     student_number = str(randint(10000,99999))
 
-    # Создаем и возвращаем объект Student
+    # Create and return a Student object
     return Student(name, student_number)
 
 if __name__ == "__main__":
-    # Вызываем функцию пять раз и сохраняем результаты в список
+    # Call the function five times and store the results in a list
     students = []
     for i in range(5):
         students.append(new_student())
 
-    # Выводим результаты
+    # Print out the results
     for student in students :
         print(student)
 ```
@@ -462,11 +523,9 @@ if __name__ == "__main__":
 
 <sample-output>
 
-Мария Растиков (78218)
-Минди Растиков (80068)
-Майк Питонов (70396)
-Марк Яванский (83307)
-Мария Питонов (45149)
+Jared got on board
+Alice was too short :(
+Rollercoaster (1 visitors)
 
 </sample-output>
 
@@ -489,19 +548,19 @@ class Attraction:
     def admit_visitor(self, person: Person):
         if person.height >= self.min_height:
             self.visitors += 1
-            print(f"{person.name} прошел на аттракцион")
+            print(f"{person.name} got on board")
         else:
-            print(f"{person.name} слишком низкий :(")
+            print(f"{person.name} was too short :(")
 
     def __str__(self):
-        return f"{self.name} ({self.visitors} посетителей)"
+        return f"{self.name} ({self.visitors} visitors)"
 ```
 Attraction содержит метод `admit_visitor`, который принимает объект типа `Person` в качестве аргумента. Если посетитель достаточно высокий, он допускается на аттракцион и количество посетителей увеличивается. Классы можно протестировать следующим образом:
 
 ```python
-rollercoaster = Attraction("Американские горки", 120)
-jared = Person("Джаред", 172)
-alice = Person("Алиса", 105)
+rollercoaster = Attraction("Rollercoaster", 120)
+jared = Person("Jared", 172)
+alice = Person("Alice", 105)
 
 rollercoaster.admit_visitor(jared)
 rollercoaster.admit_visitor(alice)
@@ -511,9 +570,8 @@ print(rollercoaster)
 
 <sample-output>
 
-Джаред прошел на аттракцион
-Алиса слишком низкий :(
-Американские горки (1 посетителей)
+Eric weighs 7 kg
+Peter weighs 85 kg
 
 </sample-output>
 
@@ -528,7 +586,7 @@ print(rollercoaster)
 ```python
 class BabyCentre:
     def weigh(self, person: Person):
-        # вернуть вес человека, переданного в качестве аргумента
+        # return the weight of the person passed as an argument
         return -1
 ```
 
@@ -542,14 +600,17 @@ baby_centre = BabyCentre()
 eric = Person("Eric", 1, 110, 7)
 peter = Person("Peter", 33, 176, 85)
 
-print(f"{eric.name} весит {baby_centre.weigh(eric)} кг")
-print(f"{peter.name} весит {baby_centre.weigh(peter)} кг")
+print(f"{eric.name} weighs {baby_centre.weigh(eric)} kg")
+print(f"{peter.name} weighs {baby_centre.weigh(peter)} kg")
 ```
 
 <sample-output>
 
-Eric весит 7 кг
-Peter весит 85 кг
+Eric weighs 7 kg
+Peter weighs 85 kg
+
+Eric weighs 10 kg
+Peter weighs 85 kg
 
 </sample-output>
 
@@ -565,27 +626,25 @@ baby_centre = BabyCentre()
 eric = Person("Eric", 1, 110, 7)
 peter = Person("Peter", 33, 176, 85)
 
-print(f"{eric.name} весит {baby_centre.weigh(eric)} кг")
-print(f"{peter.name} весит {baby_centre.weigh(peter)} кг")
+print(f"{eric.name} weighs {baby_centre.weigh(eric)} kg")
+print(f"{peter.name} weighs {baby_centre.weigh(peter)} kg")
 print() 
 
 baby_centre.feed(eric)
 baby_centre.feed(eric)
 baby_centre.feed(eric)
 
-print(f"{eric.name} весит {baby_centre.weigh(eric)} кг")
-print(f"{peter.name} весит {baby_centre.weigh(peter)} кг")
+print(f"{eric.name} weighs {baby_centre.weigh(eric)} kg")
+print(f"{peter.name} weighs {baby_centre.weigh(peter)} kg")
 ```
 
 Вывод должен показать, что вес Эрика увеличился на три:
 
 <sample-output>
 
-Eric весит 7 кг
-Peter весит 85 кг
-
-Eric весит 10 кг
-Peter весит 85 кг
+Total number of weigh-ins is 0
+Total number of weigh-ins is 2
+Total number of weigh-ins is 6
 
 </sample-output>
 
@@ -599,26 +658,28 @@ baby_centre = BabyCentre()
 eric = Person("Eric", 1, 110, 7)
 peter = Person("Peter", 33, 176, 85)
 
-print(f"Общее количество взвешиваний: {baby_centre.weigh_ins()}")
+print(f"Total number of weigh-ins is {baby_centre.weigh_ins()}")
 
 baby_centre.weigh(eric)
 baby_centre.weigh(eric)
 
-print(f"Общее количество взвешиваний: {baby_centre.weigh_ins()}")
+print(f"Total number of weigh-ins is {baby_centre.weigh_ins()}")
 
 baby_centre.weigh(eric)
 baby_centre.weigh(eric)
 baby_centre.weigh(eric)
 baby_centre.weigh(eric)
 
-print(f"Общее количество взвешиваний: {baby_centre.weigh_ins()}")
+print(f"Total number of weigh-ins is {baby_centre.weigh_ins()}")
 ```
 
 <sample-output>
 
-Общее количество взвешиваний: 0
-Общее количество взвешиваний: 2
-Общее количество взвешиваний: 6
+Balance 10
+Payment successful: True
+Balance 2
+Payment successful: False
+Balance 2
 
 </sample-output>
 
@@ -646,10 +707,10 @@ class LunchCard:
 
     def subtract_from_balance(self, amount: float):
         pass
-        # Сумма должна быть вычтена из баланса только если
-        # на карте достаточно денег.
-        # Если платеж успешен, метод возвращает True. 
-        # Иначе он возвращает False.
+        # The amount should be subtracted from the balance only if
+        # there is enough money on the card.
+        # If the payment is successful, the method returns True. 
+        # Otherwise it returns False.
 ```
 
 Вы можете использовать следующий код для тестирования функции:
@@ -657,22 +718,23 @@ class LunchCard:
 ```python
 if __name__ == "__main__":
     card = LunchCard(10)
-    print("Баланс", card.balance)
+    print("Balance", card.balance)
     result = card.subtract_from_balance(8)
-    print("Платеж успешен:", result)
-    print("Баланс", card.balance)
+    print("Payment successful:", result)
+    print("Balance", card.balance)
     result = card.subtract_from_balance(4)
-    print("Платеж успешен:", result)
-    print("Баланс", card.balance)
+    print("Payment successful:", result)
+    print("Balance", card.balance)
 ```
 
 <sample-output>
 
-Баланс 10
-Платеж успешен: True
-Баланс 2
-Платеж успешен: False
-Баланс 2
+The change returned was 7.5
+The change returned was 2.5
+The change returned was 0.0
+Funds available at the terminal: 1009.3
+Regular lunches sold: 2
+Special lunches sold: 1
 
 </sample-output>
 
@@ -685,26 +747,26 @@ if __name__ == "__main__":
 ```python
 class PaymentTerminal:
     def __init__(self):
-        # Изначально в терминале доступно 1000 евро наличными
+        # Initially there is 1000 euros in cash available at the terminal
         self.funds = 1000
         self.lunches = 0
         self.specials = 0
 
     def eat_lunch(self, payment: float):
-        # Обычный обед стоит 2.50 евро.
-        # Увеличьте значение средств в терминале на 
-        # цену обеда, увеличьте количество проданных обедов, 
-        # и верните соответствующую сдачу.
-        # Если платеж, переданный в качестве аргумента, недостаточно велик, чтобы покрыть
-        # цену, обед не продается, и вся сумма возвращается.
+        # A regular lunch costs 2.50 euros.
+        # Increase the value of the funds at the terminal by the 
+        # price of the lunch, increase the number of lunches sold, 
+        # and return the appropriate change.
+        # If the payment passed as an argument is not large enough to cover
+        # the price, the lunch is not sold, and the entire sum is returned.
 
     def eat_special(self, payment: float):
-        # Специальный обед стоит 4.30 евро.
-        # Увеличьте значение средств в терминале на 
-        # цену обеда, увеличьте количество проданных обедов, 
-        # и верните соответствующую сдачу.
-        # Если платеж, переданный в качестве аргумента, недостаточно велик, чтобы покрыть
-        # цену, обед не продается, и вся сумма возвращается.
+        # A special lunch costs 4.30 euros.
+        # Increase the value of the funds at the terminal by the 
+        # price of the lunch, increase the number of lunches sold, 
+        # and return the appropriate change.
+        # If the payment passed as an argument is not large enough to cover
+        # the price, the lunch is not sold, and the entire sum is returned.
 ```
 
 Вы можете использовать следующий код для тестирования класса:
@@ -713,27 +775,28 @@ class PaymentTerminal:
 exactum = PaymentTerminal()
 
 change = exactum.eat_lunch(10)
-print("Возвращенная сдача", change)
+print("The change returned was", change)
 
 change = exactum.eat_lunch(5)
-print("Возвращенная сдача", change)
+print("The change returned was", change)
 
 change = exactum.eat_special(4.3)
-print("Возвращенная сдача", change)
+print("The change returned was", change)
 
-print("Средства, доступные в терминале:", exactum.funds)
-print("Проданных обычных обедов:", exactum.lunches)
-print("Проданных специальных обедов:", exactum.specials)
+print("Funds available at the terminal:", exactum.funds)
+print("Regular lunches sold:", exactum.lunches)
+print("Special lunches sold:", exactum.specials)
 ```
 
 <sample-output>
 
-Возвращенная сдача 7.5
-Возвращенная сдача 2.5
-Возвращенная сдача 0.0
-Средства, доступные в терминале: 1009.3
-Проданных обычных обедов: 2
-Проданных специальных обедов: 1
+The change returned was 7.5
+Payment successful: True
+Payment successful: False
+Payment successful: True
+Funds available at the terminal: 1002.5
+Regular lunches sold: 2
+Special lunches sold: 1
 
 </sample-output>
 
@@ -746,17 +809,17 @@ class PaymentTerminal:
     # ...
 
     def eat_lunch_lunchcard(self, card: LunchCard):
-        # Обычный обед стоит 2.50 евро.
-        # Если на карте достаточно денег, 
-        # вычтите цену обеда из баланса
-        # и верните True. Если нет, верните False.
+        # A regular lunch costs 2.50 euros.
+        # If there is enough money on the card, 
+        # subtract the price of the lunch from the balance
+        # and return True. If not, return False.
 
 
     def eat_special_lunchcard(self, card: LunchCard):
-        # Специальный обед стоит 4.30 евро.
-        # Если на карте достаточно денег, 
-        # вычтите цену обеда из баланса
-        # и верните True. Если нет, верните False.
+        # A special lunch costs 4.30 euros.
+        # If there is enough money on the card, 
+        # subtract the price of the lunch from the balance
+        # and return True. If not, return False.
 ```
 
 **Примечание:** при оплате LunchCard наличные средства, доступные в терминале, не изменяются. Однако обеды все еще продаются всякий раз, когда есть необходимый баланс, поэтому не забудьте соответствующим образом увеличить количество проданных обедов.
@@ -767,31 +830,32 @@ class PaymentTerminal:
 exactum = PaymentTerminal()
 
 change = exactum.eat_lunch(10)
-print("Возвращенная сдача", change)
+print("The change returned was", change)
 
 card = LunchCard(7)
 
 result = exactum.eat_special_lunchcard(card)
-print("Платеж успешен:", result)
+print("Payment successful:", result)
 result = exactum.eat_special_lunchcard(card)
-print("Платеж успешен:", result)
+print("Payment successful:", result)
 result = exactum.eat_lunch_lunchcard(card)
-print("Платеж успешен:", result)
+print("Payment successful:", result)
 
-print("Средства, доступные в терминале:", exactum.funds)
-print("Проданных обычных обедов:", exactum.lunches)
-print("Проданных специальных обедов:", exactum.specials)
+print("Funds available at the terminal:", exactum.funds)
+print("Regular lunches sold:", exactum.lunches)
+print("Special lunches sold:", exactum.specials)
 ```
 
 <sample-output>
 
-Возвращенная сдача 7.5
-Платеж успешен: True
-Платеж успешен: False
-Платеж успешен: True
-Средства, доступные в терминале: 1002.5
-Проданных обычных обедов: 2
-Проданных специальных обедов: 1
+Card balance is 2 euros
+Payment successful: False
+Card balance is 102 euros
+Payment successful: True
+Card balance is 97.7 euros
+Funds available at the terminal: 1100
+Regular lunches sold: 0
+Special lunches sold: 1
 
 </sample-output>
 
@@ -810,33 +874,27 @@ def deposit_money_on_card(self, card: LunchCard, amount: float):
 exactum = PaymentTerminal()
 
 card = LunchCard(2)
-print(f"Баланс карты составляет {card.balance} евро")
+print(f"Card balance is {card.balance} euros")
 
 result = exactum.eat_special_lunchcard(card)
-print("Платеж успешен:", result)
+print("Payment successful:", result)
 
 exactum.deposit_money_on_card(card, 100)
-print(f"Баланс карты составляет {card.balance} евро")
+print(f"Card balance is {card.balance} euros")
 
 result = exactum.eat_special_lunchcard(card)
-print("Платеж успешен:", result)
-print(f"Баланс карты составляет {card.balance} евро")
+print("Payment successful:", result)
+print(f"Card balance is {card.balance} euros")
 
-print("Средства, доступные в терминале:", exactum.funds)
-print("Проданных обычных обедов:", exactum.lunches)
-print("Проданных специальных обедов:", exactum.specials)
+print("Funds available at the terminal:", exactum.funds)
+print("Regular lunches sold:", exactum.lunches)
+print("Special lunches sold:", exactum.specials)
 ```
 
 <sample-output>
 
-Баланс карты составляет 2 евро
-Платеж успешен: False
-Баланс карты составляет 102 евро
-Платеж успешен: True
-Баланс карты составляет 97.7 евро
-Средства, доступные в терминале: 1100
-Проданных обычных обедов: 0
-Проданных специальных обедов: 1
+Muhammad ibn Musa al-Khwarizmi is older than Blaise Pascal
+Grace Hopper is not older than Blaise Pascal
 
 </sample-output>
 
@@ -862,25 +920,25 @@ def older_than(person1: Person, person2: Person):
     else:
         return False
 
-muhammad = Person("Мухаммад ибн Муса аль-Хорезми", 780)
-pascal = Person("Блез Паскаль", 1623)
-grace = Person("Грейс Хоппер", 1906)
+muhammad = Person("Muhammad ibn Musa al-Khwarizmi", 780)
+pascal = Person("Blaise Pascal", 1623)
+grace = Person("Grace Hopper", 1906)
 
 if older_than(muhammad, pascal):
-    print(f"{muhammad.name} старше, чем {pascal.name}")
+    print(f"{muhammad.name} is older than {pascal.name}")
 else:
-    print(f"{muhammad.name} не старше, чем {pascal.name}")
+    print(f"{muhammad.name} is not older than {pascal.name}")
 
 if older_than(grace, pascal):
-    print(f"{grace.name} старше, чем {pascal.name}")
+    print(f"{grace.name} is older than {pascal.name}")
 else:
-    print(f"{grace.name} не старше, чем {pascal.name}")
+    print(f"{grace.name} is not older than {pascal.name}")
 ```
 
 <sample-output>
 
-Мухаммад ибн Муса аль-Хорезми старше, чем Блез Паскаль
-Грейс Хоппер не старше, чем Блез Паскаль
+False
+True
 
 </sample-output>
 
@@ -892,8 +950,8 @@ class Person:
         self.name = name
         self.year_of_birth = year_of_birth
 
-    # Примечание: подсказки типов должны быть заключены в кавычки, если параметр
-    # имеет тот же тип, что и сам класс!
+    # NB: type hints must be enclosed in quotation marks if the parameter
+    # is of the same type as the class itself!
     def older_than(self, another: "Person"):
         if self.year_of_birth < another.year_of_birth:
             return True
@@ -906,19 +964,19 @@ class Person:
 Помните, вызов метода отличается от вызова функции. Метод присоединяется к объекту с помощью точечной нотации:
 
 ```python
-muhammad = Person("Мухаммад ибн Муса аль-Хорезми", 780)
-pascal = Person("Блез Паскаль", 1623)
-grace = Person("Грейс Хоппер", 1906)
+muhammad = Person("Muhammad ibn Musa al-Khwarizmi", 780)
+pascal = Person("Blaise Pascal", 1623)
+grace = Person("Grace Hopper", 1906)
 
 if muhammad.older_than(pascal):
-    print(f"{muhammad.name} старше, чем {pascal.name}")
+    print(f"{muhammad.name} is older than {pascal.name}")
 else:
-    print(f"{muhammad.name} не старше, чем {pascal.name}")
+    print(f"{muhammad.name} is not older than {pascal.name}")
 
 if grace.older_than(pascal):
-    print(f"{grace.name} старше, чем {pascal.name}")
+    print(f"{grace.name} is older than {pascal.name}")
 else:
-    print(f"{grace.name} не старше, чем {pascal.name}")
+    print(f"{grace.name} is not older than {pascal.name}")
 ```
 
 Слева от точки находится сам объект, который называется `self` в определении метода. В скобках находится аргумент метода, который является объектом, называемым `another`.
@@ -933,8 +991,8 @@ class Person:
         self.name = name
         self.year_of_birth = year_of_birth
 
-    # Примечание: подсказки типов должны быть заключены в кавычки, если параметр 
-    # имеет тот же тип, что и сам класс!
+    # NB: type hints must be enclosed in quotation marks if the parameter 
+    # is of the same type as the class itself!
     def older_than(self, another: "Person"):
         return self.year_of_birth < another.year_of_birth
 ```
@@ -945,7 +1003,7 @@ class Person:
 class Person:
     # ...
 
-    # это вызовет ошибку, поскольку Person должен быть заключен в кавычки
+    # this would cause an error, as Person must be enclosed in quotation marks
     def older_than(self, another: Person):
         return self.year_of_birth < another.year_of_birth:
 ```
@@ -981,8 +1039,8 @@ print(suburbs_three_bedroom.bigger(downtown_two_bedroom))
 
 <sample-output>
 
-False
-True
+71600
+35400
 
 </sample-output>
 
@@ -1003,8 +1061,8 @@ print(suburbs_three_bedroom.price_difference(downtown_two_bedroom))
 
 <sample-output>
 
-71600
-35400
+False
+True
 
 </sample-output>
 

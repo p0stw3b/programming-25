@@ -41,7 +41,7 @@ hidden: false
 ```python
     def draw_window(self):
         ...
-        game_text = self.game_font.render("Ходы: " + str(self.moves), True, (255, 0, 0))
+        game_text = self.game_font.render("Moves: " + str(self.moves), True, (255, 0, 0))
         self.window.blit(game_text, (25, self.height * self.scale + 10))
         ...
 ```
@@ -65,10 +65,10 @@ hidden: false
 ```python
     def draw_window(self):
         ...
-        game_text = self.game_font.render("F2 = новая игра", True, (255, 0, 0))
+        game_text = self.game_font.render("F2 = new game", True, (255, 0, 0))
         self.window.blit(game_text, (200, self.height * self.scale + 10))
 
-        game_text = self.game_font.render("Esc = выйти из игры", True, (255, 0, 0))
+        game_text = self.game_font.render("Esc = exit game", True, (255, 0, 0))
         self.window.blit(game_text, (400, self.height * self.scale + 10))
         ...
 ```
@@ -94,7 +94,7 @@ hidden: false
     def draw_window(self):
         ...
         if self.game_solved():
-            game_text = self.game_font.render("Поздравляем, вы решили игру!", True, (255, 0, 0))
+            game_text = self.game_font.render("Congratulations, you solved the game!", True, (255, 0, 0))
             game_text_x = self.scale * self.width / 2 - game_text.get_width() / 2
             game_text_y = self.scale * self.height / 2 - game_text.get_height() / 2
             pygame.draw.rect(self.window, (0, 0, 0), (game_text_x, game_text_y, game_text.get_width(), game_text.get_height()))

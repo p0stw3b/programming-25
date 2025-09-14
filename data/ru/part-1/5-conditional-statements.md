@@ -19,23 +19,23 @@ hidden: false
 Например, следующий код проверяет, является ли пользователь совершеннолетним:
 
 ```python
-age = int(input("Сколько вам лет? "))
+age = int(input("How old are you? "))
 
 if age > 17:
-    print("Вы совершеннолетний!")
-    print("Вот ваша копия GTA6.")
+    print("You are of age!")
+    print("Here's a copy of GTA6 for you.")
 
-print("Следующий покупатель, пожалуйста!")
+print("Next customer, please!")
 ```
 
 Когда пользователю больше 17 лет, выполнение программы должно выглядеть так:
 
 <sample-output>
 
-Сколько вам лет? **18**
-Вы совершеннолетний!
-Вот ваша копия GTA6.
-Следующий покупатель, пожалуйста!
+How old are you? **18**
+You are of age!
+Here's a copy of GTA6 for you.
+Next customer, please!
 
 </sample-output>
 
@@ -43,8 +43,8 @@ print("Следующий покупатель, пожалуйста!")
 
 <sample-output>
 
-Сколько вам лет? **16**
-Следующий покупатель, пожалуйста!
+How old are you? **16**
+Next customer, please!
 
 </sample-output>
 
@@ -59,9 +59,9 @@ print("Следующий покупатель, пожалуйста!")
 ```python
 age = 10
 
-# нет двоеточия в конце следующей строки
+# no colon at the end of the following line
 if age > 17
-    print("Вы совершеннолетний.")
+    print("You are of age.")
 ```
 
 При выполнении это вызывает ошибку:
@@ -91,38 +91,38 @@ SyntaxError: invalid syntax
 Давайте посмотрим на программу, которая выводит разные вещи в зависимости от того, является ли число, которое вводит пользователь, отрицательным, положительным или равным нулю:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 if number < 0:
-    print("Число отрицательное.")
+    print("The number is negative.")
 
 if number > 0:
-    print("Число положительное.")
+    print("The number is positive.")
 
 if number == 0:
-    print("Число равно нулю.")
+    print("The number is zero.")
 ```
 
 Примеры того, как программа работает с тремя различными вводами:
 
 <sample-output>
 
-Пожалуйста, введите число: **15**
-Число положительное.
+Please type in a number: **15**
+The number is positive.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **-18**
-Число отрицательное.
+Please type in a number: **-18**
+The number is negative.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **0**
-Число равно нулю.
+Please type in a number: **0**
+The number is zero.
 
 </sample-output>
 
@@ -133,14 +133,14 @@ Python распознает, что блок кода является част�
 Например:
 
 ````python
-password = input("Пожалуйста, введите пароль: ")
+password = input("Please type in a password: ")
 
 if password == "kittycat":
-    print("Вы знали пароль!")
-    print("Вы должны быть либо предполагаемым пользователем...")
-    print("...либо довольно искусным хакером.")
+    print("You knew the password!")
+    print("You must be either the intended user...")
+    print("...or quite an accomplished hacker.")
 
-print("Программа завершила выполнение. Спасибо и до свидания!")
+print("The program has finished its execution. Thanks and bye!")
 ````
 
 Вы можете использовать клавишу Tab, сокращение от клавиши _табулятора_, чтобы вставить определенное количество пробелов.
@@ -161,13 +161,13 @@ print("Программа завершила выполнение. Спасиб�
 
 <sample-output>
 
-Пожалуйста, введите число: **2020**
+Please type in a number: **2020**
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **1984**
+Please type in a number: **1984**
 Orwell
 
 </sample-output>
@@ -180,22 +180,22 @@ Orwell
 
 <sample-output>
 
-Пожалуйста, введите число: **-7**
-Абсолютное значение этого числа равно 7
+Please type in a number: **-7**
+The absolute value of this number is 7
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **1**
-Абсолютное значение этого числа равно 1
+Please type in a number: **1**
+The absolute value of this number is 1
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **-99**
-Абсолютное значение этого числа равно 99
+Please type in a number: **-99**
+The absolute value of this number is 99
 
 </sample-output>
 
@@ -210,17 +210,17 @@ Orwell
 
 <sample-output>
 
-Пожалуйста, скажите мне ваше имя: **Kramer**
-Сколько порций супа? **2**
-Общая стоимость составляет 11.8
-Следующий, пожалуйста!
+Please tell me your name: **Kramer**
+How many portions of soup? **2**
+The total cost is 11.8
+Next please!
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, скажите мне ваше имя: **Jerry**
-Следующий, пожалуйста!
+Please tell me your name: **Jerry**
+Next please!
 
 </sample-output>
 
@@ -233,35 +233,35 @@ Orwell
 
 <sample-output>
 
-Пожалуйста, введите число: **950**
-Это число меньше 1000
-Спасибо!
+Please type in a number: **950**
+This number is smaller than 1000
+Thank you!
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **59**
-Это число меньше 1000
-Это число меньше 100
-Спасибо!
+Please type in a number: **59**
+This number is smaller than 1000
+This number is smaller than 100
+Thank you!
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **2**
-Это число меньше 1000
-Это число меньше 100
-Это число меньше 10
-Спасибо!
+Please type in a number: **2**
+This number is smaller than 1000
+This number is smaller than 100
+This number is smaller than 10
+Thank you!
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **1123**
-Спасибо!
+Please type in a number: **1123**
+Thank you!
 
 </sample-output>
 
@@ -284,13 +284,13 @@ a = 3
 condition = a < 5
 print(condition)
 if condition:
-    print("a меньше 5")
+    print("a is less than 5")
 ```
 
 <sample-output>
 
 True
-a меньше 5
+a is less than 5
 
 </sample-output>
 
@@ -299,12 +299,12 @@ a меньше 5
 ```python
 condition = True
 if condition:
-    print("Это выводится каждый раз.")
+    print("This is printed every time.")
 ```
 
 <sample-output>
 
-Это выводится каждый раз.
+This is printed every time.
 
 </sample-output>
 
@@ -318,9 +318,9 @@ if condition:
 
 <sample-output>
 
-Число 1: **10**
-Число 2: **17**
-Операция: **add**
+Number 1: **10**
+Number 2: **17**
+Operation: **add**
 
 10 + 17 = 27
 
@@ -328,9 +328,9 @@ if condition:
 
 <sample-output>
 
-Число 1: **4**
-Число 2: **6**
-Операция: **multiply**
+Number 1: **4**
+Number 2: **6**
+Operation: **multiply**
 
 4 * 6 = 24
 
@@ -338,9 +338,9 @@ if condition:
 
 <sample-output>
 
-Число 1: **4**
-Число 2: **6**
-Операция: **subtract**
+Number 1: **4**
+Number 2: **6**
+Operation: **subtract**
 
 4 - 6 = -2
 
@@ -358,12 +358,12 @@ if condition:
 
 <sample-output>
 
-Пожалуйста, введите температуру (F): **101**
-101 градус Фаренгейта равен 38.333333333333336 градусов Цельсия
+Please type in a temperature (F): **101**
+101 degrees Fahrenheit equals 38.333333333333336 degrees Celsius
 
-Пожалуйста, введите температуру (F): **21**
-21 градус Фаренгейта равен -6.111111111111111 градусов Цельсия
-Бррр! Здесь холодно!
+Please type in a temperature (F): **21**
+21 degrees Fahrenheit equals -6.111111111111111 degrees Celsius
+Brr! It's cold in here!
 
 </sample-output>
 
@@ -375,19 +375,19 @@ if condition:
 
 <sample-output>
 
-Почасовая ставка: **8.5**
-Отработанные часы: **3**
-День недели: **Monday**
-Ежедневная зарплата: 25.5 евро
+Hourly wage: **8.5**
+Hours worked: **3**
+Day of the week: **Monday**
+Daily wages: 25.5 euros
 
 </sample-output>
 
 <sample-output>
 
-Почасовая ставка: **12.5**
-Отработанные часы: **10**
-День недели: **Sunday**
-Ежедневная зарплата: 250.0 евро
+Hourly wage: **12.5**
+Hours worked: **10**
+Day of the week: **Sunday**
+Daily wages: 250.0 euros
 
 </sample-output>
 
@@ -404,9 +404,9 @@ if condition:
 
 <sample-output>
 
-Сколько баллов на вашей карте? **55**
-Ваш бонус составляет 10%
-У вас теперь 60.5 баллов
+How many points are on your card? **55**
+Your bonus is 10 %
+You now have 60.5 points
 
 </sample-output>
 
@@ -414,10 +414,10 @@ if condition:
 
 <sample-output>
 
-Сколько баллов на вашей карте? **95**
-Ваш бонус составляет 10%
-Ваш бонус составляет 15%
-У вас теперь 120.175 баллов
+How many points are on your card? **95**
+Your bonus is 10 %
+Your bonus is 15 %
+You now have 120.175 points
 
 </sample-output>
 
@@ -435,45 +435,45 @@ if condition:
 
 <sample-output>
 
-Какой прогноз погоды на завтра?
-Температура: **21**
-Будет ли дождь (да/нет): **нет**
-Наденьте джинсы и футболку
+What is the weather forecast for tomorrow?
+Temperature: **21**
+Will it rain (yes/no): **no**
+Wear jeans and a T-shirt
 
 </sample-output>
 
 <sample-output>
 
-Какой прогноз погоды на завтра?
-Температура: **11**
-Будет ли дождь (да/нет): **нет**
-Наденьте джинсы и футболку
-Я рекомендую также свитер
+What is the weather forecast for tomorrow?
+Temperature: **11**
+Will it rain (yes/no): **no**
+Wear jeans and a T-shirt
+I recommend a jumper as well
 
 </sample-output>
 
 <sample-output>
 
-Какой прогноз погоды на завтра?
-Температура: **7**
-Будет ли дождь (да/нет): **нет**
-Наденьте джинсы и футболку
-Я рекомендую также свитер
-Возьмите с собой куртку
+What is the weather forecast for tomorrow?
+Temperature: **7**
+Will it rain (yes/no): **no**
+Wear jeans and a T-shirt
+I recommend a jumper as well
+Take a jacket with you
 
 </sample-output>
 
 <sample-output>
 
-Какой прогноз погоды на завтра?
-Температура: **3**
-Будет ли дождь (да/нет): **да**
-Наденьте джинсы и футболку
-Я рекомендую также свитер
-Возьмите с собой куртку
-Сделайте это теплым пальто, на самом деле
-Я думаю, перчатки не помешают
-Не забудьте ваш зонт!
+What is the weather forecast for tomorrow?
+Temperature: **3**
+Will it rain (yes/no): **yes**
+Wear jeans and a T-shirt
+I recommend a jumper as well
+Take a jacket with you
+Make it a warm coat, actually
+I think gloves are in order
+Don't forget your umbrella!
 
 </sample-output>
 
@@ -509,11 +509,11 @@ x = (-b ± sqrt(b²-4ac))/(2a).
 
 <sample-output>
 
-Значение a: **1**
-Значение b: **2**
-Значение c: **-8**
+Value of a: **1**
+Value of b: **2**
+Value of c: **-8**
 
-Корни равны 2.0 и -4.0
+The roots are 2.0 and -4.0
 
 </sample-output>
 

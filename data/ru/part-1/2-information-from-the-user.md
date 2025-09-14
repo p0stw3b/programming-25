@@ -19,16 +19,16 @@ _Ввод_ означает любую информацию, которую по
 Следующая программа считывает имя пользователя с помощью команды `input`. Затем она выводит его с помощью команды `print`:
 
 ```python
-name = input("Как вас зовут? ")
-print("Привет, " + name)
+name = input("What is your name? ")
+print("Hi there, " + name)
 ```
 
 Выполнение этой программы может выглядеть так (ввод пользователя выделен жирным):
 
 <sample-output>
 
-Как вас зовут? **Пол Питон**
-Привет, Пол Питон
+What is your name? **Paul Python**
+Hi there, Paul Python
 
 </sample-output>
 
@@ -36,8 +36,8 @@ print("Привет, " + name)
 
 <sample-output>
 
-Как вас зовут? **Паула Программист**
-Привет, Паула Программист
+What is your name? **Paula Programmer**
+Hi there, Paula Programmer
 
 </sample-output>
 
@@ -59,9 +59,9 @@ print("Привет, " + name)
 
 <sample-output>
 
-Как вас зовут? **Пол**
-Пол
-Пол
+What is your name? **Paul**
+Paul
+Paul
 
 </sample-output>
 
@@ -72,19 +72,19 @@ print("Привет, " + name)
 К одной переменной можно обращаться много раз в программе:
 
 ```python
-name = input("Как вас зовут? ")
+name = input("What is your name? ")
 
-print("Привет, " + name + "!")
-print(name + " - довольно красивое имя.")
+print("Hi, " + name + "!")
+print(name + " is quite a nice name.")
 ```
 
 Если пользователь вводит имя `Пол Питон`, эта программа выводит следующее:
 
 <sample-output>
 
-Как вас зовут? **Пол Питон**
-Привет, Пол Питон!
-Пол Питон - довольно красивое имя.
+What is your name? **Paul Python**
+Hi, Paul Python!
+Paul Python is quite a nice name.
 
 </sample-output>
 
@@ -93,17 +93,17 @@ print(name + " - довольно красивое имя.")
 Строки и переменные можно комбинировать довольно свободно:
 
 ```python
-name = input("Как вас зовут? ")
+name = input("What is your name? ")
 
-print("Привет " + name + "! Позвольте мне убедиться: ваше имя " + name + "?")
+print("Hi " + name + "! Let me make sure: your name is " + name + "?")
 ```
 
 Если пользователь вводит имя `Эллен Пример`, это выводит
 
 <sample-output>
 
-Как вас зовут? **Эллен Пример**
-Привет Эллен Пример! Позвольте мне убедиться: ваше имя Эллен Пример?
+What is your name? **Ellen Example**
+Hi Ellen Example! Let me make sure: your name is Ellen Example?
 
 </sample-output>
 
@@ -115,8 +115,8 @@ print("Привет " + name + "! Позвольте мне убедиться: 
 
 <sample-output>
 
-Как вас зовут? **Пол**
-!Пол!Пол!
+What is your name? **Paul**
+!Paul!Paul!
 
 </sample-output>
 
@@ -127,67 +127,67 @@ print("Привет " + name + "! Позвольте мне убедиться: 
 Программа может запрашивать более одного ввода. Обратите внимание, как ниже каждая команда `input` сохраняет полученное значение в разной переменной.
 
 ```python
-name = input("Как вас зовут? ")
-email = input("Какой ваш адрес электронной почты? ")
-nickname = input("Какой ваш псевдоним? ")
+name = input("What is your name? ")
+email = input("What is your email address? ")
+nickname = input("What is your nickname? ")
 
-print("Давайте убедимся, что мы правильно поняли")
-print("Ваше имя: " + name)
-print("Ваш адрес электронной почты: " + email)
-print("Ваш псевдоним: " + nickname)
+print("Let's make sure we got this right")
+print("Your name: " + name)
+print("Your email address: " + email)
+print("Your nickname: " + nickname)
 ```
 
 Программа может вывести это, например:
 
 <sample-output>
 
-Как вас зовут? **Фрэнсис Вымышленная**
-Какой ваш адрес электронной почты? **frances99@example.com**
-Какой ваш псевдоним? **Фрэн**
-Давайте убедимся, что мы правильно поняли
-Ваше имя: Фрэнсис Вымышленная
-Ваш адрес электронной почты: frances99@example.com
-Ваш псевдоним: Фрэн
+What is your name? **Frances Fictitious**
+What is your email address? **frances99@example.com**
+What is your nickname? **Fran**
+Let's make sure we got this right
+Your name: Frances Fictitious
+Your email address: frances99@example.com
+Your nickname: Fran
 
 </sample-output>
 
 Если одна и та же переменная используется для хранения более одного ввода, каждое новое значение заменит предыдущее. Например:
 
 ```python
-address = input("Какой ваш адрес? ")
-print("Значит, вы живете по адресу " + address)
+address = input("What is your address? ")
+print("So you live at address " + address)
 
-address = input("Пожалуйста, введите новый адрес: ")
-print("Ваш адрес теперь " + address)
+address = input("Please type in a new address: ")
+print("Your address is now " + address)
 ```
 
 Пример выполнения программы:
 
 <sample-output>
 
-Какой ваш адрес? **Питон Путь 101, кв. 3Д**
-Значит, вы живете по адресу Питон Путь 101, кв. 3Д
-Пожалуйста, введите новый адрес: **Новая Дорога 999**
-Ваш адрес теперь Новая Дорога 999
+What is your address? **Python Path 101, Flat 3D**
+So you live at address Python Path 101, Flat 3D
+Please type in a new address: **New Road 999**
+Your address is now New Road 999
 
 </sample-output>
 
 Это означает, что если одна и та же переменная используется для хранения двух вводов подряд, то нет способа получить доступ к значению первого ввода после его замены вторым:
 
 ```python
-address = input("Какой ваш адрес? ")
-address = input("Пожалуйста, введите новый адрес: ")
+address = input("What is your address? ")
+address = input("Please type in a new address: ")
 
-print("Ваш адрес теперь " + address)
+print("Your address is now " + address)
 ```
 
 Пример того, как может выглядеть вывод программы:
 
 <sample-output>
 
-Какой ваш адрес? **Питон Путь 10**
-Пожалуйста, введите новый адрес: **Аллея Программиста 23**
-Ваш адрес теперь Аллея Программиста 23
+What is your address? **Python Path 10**
+Please type in a new address: **Programmer's Walk 23**
+Your address is now Programmer's Walk 23
 
 </sample-output>
 
@@ -197,13 +197,13 @@ print("Ваш адрес теперь " + address)
 
 <sample-output>
 
-Имя: **Стив**
-Фамилия: **Сандерс**
-Адрес: **91 Станционная Дорога**
-Город и почтовый индекс: **Лондон EC05 6AW**
-Стив Сандерс
-91 Станционная Дорога
-Лондон EC05 6AW
+Given name: **Steve**
+Family name: **Sanders**
+Street address: **91 Station Road**
+City and postal code: **London EC05 6AW**
+Steve Sanders
+91 Station Road
+London EC05 6AW
 
 </sample-output>
 
@@ -215,9 +215,9 @@ print("Ваш адрес теперь " + address)
 
 <sample-output>
 
-1-я часть: **hickory**
-2-я часть: **dickory**
-3-я часть: **dock**
+The 1st part: **hickory**
+The 2nd part: **dickory**
+The 3rd part: **dock**
 hickory-dickory-dock!
 
 </sample-output>
@@ -232,10 +232,10 @@ hickory-dickory-dock!
 
 <sample-output>
 
-Пожалуйста, введите имя: **Мария**
-Пожалуйста, введите год: **1572**
+Please type in a name: **Mary**
+Please type in a year: **1572**
 
-Мария - доблестный рыцарь, рожденная в 1572 году. Однажды утром Мария проснулась от ужасного грохота: к деревне приближался дракон. Только Мария могла спасти жителей деревни.
+Mary is a valiant knight, born in the year 1572. One morning Mary woke up to an awful racket: a dragon was approaching the village. Only Mary could save the village's residents.
 
 </sample-output>
 

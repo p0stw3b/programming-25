@@ -21,28 +21,28 @@ hidden: false
 Решение с использованием кортежа могло бы выглядеть так:
 
 ```python
-name = "В поисках утраченного набора"
-author = "Марсель Питонс"
+name = "In Search of Lost Typing"
+author = "Marcel Pythons"
 year = 1992
 
-# Объединяем это в кортеж
+# Combine these in a tuple
 book = (name, author, year)
 
-# Выводим название книги
+# Print the name of the book
 print(book[0])
 ```
 
 В таком случае преимущество использования словаря в том, что мы можем использовать строки вместо индексов в качестве ключей. То есть мы можем давать описательные имена элементам, хранящимся в структуре данных:
 
 ```python
-name = "В поисках утраченного набора"
-author = "Марсель Питонс"
+name = "In Search of Lost Typing"
+author = "Marcel Pythons"
 year = 1992
 
-# Объединяем это в словарь
+# Combine these in a dictionary
 book = {"name": name, "author": author, "year": year}
 
-# Выводим название книги
+# Print the name of the book
 print(book["name"])
 ```
 
@@ -51,13 +51,13 @@ print(book["name"])
 Если бы мы создали два структурно одинаковых представления книг, используя словари с одинаковыми ключами, любые изменения, внесенные в один из них, не оказали бы влияния на другой:
 
 ```python
-book1 = {"name": "Старик и питоны", "author": "Эрнест Питонс", "year": 1952}
-book2 = {"name": "Семь питонов", "author": "Алексис Питон", "year": 1894}
+book1 = {"name": "The Old Man and the Pythons", "author": "Ernest Pythons", "year": 1952}
+book2 = {"name": "Seven Pythons", "author": "Aleksis Python", "year": 1894}
 
 print(book1["name"])
 print(book2["name"])
 
-book1["name"] = "Прощай, ARM-процессоры"
+book1["name"] = "A Farewell to ARM Processors"
 
 print(book1["name"])
 print(book2["name"])
@@ -65,10 +65,10 @@ print(book2["name"])
 
 <sample-output>
 
-Старик и питоны
-Семь питонов
-Прощай, ARM-процессоры
-Семь питонов
+The Old Man and the Pythons
+Seven Pythons
+A Farewell to ARM Processors
+Seven Pythons
 
 </sample-output>
 
@@ -87,20 +87,20 @@ print(book2["name"])
 К данным, хранящимся в объекте, можно обращаться через _методы_. Метод - это функция, которая оперирует конкретным объектом, к которому он прикреплен. Способ отличить методы от других функций - это способ их вызова: сначала вы пишете имя целевого объекта, затем точку, а затем имя метода с аргументами, если они есть. Например, метод `values` возвращает все значения, хранящиеся в объекте типа словарь, или `dict`:
 
 ```python
-# это создает объект типа словарь с именем book
-book = {"name": "Старик и питоны", "author": "Эрнест Питонс", "year": 1952}
+# this creates an object of type dictionary with the name book
+book = {"name": "The Old Man and the Pythons", "author": "Ernest Pythons", "year": 1952}
 
-# Выводим все значения
-# Вызов метода values() пишется после имени переменной
-# Помните о точечной нотации!
+# Print out all the values
+# The method call values() is written after the name of the variable
+# Remember the dot notation!
 for value in book.values():
     print(value)
 ```
 
 <sample-output>
 
-Старик и питоны
-Эрнест Питонс
+The Old Man and the Pythons
+Ernest Pythons
 1952
 
 </sample-output>
@@ -108,26 +108,26 @@ for value in book.values():
 Аналогично, строковые методы нацелены на строковый объект, для которого они вызываются. Некоторые примеры строковых методов включают `count` и `find`:
 
 ```python
-name = "Воображаемая Ирина"
+name = "Imaginary Irene"
 
-# Выводим количество раз, когда найдена буква И
-print(name.count("И"))
+# Print out the number of times the letter I is found
+print(name.count("I"))
 
-# Количество букв И, найденных в другой строке
-print("Иррациональные ирисы в Ислингтоне".count("И"))
+# The number of letters I found in another string
+print("Irreverent Irises in Islington".count("I"))
 
-# Индекс подстроки Ирина
-print(name.find("Ирина"))
+# The index of the substring Irene
+print(name.find("Irene"))
 
-# Эта строка не содержит такой подстроки
-print("Совершенно другая строка".find("Ирина"))
+# This string has no such substring
+print("A completely different string".find("Irene"))
 ```
 
 <sample-output>
 
 2
-1
-11
+3
+10
 -1
 
 </sample-output>
@@ -137,13 +137,13 @@ print("Совершенно другая строка".find("Ирина"))
 ```python
 my_list = [1,2,3]
 
-# Добавляем пару элементов
+# Add a couple of items
 my_list.append(5)
 my_list.append(1)
 
 print(my_list)
 
-# Удаляем первый элемент
+# Remove the first item
 my_list.pop(0)
 
 print(my_list)

@@ -44,8 +44,8 @@ print("Привет")
 print(имя)
 
 # Правильно
-имя = "Алексей"
-print(имя)
+name = "Alexey"
+print(name)
 ```
 
 ## IndentationError: unexpected indent
@@ -60,12 +60,12 @@ print(имя)
 **Пример:**
 ```python
 # Неправильно
-print("Привет")
-  print("Мир")
+print("Hello")
+  print("World")
 
 # Правильно
-print("Привет")
-print("Мир")
+print("Hello")
+print("World")
 ```
 
 ## TypeError
@@ -80,10 +80,10 @@ print("Мир")
 **Пример:**
 ```python
 # Неправильно
-результат = "5" + 10
+result = "5" + 10
 
 # Правильно
-результат = int("5") + 10
+result = int("5") + 10
 ```
 
 ## ValueError
@@ -97,10 +97,10 @@ print("Мир")
 **Пример:**
 ```python
 # Неправильно
-число = int("abc")
+number = int("abc")
 
 # Правильно
-число = int("123")
+number = int("123")
 ```
 
 ## IndexError: list index out of range
@@ -114,12 +114,12 @@ print("Мир")
 **Пример:**
 ```python
 # Неправильно
-список = [1, 2, 3]
-print(список[3])
+my_list = [1, 2, 3]
+print(my_list[3])
 
 # Правильно
-список = [1, 2, 3]
-print(список[2])
+my_list = [1, 2, 3]
+print(my_list[2])
 ```
 
 ## KeyError
@@ -133,12 +133,12 @@ print(список[2])
 **Пример:**
 ```python
 # Неправильно
-словарь = {"имя": "Алексей"}
-print(словарь["возраст"])
+my_dict = {"name": "Alexey"}
+print(my_dict["age"])
 
 # Правильно
-словарь = {"имя": "Алексей", "возраст": 25}
-print(словарь["возраст"])
+my_dict = {"name": "Alexey", "age": 25}
+print(my_dict["age"])
 ```
 
 ## Как отладить ошибку

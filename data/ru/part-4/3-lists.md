@@ -46,7 +46,7 @@ print(my_list[0])
 print(my_list[1])
 print(my_list[3])
 
-print("Сумма первых двух элементов:", my_list[0] + my_list[1])
+print("The sum of the first two items:", my_list[0] + my_list[1])
 ```
 
 <sample-output>
@@ -54,7 +54,7 @@ print("Сумма первых двух элементов:", my_list[0] + my_li
 7
 2
 5
-Сумма первых двух элементов: 9
+The sum of the first two items: 9
 
 </sample-output>
 
@@ -109,16 +109,16 @@ print(len(my_list))
 
 <sample-output>
 
-Индекс: **0**
-Новое значение: **10**
+Index: **0**
+New value: **10**
 [10, 2, 3, 4, 5]
-Индекс: **2**
-Новое значение: **250**
+Index: **2**
+New value: **250**
 [10, 2, 250, 4, 5]
-Индекс: **4**
-Новое значение: **-45**
+Index: **4**
+New value: **-45**
 [10, 2, 250, 4, -45]
-Индекс: **-1**
+Index: **-1**
 
 </sample-output>
 
@@ -159,10 +159,10 @@ shoe_sizes.append(44)
 shoe_sizes.append(40)
 shoe_sizes.append(28)
 
-print("Числа:")
+print("Numbers:")
 print(numbers)
 
-print("Размеры обуви:")
+print("Shoe sizes:")
 print(shoe_sizes)
 ```
 
@@ -170,9 +170,9 @@ print(shoe_sizes)
 
 <sample-output>
 
-Числа:
+Numbers:
 [5, 10, 3]
-Размеры обуви:
+Shoe sizes:
 [37, 44, 40, 28]
 
 </sample-output>
@@ -185,10 +185,10 @@ print(shoe_sizes)
 
 <sample-output>
 
-Сколько элементов: **3**
-Элемент 1: **10**
-Элемент 2: **250**
-Элемент 3: **34**
+How many items: **3**
+Item 1: **10**
+Item 2: **250**
+Item 3: **34**
 [10, 250, 34]
 
 </sample-output>
@@ -310,19 +310,19 @@ print(my_list)
 
 <sample-output>
 
-Список сейчас []
-(д)обавить, (у)далить или (в)ыход: **д**
-Список сейчас [1]
-(д)обавить, (у)далить или (в)ыход: **д**
-Список сейчас [1, 2]
-(д)обавить, (у)далить или (в)ыход: **д**
-Список сейчас [1, 2, 3]
-(д)обавить, (у)далить или (в)ыход: **у**
-Список сейчас [1, 2]
-(д)обавить, (у)далить или (в)ыход: **д**
-Список сейчас [1, 2, 3]
-(д)обавить, (у)далить или (в)ыход: **в**
-Пока!
+The list is now []
+a(d)d, (r)emove or e(x)it: **d**
+The list is now [1]
+a(d)d, (r)emove or e(x)it: **d**
+The list is now [1, 2]
+a(d)d, (r)emove or e(x)it: **d**
+The list is now [1, 2, 3]
+a(d)d, (r)emove or e(x)it: **r**
+The list is now [1, 2]
+a(d)d, (r)emove or e(x)it: **d**
+The list is now [1, 2, 3]
+a(d)d, (r)emove or e(x)it: **x**
+Bye!
 
 </sample-output>
 
@@ -338,15 +338,15 @@ print(my_list)
 my_list = [1, 3, 4]
 
 if 1 in my_list:
-    print("Список содержит элемент 1")
+    print("The list contains item 1")
 
 if 2 in my_list:
-    print("Список содержит элемент 2")
+    print("The list contains item 2")
 ```
 
 <sample-output>
 
-Список содержит элемент 1
+The list contains item 1
 
 </sample-output>
 
@@ -356,12 +356,12 @@ if 2 in my_list:
 
 <sample-output>
 
-Слово: **однажды**
-Слово: **жили**
-Слово: **были**
-Слово: **времена**
-Слово: **жили**
-Вы ввели 4 различных слова
+Word: **once**
+Word: **upon**
+Word: **a**
+Word: **time**
+Word: **upon**
+You typed in 4 different words
 
 </sample-output>
 
@@ -389,7 +389,7 @@ print(my_list)
 
 ```python
 my_list = [2,5,1,2,4]
-print(sorted(my_list))
+print(sorted(my_list)))
 ```
 
 <sample-output>
@@ -426,20 +426,20 @@ print(in_order)
 
 <sample-output>
 
-Новый элемент: **3**
-Список сейчас: [3]
-Список по порядку: [3]
-Новый элемент: **1**
-Список сейчас: [3, 1]
-Список по порядку: [1, 3]
-Новый элемент: **9**
-Список сейчас: [3, 1, 9]
-Список по порядку: [1, 3, 9]
-Новый элемент: **5**
-Список сейчас: [3, 1, 9, 5]
-Список по порядку: [1, 3, 5, 9]
-Новый элемент: **0**
-Пока!
+New item: **3**
+The list now: [3]
+The list in order: [3]
+New item: **1**
+The list now: [3, 1]
+The list in order: [1, 3]
+New item: **9**
+The list now: [3, 1, 9]
+The list in order: [1, 3, 9]
+New item: **5**
+The list now: [3, 1, 9, 5]
+The list in order: [1, 3, 5, 9]
+New item: **0**
+Bye!
 
 </sample-output>
 
@@ -458,16 +458,16 @@ greatest = max(my_list)
 smallest = min(my_list)
 list_sum = sum(my_list)
 
-print("Наименьший:", smallest)
-print("Наибольший:", greatest)
-print("Сумма:", list_sum)
+print("Smallest:", smallest)
+print("Greatest:", greatest)
+print("Sum:", list_sum)
 ```
 
 <sample-output>
 
-Наименьший: 1
-Наибольший: 5
-Сумма: 15
+Smallest: 1
+Greatest: 5
+Sum: 15
 
 </sample-output>
 
@@ -478,13 +478,13 @@ print("Сумма:", list_sum)
 ```python
 my_list = []
 
-# вызовы методов
+# method calls
 my_list.append(3)
 my_list.append(1)
 my_list.append(7)
 my_list.append(2)
 
-# еще один вызов метода
+# another method call
 my_list.sort()
 ```
 
@@ -493,26 +493,26 @@ my_list.sort()
 ```python
 my_list = [3, 2, 7, 1]
 
-# вызовы функций принимают список как аргумент
+# function calls take the list as an argument
 greatest = max(my_list)
 smallest = min(my_list)
 length = len(my_list)
 
-print("Наименьший:", smallest)
-print("Наибольший:", greatest)
-print("Длина списка:", length)
+print("Smallest:", smallest)
+print("Greatest:", greatest)
+print("Length of the list:", length)
 
-# еще один вызов функции 
-# сам список является аргументом, функция возвращает отсортированную копию
+# another function call 
+# the list itself is an argument, the function returns a sorted copy
 in_order = sorted(my_list)
 print(in_order)
 ```
 
 <sample-output>
 
-Наименьший: 1
-Наибольший: 7
-Длина списка: 4
+Smallest: 1
+Greatest: 7
+Length of the list: 4
 [1, 2, 3, 7]
 
 </sample-output>
@@ -534,16 +534,16 @@ def median(my_list: list):
 
 ```python
 shoe_sizes = [45, 44, 36, 39, 40]
-print("Медиана размеров обуви равна", median(shoe_sizes))
+print("The median of the shoe sizes is", median(shoe_sizes))
 
 ages = [1, 56, 34, 22, 5, 77, 5]
-print("Медиана возрастов равна", median(ages))
+print("The median of the ages is", median(ages))
 ```
 
 <sample-output>
 
-Медиана размеров обуви равна 40
-Медиана возрастов равна 22
+The median of the shoe sizes is 40
+The median of the ages is 22
 
 </sample-output>
 
@@ -553,7 +553,7 @@ print("Медиана возрастов равна", median(ages))
 def input_numbers():
     numbers = []
     while True:
-        user_input = input("Пожалуйста, введите целое число, оставьте пустым для выхода: ")
+        user_input = input("Please type in an integer, leave empty to exit: ")
         if len(user_input) == 0:
             break
         numbers.append(int(user_input))
@@ -575,14 +575,14 @@ print("Медиана чисел равна", median(numbers))
 
 <sample-output>
 
-Пожалуйста, введите целое число, оставьте пустым для выхода: **5**
-Пожалуйста, введите целое число, оставьте пустым для выхода: **-22**
-Пожалуйста, введите целое число, оставьте пустым для выхода: **4**
-Пожалуйста, введите целое число, оставьте пустым для выхода: **35**
-Пожалуйста, введите целое число, оставьте пустым для выхода: **1**
-Пожалуйста, введите целое число, оставьте пустым для выхода:
-Наибольшее число равно 35
-Медиана чисел равна 4
+Please type in an integer, leave empty to exit: **5**
+Please type in an integer, leave empty to exit: **-22**
+Please type in an integer, leave empty to exit: **4**
+Please type in an integer, leave empty to exit: **35**
+Please type in an integer, leave empty to exit: **1**
+Please type in an integer, leave empty to exit:
+The greatest number is 35
+The median of the numbers is 4
 
 </sample-output>
 
@@ -593,7 +593,7 @@ print("Медиана чисел равна", median(numbers))
 ```python
 numbers = []
 while True:
-    user_input = input("Пожалуйста, введите целое число, оставьте пустым для выхода: ")
+    user_input = input("Please type in an integer, leave empty to exit: ")
     if len(user_input) == 0:
         break
     numbers.append(int(user_input))
@@ -602,8 +602,8 @@ ordered = sorted(numbers)
 list_centre = len(ordered) // 2
 median = ordered[list_centre]
 
-print("Наибольшее число равно", max(numbers))
-print("Медиана чисел равна", median)
+print("The greatest number is", max(numbers))
+print("The median of the numbers is", median)
 ```
 
 В этой версии следовать программной логике сложнее, поскольку больше не ясно, какие команды являются частью какой функциональности. Код выполняет те же цели - чтение ввода, вычисление медианного значения и так далее - но структура менее ясна.
@@ -613,13 +613,13 @@ print("Медиана чисел равна", median)
 Другое важное применение функций - делать код _многократно используемым_. Если вам нужно достичь какой-то функциональности несколько раз в вашей программе, хорошая идея создать свою собственную функцию и назвать ее соответствующим образом:
 
 ```python
-print("Размеры обуви:")
+print("Shoe sizes:")
 shoe_sizes = input_numbers()
 
-print("Веса:")
+print("Weights:")
 weights = input_numbers()
 
-print("Росты:")
+print("Heights:")
 heights = input_numbers()
 ```
 
@@ -630,17 +630,17 @@ heights = input_numbers()
 ```python
 my_list = [1, 2, 3, 4, 5]
 result = length(my_list)
-print("Длина равна", result)
+print("The length is", result)
 
-# список, переданный как аргумент, не нужно хранить в какой-либо переменной
+# the list given as an argument doesn't need to be stored in any variable
 result = length([1, 1, 1, 1])
-print("Длина равна", result)
+print("The length is", result)
 ```
 
 <sample-output>
 
-Длина равна 5
-Длина равна 4
+The length is 5
+The length is 4
 
 </sample-output>
 
@@ -652,13 +652,13 @@ print("Длина равна", result)
 
 ```python
 my_list = [1, 2, 3, 4, 5]
-result = mean(my_list)
-print("среднее значение равно", result)
+result = mean(my_list))
+print("mean value is", result)
 ```
 
 <sample-output>
 
-среднее значение равно 3.0
+mean value is 3.0
 
 </sample-output>
 
@@ -671,13 +671,13 @@ print("среднее значение равно", result)
 
 ```python
 my_list = [1, 2, 3, 4, 5]
-result = range_of_list(my_list)
-print("Диапазон списка равен", result)
+result = range_of_list(my_list))
+print("The range of the list is", result)
 ```
 
 <sample-output>
 
-Диапазон списка равен 4
+The range of the list is 4
 
 </sample-output>
 

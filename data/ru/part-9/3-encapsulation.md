@@ -38,30 +38,30 @@ class Student:
 Объект `Student` предлагает своим клиентам метод `add_credits`, который позволяет клиенту добавить определенное количество кредитов к общему количеству студента. Метод гарантирует, что значение, переданное в качестве аргумента, больше нуля. Следующий код добавляет учебные кредиты в трех случаях:
 
 ```python
-sally = Student("Салли Студент", "12345")
+sally = Student("Sally Student", "12345")
 sally.add_credits(5)
 sally.add_credits(5)
 sally.add_credits(10)
-print("Учебных кредитов:", sally.study_credits)
+print("Study credits:", sally.study_credits)
 ```
 
 <sample-output>
 
-Учебных кредитов: 20
+Study credits: 20
 
 </sample-output>
 
 Несмотря на определение метода, все еще возможно получить прямой доступ к атрибуту `study_credits`. Это может привести к ошибочному состоянию, где целостность объекта теряется:
 
 ```python
-sally = Student("Салли Студент", "12345")
+sally = Student("Sally Student", "12345")
 sally.study_credits = -100
-print("Учебных кредитов:", sally.study_credits)
+print("Study credits:", sally.study_credits)
 ```
 
 <sample-output>
 
-Учебных кредитов: -100
+Study credits: -100
 
 </sample-output>
 
@@ -71,7 +71,7 @@ print("Учебных кредитов:", sally.study_credits)
 
 ```python
 class CreditCard:
-    # атрибут number является приватным, а атрибут name доступен
+    # the attribute number is private, while the attribute name is accessible
     def __init__(self, number: str, name: str):
         self.__number = number
         self.name = name
@@ -80,23 +80,23 @@ class CreditCard:
 Приватный атрибут не виден непосредственно клиенту. Попытка ссылаться на него вызывает ошибку. В приведенном выше примере атрибут `name` может быть легко получен и изменен:
 
 ```python
-card = CreditCard("123456","Рэнди Богач")
+card = CreditCard("123456","Randy Riches")
 print(card.name)
-card.name = "Чарли Черчмауз"
+card.name = "Charlie Churchmouse"
 print(card.name)
 ```
 
 <sample-output>
 
-Рэнди Богач
-Чарли Черчмауз
+Randy Riches
+Charlie Churchmouse
 
 </sample-output>
 
 Попытка вывести номер карты, однако, вызывает ошибку:
 
 ```python
-card = CreditCard("123456","Рэнди Богач")
+card = CreditCard("123456","Randy Riches")
 print(card.__number)
 ```
 
@@ -130,13 +130,13 @@ class CreditCard:
 ```
 
 ```python
-card = CreditCard("123456", "Рэнди Богач", 5000)
+card = CreditCard("123456", "Randy Riches", 5000)
 print(card.retrieve_balance())
 card.deposit_money(100)
 print(card.retrieve_balance())
 card.withdraw_money(500)
 print(card.retrieve_balance())
-# Следующее не будет работать, потому что баланс недостаточен
+# The following will not work because the balance is not sufficient
 card.withdraw_money(10000)
 print(card.retrieve_balance())
 ```
@@ -218,12 +218,12 @@ class Wallet:
     def __init__(self):
         self.__money = 0
 
-    # Метод геттер
+    # A getter method
     @property
     def money(self):
         return self.__money
 
-    # Метод сеттер
+    # A setter method
     @money.setter
     def money(self, money):
         if money >= 0:
@@ -264,18 +264,18 @@ class Wallet:
     def __init__(self):
         self.__money = 0
 
-    # Метод геттер
+    # A getter method
     @property
     def money(self):
         return self.__money
 
-    # Метод сеттер
+    # A setter method
     @money.setter
     def money(self, money):
         if money >= 0:
             self.__money = money
         else:
-            raise ValueError("Сумма не должна быть меньше нуля")
+            raise ValueError("The amount must not be below zero")
 ```
 
 ```python
@@ -285,7 +285,7 @@ print(wallet.money)
 
 <sample-output>
 
-ValueError: Сумма не должна быть меньше нуля
+ValueError: The amount must not be below zero
 
 </sample-output>
 
@@ -340,7 +340,7 @@ class Player:
         if name != "":
             self.__name = name
         else:
-            raise ValueError("Имя не может быть пустой строкой")
+            raise ValueError("The name may not be an empty string")
 
     @property
     def player_number(self):
@@ -351,15 +351,15 @@ class Player:
         if player_number > 0:
             self.__player_number = player_number
         else:
-            raise ValueError("Номер игрока должен быть положительным целым числом")
+            raise ValueError("The player number must be a positive integer")
 ```
 
 ```python
-player = Player("Бетти Баллмер", 10)
+player = Player("Betty Ballmer", 10)
 print(player.name)
 print(player.player_number)
 
-player.name = "Бастер Баллмер"
+player.name = "Buster Ballmer"
 player.player_number = 11
 print(player.name)
 print(player.player_number)
@@ -367,9 +367,9 @@ print(player.player_number)
 
 <sample-output>
 
-Бетти Баллмер
+Betty Ballmer
 10
-Бастер Баллмер
+Buster Ballmer
 11
 
 </sample-output>
@@ -393,31 +393,31 @@ class Diary:
         if owner != "":
             self.__owner = owner
         else:
-            raise ValueError("Владелец не может быть пустой строкой")
+            raise ValueError("The owner may not be an empty string")
 
     def add_entry(self, entry: str):
         self.__entries.append(entry)
 
     def print_entries(self):
-        print("Всего", len(self.__entries), "записей")
+        print("A total of", len(self.__entries), "entries")
         for entry in self.__entries:
             print("- " + entry)
 ```
 
 ```python
-diary = Diary("Петр")
-diary.add_entry("Сегодня я ел кашу")
-diary.add_entry("Сегодня я изучал объектно-ориентированное программирование")
-diary.add_entry("Сегодня я лег спать рано")
+diary = Diary("Peter")
+diary.add_entry("Today I ate porridge")
+diary.add_entry("Today I learned object oriented programming")
+diary.add_entry("Today I went to bed early")
 diary.print_entries()
 ```
 
 <sample-output>
 
-Всего 3 записей
-- Сегодня я ел кашу
-- Сегодня я изучал объектно-ориентированное программирование
-- Сегодня я лег спать рано
+A total of 3 entries
+- Today I ate porridge
+- Today I learned object oriented programming
+- Today I went to bed early
 
 </sample-output>
 

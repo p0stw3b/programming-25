@@ -33,7 +33,7 @@ hidden: false
 ```python
 
 class Node:
-    """ Класс представляет одиночный узел в бинарном дереве """
+    """ The class represents a single node in a binary tree """
     def __init__(self, value, left_child:'Node' = None, right_child:'Node' = None):
         self.value = value
         self.left_child = left_child
@@ -390,68 +390,68 @@ print(status)
 
 <sample-output>
 
-команды:
-0 выход
-1 добавить заказ
-2 список завершённых задач
-3 список незавершённых задач
-4 пометить задачу как завершённую
-5 программисты
-6 статус программиста
+commands:
+0 exit
+1 add order
+2 list finished tasks
+3 list unfinished tasks
+4 mark task as finished
+5 programmers
+6 status of programmer
 
-команда: **1**
-описание: **program the next facebook**
-программист и оценка рабочей нагрузки: **jonah 1000**
-добавлено!
+command: **1**
+description: **program the next facebook**
+programmer and workload estimate: **jonah 1000**
+added!
 
-команда: **1**
-описание: **program mobile app for workload accounting**
-программист и оценка рабочей нагрузки: **eric 25**
-добавлено!
+command: **1**
+description: **program mobile app for workload accounting**
+programmer and workload estimate: **eric 25**
+added!
 
-команда: **1**
-описание: **program an app for music theory revision**
-программист и оценка рабочей нагрузки: **nina 12**
-добавлено!
+command: **1**
+description: **program an app for music theory revision**
+programmer and workload estimate: **nina 12**
+added!
 
-команда: **1**
-описание: **program the next twitter**
-программист и оценка рабочей нагрузки: **jonah 55**
-добавлено!
+command: **1**
+description: **program the next twitter**
+programmer and workload estimate: **jonah 55**
+added!
 
-команда: **2**
-нет завершённых задач
+command: **2**
+no finished tasks
 
-команда: **3**
+command: **3**
 1: program the next facebook (1000 hours), programmer jonah NOT FINISHED
 2: program mobile app for workload accounting (25 hours), programmer eric NOT FINISHED
 3: program an app for music theory revision (12 hours), programmer nina NOT FINISHED
 4: program the next twitter (55 hours), programmer jonah NOT FINISHED
 
-команда: **4**
+command: **4**
 id: **2**
-помечено как завершённое
+marked as finished
 
-команда: **4**
+command: **4**
 id: **4**
-помечено как завершённое
+marked as finished
 
-команда: **2**
+command: **2**
 2: program mobile app for workload accounting (25 hours), programmer eric FINISHED
 4: program the next twitter (55 hours), programmer jonah FINISHED
 
-команда: **3**
+command: **3**
 1: program the next facebook (1000 hours), programmer jonah NOT FINISHED
 3: program an app for music theory revision (12 hours), programmer nina NOT FINISHED
 
-команда: **5**
+command: **5**
 jonah
 eric
 nina
 
-команда: **6**
-программист: **jonah**
-задач: завершено 1 не завершено 1, часов: выполнено 55 запланировано 1000
+command: **6**
+programmer: **jonah**
+tasks: finished 1 not finished 1, hours: done 55 scheduled 1000
 
 </sample-output>
 
@@ -463,27 +463,27 @@ nina
 
 <sample-output>
 
-команда: **1**
-описание: **program mobile app for workload accounting**
-программист и оценка рабочей нагрузки: **eric xxx**
-ошибочный ввод
+command: **1**
+description: **program mobile app for workload accounting**
+programmer and workload estimate: **eric xxx**
+erroneous input
 
-команда: **1**
-описание: **program mobile app for workload accounting**
-программист и оценка рабочей нагрузки: **eric**
-ошибочный ввод
+command: **1**
+description: **program mobile app for workload accounting**
+programmer and workload estimate: **eric**
+erroneous input
 
-команда: **4**
+command: **4**
 id: **1000000**
-ошибочный ввод
+erroneous input
 
-команда: **4**
+command: **4**
 id: **XXXX**
-ошибочный ввод
+erroneous input
 
-команда: **6**
-программист: **unknownprogrammer**
-ошибочный ввод
+command: **6**
+programmer: **unknownprogrammer**
+erroneous input
 
 </sample-output>
 

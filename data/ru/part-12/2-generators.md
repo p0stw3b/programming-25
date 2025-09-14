@@ -39,17 +39,17 @@ def counter(max_value: int):
 ```python
 if __name__ == "__main__":
     numbers = counter(10)
-    print("Первое значение:")
+    print("First value:")
     print(next(numbers))
-    print("Второе значение:")
+    print("Second value:")
     print(next(numbers))
 ```
 
 <sample-output>
 
-Первое значение:
+First value:
 0
-Второе значение:
+Second value:
 1
 
 </sample-output>
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
 ```python
 if __name__ == "__main__":
-    # создаёт генератор с максимальным значением 1
+    # creates a generator with maximum value 1
     numbers = counter(1)
     print(next(numbers))
     print(next(numbers))
@@ -88,14 +88,14 @@ if __name__ == "__main__":
         print(next(numbers))
         print(next(numbers))
     except StopIteration:
-        print("числа закончились")
+        print("ran out of numbers")
 ```
 
 <sample-output>
 
 0
 1
-числа закончились
+ran out of numbers
 
 </sample-output>
 
@@ -200,10 +200,10 @@ for i in range(8):
 Вам не обязательно нужно определение функции для создания генератора. Вместо этого мы можем использовать структуру, аналогичную спискам выражения. На этот раз мы используем _круглые_ скобки для обозначения генератора вместо списка или словаря:
 
 ```python
-# Этот генератор возвращает квадраты целых чисел
+# This generator returns squares of integers
 squares = (x ** 2 for x in range(1, 64))
 
-print(squares) # вывод объекта генератора не очень информативен
+print(squares) # the printout of a generator object isn't too informative
 
 for i in range(5):
     print(next(squares))
@@ -225,7 +225,7 @@ for i in range(5):
 ```python
 substrings = ("abcdefghijklmnopqrstuvwxyz"[i : i + 3] for i in range(24))
 
-# вывести первые 10 подстрок
+# print out first 10 substrings
 for i in range(10):
     print(next(substrings))
 ```

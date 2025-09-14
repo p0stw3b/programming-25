@@ -22,28 +22,28 @@ hidden: false
 
 ```python
 while True:
-    number = int(input("Пожалуйста, введите число, -1 для выхода: "))
+    number = int(input("Please type in a number, -1 to quit: "))
 
     if number == -1:
         break
 
     print(number ** 2)
 
-print("Спасибо и до свидания!")
+print("Thanks and bye!")
 ```
 
 Выполнение программы может выглядеть так:
 
 <sample-output>
 
-Пожалуйста, введите число, -1 для выхода: **2**
+Please type in a number, -1 to quit: **2**
 4
-Пожалуйста, введите число, -1 для выхода: **4**
+Please type in a number, -1 to quit: **4**
 16
-Пожалуйста, введите число, -1 для выхода: **10**
+Please type in a number, -1 to quit: **10**
 100
-Пожалуйста, введите число, -1 для выхода: **-1**
-Спасибо и до свидания!
+Please type in a number, -1 to quit: **-1**
+Thanks and bye!
 
 </sample-output>
 
@@ -52,21 +52,21 @@ print("Спасибо и до свидания!")
 С циклами крайне важно, чтобы всегда был способ выйти из цикла в какой-то точке кода, иначе повторение могло бы продолжаться вечно. Чтобы проиллюстрировать это, давайте немного изменим приведенный выше пример:
 
 ```python
-number = int(input("Пожалуйста, введите число, -1 для выхода: "))
+number = int(input("Please type in a number, -1 to quit: "))
 while True:
     if number == -1:
         break
 
     print(number ** 2)
 
-print("Спасибо и до свидания!")
+print("Thanks and bye!")
 ```
 
 В этой версии программа просит пользователя ввести число _вне цикла_. Если пользователь введет любое другое число, кроме -1, из цикла никогда не выйти. Это образует _бесконечный цикл_, что означает, что блок кода внутри цикла повторяется бесконечно:
 
 <sample-output>
 
-Пожалуйста, введите число, -1 для выхода: **2**
+Please type in a number, -1 to quit: **2**
 4
 4
 4
@@ -75,7 +75,7 @@ print("Спасибо и до свидания!")
 4
 4
 4
-(продолжается до бесконечности...)
+(continued ad infinitum...)
 
 </sample-output>
 
@@ -83,22 +83,22 @@ print("Спасибо и до свидания!")
 
 ```python
 while True:
-    code = input("Пожалуйста, введите ваш PIN: ")
+    code = input("Please type in your PIN: ")
     if code == "1234":
         break
-    print("Неправильно...попробуйте снова")
+    print("Incorrect...try again")
 
-print("Правильный PIN введен!")
+print("Correct PIN entered!")
 ```
 
 <sample-output>
 
-Пожалуйста, введите ваш PIN: **0000**
-Неправильно...попробуйте снова
-Пожалуйста, введите ваш PIN: **9999**
-Неправильно...попробуйте снова
-Пожалуйста, введите ваш PIN: **1234**
-Правильный PIN введен!
+Please type in your PIN: **0000**
+Incorrect...try again
+Please type in your PIN: **9999**
+Incorrect...try again
+Please type in your PIN: **1234**
+Correct PIN entered!
 
 </sample-output>
 
@@ -108,15 +108,15 @@ print("Правильный PIN введен!")
 
 <sample-output>
 
-привет
-Продолжим? **да**
-привет
-Продолжим? **конечно**
-привет
-Продолжим? **ага**
-привет
-Продолжим? **нет**
-ладно тогда
+hi
+Shall we continue? **yes**
+hi
+Shall we continue? **oui**
+hi
+Shall we continue? **jawohl**
+hi
+Shall we continue? **no**
+okay then
 
 </sample-output>
 
@@ -137,7 +137,7 @@ print("Правильный PIN введен!")
 Ниже вы найдете напоминание о том, как используется функция `sqrt`. Не забудьте `import`ировать ее в начале программы.
 
 ```python
-# функция sqrt не будет работать без этой строки в начале программы
+# sqrt function will not work without this line in the beginning of the program
 from math import sqrt
 
 print(sqrt(9))
@@ -153,16 +153,16 @@ print(sqrt(9))
 
 <sample-output>
 
-Пожалуйста, введите число: **16**
+Please type in a number: **16**
 4.0
-Пожалуйста, введите число: **4**
+Please type in a number: **4**
 2.0
-Пожалуйста, введите число: **-3**
-Неверное число
-Пожалуйста, введите число: **1**
+Please type in a number: **-3**
+Invalid number
+Please type in a number: **1**
 1.0
-Пожалуйста, введите число: **0**
-Выход...
+Please type in a number: **0**
+Exiting...
 
 </sample-output>
 
@@ -174,27 +174,27 @@ print(sqrt(9))
 
 ```python
 number = 5
-print("Обратный отсчет!")
+print("Countdown!")
 while True:
   print(number)
   number = number - 1
   if number > 0:
     break
 
-print("Сейчас!")
+print("Now!")
 ```
 
 Это должно вывести
 
 <sample-output>
 
-Обратный отсчет!
+Countdown!
 5
 4
 3
 2
 1
-Сейчас!
+Now!
 
 </sample-output>
 
@@ -210,13 +210,13 @@ print("Сейчас!")
 
 <sample-output>
 
-Пароль: **секрет**
-Повторите пароль: **secret**
-Они не совпадают!
-Повторите пароль: **незапомнил**
-Они не совпадают!
-Повторите пароль: **секрет**
-Аккаунт пользователя создан!
+Password: **sekred**
+Repeat password: **secret**
+They do not match!
+Repeat password: **cantremember**
+They do not match!
+Repeat password: **sekred**
+User account created!
 
 </sample-output>
 
@@ -232,7 +232,7 @@ print("Сейчас!")
 attempts = 0
 
 while True:
-    code = input("Пожалуйста, введите ваш PIN: ")
+    code = input("Please type in your PIN: ")
     attempts += 1
 
     if code == "1234":
@@ -243,32 +243,32 @@ while True:
         success = False
         break
 
-    # это печатается, если код был неправильным И было меньше трех попыток
-    print("Неправильно...попробуйте снова")
+    # this is printed if the code was incorrect AND there have been less than three attempts
+    print("Incorrect...try again")
 
 if success:
-    print("Правильный PIN введен!")
+    print("Correct PIN entered!")
 else:
-    print("Слишком много попыток...")
+    print("Too many attempts...")
 ```
 
 <sample-output>
 
-Пожалуйста, введите ваш PIN: **0000**
-Неправильно...попробуйте снова
-Пожалуйста, введите ваш PIN: **1234**
-Правильный PIN введен!
+Please type in your PIN: **0000**
+Incorrect...try again
+Please type in your PIN: **1234**
+Correct PIN entered!
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите ваш PIN: **0000**
-Неправильно...попробуйте снова
-Пожалуйста, введите ваш PIN: **9999**
-Неправильно...попробуйте снова
-Пожалуйста, введите ваш PIN: **4321**
-Слишком много попыток...
+Please type in your PIN: **0000**
+Incorrect...try again
+Please type in your PIN: **9999**
+Incorrect...try again
+Please type in your PIN: **4321**
+Too many attempts...
 
 </sample-output>
 
@@ -284,7 +284,7 @@ else:
 attempts = 0
 
 while True:
-    code = input("Пожалуйста, введите ваш PIN: ")
+    code = input("Please type in your PIN: ")
     attempts += 1
 
     if attempts == 3:
@@ -295,24 +295,24 @@ while True:
         success = True
         break
 
-    print("Неправильно...попробуйте снова")
+    print("Incorrect...try again")
 
 if success:
-    print("Правильный PIN введен!")
+    print("Correct PIN entered!")
 else:
-    print("Слишком много попыток...")
+    print("Too many attempts...")
 ```
 
 Эта версия ведет себя странно, когда пользователь вводит правильный код на третьей попытке:
 
 <sample-output>
 
-Пожалуйста, введите ваш PIN: **0000**
-Неправильно...попробуйте снова
-Пожалуйста, введите ваш PIN: **9999**
-Неправильно...попробуйте снова
-Пожалуйста, введите ваш PIN: **1234**
-Слишком много попыток...
+Please type in your PIN: **0000**
+Incorrect...try again
+Please type in your PIN: **9999**
+Incorrect...try again
+Please type in your PIN: **1234**
+Too many attempts...
 
 </sample-output>
 
@@ -320,46 +320,46 @@ else:
 
 ```python
 while True:
-    print("начало блока while:")
-    code = input("Пожалуйста, введите ваш PIN: ")
+    print("beginning of the while block:")
+    code = input("Please type in your PIN: ")
     attempts += 1
 
-    print("попытки:", attempts)
-    print("условие1:", attempts == 3)
+    print("attempts:", attempts)
+    print("condition1:", attempts == 3)
     if attempts == 3:
         success = False
         break
 
-    print("код:", code)
-    print("условие2:", code == "1234")
+    print("code:", code)
+    print("condition2:", code == "1234")
     if code == "1234":
         success = True
         break
 
-    print("Неправильно...попробуйте снова")
+    print("Incorrect...try again")
 ```
 
 <sample-output>
 
-начало блока while:
-Пожалуйста, введите ваш PIN: **2233**
-попытки: 1
-условие1: False
-код: 2233
-условие2: False
-Неправильно...попробуйте снова
-начало блока while:
-Пожалуйста, введите ваш PIN: **4545**
-попытки: 2
-условие1: False
-код: 4545
-условие2: False
-Неправильно...попробуйте снова
-начало блока while:
-Пожалуйста, введите ваш PIN: **1234**
-попытки: 3
-условие1: True
-Слишком много попыток...
+beginning of the while block:
+Please type in your PIN: **2233**
+attempts: 1
+condition1: False
+code: 2233
+condition2: False
+Incorrect...try again
+beginning of the while block:
+Please type in your PIN: **4545**
+attempts: 2
+condition1: False
+code: 4545
+condition2: False
+Incorrect...try again
+beginning of the while block:
+Please type in your PIN: **1234**
+attempts: 3
+condition1: True
+Too many attempts...
 
 </sample-output>
 
@@ -369,12 +369,12 @@ while True:
   while True:
     # ....
 
-    # этот блок выполняется слишком рано
+    # this block is executed too early
     if attempts == 3:
         success = False
         break
 
-    # третья итерация никогда не доходит сюда
+    # the third iteration never gets this far
     if code == "1234":
         success = True
         break
@@ -389,13 +389,13 @@ while True:
 <sample-output>
 
 PIN: **3245**
-Неправильно
+Wrong
 PIN: **1234**
-Неправильно
+Wrong
 PIN: **0000**
-Неправильно
+Wrong
 PIN: **4321**
-Правильно! Вам потребовалось 4 попытки
+Correct! It took you 4 attempts
 
 </sample-output>
 
@@ -404,7 +404,7 @@ PIN: **4321**
 <sample-output>
 
 PIN: **4321**
-Правильно! Вам потребовалась всего одна попытка!
+Correct! It only took you one single attempt!
 
 </sample-output>
 
@@ -417,8 +417,8 @@ PIN: **4321**
 
 <sample-output>
 
-Год: **2023**
-Следующий високосный год после 2023 это 2024
+Year: **2023**
+The next leap year after 2023 is 2024
 
 </sample-output>
 
@@ -426,8 +426,8 @@ PIN: **4321**
 
 <sample-output>
 
-Год: **2024**
-Следующий високосный год после 2024 это 2028
+Year: **2024**
+The next leap year after 2024 is 2028
 
 </sample-output>
 
@@ -441,7 +441,7 @@ PIN: **4321**
 attempts = 0
 
 while True:
-    code = input("Пожалуйста, введите ваш PIN: ")
+    code = input("Please type in your PIN: ")
     attempts += 1
     # ...
 ```
@@ -456,7 +456,7 @@ codes = ""
 attempts = 0
 
 while True:
-    code = input("Пожалуйста, введите ваш PIN: ")
+    code = input("Please type in your PIN: ")
     attempts += 1
     codes += code + ", "
     # ...
@@ -471,7 +471,7 @@ codes = ""
 С каждой итерацией строка становится длиннее, поскольку код, который пользователь ввел, добавляется вместе с запятой:
 
 ```python
-    code = input("Пожалуйста, введите ваш PIN: ")
+    code = input("Please type in your PIN: ")
     codes += code + ", "
 ```
 
@@ -492,18 +492,16 @@ codes = ""
 
 <sample-output>
 
-Пожалуйста, введите слово: **Жили**
-Пожалуйста, введите слово: **были**
-Пожалуйста, введите слово: **дед**
-Пожалуйста, введите слово: **да**
-Пожалуйста, введите слово: **баба**
-Пожалуйста, введите слово: **и**
-Пожалуйста, введите слово: **была**
-Пожалуйста, введите слово: **у**
-Пожалуйста, введите слово: **них**
-Пожалуйста, введите слово: **курочка**
-Пожалуйста, введите слово: **конец**
-Жили были дед да баба и была у них курочка
+Please type in a word: **Once**
+Please type in a word: **upon**
+Please type in a word: **a**
+Please type in a word: **time**
+Please type in a word: **there**
+Please type in a word: **was**
+Please type in a word: **a**
+Please type in a word: **girl**
+Please type in a word: **end**
+Once upon a time there was a girl
 
 </sample-output>
 
@@ -513,14 +511,15 @@ codes = ""
 
 <sample-output>
 
-Пожалуйста, введите слово: **Это**
-Пожалуйста, введите слово: **была**
-Пожалуйста, введите слово: **темная**
-Пожалуйста, введите слово: **и**
-Пожалуйста, введите слово: **бурная**
-Пожалуйста, введите слово: **ночь**
-Пожалуйста, введите слово: **ночь**
-Это была темная и бурная ночь
+Please type in a word: **It**
+Please type in a word: **was**
+Please type in a word: **a**
+Please type in a word: **dark**
+Please type in a word: **and**
+Please type in a word: **stormy**
+Please type in a word: **night**
+Please type in a word: **night**
+It was a dark and stormy night
 
 </sample-output>
 
@@ -534,12 +533,12 @@ codes = ""
 
 <sample-output>
 
-Пожалуйста, введите целые числа. Введите 0 для завершения.
-Число: **5**
-Число: **22**
-Число: **9**
-Число: **-2**
-Число: **0**
+Please type in integer numbers. Type in 0 to finish.
+Number: **5**
+Number: **22**
+Number: **9**
+Number: **-2**
+Number: **0**
 
 </sample-output>
 
@@ -551,8 +550,8 @@ codes = ""
 
 <sample-output>
 
-... программа спрашивает числа
-Введено чисел: 4
+... the program asks for numbers
+Numbers typed in 4
 
 </sample-output>
 
@@ -564,9 +563,9 @@ codes = ""
 
 <sample-output>
 
-... программа спрашивает числа
-Введено чисел: 4
-Сумма чисел: 34
+... the program asks for numbers
+Numbers typed in 4
+The sum of the numbers is 34
 
 </sample-output>
 
@@ -576,10 +575,10 @@ codes = ""
 
 <sample-output>
 
-... программа спрашивает числа
-Введено чисел: 4
-Сумма чисел: 34
-Среднее значение чисел: 8.5
+... the program asks for numbers
+Numbers typed in 4
+The sum of the numbers is 34
+The mean of the numbers is 8.5
 
 </sample-output>
 
@@ -589,12 +588,12 @@ codes = ""
 
 <sample-output>
 
-... программа спрашивает числа
-Введено чисел: 4
-Сумма чисел: 34
-Среднее значение чисел: 8.5
-Положительных чисел: 3
-Отрицательных чисел: 1
+... the program asks for numbers
+Numbers typed in 4
+The sum of the numbers is 34
+The mean of the numbers is 8.5
+Positive numbers 3
+Negative numbers 1
 
 </sample-output>
 

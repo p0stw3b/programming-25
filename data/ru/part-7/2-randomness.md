@@ -24,14 +24,14 @@ hidden: false
 ```python
 from random import randint
 
-print("Результат броска:", randint(1, 6))
+print("The result of the throw:", randint(1, 6))
 ```
 
 Выполнение этого может напечатать:
 
 <sample-output>
 
-Результат броска: 4
+The result of the throw: 4
 
 </sample-output>
 
@@ -41,23 +41,23 @@ print("Результат броска:", randint(1, 6))
 from random import randint
 
 for i in range(10):
-    print("Результат броска:", randint(1, 6))
+    print("The result of the throw:", randint(1, 6))
 ```
 
 Запуск приведенного выше кода может напечатать
 
 <sample-output>
 
-Результат броска: 5
-Результат броска: 4
-Результат броска: 3
-Результат броска: 2
-Результат броска: 3
-Результат броска: 4
-Результат броска: 6
-Результат броска: 4
-Результат броска: 4
-Результат броска: 3
+The result of the throw: 5
+The result of the throw: 4
+The result of the throw: 3
+The result of the throw: 2
+The result of the throw: 3
+The result of the throw: 4
+The result of the throw: 6
+The result of the throw: 4
+The result of the throw: 4
+The result of the throw: 3
 
 </sample-output>
 
@@ -70,14 +70,14 @@ for i in range(10):
 ```python
 from random import shuffle
 
-words = ["атлас", "банан", "морковь"]
+words = ["atlas", "banana", "carrot"]
 shuffle(words)
 print(words)
 ```
 
 <sample-output>
 
-['банан', 'атлас', 'морковь']
+['banana', 'atlas', 'carrot']
 
 </sample-output>
 
@@ -86,13 +86,13 @@ print(words)
 ```python
 from random import choice
 
-words = ["атлас", "банан", "морковь"]
+words = ["atlas", "banana", "carrot"]
 print(choice(words))
 ```
 
 <sample-output>
 
-'морковь'
+'carrot'
 
 </sample-output>
 
@@ -185,7 +185,7 @@ for number in lottery_numbers(7, 1, 40):
 from random import randint, seed
 
 seed(1337)
-# это всегда будет производить одно и то же "случайное" число
+# this will always produce the same "random" number
 print(randint(1, 100))
 ```
 

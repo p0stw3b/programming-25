@@ -167,7 +167,7 @@ print(calculate_sum(2, 3))
 print(calculate_sum(5, 5))
 print(calculate_difference(5, 2))
 print(calculate_sum(1, 0))
-print("Было", count, "вызовов функций")
+print("There were", count, "function calls")
 ```
 
 <sample-output>
@@ -176,7 +176,7 @@ print("Было", count, "вызовов функций")
 10
 3
 1
-Было 4 вызовов функций
+There were 4 function calls
 
 </sample-output>
 
@@ -191,25 +191,25 @@ print("Было", count, "вызовов функций")
 
 ```python
 def input_from_user(how_many: int):
-    print(f"Пожалуйста, введите {how_many} чисел:")
+    print(f"Please type in {how_many} numbers:")
     numbers = []
 
     for i in range(how_many):
-        number = int(input(f"Число {i+1}: "))
+        number = int(input(f"Number {i+1}: "))
         numbers.append(number)
 
     return numbers
 
 def print_result(numbers: list):
-    print("Числа: ")
+    print("The numbers are: ")
     for number in numbers:
         print(number)
 
 def analyze(numbers: list):
     mean = sum(numbers) / len(numbers)
-    return f"Всего {len(numbers)} чисел, среднее значение {mean}, наименьшее {min(numbers)}, а наибольшее {max(numbers)}"
+    return f"There are altogether {len(numbers)} numbers, the mean is {mean}, the smallest is {min(numbers)} and the greatest is {max(numbers)}"
 
-# основная функция, использующая эти функции
+# the main function using these functions
 inputs = input_from_user(5)
 print_result(inputs)
 analysis_result = analyze(inputs)
@@ -220,19 +220,19 @@ print(analysis_result)
 
 <sample-output>
 
-Пожалуйста, введите 5 чисел:
-Число 1: 10
-Число 2: 34
-Число 3: -32
-Число 4: 99
-Число 5: -53
-Числа:
+Please type in 5 numbers:
+Number 1: 10
+Number 2: 34
+Number 3: -32
+Number 4: 99
+Number 5: -53
+The numbers are:
 10
 34
 -32
 99
 -53
-Всего 5 чисел, среднее значение 11.6, наименьшее -53, а наибольшее 99
+There are altogether 5 numbers, the mean is 11.6, the smallest is -53 and the greatest is 99
 
 </sample-output>
 
@@ -247,7 +247,7 @@ print(analysis_result)
 Вы также можете отделить неявную основную функцию в приведенном выше примере в свою собственную, явную функцию `main`. Тогда переменная `inputs` больше не будет глобальной переменной, а вместо этого будет локальной переменной в функции `main`:
 
 ```python
-# ваша основная функция идет здесь
+# your main function goes here
 def main():
     inputs = input_from_user(5)
     print_result(inputs)
@@ -255,7 +255,7 @@ def main():
 
     print(analysis_result)
 
-# запуск основной функции
+# run the main function
 main()
 ```
 

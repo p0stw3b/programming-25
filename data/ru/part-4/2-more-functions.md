@@ -18,7 +18,7 @@ hidden: false
 
 ```python
 def message():
-    print("Это сообщение было доставлено вам функцией")
+    print("This message was brought to you by a function")
 ```
 
 Эта функция может быть вызвана в коде вашей программы следующим образом:
@@ -31,7 +31,7 @@ message()
 
 <sample-output>
 
-Это сообщение было доставлено вам функцией
+This message was brought to you by a function
 
 </sample-output>
 
@@ -43,21 +43,21 @@ message()
 
 ```python
 def greet(name):
-    print("Привет,", name)
+    print("Hello there,", name)
 
 def sum(a, b):
-    print("Сумма аргументов равна", a + b)
+    print("The sum of the arguments is", a + b)
 ```
 
 ```python
-greet("Елена")
+greet("Emily")
 sum(2, 3)
 ```
 
 <sample-output>
 
-Привет, Елена
-Сумма аргументов равна 5
+Hello there, Emily
+The sum of the arguments is 5
 
 </sample-output>
 
@@ -126,21 +126,21 @@ LLLLLLLLLL
 
 ```python
 def greet(name):
-    print("Привет,", name)
+    print("Hello there,", name)
 
 def greet_many_times(name, times):
     while times > 0:
         greet(name)
         times -= 1
 
-greet_many_times("Елена", 3)
+greet_many_times("Emily", 3)
 ```
 
 <sample-output>
 
-Привет, Елена
-Привет, Елена
-Привет, Елена
+Hello there, Emily
+Hello there, Emily
+Hello there, Emily
 
 </sample-output>
 
@@ -331,7 +331,7 @@ oo
 <sample-output>
 
 <pre>
-елка!
+a spruce!
   *
  ***
 *****
@@ -345,7 +345,7 @@ oo
 <sample-output>
 
 <pre>
-елка!
+a spruce!
     *
    ***
   *****
@@ -365,13 +365,13 @@ oo
 Функции также могут возвращать значения. Например, встроенная функция Python `input` _возвращает_ входную строку, введенную пользователем. Значение, возвращаемое функцией, может быть сохранено в переменной:
 
 ```python
-word = input("Пожалуйста, введите слово: ")
+word = input("Please type in a word: ")
 ```
 
 Когда вам нужно целочисленное значение от пользователя, ввод пользователя должен быть преобразован в целое число. Функция, которую мы использовали для этой цели, это `int`, и она также возвращает значение:
 
 ```python
-number = int(input("Пожалуйста, введите целое число: "))
+number = int(input("Please type in an integer: "))
 ```
 
 Функция `int` принимает строку, возвращенную `input`, в качестве своего аргумента и возвращает значение типа integer, если из строки можно разобрать целое число.
@@ -386,12 +386,12 @@ def my_sum(a, b):
 
 result = my_sum(2, 3)
 
-print("Сумма:", result)
+print("Sum:", result)
 ```
 
 <sample-output>
 
-Сумма: 5
+Sum: 5
 
 </sample-output>
 
@@ -399,17 +399,17 @@ print("Сумма:", result)
 
 ```python
 def ask_for_name():
-    name = input("Как вас зовут? ")
+    name = input("What is your name? ")
     return name
 
 name = ask_for_name()
-print("Привет,", name)
+print("Hello there,", name)
 ```
 
 <sample-output>
 
-Как вас зовут? **Анна**
-Привет, Анна
+What is your name? **Anna**
+Hello there, Anna
 
 </sample-output>
 
@@ -441,20 +441,20 @@ def greet(name):
     if name == "":
         print("???")
         return
-    print("Привет,", name)
+    print("Hello there,", name)
 
-greet("Елена")
+greet("Emily")
 greet("")
-greet("Марк")
+greet("Mark")
 ```
 
 Если аргумент (который сохраняется в переменной `name`) является пустой строкой, функция печатает `???` и завершается.
 
 <sample-output>
 
-Привет, Елена
+Hello there, Emily
 ???
-Привет, Марк
+Hello there, Mark
 
 </sample-output>
 
@@ -467,19 +467,19 @@ def my_sum(a, b):
     return a + b
 
 result = my_sum(4, 6)
-print("Сумма равна", result)
+print("The sum is", result)
 ```
 
 <sample-output>
 
-Сумма равна 10
+The sum is 10
 
 </sample-output>
 
 Возвращаемое значение функции - это значение, как и любое другое. Нет необходимости сохранять его в переменной, чтобы передать в качестве аргумента команде `print`:
 
 ```python
-print("Сумма равна", my_sum(4, 6))
+print("The sum is", my_sum(4, 6))
 ```
 
 Возвращаемое значение функции может стать аргументом другой функции:
@@ -492,12 +492,12 @@ def difference(a, b):
     return a-b
 
 result = difference(my_sum(5, 2), my_sum(2, 3))
-print("Результат равен", result)
+print("The result is", result)
 ```
 
 <sample-output>
 
-Результат равен 2
+The result is 2
 
 </sample-output>
 
@@ -579,13 +579,13 @@ print(greatest_number(0, 0, 0)) # 0
 Некоторые примеры использования функции:
 
 ```python
-# одинаковые символы m и m
+# same characters m and m
 print(same_chars("programmer", 6, 7)) # True
 
-# разные символы p и r
+# different characters p and r
 print(same_chars("programmer", 0, 4)) # False
 
-# второй индекс не в пределах строки
+# the second index is not within the string
 print(same_chars("programmer", 0, 12)) # False
 ```
 
@@ -600,26 +600,26 @@ print(same_chars("programmer", 0, 12)) # False
 В каждом случае вы можете предположить, что строка аргумента содержит как минимум два отдельных слова, и все слова разделены ровно одним пробелом. Не будет пробелов в начале или в конце строк аргументов.
 
 ```python
-sentence = "это был темный и бурный питон"
+sentence = "it was a dark and stormy python"
 
-print(first_word(sentence)) # это
-print(second_word(sentence)) # был
-print(last_word(sentence)) # питон
+print(first_word(sentence)) # it
+print(second_word(sentence)) # was
+print(last_word(sentence)) # python
 ```
 
 <sample-output>
 
-это
-был
-питон
+it
+was
+python
 
 </sample-output>
 
 ```python
-sentence = "это был"
+sentence = "it was"
 
-print(second_word(sentence)) # был
-print(last_word(sentence)) # был
+print(second_word(sentence)) # was
+print(last_word(sentence)) # was
 ```
 
 </programming-exercise>
@@ -647,23 +647,23 @@ def print_many_times(message, times):
 Функция работает как ожидается, если мы вызовем ее таким образом:
 
 ```python
-print_many_times("Привет", 5)
+print_many_times("Hello there", 5)
 ```
 
 <sample-output>
 
-Привет
-Привет
-Привет
-Привет
-Привет
+Hello there
+Hello there
+Hello there
+Hello there
+Hello there
 
 </sample-output>
 
 Однако, если мы дадим функции аргумент неправильного типа, она не будет работать:
 
 ```python
-print_many_times("Привет", "Елена")
+print_many_times("Hello there", "Emily")
 ```
 
 <sample-output>

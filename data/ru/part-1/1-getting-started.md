@@ -21,21 +21,21 @@ hidden: false
 Следующая программа выведет строку "Привет!":
 
 ```python
-print("Привет!")
+print("Hi there!")
 ```
 
 При запуске программы она выдает следующий результат:
 
 <sample-output>
 
-Привет!
+Hi there!
 
 </sample-output>
 
 Программа не будет работать, если код написан неточно. Например, попытка запустить команду print без кавычек, например так:
 
 ```python
-print(Привет!)
+print(Hi there!)
 ```
 
 не выведет сообщение, а вместо этого вызовет ошибку:
@@ -44,7 +44,7 @@ print(Привет!)
 
 <pre>
 File "<stdin>", line 1
-  print(Привет!)
+  print(Hi there!)
                    ^
 SyntaxError: invalid syntax
 </pre>
@@ -65,17 +65,17 @@ SyntaxError: invalid syntax
 Например, эта программа
 
 ```python
-print("Добро пожаловать на курс 'Введение в программирование'!")
-print("Сначала мы попрактикуемся в использовании команды print.")
-print("Эта программа выводит три строки текста на экран.")
+print("Welcome to Introduction to Programming!")
+print("First we will practice using the print command.")
+print("This program prints three lines of text on the screen.")
 ```
 выводит следующие строки на экран:
 
 <sample-output>
 
-Добро пожаловать на курс 'Введение в программирование'!
-Сначала мы попрактикуемся в использовании команды print.
-Эта программа выводит три строки текста на экран.
+Welcome to Introduction to Programming!
+First we will practice using the print command.
+This program prints three lines of text on the screen.
 
 </sample-output>
 
@@ -161,8 +161,8 @@ print("2 + 2 * 10")
 Комментарии используются для объяснения того, как работает программа, как самому программисту, так и другим, читающим код программы. В этой программе комментарий объясняет вычисление, выполняемое в коде:
 
 ```python
-print("Часов в году:")
-# в году 365 дней и в каждом дне 24 часа
+print("Hours in a year:")
+# there are 365 days in a year and 24 hours in each day
 print(365*24)
 ```
 
@@ -170,7 +170,7 @@ print(365*24)
 
 <sample-output>
 
-Часов в году:
+Hours in a year:
 8760
 
 </sample-output>
@@ -178,8 +178,8 @@ print(365*24)
 Короткие комментарии также можно добавлять в конец строки:
 
 ```python
-print("Часов в году:")
-print(365*24) # 365 дней, 24 часа в каждом дне
+print("Hours in a year:")
+print(365*24) # 365 days, 24 hours in each day
 ```
 
 <in-browser-programming-exercise name="Minutes in a year" tmcname="part01-04_minutes_in_a_year" title="Минуты в году">
@@ -196,13 +196,13 @@ print(365*24) # 365 дней, 24 часа в каждом дне
 
 ```python
 
-print('"Немедленно возвращайся!", крикнул полицейский.')
+print('"Come right back!", shouted the police officer.')
 
 ```
 
 <sample-output>
 
-"Немедленно возвращайся!", крикнул полицейский.
+"Come right back!", shouted the police officer.
 
 </sample-output>
 

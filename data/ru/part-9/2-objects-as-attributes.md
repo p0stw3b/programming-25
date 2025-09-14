@@ -57,32 +57,32 @@ from completedcourse import CompletedCourse
 from course import Course
 from student import Student
 
-# Создаем список студентов
+# Create a list of students
 students = []
-students.append(Student("Олег", "1234", 10))
-students.append(Student("Петр", "3210", 23))
-students.append(Student("Лена", "9999", 43))
-students.append(Student("Тина", "3333", 8))
+students.append(Student("Ollie", "1234", 10))
+students.append(Student("Peter", "3210", 23))
+students.append(Student("Lena", "9999", 43))
+students.append(Student("Tina", "3333", 8))
 
-# Создаем курс "Введение в программирование"
-itp = Course("Введение в программирование", "itp1", 5)
+# Create a course named Introduction to Programming
+itp = Course("Introduction to Programming", "itp1", 5)
 
-# Добавляем завершенные курсы для каждого студента с оценкой 3 для всех
+# Add completed courses for each student, with grade 3 for all
 completed = []
 for student in students:
     completed.append(CompletedCourse(student, itp, 3))
 
-# Выводим имя студента для каждого завершенного курса
+# Print out the name of the student for each completed course
 for course in completed:
     print(course.student.name)
 ```
 
 <sample-output>
 
-Олег
-Петр
-Лена
-Тина
+Ollie
+Peter
+Lena
+Tina
 
 </sample-output>
 
@@ -101,7 +101,7 @@ from completedcourse import CompletedCourse
 from course import Course
 from student import Student
 
-# остальная часть основной функции
+# rest of the main function
 ```
 
 Оператор `import` необходим только при использовании кода, который определен где-то вне текущего файла (или сеанса интерпретатора Python). Это включает ситуации, когда мы хотим использовать что-то, определенное в стандартной библиотеке Python. Например, модуль `math` содержит некоторые математические операции:
@@ -110,7 +110,7 @@ from student import Student
 import math
 
 x = 10
-print(f"квадратный корень из {x} равен {math.sqrt(x)}")
+print(f"the square root of {x} is {math.sqrt(x)}")
 ```
 
 В приведенном выше примере мы предположили, что три класса определены каждый в отдельном файле, а основная функция запускается из еще одного файла. Именно поэтому операторы `import` были необходимы.
@@ -122,7 +122,7 @@ print(f"квадратный корень из {x} равен {math.sqrt(x)}")
 ```python
 from person import Person
 
-# больше кода здесь
+# more code goes here
 ```
 
 вероятно, вы что-то делаете не так. Если вам нужно освежить память, оператор `import` впервые был представлен в [части 7](/ru/part-7/1-modules) этого учебного материала.
@@ -163,7 +163,7 @@ class Player:
         self.goals = goals
 
     def __str__(self):
-        return f"{self.name} ({self.goals} голов)"
+        return f"{self.name} ({self.goals} goals)"
 
 class Team:
     def __init__(self, name: str):
@@ -177,26 +177,26 @@ class Team:
         goals = []
         for player in self.players:
             goals.append(player.goals)
-        print("Команда:", self.name)
-        print("Игроков:", len(self.players))
-        print("Голов забито каждым игроком:", goals)
+        print("Team:", self.name)
+        print("Players:", len(self.players))
+        print("Goals scored by each player:", goals)
 ```
 
 Пример нашего класса в действии:
 
 ```python
 ca = Team("Campus Allstars")
-ca.add_player(Player("Эрик", 10))
-ca.add_player(Player("Эмили", 22))
-ca.add_player(Player("Энди", 1))
+ca.add_player(Player("Eric", 10))
+ca.add_player(Player("Emily", 22))
+ca.add_player(Player("Andy", 1))
 ca.summary()
 ```
 
 <sample-output>
 
-Команда: Campus Allstars
-Игроков: 3
-Голов забито каждым игроком: [10, 22, 1]
+Team: Campus Allstars
+Players: 3
+Goals scored by each player: [10, 22, 1]
 
 </sample-output>
 
@@ -211,18 +211,18 @@ ca.summary()
 ```python
 book = Present("ABC Book", 2)
 
-print("Название подарка:", book.name)
-print("Вес подарка:", book.weight)
-print("Подарок:", book)
+print("The name of the present:", book.name)
+print("The weight of the present:", book.weight)
+print("Present:", book)
 ```
 
 Это должно вывести
 
 <sample-output>
 
-Название подарка: ABC Book
-Вес подарка: 2
-Подарок: ABC Book (2 kg)
+The name of the present: ABC Book
+The weight of the present: 2
+Present: ABC Book (2 kg)
 
 </sample-output>
 
@@ -269,7 +269,7 @@ class Player:
         self.goals = goals
 
     def __str__(self):
-        return f"{self.name} ({self.goals} голов)"
+        return f"{self.name} ({self.goals} goals)"
 
 class Team:
     def __init__(self, name: str):
@@ -290,19 +290,19 @@ class Team:
 
 ```python
 ca = Team("Campus Allstars")
-ca.add_player(Player("Эрик", 10))
-ca.add_player(Player("Эмили", 22))
-ca.add_player(Player("Энди", 1))
+ca.add_player(Player("Eric", 10))
+ca.add_player(Player("Amily", 22))
+ca.add_player(Player("Andy", 1))
 
-player1 = ca.find_player("Энди")
+player1 = ca.find_player("Andy")
 print(player1)
-player2 = ca.find_player("Чарли")
+player2 = ca.find_player("Charlie")
 print(player2)
 ```
 
 <sample-output>
 
-Энди (1 голов)
+Andy (1 goals)
 None
 
 </sample-output>
@@ -311,10 +311,10 @@ None
 
 ```python
 ca = Team("Campus Allstars")
-ca.add_player(Player("Эрик", 10))
+ca.add_player(Player("Eric", 10))
 
-player = ca.find_player("Чарли")
-print(f"Голов Чарли: {player.goals}")
+player = ca.find_player("Charlie")
+print(f"Goals by Charlie: {player.goals}")
 ```
 
 Выполнение приведенного выше кода вызовет ошибку:
@@ -331,18 +331,18 @@ AttributeError: 'NoneType' object has no attribute 'goals'
 
 ```python
 ca = Team("Campus Allstars")
-ca.add_player(Player("Эрик", 10))
+ca.add_player(Player("Eric", 10))
 
-player = ca.find_player("Чарли")
+player = ca.find_player("Charlie")
 if player is not None:
-    print(f"Голов Чарли: {player.goals}")
+    print(f"Goals by Charlie: {player.goals}")
 else:
-    print(f"Чарли не играет в Campus Allstars :(")
+    print(f"Charlie doesn't play in Campus Allstars :(")
 ```
 
 <sample-output>
 
-Чарли не играет в Campus Allstars :(
+Charlie doesn't play in Campus Allstars :(
 
 </sample-output>
 
@@ -362,26 +362,26 @@ else:
 
 ```python
 room = Room()
-print("Комната пуста?", room.is_empty())
+print("Is the room empty?", room.is_empty())
 room.add(Person("Lea", 183))
 room.add(Person("Kenya", 172))
 room.add(Person("Ally", 166))
 room.add(Person("Nina", 162))
 room.add(Person("Dorothy", 155))
-print("Комната пуста?", room.is_empty())
+print("Is the room empty?", room.is_empty())
 room.print_contents()
 ```
 
 <sample-output>
 
-Комната пуста? True
-Комната пуста? False
-В комнате 5 человек, их общий рост составляет 838 см
-Lea (183 см)
-Kenya (172 см)
-Ally (166 см)
-Nina (162 см)
-Dorothy (155 см)
+Is the room empty? True
+Is the room empty? False
+There are 5 persons in the room, and their combined height is 838 cm
+Lea (183 cm)
+Kenya (172 cm)
+Ally (166 cm)
+Nina (162 cm)
+Dorothy (155 cm)
 
 </sample-output>
 
@@ -392,8 +392,8 @@ Dorothy (155 см)
 ```python
 room = Room()
 
-print("Комната пуста?", room.is_empty())
-print("Самый низкий:", room.shortest())
+print("Is the room empty?", room.is_empty())
+print("Shortest:", room.shortest())
 
 room.add(Person("Lea", 183))
 room.add(Person("Kenya", 172))
@@ -402,8 +402,8 @@ room.add(Person("Ally", 166))
 
 print()
 
-print("Комната пуста?", room.is_empty())
-print("Самый низкий:", room.shortest())
+print("Is the room empty?", room.is_empty())
+print("Shortest:", room.shortest())
 
 print()
 
@@ -412,17 +412,17 @@ room.print_contents()
 
 <sample-output>
 
-Комната пуста? True
-Самый низкий: None
+Is the room empty? True
+Shortest: None
 
-Комната пуста? False
-Самый низкий: Nina
+Is the room empty? False
+Shortest: Nina
 
-В комнате 4 человека, их общий рост составляет 683 см
-Lea (183 см)
-Kenya (172 см)
-Nina (162 см)
-Ally (166 см)
+There are 4 persons in the room, and their combined height is 683 cm
+Lea (183 cm)
+Kenya (172 cm)
+Nina (162 cm)
+Ally (166 cm)
 
 </sample-output>
 
@@ -442,7 +442,7 @@ room.print_contents()
 print()
 
 removed = room.remove_shortest()
-print(f"Удален из комнаты: {removed.name}")
+print(f"Removed from room: {removed.name}")
 
 print()
 
@@ -451,18 +451,18 @@ room.print_contents()
 
 <sample-output>
 
-В комнате 4 человека, их общий рост составляет 683 см
-Lea (183 см)
-Kenya (172 см)
-Nina (162 см)
-Ally (166 см)
+There are 4 persons in the room, and their combined height is 683 cm
+Lea (183 cm)
+Kenya (172 cm)
+Nina (162 cm)
+Ally (166 cm)
 
-Удален из комнаты: Nina
+Removed from room: Nina
 
-В комнате 3 человека, их общий рост составляет 521 см
-Lea (183 см)
-Kenya (172 см)
-Ally (166 см)
+There are 3 persons in the room, and their combined height is 521 cm
+Lea (183 cm)
+Kenya (172 cm)
+Ally (166 cm)
 
 </sample-output>
 
@@ -474,7 +474,7 @@ Ally (166 см)
 class Room:
     # ...
     def shortest(self):
-        # ваш код здесь
+        # your code goes here
 
     def remove_shortest(self):
         shortest_person = self.shortest()

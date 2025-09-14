@@ -19,7 +19,7 @@ hidden: false
 Ваши программы будут выглядеть более профессионально, если вместо "pygame window" заголовок окна будет содержать фактическое название программы. Заголовок устанавливается функцией `pygame.display.set_caption`:
 
 ```python
-pygame.display.set_caption("Великое приключение")
+pygame.display.set_caption("Great Adventure")
 ```
 
 ## Рисование фигур
@@ -61,7 +61,7 @@ display = pygame.display.set_mode((640, 480))
 display.fill((0, 0, 0))
 
 game_font = pygame.font.SysFont("Arial", 24)
-text = game_font.render("Привет!", True, (255, 0, 0))
+text = game_font.render("Moikka!", True, (255, 0, 0))
 display.blit(text, (100, 50))
 pygame.display.flip()
 

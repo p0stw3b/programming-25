@@ -32,13 +32,13 @@ hidden: false
 В предыдущей части мы в основном работали со списками с целочисленными элементами, но в списках могут храниться любые типы значений. Список строк может выглядеть так:
 
 ```python
-names = ["Марлин", "Рут", "Пол"]
+names = ["Marlyn", "Ruth", "Paul"]
 print(names)
-names.append("Давид")
+names.append("David")
 print(names)
 
-print("Количество имён в списке:", len(names))
-print("Имена в алфавитном порядке:")
+print("Number of names on the list:", len(names))
+print("Names in alphabetical order:")
 names.sort()
 for name in names:
   print(name)
@@ -46,14 +46,14 @@ for name in names:
 
 <sample-output>
 
-['Марлин', 'Рут', 'Пол']
-['Марлин', 'Рут', 'Пол', 'Давид']
-Количество имён в списке: 4
-Имена в алфавитном порядке:
-Давид
-Марлин
-Пол
-Рут
+['Marlyn', 'Ruth', 'Paul']
+['Marlyn', 'Ruth', 'Paul', 'David']
+Number of names on the list: 4
+Names in alphabetical order:
+David
+Marlyn
+Paul
+Ruth
 
 </sample-output>
 
@@ -67,7 +67,7 @@ for measure in measurements:
 
 mean = sum(measurements) / len(measurements)
 
-print("Среднее значение:", mean)
+print("The mean is:", mean)
 ```
 
 <sample-output>
@@ -78,7 +78,7 @@ print("Среднее значение:", mean)
 14.6
 21.0
 19.2
-Среднее значение: 10.15
+The mean is: 10.15
 
 </sample-output>
 
@@ -93,30 +93,30 @@ print("Среднее значение:", mean)
 
 ```python
 def print_reversed(names: list):
-    # использование глобальной переменной вместо параметра по случайности
+    # using the global variable instead of the parameter by accident
     i = len(name_list) - 1
     while i >= 0:
         print(name_list[i])
         i -= 1
 
-# здесь присваивается глобальная переменная
-name_list = ["Стив", "Жан", "Катерина", "Пол"]
+# here the global variable is assigned
+name_list = ["Steve", "Jean", "Katherine", "Paul"]
 print_reversed(name_list)
 print()
-print_reversed(["Хьюи", "Дьюи", "Луи"])
+print_reversed(["Huey", "Dewey", "Louie"])
 ```
 
 <sample-output>
 
-Пол
-Катерина
-Жан
-Стив
+Paul
+Katherine
+Jean
+Steve
 
-Пол
-Катерина
-Жан
-Стив
+Paul
+Katherine
+Jean
+Steve
 
 </sample-output>
 
@@ -126,19 +126,19 @@ print_reversed(["Хьюи", "Дьюи", "Луи"])
 
 ```python
 def print_reversed(names: list):
-    # использование глобальной переменной вместо параметра по случайности
+    # using the global variable instead of the parameter by accident
     i = len(name_list) - 1
     while i>=0:
         print(name_list[i])
         i -= 1
 
-# Весь код для тестирования функции должен быть в этом блоке
+# All the code for testing the function should be within this block
 if __name__ == "__main__":
-    # здесь присваивается глобальная переменная
-    name_list = ["Стив", "Жан", "Катерина", "Пол"]
+    # here the global variable is assigned
+    name_list = ["Steve", "Jean", "Katherine", "Paul"]
     print_reversed(name_list)
     print()
-    print_reversed(["Хьюи", "Дьюи", "Луи"])
+    print_reversed(["Huey", "Dewey", "Louie"])
 ```
 
 Обратите внимание, что глобальная переменная теперь присваивается в блоке `if`.
@@ -175,7 +175,7 @@ def number_in_list(numbers: list, searched_number: int):
 
 ```python
 found = number_in_list([1, 2, 3, 4], 3)
-print(found)  # выводит False
+print(found)  # prints out False
 ```
 
 Проблема здесь в том, что функция возвращается слишком рано, не проверив все числа в списке. Фактически, функция берёт только первый элемент в списке и возвращает `True` или `False` в зависимости от его значения. Мы не можем знать, _отсутствует_ ли число в списке, пока не проверили все элементы в списке. Команда `return False` должна быть размещена вне цикла `for`:
@@ -193,10 +193,10 @@ def number_in_list(numbers: list, searched_number: int):
 
 ```python
 def unique_numbers(numbers: list):
-    # вспомогательная переменная для хранения всех чисел, которые мы уже проверили
+    # a helper variable to store all the numbers we've already checked
     numbers = []
     for number in numbers:
-        # видели ли мы это число уже?
+        # have we seen this number already?
         if number in numbers:
             return False
         numbers.append(number)
@@ -204,7 +204,7 @@ def unique_numbers(numbers: list):
     return True
 
 unique = unique_numbers([1, 2, 2])
-print(unique)  # выводит True
+print(unique)  # prints out True
 ```
 
 Эта функция должна проверить, являются ли все числа в списке различными друг от друга, но она всегда возвращает `True`.
@@ -213,10 +213,10 @@ print(unique)  # выводит True
 
 ```python
 def unique_numbers(numbers: list):
-    # вспомогательная переменная для хранения всех чисел, которые мы уже проверили
+    # a helper variable to store all the numbers we've already checked
     numbers_checked = []
     for number in numbers:
-        # видели ли мы это число уже?
+        # have we seen this number already?
         if number in numbers_checked:
             return False
         numbers_checked.append(number)
@@ -224,7 +224,7 @@ def unique_numbers(numbers: list):
     return True
 
 unique = unique_numbers([1, 2, 2])
-print(unique)  # выводит False
+print(unique)  # prints out False
 ```
 
 Подобные проблемы и многие другие могут быть обнаружены и исправлены с помощью отладчика или [инструмента визуализации](http://www.pythontutor.com/visualize.html#mode=edit). Обучение эффективному использованию этих инструментов невозможно переоценить.
@@ -238,14 +238,14 @@ print(unique)  # выводит False
 ```python
 
 if __name__ == "__main__":
-    strings = ["привет", "привет-привет", "здравствуй", "здравствуйте-здравствуйте", "привет там"]
+    strings = ["hi", "hiya", "hello", "howdydoody", "hi there"]
     print(longest(strings))
 
 ```
 
 <sample-output>
 
-здравствуйте-здравствуйте
+howdydoody
 
 </sample-output>
 
@@ -274,27 +274,27 @@ print(my_list[1][0])
 Помните, что списки могут содержать элементы разных типов. Вы могли бы хранить информацию о человеке в списке. Например, вы могли бы включить их имя как первый элемент, их возраст как второй элемент и их рост в метрах как третий элемент:
 
 ```python
-["Анна", 12, 1.45]
+["Anne", 12, 1.45]
 ```
 
 База данных людей тогда могла бы быть списком, элементы которого были бы списками, содержащими информацию об одном человеке:
 
 ```python
-persons = [["Бетти", 10, 1.37], ["Пётр", 7, 1.25], ["Эмили", 32, 1.64], ["Алан", 39, 1.78]]
+persons = [["Betty", 10, 1.37], ["Peter", 7, 1.25], ["Emily", 32, 1.64], ["Alan", 39, 1.78]]
 
 for person in persons:
   name = person[0]
   age = person[1]
   height = person[2]
-  print(f"{name}: возраст {age} лет, рост {height} метров")
+  print(f"{name}: age {age} years, height {height} meters")
 ```
 
 <sample-output>
 
-Бетти: возраст 10 лет, рост 1.37 метров
-Пётр: возраст 7 лет, рост 1.25 метров
-Эмили: возраст 32 лет, рост 1.64 метров
-Алан: возраст 39 лет, рост 1.78 метров
+Betty: age 10 years, height 1.37 meters
+Peter: age 7 years, height 1.25 meters
+Emily: age 32 years, height 1.64 meters
+Alan: age 39 years, height 1.78 meters
 
 </sample-output>
 
@@ -356,22 +356,22 @@ for row in my_matrix:
 my_matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 for row in my_matrix:
-    print("новая строка")
+    print("a new row")
     for element in row:
         print(element)
 ```
 
 <sample-output>
 
-новая строка
+a new row
 1
 2
 3
-новая строка
+a new row
 4
 5
 6
-новая строка
+a new row
 7
 8
 9
@@ -396,7 +396,7 @@ for row in my_matrix:
 
 ```python
 def sum_of_row(my_matrix, row_no: int):
-    # выбрать желаемую строку из матрицы
+    # choose the desired row from within the matrix
     row = my_matrix[row_no]
     row_sum = 0
     for item in row:
@@ -407,14 +407,14 @@ def sum_of_row(my_matrix, row_no: int):
 m = [[4, 2, 3, 2], [9, 1, 12, 11], [7, 8, 9, 5], [2, 9, 15, 1]]
 
 my_sum = sum_of_row(m, 1)
-print(my_sum) # выводит 33 (что равно 9 + 1 + 12 + 11)
+print(my_sum) # prints out 33 (which equals 9 + 1 + 12 + 11)
 ```
 
 Работа со столбцами внутри матрицы немного сложнее, поскольку матрица хранится по строкам: 
 
 ```python
 def sum_of_column(my_matrix, column_no: int):
-    # пройти через каждую строку и выбрать элемент в выбранной позиции
+    # go through each row and select the item at the chosen position
     column_sum = 0
     for row in my_matrix:
         column_sum += row[column_no]
@@ -424,7 +424,7 @@ def sum_of_column(my_matrix, column_no: int):
 m = [[4, 2, 3, 2], [9, 1, 12, 11], [7, 8, 9, 5], [2, 9, 15, 1]]
 
 my_sum = sum_of_column(m, 2)
-print(my_sum) # выводит 39 (что равно 3 + 12 + 9 + 15)
+print(my_sum) # prints out 39 (which equals 3 + 12 + 9 + 15)
 ```
 
 Столбец, обрабатываемый здесь, состоит из элементов с индексом 2 в _каждой строке_.
@@ -435,9 +435,9 @@ print(my_sum) # выводит 39 (что равно 3 + 12 + 9 + 15)
 
 ```python
 def change_value(my_matrix, row_no: int, column_no: int, new_value: int):
-    # выбрать желаемую строку
+    # choose the desired row
     row = my_matrix[row_no]
-    # выбрать правильный элемент в строке
+    # select the correct item within the row
     row[column_no] = new_value
 
 m = [[4, 2, 3, 2], [9, 1, 12, 11], [7, 8, 9, 5], [2, 9, 15, 1]]
@@ -461,8 +461,8 @@ print(m)
 ```python
 m = [[1,2,3], [4,5,6], [7,8,9]]
 
-for i in range(len(m)): # используя количество строк в матрице
-    for j in range(len(m[i])): # используя количество элементов в каждой строке 
+for i in range(len(m)): # using the number of rows in the matrix
+    for j in range(len(m[i])): # using the number of items on each row 
         m[i][j] += 1
 
 print(m)

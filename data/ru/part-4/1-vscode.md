@@ -29,16 +29,16 @@ hidden: false
 
 <sample-output>
 
-Редактор: **Emacs**
-не очень
-Редактор: **Vim**
-не очень
-Редактор: **Word**
-ужасно
-Редактор: **Atom**
-не очень
-Редактор: **Visual Studio Code**
-отличный выбор!
+Editor: **Emacs**
+not good
+Editor: **Vim**
+not good
+Editor: **Word**
+awful
+Editor: **Atom**
+not good
+Editor: **Visual Studio Code**
+an excellent choice!
 
 </sample-output>
 
@@ -48,10 +48,10 @@ hidden: false
 
 <sample-output>
 
-Редактор: **NOTEPAD**
-ужасно
-Редактор: **viSUal STudiO cODe**
-отличный выбор!
+Editor: **NOTEPAD**
+awful
+Editor: **viSUal STudiO cODe**
+an excellent choice!
 
 </sample-output>
 
@@ -60,7 +60,7 @@ hidden: false
 ```python
 mystring = "Visual Studio CODE"
 if "visual studio code" == mystring.lower():
-    print("это была строка, которую я искал!")
+    print("this was the string I was looking for!")
 ```
 
 **Примечание:** это упражнение не просит вас писать какие-либо функции, поэтому вы __не должны__ размещать какой-либо код в блоке `if __name__ == "__main__"`. То же самое относится к любым будущим упражнениям, которые явно не просят функции.
@@ -111,7 +111,7 @@ if "visual studio code" == mystring.lower():
 >>> absolute_value(number)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
- NameError: name 'number' is not defined
+NameError: name 'number' is not defined
 >>> absolute_value(x)
 10
 >>> absolute_value(y)
@@ -134,7 +134,7 @@ AttributeError: 'str' object has no attribute 'toupper'
 Если есть метод, который вам нужен, и вы можете _почти_ вспомнить его название, иногда быстрее пропустить Google и использовать функцию `dir` в интерпретаторе. Она говорит вам, какие методы доступны для использования на данном объекте:
 
 ```python
->>> dir("это строка")
+>>> dir("this is a string")
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__',
 '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__',
 '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__',

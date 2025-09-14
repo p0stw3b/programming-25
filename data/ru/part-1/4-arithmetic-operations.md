@@ -60,18 +60,18 @@ print((2 + 3) * 3)
 height = 172.5
 weight = 68.55
 
-# Индекс массы тела, или ИМТ, вычисляется делением массы тела на квадрат роста
-# рост преобразуется в метры в формуле
+# the Body Mass Index, or BMI, is calculated by dividing body mass with the square of height
+# height is converted into metres in the formula
 bmi = weight / (height / 100) ** 2
 
-print(f"ИМТ равен {bmi}")
+print(f"The BMI is {bmi}")
 ```
 
 Эта программа выводит следующее:
 
 <sample-output>
 
-ИМТ равен 23.037177063642087
+The BMI is 23.037177063642087
 
 </sample-output>
 
@@ -81,16 +81,16 @@ print(f"ИМТ равен {bmi}")
 x = 3
 y = 2
 
-print(f"Оператор / {x/y}")
-print(f"Оператор // {x//y}")
+print(f"/ operator {x/y}")
+print(f"// operator {x//y}")
 ```
 
 выводит
 
 <sample-output>
 
-Оператор / 1.5
-Оператор // 1
+/ operator 1.5
+// operator 1
 
 </sample-output>
 
@@ -101,43 +101,43 @@ print(f"Оператор // {x//y}")
 Строка может быть преобразована в целое число с помощью функции `int`. Следующая программа спрашивает пользователя о году его рождения и сохраняет его в переменной `input_str`. Программа затем создает другую переменную `year`, которая содержит год, преобразованный в целое число. После этого вычисление `2021-year` становится возможным, используя значение, предоставленное пользователем.
 
 ```python
-input_str = input("В каком году вы родились? ")
+input_str = input("Which year were you born? ")
 year = int(input_str)
-print(f"Ваш возраст на конец 2021 года: {2021 - year}" )
+print(f"Your age at the end of the year 2021: {2021 - year}" )
 ```
 <sample-output>
 
-В каком году вы родились? **1995**
-Ваш возраст на конец 2021 года: 26
+Which year were you born? **1995**
+Your age at the end of the year 2021: 26
 
 </sample-output>
 
 Обычно вам не нужно создавать две отдельные переменные (как `input_str` и `year` выше) для чтения числового значения от пользователя. Вместо этого чтение ввода с помощью функции `input` и преобразование его с помощью функции `int` может быть достигнуто за один раз:
 
 ```python
-year = int(input("В каком году вы родились? "))
-print(f"Ваш возраст на конец 2021 года: {2021 - year}" )
+year = int(input("Which year were you born? "))
+print(f"Your age at the end of the year 2021: {2021 - year}" )
 ```
 
 Аналогично, строка может быть преобразована в число с плавающей точкой с помощью функции `float`. Эта программа спрашивает пользователя о его росте и весе и использует их для вычисления ИМТ:
 
 ```python
-height = float(input("Какой ваш рост? "))
-weight = float(input("Какой ваш вес? "))
+height = float(input("What is your height? "))
+weight = float(input("What is your weight? "))
 
 height = height / 100
 bmi = weight / height ** 2
 
-print(f"ИМТ равен {bmi}")
+print(f"The BMI is {bmi}")
 ```
 
 Пример вывода программы:
 
 <sample-output>
 
-Какой ваш рост? **163**
-Какой ваш вес? **74.45**
-ИМТ равен 28.02137829801649
+What is your height? **163**
+What is your weight? **74.45**
+The BMI is 28.02137829801649
 
 </sample-output>
 
@@ -149,8 +149,8 @@ print(f"ИМТ равен {bmi}")
 
 <sample-output>
 
-Пожалуйста, введите число: **3**
-3 умножить на 5 равно 15
+Please type in a number: **3**
+3 times 5 is 15
 
 </sample-output>
 
@@ -162,9 +162,9 @@ print(f"ИМТ равен {bmi}")
 
 <sample-output>
 
-Как вас зовут? **Фрэнсис Вымышленная**
-В каком году вы родились? **1990**
-Привет, Фрэнсис Вымышленная, вам будет 31 год на конец 2021 года
+What is your name? **Frances Fictitious**
+Which year were you born? **1990**
+Hi Frances Fictitious, you will be 31 years old at the end of the year 2021
 
 </sample-output>
 
@@ -175,22 +175,22 @@ print(f"ИМТ равен {bmi}")
 Давайте посмотрим на программу, которая вычисляет сумму трех чисел, заданных пользователем:
 
 ```python
-number1 = int(input("Первое число: "))
-number2 = int(input("Второе число: "))
-number3 = int(input("Третье число: "))
+number1 = int(input("First number: "))
+number2 = int(input("Second number: "))
+number3 = int(input("Third number: "))
 
 sum = number1 + number2 + number3
-print(f"Сумма чисел: {sum}")
+print(f"The sum of the numbers: {sum}")
 ```
 
 Пример выполнения программы:
 
 <sample-output>
 
-Первое число: **5**
-Второе число: **21**
-Третье число: **7**
-Сумма чисел: 33
+First number: **5**
+Second number: **21**
+Third number: **7**
+The sum of the numbers: 33
 
 </sample-output>
 
@@ -199,16 +199,16 @@ print(f"Сумма чисел: {sum}")
 ```python
 sum = 0
 
-number = int(input("Первое число: "))
+number = int(input("First number: "))
 sum = sum + number
 
-number = int(input("Второе число: "))
+number = int(input("Second number: "))
 sum = sum + number
 
-number = int(input("Третье число: "))
+number = int(input("Third number: "))
 sum = sum + number
 
-print(f"Сумма чисел: {sum}")
+print(f"The sum of the numbers: {sum}")
 ```
 
 Теперь все вводы от пользователя читаются в одну и ту же переменную `number`. Значение переменной `sum` _увеличивается_ на значение переменной `number` каждый раз, когда пользователь вводит новое число.
@@ -232,16 +232,16 @@ sum += number
 ```python
 sum = 0
 
-number = int(input("Первое число: "))
+number = int(input("First number: "))
 sum += number
 
-number = int(input("Второе число: "))
+number = int(input("Second number: "))
 sum += number
 
-number = int(input("Третье число: "))
+number = int(input("Third number: "))
 sum += number
 
-print(f"Сумма чисел: {sum}")
+print(f"The sum of the numbers: {sum}")
 ```
 
 Фактически, нам не обязательно нужна переменная `number` вообще. Вводы от пользователя также могут быть обработаны так:
@@ -249,26 +249,26 @@ print(f"Сумма чисел: {sum}")
 ```python
 sum = 0
 
-sum += int(input("Первое число: "))
-sum += int(input("Второе число: "))
-sum += int(input("Третье число: "))
+sum += int(input("First number: "))
+sum += int(input("Second number: "))
+sum += int(input("Third number: "))
 
-print(f"Сумма чисел: {sum}")
+print(f"The sum of the numbers: {sum}")
 ```
 
 Конечно, это будет зависеть от контекста, сколько переменных нужно. Если требуется запомнить каждое значение, которое вводит пользователь, не будет возможности "переиспользовать" ту же переменную для чтения разных значений от пользователя. Рассмотрим следующее:
 
 ```python
-number1 = int(input("Первое число: "))
-number2 = int(input("Второе число: "))
+number1 = int(input("First number: "))
+number2 = int(input("Second number: "))
 
 print(f"{number1} + {number2} = {number1+number2}")
 ```
 
 <sample-output>
 
-Первое число: **2**
-Второе число: **3**
+First number: **2**
+Second number: **3**
 2 + 3 = 5
 
 </sample-output>
@@ -280,21 +280,21 @@ print(f"{number1} + {number2} = {number1+number2}")
 В следующем примере переменная `data` используется для сначала хранения имени пользователя, а затем его возраста. Это совсем не разумно.
 
 ```python
-data = input("Как вас зовут? ")
-print("Привет " + data + "!")
+data = input("What is your name? ")
+print("Hi " + data + "!")
 
-data = int(input("Сколько вам лет? "))
-# программа продолжается...
+data = int(input("What is your age? "))
+# program continues...
 ```
 
 Лучшая идея - использовать отдельные переменные с _описательными_ именами:
 
 ```python
-name = input("Как вас зовут? ")
-print("Привет " + name + "!")
+name = input("What is your name? ")
+print("Hi " + name + "!")
 
-age = int(input("Сколько вам лет? "))
-# программа продолжается...
+age = int(input("What is your age? "))
+# program continues...
 ```
 
 <in-browser-programming-exercise name="Seconds in a day" tmcname="part01-15_seconds_in_a_day" title="Секунды в дне">
@@ -305,8 +305,8 @@ age = int(input("Сколько вам лет? "))
 
 <sample-output>
 
-Сколько дней? **1**
-Секунд в таком количестве дней: 86400
+How many days? **1**
+Seconds in that many days: 86400
 
 </sample-output>
 
@@ -314,8 +314,8 @@ age = int(input("Сколько вам лет? "))
 
 <sample-output>
 
-Сколько дней? **7**
-Секунд в таком количестве дней: 604800
+How many days? **7**
+Seconds in that many days: 604800
 
 </sample-output>
 
@@ -330,10 +330,10 @@ age = int(input("Сколько вам лет? "))
 
 <sample-output>
 
-Пожалуйста, введите первое число: **2**
-Пожалуйста, введите второе число: **3**
-Пожалуйста, введите третье число: **5**
-Произведение равно 30
+Please type in the first number: **2**
+Please type in the second number: **3**
+Please type in the third number: **5**
+The product is 30
 
 </sample-output>
 
@@ -347,10 +347,10 @@ age = int(input("Сколько вам лет? "))
 
 <sample-output>
 
-Число 1: **3**
-Число 2: **7**
-Сумма чисел: 10
-Произведение чисел: 21
+Number 1: **3**
+Number 2: **7**
+The sum of the numbers: 10
+The product of the numbers: 21
 
 </sample-output>
 
@@ -365,11 +365,11 @@ age = int(input("Сколько вам лет? "))
 
 <sample-output>
 
-Число 1: **2**
-Число 2: **1**
-Число 3: **6**
-Число 4: **7**
-Сумма чисел равна 16, а среднее равно 4.0
+Number 1: **2**
+Number 2: **1**
+Number 3: **6**
+Number 4: **7**
+The sum of the numbers is 16 and the mean is 4.0
 
 </sample-output>
 
@@ -389,13 +389,13 @@ age = int(input("Сколько вам лет? "))
 
 <sample-output>
 
-Сколько раз в неделю вы едите в студенческой столовой? **4**
-Цена типичного студенческого обеда? **2.5**
-Сколько денег вы тратите на продукты в неделю? **28.5**
+How many times a week do you eat at the student cafeteria? **4**
+The price of a typical student lunch? **2.5**
+How much money do you spend on groceries in a week? **28.5**
 
-Средние расходы на питание:
-Ежедневно: 5.5 евро
-Еженедельно: 38.5 евро
+Average food expenditure:
+Daily: 5.5 euros
+Weekly: 38.5 euros
 
 </sample-output>
 
@@ -409,17 +409,17 @@ age = int(input("Сколько вам лет? "))
 
 <sample-output>
 
-Сколько студентов на курсе? **8**
-Желаемый размер группы? **4**
-Количество сформированных групп: 2
+How many students on the course? **8**
+Desired group size? **4**
+Number of groups formed: 2
 
 </sample-output>
 
 <sample-output>
 
-Сколько студентов на курсе? **11**
-Желаемый размер группы? **3**
-Количество сформированных групп: 4
+How many students on the course? **11**
+Desired group size? **3**
+Number of groups formed: 4
 
 </sample-output>
 

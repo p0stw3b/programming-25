@@ -20,13 +20,13 @@ hidden: false
 
 ```python
 if x%2 == 0:
-    print("четное")
+    print("even")
 else:
-    print("нечетное")
+    print("odd")
 ```
 
 ```python
-print("четное" if x%2 == 0 else "нечетное")
+print("even" if x%2 == 0 else "odd")
 ```
 
 В последнем примере у нас есть условное выражение в одной строке: `a if [условие] else b`. Значение этого выражения оценивается как `a`, если условие истинно, и `b`, если оно ложно. Эта структура иногда называется _тернарным оператором_.
@@ -58,7 +58,7 @@ def testing():
 Эта функция просто немедленно вернется. Пропуск команды `pass`, то есть наличие полностью пустого блока, привело бы к ошибке.
 
 ```python
-def testing():  # это вызывает ошибку!
+def testing():  # this causes an error!
 ```
 
 ## Циклы с блоками else
@@ -71,10 +71,10 @@ def testing():  # это вызывает ошибку!
 my_list = [3,5,2,8,1]
 for x in my_list:
     if x%2 == 0:
-        print("найдено четное число", x)
+        print("found an even number", x)
         break
 else:
-    print("четных чисел не было")
+    print("there were no even numbers")
 ```
 
 Более традиционный способ достичь этого - использовать вспомогательную переменную для запоминания того, был ли найден желаемый элемент:
@@ -84,11 +84,11 @@ my_list = [3,5,2,8,1]
 found = False
 for x in my_list:
     if x%2 == 0:
-        print("найдено четное число", x)
+        print("found an even number", x)
         found = True
         break
 if not found:
-    print("четных чисел не было")
+    print("there were no even numbers")
 ```
 
 Использование оператора `for else` избавляет нас от необходимости писать отдельную переменную.
@@ -98,21 +98,21 @@ if not found:
 Функция Python может иметь значение параметра по умолчанию. Оно используется всякий раз, когда в функцию не передается аргумент. Смотрите следующий пример:
 
 ```python
-def say_hello(name="Эмили"):
-    print("Привет,", name)
+def say_hello(name="Emily"):
+    print("Hi there,", name)
 
 say_hello()
-say_hello("Эрик")
-say_hello("Матвей")
+say_hello("Eric")
+say_hello("Matthew")
 say_hello("")
 ```
 
 <sample-output>
 
-Привет, Эмили
-Привет, Эрик
-Привет, Матвей
-Привет,
+Hi there, Emily
+Hi there, Eric
+Hi there, Matthew
+Hi there,
 
 </sample-output>
 
@@ -126,16 +126,16 @@ say_hello("")
 
 ```python
 def testing(*my_args):
-    print("Вы передали", len(my_args), "аргументов")
-    print("Сумма аргументов равна", sum(my_args))
+    print("You passed", len(my_args), "arguments")
+    print("The sum of the arguments is", sum(my_args))
 
 testing(1, 2, 3, 4, 5)
 ```
 
 <sample-output>
 
-Вы передали 5 аргументов
-Сумма аргументов равна 15
+You passed 5 arguments
+The sum of the arguments is 15
 
 </sample-output>
 

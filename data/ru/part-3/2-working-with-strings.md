@@ -20,35 +20,35 @@ hidden: false
 Строки можно объединять, или _конкатенировать_, с помощью оператора `+`:
 
 ```python
-begin = "пр"
-end = "имер"
+begin = "ex"
+end = "ample"
 word = begin+end
 print(word)
 ```
 
 <sample-output>
 
-пример
+example
 
 </sample-output>
 
 Оператор `*` также можно использовать со строкой, когда другой операнд — целое число. Строка-операнд тогда повторяется количество раз, указанное целым числом. Например, это будет работать:
 
 ```python
-word = "банан"
+word = "banana"
 print(word*3)
 ```
 
 <sample-output>
 
-бананбананбанан
+bananabananabanana
 
 </sample-output>
 
 Используя строковые операции вместе с циклом, мы можем написать программу, которая рисует пирамиду:
 
 ```python
-n = 10 # количество слоёв в пирамиде
+n = 10 # number of layers in the pyramid
 row = "*"
 
 while n > 0:
@@ -82,9 +82,9 @@ while n > 0:
 
 <sample-output>
 
-Пожалуйста, введите строку: **привет**
-Пожалуйста, введите количество: **4**
-приветприветприветпривет
+Please type in a string: **hiya**
+Please type in an amount: **4**
+hiyahiyahiyahiya
 
 </sample-output>
 
@@ -97,18 +97,18 @@ while n > 0:
 Следующая программа спрашивает у пользователя строку и затем выводит её "подчёркнутой". Программа печатает вторую строку с таким же количеством символов `-`, как длина входной строки:
 
 ```python
-input_string = input("Пожалуйста, введите строку: ")
+input_string = input("Please type in a string: ")
 print(input_string)
 print("-"*len(input_string))
 ```
 
 <sample-output>
 
-Пожалуйста, введите строку: **Привет всем!**
+Please type in a string: **Hi there!**
 
 <pre>
-Привет всем!
-------------
+Hi there!
+---------
 </pre>
 
 </sample-output>
@@ -123,25 +123,25 @@ print("-"*len(input_string))
 
 <sample-output>
 
-Пожалуйста, введите строку 1: **привет**
-Пожалуйста, введите строку 2: **приветик**
-приветик длиннее
+Please type in string 1: **hey**
+Please type in string 2: **hiya**
+hiya is longer
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку 1: **добро пожаловать**
-Пожалуйста, введите строку 2: **хола**
-добро пожаловать длиннее
+Please type in string 1: **howdy doody**
+Please type in string 2: **hola**
+howdy doody is longer
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку 1: **привет**
-Пожалуйста, введите строку 2: **пока**
-Строки имеют одинаковую длину
+Please type in string 1: **hey**
+Please type in string 2: **bye**
+The strings are equally long
 
 </sample-output>
 
@@ -157,7 +157,7 @@ print("-"*len(input_string))
 
 ```python
 
-input_string = input("Пожалуйста, введите строку: ")
+input_string = input("Please type in a string: ")
 print(input_string[0])
 print(input_string[1])
 print(input_string[3])
@@ -168,33 +168,33 @@ print(input_string[3])
 
 <sample-output>
 
-Пожалуйста, введите строку: **обезьяна**
-о
-б
-з
+Please type in a string: **monkey**
+m
+o
+k
 
 </sample-output>
 
 Поскольку первый символ в строке имеет индекс 0, последний символ имеет индекс _длина - 1_. Следующая программа выводит первый и последний символы строки:
 
 ```python
-input_string = input("Пожалуйста, введите строку: ")
-print("Первый символ: " + input_string[0])
-print("Последний символ: " + input_string[len(input_string) - 1])
+input_string = input("Please type in a string: ")
+print("First character: " + input_string[0])
+print("Last character: " + input_string[len(input_string) - 1])
 ```
 
 <sample-output>
 
-Пожалуйста, введите строку: **тестирование**
-Первый символ: т
-Последний символ: е
+Please type in a string: **testing**
+First character: t
+Last character: g
 
 </sample-output>
 
 Следующая программа проходит через все символы в строке от первого до последнего:
 
 ```python
-input_string = input("Пожалуйста, введите строку: ")
+input_string = input("Please type in a string: ")
 index = 0
 while index < len(input_string):
     print(input_string[index])
@@ -203,11 +203,11 @@ while index < len(input_string):
 
 <sample-output>
 
-Пожалуйста, введите строку: **тест**
-т
-е
-с
-т
+Please type in a string: **test**
+t
+e
+s
+t
 
 </sample-output>
 
@@ -218,16 +218,16 @@ while index < len(input_string):
 Пример выше можно упростить с помощью отрицательной индексации:
 
 ```python
-input_string = input("Пожалуйста, введите строку: ")
-print("Первый символ: " + input_string[0])
-print("Последний символ: " + input_string[-1])
+input_string = input("Please type in a string: ")
+print("First character: " + input_string[0])
+print("Last character: " + input_string[-1])
 ```
 
 <sample-output>
 
-Пожалуйста, введите строку: **тестирование**
-Первый символ: т
-Последний символ: е
+Please type in a string: **testing**
+First character: t
+Last character: g
 
 </sample-output>
 
@@ -236,20 +236,20 @@ print("Последний символ: " + input_string[-1])
 Если вы попробовали приведённые выше примеры самостоятельно, возможно, вы уже сталкивались с сообщением об ошибке _IndexError: string index out of range_. Эта ошибка появляется, если вы пытаетесь получить доступ к индексу, которого нет в строке.
 
 ```python
-input_string = input("Пожалуйста, введите строку: ")
-print("Десятый символ: " + input_string[9])
+input_string = input("Please type in a string: ")
+print("The tenth character: " + input_string[9])
 ```
 
 <sample-output>
 
-Пожалуйста, введите строку: **введение в программирование**
-Десятый символ: в
+Please type in a string: **introduction to programming**
+The tenth character: i
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку: **python**
+Please type in a string: **python**
 
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -260,8 +260,8 @@ IndexError: string index out of range
 Иногда ошибка индексации вызвана ошибкой в коде. Например, довольно часто допускают ошибку индексации при попытке получить доступ к последнему символу в строке:
 
 ```python
-input_string = input("Пожалуйста, введите строку: ")
-print("Последний символ: " + input_string[len(input_string)])
+input_string = input("Please type in a string: ")
+print("Last character: " + input_string[len(input_string)])
 ```
 
 Поскольку индексация строки начинается с нуля, последний символ находится по индексу `len(input_string) - 1`, а не по `len(input_string)`.
@@ -269,11 +269,11 @@ print("Последний символ: " + input_string[len(input_string)])
 Есть ситуации, когда программа должна готовиться к ошибкам, вызванным вводом пользователя:
 
 ```python
-input_string = input("Пожалуйста, введите строку: ")
+input_string = input("Please type in a string: ")
 if len(input_string) > 0:
-    print("Первый символ: " + input_string[0])
+    print("First character: " + input_string[0])
 else:
-    print("Входная строка пуста. Первого символа нет.")
+    print("The input string is empty. There is no first character.")
 ```
 
 В приведённом выше примере, если программист не включил проверку длины входной строки, строка длиной ноль вызвала бы ошибку. Строка длиной ноль также называется пустой строкой, и здесь она была бы получена простым нажатием Enter при запросе ввода.
@@ -286,13 +286,11 @@ else:
 
 <sample-output>
 
-Пожалуйста, введите строку: **привет**
-т
-е
-в
-и
-р
-п
+Please type in a string: **hiya**
+a
+y
+i
+h
 
 </sample-output>
 
@@ -304,15 +302,15 @@ else:
 
 <sample-output>
 
-Пожалуйста, введите строку: **python**
-Второй и предпоследний символы разные
+Please type in a string: **python**
+The second and the second to last characters are different
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку: **pascal**
-Второй и предпоследний символы одинаковые: a
+Please type in a string: **pascal**
+The second and the second to last characters are a
 
 </sample-output>
 
@@ -324,7 +322,7 @@ else:
 
 <sample-output>
 
-Ширина: **3**
+Width: **3**
 <pre>
 ###
 </pre>
@@ -333,7 +331,7 @@ else:
 
 <sample-output>
 
-Ширина: **8**
+Width: **8**
 <pre>
 ########
 </pre>
@@ -348,8 +346,8 @@ else:
 
 <sample-output>
 
-Ширина: **10**
-Высота: **3**
+Width: **10**
+Height: **3**
 ##########
 ##########
 ##########
@@ -364,22 +362,22 @@ else:
 
 <sample-output>
 
-Пожалуйста, введите строку: **Привет всем!**
+Please type in a string: **Hi there!**
 <pre>
-Привет всем!
-------------
+Hi there!
+---------
 </pre>
-Пожалуйста, введите строку: **Это тест**
+Please type in a string: **This is a test**
 <pre>
-Это тест
---------
+This is a test
+--------------
 </pre>
-Пожалуйста, введите строку: **а**
+Please type in a string: **a**
 <pre>
-а
+a
 -
 </pre>
-Пожалуйста, введите строку:
+Please type in a string:
 
 </sample-output>
 
@@ -393,7 +391,7 @@ else:
 
 <sample-output>
 
-Пожалуйста, введите строку: **python**
+Please type in a string: **python**
 <pre>
 **************python
 </pre>
@@ -402,18 +400,18 @@ else:
 
 <sample-output>
 
-Пожалуйста, введите строку: **болеедлиннаястрока**
+Please type in a string: **alongerstring**
 <pre>
-*болеедлиннаястрока
+*******alongerstring
 </pre>
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку: **оченьоченьдлиннаястрока**
+Please type in a string: **averyverylongstring**
 <pre>
-*оченьоченьдлиннаястрока
+*averyverylongstring
 </pre>
 
 </sample-output>
@@ -429,10 +427,10 @@ else:
 
 <sample-output>
 
-Слово: **тестирование**
+Word: **testing**
 <pre>
 ******************************
-*        тестирование         *
+*          testing           *
 ******************************
 </pre>
 
@@ -440,10 +438,10 @@ else:
 
 <sample-output>
 
-Слово: **python**
+Word: **python**
 <pre>
 ******************************
-*           python            *
+*           python           *
 ******************************
 </pre>
 
@@ -463,24 +461,24 @@ _Подстрока_ строки — это последовательност�
 Давайте внимательнее посмотрим на некоторые нарезанные строки:
 
 ```python
-input_string = "самонадеянный"
+input_string = "presumptious"
 
 print(input_string[0:3])
 print(input_string[4:10])
 
-# если начальный индекс пропущен, он по умолчанию равен 0
+# if the beginning index is left out, it defaults to 0
 print(input_string[:3])
 
-# если конечный индекс пропущен, он по умолчанию равен длине строки
+# if the end index is left out, it defaults to the length of the string
 print(input_string[4:])
 ```
 
 <sample-output>
 
-сам
-наде
-сам
-наде
+pre
+umptio
+pre
+umptious
 
 </sample-output>
 
@@ -500,11 +498,11 @@ print(input_string[4:])
 
 <sample-output>
 
-Пожалуйста, введите строку: **тест**
-т
-те
-тес
-тест
+Please type in a string: **test**
+t
+te
+tes
+test
 
 </sample-output>
 
@@ -516,11 +514,11 @@ print(input_string[4:])
 
 <sample-output>
 
-Пожалуйста, введите строку: **тест**
-т
-ст
-ест
-тест
+Please type in a string: **test**
+t
+st
+est
+test
 
 </sample-output>
 
@@ -533,12 +531,12 @@ print(input_string[4:])
 Например, этот фрагмент кода
 
 ```python
-input_string = "тест"
+input_string = "test"
 
-print("т" in input_string)
-print("х" in input_string)
-print("ес" in input_string)
-print("етс" in input_string)
+print("t" in input_string)
+print("x" in input_string)
+print("es" in input_string)
+print("ets" in input_string)
 ```
 
 выводит следующее:
@@ -555,24 +553,24 @@ False
 Программа ниже позволяет пользователю искать подстроки в строке, жёстко закодированной в программу:
 
 ```python
-input_string = "перпендикулярный"
+input_string = "perpendicular"
 
 while True:
-    substring = input("Что вы ищете? ")
+    substring = input("What are you looking for? ")
     if substring in input_string:
-        print("Найдено")
+        print("Found it")
     else:
-        print("Не найдено")
+        print("Not found")
 ```
 
 <sample-output>
 
-Что вы ищете? **перп**
-Найдено
-Что вы ищете? **абв**
-Не найдено
-Что вы ищете? **пен**
-Найдено
+What are you looking for? **perp**
+Found it
+What are you looking for? **abc**
+Not found
+What are you looking for? **pen**
+Found it
 ...
 
 </sample-output>
@@ -585,19 +583,19 @@ while True:
 
 <sample-output>
 
-Пожалуйста, введите строку: **привет всем**
-а не найдено
-е найдено
-о не найдено
+Please type in a string: **hello there**
+a not found
+e found
+o found
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку: **пока**
-а найдено
-е не найдено
-о найдено
+Please type in a string: **hiya**
+a found
+e not found
+o not found
 
 </sample-output>
 
@@ -613,12 +611,12 @@ while True:
 Некоторые примеры использования `find`:
 
 ```python
-input_string = "тест"
+input_string = "test"
 
-print(input_string.find("т"))
-print(input_string.find("х"))
-print(input_string.find("ес"))
-print(input_string.find("етс"))
+print(input_string.find("t"))
+print(input_string.find("x"))
+print(input_string.find("es"))
+print(input_string.find("ets"))
 ```
 
 <sample-output>
@@ -633,25 +631,25 @@ print(input_string.find("етс"))
 Приведённый выше пример поиска подстроки, реализованный с помощью `find`:
 
 ```python
-input_string = "перпендикулярный"
+input_string = "perpendicular"
 
 while True:
-    substring = input("Что вы ищете? ")
+    substring = input("What are you looking for? ")
     index = input_string.find(substring)
     if index >= 0:
-        print(f"Найдено по индексу {index}")
+        print(f"Found it at the index {index}")
     else:
-        print("Не найдено")
+        print("Not found")
 ```
 
 <sample-output>
 
-Что вы ищете? **перп**
-Найдено по индексу 0
-Что вы ищете? **абв**
-Не найдено
-Что вы ищете? **пен**
-Найдено по индексу 3
+What are you looking for? **perp**
+Found it at the index 0
+What are you looking for? **abc**
+Not found
+What are you looking for? **pen**
+Found it at the index 3
 ...
 
 </sample-output>
@@ -670,31 +668,31 @@ while True:
 
 <sample-output>
 
-Пожалуйста, введите слово: **мамонт**
-Пожалуйста, введите символ: **м**
-мам
+Please type in a word: **mammoth**
+Please type in a character: **m**
+mam
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите слово: **банан**
-Пожалуйста, введите символ: **н**
-нан
+Please type in a word: **banana**
+Please type in a character: **n**
+nan
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите слово: **помидор**
-Пожалуйста, введите символ: **х**
+Please type in a word: **tomato**
+Please type in a character: **x**
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите слово: **python**
-Пожалуйста, введите символ: **n**
+Please type in a word: **python**
+Please type in a character: **n**
 
 </sample-output>
 
@@ -706,26 +704,26 @@ while True:
 
 <sample-output>
 
-Пожалуйста, введите слово: **мамонт**
-Пожалуйста, введите символ: **м**
-мам
-мон
-онт
+Please type in a word: **mammoth**
+Please type in a character: **m**
+mam
+mmo
+mot
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите слово: **банан**
-Пожалуйста, введите символ: **н**
-нан
+Please type in a word: **banana**
+Please type in a character: **n**
+nan
 
 </sample-output>
 
 **Подсказка** следующий пример может дать вам вдохновение о том, как можно решить это упражнение:
 
 ```python
-word = input("Слово: ")
+word = input("Word: ")
 while True:
     if len(word) == 0:
         break
@@ -735,10 +733,11 @@ while True:
 
 <sample-output>
 
-Слово: **мамонт**
-мамонт
-монт
-нт
+Word: **mammoth**
+mammoth
+mmoth
+oth
+h
 
 </sample-output>
 
@@ -754,25 +753,25 @@ while True:
 
 <sample-output>
 
-Пожалуйста, введите строку: **абвабв**
-Пожалуйста, введите подстроку: **аб**
-Второе вхождение подстроки находится по индексу 3.
+Please type in a string: **abcabc**
+Please type in a substring: **ab**
+The second occurrence of the substring is at index 3.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку: **методология**
-Пожалуйста, введите подстроку: **о**
-Второе вхождение подстроки находится по индексу 6.
+Please type in a string: **methodology**
+Please type in a substring: **o**
+The second occurrence of the substring is at index 6.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите строку: **айбабту**
-Пожалуйста, введите подстроку: **ба**
-Подстрока не встречается дважды в строке.
+Please type in a string: **aybabtu**
+Please type in a substring: **ba**
+The substring does not occur twice in the string.
 
 </sample-output>
 

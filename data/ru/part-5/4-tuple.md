@@ -30,14 +30,14 @@ point = (10, 20)
 
 ```python
 point = (10, 20)
-print("x координата:", point[0])
-print("y координата:", point[1])
+print("x coordinate:", point[0])
+print("y coordinate:", point[1])
 ```
 
 <sample-output>
 
-x координата: 10
-y координата: 20
+x coordinate: 10
+y coordinate: 20
 
 </sample-output>
 
@@ -197,12 +197,12 @@ def minmax(my_list):
 my_list = [33, 5, 21, 7, 88, 312, 5]
 
 min_value, max_value = minmax(my_list)
-print(f"Наименьший элемент {min_value}, а наибольший элемент {max_value}")
+print(f"The smallest item is {min_value} and the greatest item is {max_value}")
 ```
 
 <sample-output>
 
-Наименьший элемент 5, а наибольший элемент 312
+The smallest item is 5 and the greatest item is 312
 
 </sample-output>
 
@@ -228,8 +228,8 @@ my_dictionary["banaani"] = "banana"
 my_dictionary["cembalo"] = "harpsichord"
 
 for key, value in my_dictionary.items():
-    print("ключ:", key)
-    print("значение:", value)
+    print("key:", key)
+    print("value:", value)
 ```
 
 Кортежи работают и здесь тоже. Метод `my_dictionary.items()` возвращает каждую пару ключ-значение как кортеж, где первый элемент - ключ, а второй элемент - значение.
@@ -371,7 +371,7 @@ best average grade 4.5 Eliza
 
 <sample-output>
 
-Слоев: **3**
+Layers: **3**
 <pre>
 CCCCC
 CBBBC
@@ -384,7 +384,7 @@ CCCCC
 
 <sample-output>
 
-Слоев: **4**
+Layers: **4**
 <pre>
 DDDDDDD
 DCCCCCD

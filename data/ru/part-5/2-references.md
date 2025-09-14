@@ -28,7 +28,7 @@ hidden: false
 ```python
 a = [1, 2, 3]
 print(id(a))
-b = "Это тоже ссылка"
+b = "This is a reference, too"
 print(id(b))
 ```
 
@@ -145,14 +145,14 @@ for item in my_list:
 
 new_list[0] = 10
 new_list.append(6)
-print("оригинал:", my_list)
-print("копия:", new_list)
+print("the original:", my_list)
+print("the copy:", new_list)
 ```
 
 <sample-output>
 
-оригинал [1, 2, 3, 3, 5]
-копия [10, 2, 3, 3, 5, 6]
+my_list [1, 2, 3, 3, 5]
+new_list [10, 2, 3, 3, 5, 6]
 
 </sample-output>
 
@@ -224,14 +224,14 @@ def add_item(my_list: list) -> list:
 numbers = [1, 2, 3]
 numbers2 = add_item(numbers)
 
-print("исходный список:", numbers)
-print("новый список:", numbers2)
+print("original list:", numbers)
+print("new list:", numbers2)
 ```
 
 <sample-output>
 
-исходный список: [1, 2, 3]
-новый список: [1, 2, 3, 10]
+original list: [1, 2, 3]
+new list: [1, 2, 3, 10]
 
 </sample-output>
 
@@ -249,15 +249,15 @@ def augment_all(my_list: list):
     my_list = new_list
 
 numbers = [1, 2, 3]
-print("в начале:", numbers)
+print("in the beginning:", numbers)
 augment_all(numbers)
-print("после выполнения функции:", numbers)
+print("after the function is executed:", numbers)
 ```
 
 <sample-output>
 
-в начале: [1, 2, 3]
-после выполнения функции: [1, 2, 3]
+in the beginning: [1, 2, 3]
+after the function is executed: [1, 2, 3]
 
 </sample-output>
 
@@ -285,7 +285,7 @@ def augment_all(my_list: list):
     for item in my_list:
         new_list.append(item + 10)
 
-    # копируем элементы из нового списка в старый список
+    # copy items from the new list into the old list
     for i in range(len(my_list)):
         my_list[i] = new_list[i]
 ```
@@ -327,6 +327,7 @@ def augment_all(my_list: list):
 def augment_all(my_list: list):
     for i in range(len(my_list)):
         my_list[i] += 10
+
 ```
 
 <programming-exercise name='Элементы, умноженные на два' tmcname='part05-08_items_multiplied_by_two'>
@@ -341,13 +342,13 @@ def augment_all(my_list: list):
 if __name__ == "__main__":
     numbers = [2, 4, 5, 3, 11, -4]
     numbers_doubled = double_items(numbers)
-    print("исходный:", numbers)
-    print("удвоенный:", numbers_doubled)
+    print("original:", numbers)
+    print("doubled:", numbers_doubled)
 ```
 <sample-output>
 
-исходный: [2, 4, 5, 3, 11, -4]
-удвоенный: [4, 8, 10, 6, 22, -8]
+original: [2, 4, 5, 3, 11, -4]
+doubled: [4, 8, 10, 6, 22, -8]
 
 </sample-output>
 
@@ -403,7 +404,7 @@ add_number(sudoku, 0, 0, 2)
 add_number(sudoku, 1, 2, 7)
 add_number(sudoku, 5, 7, 3)
 print()
-print("Три числа добавлены:")
+print("Three numbers added:")
 print()
 print_sudoku(sudoku)
 ```
@@ -423,7 +424,7 @@ _ _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
 
-Три числа добавлены:
+Three numbers added:
 
 2 _ _  _ _ _  _ _ _
 _ _ 7  _ _ _  _ _ _
@@ -446,13 +447,13 @@ _ _ _  _ _ _  _ _ _
 Помните, что можно вызвать функцию `print` без перехода на новую строку:
 
 ```python
-print("символы ", end="")
-print("без переноса строки", end="")
+print("characters ", end="")
+print("without carriage returns", end="")
 ```
 
 <sample-output>
 
-символы без переноса строки
+characters without carriage returns
 
 </sample-output>
 
@@ -486,17 +487,17 @@ sudoku  = [
 ]
 
 grid_copy = copy_and_add(sudoku, 0, 0, 2)
-print("Исходная:")
+print("Original:")
 print_sudoku(sudoku)
 print()
-print("Копия:")
+print("Copy:")
 print_sudoku(grid_copy)
 ```
 
 <sample-output>
 
 <pre>
-Исходная:
+Original:
 _ _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
@@ -509,7 +510,7 @@ _ _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
 
-Копия:
+Copy:
 2 _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
 _ _ _  _ _ _  _ _ _
@@ -598,7 +599,7 @@ True
 
 ```python
 def second_smallest(my_list: list) -> int:
-    # в упорядоченном списке второй наименьший элемент находится по индексу 1
+    # in an ordered list, the second smallest item is at index 1
     my_list.sort()
     return my_list[1]
 

@@ -54,16 +54,16 @@ print(my_time)
 from datetime import datetime
 
 my_time = datetime(1952, 12, 24)
-print("День:", my_time.day)
-print("Месяц:", my_time.month)
-print("Год:", my_time.year)
+print("Day:", my_time.day)
+print("Month:", my_time.month)
+print("Year:", my_time.year)
 ```
 
 <sample-output>
 
-День: 24
-Месяц: 12
-Год: 1952
+Day: 24
+Month: 12
+Year: 1952
 
 </sample-output>
 
@@ -72,8 +72,8 @@ print("Год:", my_time.year)
 ```python
 from datetime import datetime
 
-pv1 = datetime(2021, 6, 30, 13)     # 30.6.2021 в 13:00
-pv2 = datetime(2021, 6, 30, 18, 45) # 30.6.2021 в 18:45
+pv1 = datetime(2021, 6, 30, 13)     # 30.6.2021 at 1PM
+pv2 = datetime(2021, 6, 30, 18, 45) # 30.6.2021 at 6.45PM
 ```
 
 ## Сравнение времени и вычисление разностей между ними
@@ -87,16 +87,16 @@ time_now = datetime.now()
 midsummer = datetime(2021, 6, 26)
 
 if time_now < midsummer:
-    print("Еще не наступил день Ивана Купалы")
+    print("It is not yet Midsummer")
 elif time_now == midsummer:
-    print("Счастливого дня Ивана Купалы!")
+    print("Happy Midsummer!")
 elif time_now > midsummer:
-    print("День Ивана Купалы уже прошел")
+    print("It is past Midsummer")
 ```
 
 <sample-output>
 
-День Ивана Купалы уже прошел
+It is past Midsummer
 
 </sample-output>
 
@@ -109,12 +109,12 @@ time_now = datetime.now()
 midsummer = datetime(2021, 6, 26)
 
 difference = midsummer - time_now
-print("День Ивана Купалы через", difference.days, "дней")
+print("Midsummer is", difference.days, "days away")
 ```
 
 <sample-output>
 
-День Ивана Купалы через -116 дней
+Midsummer is -116 days away
 
 </sample-output>
 
@@ -129,17 +129,17 @@ midsummer = datetime(2021, 6, 26)
 one_week = timedelta(days=7)
 week_from_date = midsummer + one_week
 
-print("Неделю после дня Ивана Купалы будет", week_from_date)
+print("A week after Midsummer it will be", week_from_date)
 
 long_time = timedelta(weeks=32, days=15)
 
-print("32 недели и 15 дней после дня Ивана Купалы будет", midsummer + long_time)
+print("32 weeks and 15 days after Midsummer it will be", midsummer + long_time)
 ```
 
 <sample-output>
 
-Неделю после дня Ивана Купалы будет 2021-07-03 00:00:00
-32 недели и 15 дней после дня Ивана Купалы будет 2022-02-20 00:00:00
+A week after Midsummer it will be 2021-07-03 00:00:00
+32 weeks and 15 days after Midsummer it will be 2022-02-20 00:00:00
 
 </sample-output>
 
@@ -149,12 +149,12 @@ print("32 недели и 15 дней после дня Ивана Купалы 
 time_now = datetime.now()
 midnight = datetime(2021, 6, 30)
 difference = midnight - time_now
-print(f"До полуночи еще {difference.seconds} секунд")
+print(f"Midnight is still {difference.seconds} seconds away")
 ```
 
 <sample-output>
 
-До полуночи еще 8188 секунд
+Midnight is still 8188 seconds away
 
 </sample-output>
 
@@ -164,19 +164,19 @@ print(f"До полуночи еще {difference.seconds} секунд")
 
 <sample-output>
 
-День: **10**
-Месяц: **9**
-Год: **1979**
-Вам было 7417 дней в канун нового тысячелетия.
+Day: **10**
+Month: **9**
+Year: **1979**
+You were 7417 days old on the eve of the new millennium.
 
 </sample-output>
 
 <sample-output>
 
-День: **28**
-Месяц: **3**
-Год: **2005**
-Вы еще не родились в канун нового тысячелетия.
+Day: **28**
+Month: **3**
+Year: **2005**
+You weren't born yet on the eve of the new millennium.
 
 </sample-output>
 
@@ -247,19 +247,19 @@ print(my_time.strftime("%d/%m/%Y %H:%M"))
 ```python
 from datetime import datetime
 
-birthday = input("Пожалуйста, введите свой день рождения в формате dd.mm.yyyy: ")
+birthday = input("Please type in your birthday in the format dd.mm.yyyy: ")
 my_time = datetime.strptime(birthday, "%d.%m.%Y")
 
 if my_time < datetime(2000, 1, 1):
-    print("Вы родились в предыдущем тысячелетии")
+    print("You were born in the previous millennium")
 else:
-    print("Вы родились в этом тысячелетии")
+    print("You were born during this millennium")
 ```
 
 <sample-output>
 
-Пожалуйста, введите свой день рождения в формате dd.mm.yyyy: **5.11.1986**
-Вы родились в предыдущем тысячелетии
+Please type in your birthday in the format dd.mm.yyyy: **5.11.1986**
+You were born in the previous millennium
 
 </sample-output>
 
@@ -271,16 +271,16 @@ else:
 
 <sample-output>
 
-Имя файла: **late_june.txt**
-Начальная дата: **24.6.2020**
-Сколько дней: **5**
-Пожалуйста, введите время экрана в минутах на каждый день (ТВ компьютер мобильный):
-Время экрана 24.06.2020: **60 120 0**
-Время экрана 25.06.2020: **0 0 0**
-Время экрана 26.06.2020: **180 0 0**
-Время экрана 27.06.2020: **25 240 15**
-Время экрана 28.06.2020: **45 90 5**
-Данные сохранены в файле late_june.txt
+Filename: **late_june.txt**
+Starting date: **24.6.2020**
+How many days: **5**
+Please type in screen time in minutes on each day (TV computer mobile):
+Screen time 24.06.2020: **60 120 0**
+Screen time 25.06.2020: **0 0 0**
+Screen time 26.06.2020: **180 0 0**
+Screen time 27.06.2020: **25 240 15**
+Screen time 28.06.2020: **45 90 5**
+Data stored in file late_june.txt
 
 </sample-output>
 

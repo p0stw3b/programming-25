@@ -17,38 +17,38 @@ hidden: false
 В предыдущем разделе мы работали со списками, кортежами, словарями и строками. Все это довольно особые случаи в программировании на Python. Синтаксис Python имеет уникальный, заранее определенный метод объявления объекта, принадлежащего к каждому из этих типов:
 
 ```python
-# Списки объявляются квадратными скобками
+# Lists are declared with square brackets
 my_list = [1,2,3]
 
-# Строки объявляются кавычками
-my_string = "Привет!"
+# Strings are declared with quotation marks
+my_string = "Hi there!"
 
-# Словари объявляются фигурными скобками
-my_dict = {"один": 1, "два": 2}
+# Dictionaries are declared with curly brackets
+my_dict = {"one": 1, "two:": 2}
 
-# Кортежи объявляются круглыми скобками
+# Tuples are declared with parentheses
 my_tuple = (1,2,3)
 ```
 
 Когда объявляется какой-то другой тип объекта, нам нужно вызвать специальную функцию инициализации, называемую _конструктором_. Давайте посмотрим на работу с дробями через класс `Fraction`.
 
 ```python
-# мы используем класс Fraction из модуля fractions
+# we are using the class Fraction from the module fractions
 from fractions import Fraction
 
-# создаем новые дроби
+# create some new fractions
 half = Fraction(1,2)
 
 third = Fraction(1,3)
 
 another = Fraction(3,11)
 
-# выводим их
+# print these out
 print(half)
 print(third)
 print(another)
 
-# Дроби можно складывать вместе, например
+# Fractions can be added together, for example
 print(half + third)
 ```
 
@@ -81,10 +81,10 @@ from fractions import Fraction
 
 number = Fraction(2,5)
 
-# Выводим числитель
+# Print the numerator
 print(number.numerator)
 
-# ...и знаменатель
+# ...and the denominator
 print(number.denominator)
 ```
 
@@ -105,7 +105,7 @@ from datetime import date
 xmas_eve = date(2020, 12, 24)
 midsummer = date(2020, 6, 20)
 
-# выводим только атрибут month обоих объектов
+# print only the month attribute of both objects
 print(xmas_eve.month)
 print(midsummer.month)
 ```
@@ -155,20 +155,20 @@ True
 ```python
 my_date = date(2020, 12, 24)
 
-# вызов метода
+# calling a method
 weekday = my_date.isoweekday()
 
-# доступ к переменной
+# accessing a variable
 my_month = my_date.month
 
-print("День недели:", weekday)
-print("Месяц:", my_month)
+print("The day of the week:", weekday)
+print("The month:", my_month)
 ```
 
 <sample-output>
 
-День недели: 4
-Месяц: 12
+The day of the week: 4
+The month: 12
 
 </sample-output>
 
@@ -182,12 +182,12 @@ weekday = my_date.isoweekday()
 
 ```python
 weekday =  my_date.isoweekday
-print("День недели:", weekday)
+print("The day of the week:", weekday)
 ```
 
 <sample-output>
 
-День недели: <built-in method isoweekday of datetime.date object at 0x10ed66450>
+The day of the week: <built-in method isoweekday of datetime.date object at 0x10ed66450>
 
 </sample-output>
 
@@ -264,7 +264,7 @@ Milk
 Мы также можем сделать это:
 
 ```python
-# элементы в списке покупок индексируются с 1
+# the items on the shopping list are indexed from 1
 for i in range(1, shopping_list.number_of_items()+1):
     item = shopping_list.item(i)
     amount = shopping_list.amount(i)

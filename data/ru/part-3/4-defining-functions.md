@@ -24,7 +24,7 @@ hidden: false
 
 ```python
 def message():
-    print("Это моя собственная функция!")
+    print("This is my very own function!")
 ```
 
 Если выполнить программу выше, ничего не происходит. Это потому, что код в теле функции выполняется только тогда, когда функция _вызывается_.
@@ -33,7 +33,7 @@ def message():
 
 ```python
 def message():
-    print("Это моя собственная функция!")
+    print("This is my very own function!")
 
 message()
 ```
@@ -41,7 +41,7 @@ message()
 
 <sample-output>
 
-Это моя собственная функция!
+This is my very own function!
 
 </sample-output>
 
@@ -49,7 +49,7 @@ message()
 
 ```python
 def message():
-    print("Это моя собственная функция!")
+    print("This is my very own function!")
 
 message()
 message()
@@ -58,9 +58,9 @@ message()
 
 <sample-output>
 
-Это моя собственная функция!
-Это моя собственная функция!
-Это моя собственная функция!
+This is my very own function!
+This is my very own function!
+This is my very own function!
 
 </sample-output>
 
@@ -72,7 +72,7 @@ message()
 
 ```python
 def greet():
-    print("Привет!")
+    print("Hi!")
 ```
 
 Причина, по которой ничего не выводится, заключается в том, что код внутри тела функции `greet` выполняется только при вызове функции.
@@ -81,11 +81,11 @@ def greet():
 
 ```python
 def greet():
-    print("Привет!")
+    print("Hi!")
 
-# Весь код, не находящийся в определениях функций, является частью
-# главной функции программы
-# Вызываем нашу функцию:
+# All code not within function definitions is part of
+# the main function of the program
+# Calling our function:
 
 greet()
 ```
@@ -94,9 +94,9 @@ greet()
 
 ```python
 def greet():
-    print("Привет!")
+    print("Hi!")
 
-# Пишите главную функцию в блоке таком образом:
+# Write your main function within a block like this:
 if __name__ == "__main__":
     greet()
 ```
@@ -133,9 +133,9 @@ Tuomas
 Функции часто принимают один или несколько _аргументов_, которые могут влиять на то, что делает функция. Например, встроенные функции Python `print` и `input` принимают в качестве аргумента(аргументов) текст, который должен отображаться:
 
 ```python
-print("Привет!")                              # аргумент - строка "Привет!"
-name = input("Как вас зовут? ")                # аргумент - строка "Как вас зовут? "
-print(name)                                    # аргумент - значение переменной name
+print("Hi!")                           # argument is the string "Hi!"
+name = input("What is your name? ")    # argument is the string "What is your name? "
+print(name)                            # argument is the value of the variable name
 ```
 
 Ранее упоминалось, что термины _аргумент_ и _параметр_ часто используются для обозначения одного и того же. Различие состоит в том, что хотя _аргумент_ используется с данными, передаваемыми в функцию при её вызове, _внутри_ функции аргументы присваиваются переменным, называемым _параметрами_. Итак, приблизительно, когда функция вызывается, мы называем переданные фрагменты данных аргументами, но когда мы определяем функцию, мы называем их параметрами.
@@ -146,22 +146,22 @@ print(name)                                    # аргумент - значен
 
 ```python
 def hello(target):
-    print("Привет", target)
+    print("Hello", target)
 ```
 
 Двойной вызов этой функции, вот так
 
 ```python
-hello("Елена")
-hello("мир!")
+hello("Emily")
+hello("world!")
 ```
 
 выводит два разных приветствия:
 
 <sample-output>
 
-Привет Елена
-Привет мир!
+Hello Emily
+Hello world!
 
 </sample-output>
 
@@ -169,7 +169,7 @@ hello("мир!")
 
 ```python
 def hello(target):
-    print("Привет", target)
+    print("Hello", target)
 ```
 
 В первой строке, в заголовке функции, мы определили, что эта функция принимает аргумент и присваивает его параметру с именем `target`. В теле функции команда `print` использует значение, хранящееся в `target`.
@@ -177,7 +177,7 @@ def hello(target):
 Когда функция вызывается, параметр `target` получает значение, данное как аргумент в вызове функции. Например, следующий вызов функции
 
 ```python
-name = "Алан"
+name = "Alan"
 hello(name)
 ```
 
@@ -191,26 +191,26 @@ hello(name)
 
 ```python
 def first_character(text):
-     # напишите ваш код здесь
+     # write your code here
 
-# тестирование функции:
+# testing the function:
 if __name__ == "__main__":
     first_character('python')
-    first_character('жёлтый')
-    first_character('завтра')
-    first_character('гелиотроп')
-    first_character('открыто')
-    first_character('ночь')
+    first_character('yellow')
+    first_character('tomorrow')
+    first_character('heliotrope')
+    first_character('open')
+    first_character('night')
 ```
 
 <sample-output>
 
 p
-ж
-з
-г
-о
-н
+y
+t
+h
+o
+n
 
 </sample-output>
 
@@ -232,7 +232,7 @@ p
 
 ```python
 def squared(x):
-    print(f"Квадрат числа {x} равен {x * x}")
+    print(f"The square of the number {x} is {x * x}")
 
 squared(2)
 squared(5)
@@ -240,8 +240,8 @@ squared(5)
 
 <sample-output>
 
-Квадрат числа 2 равен 4
-Квадрат числа 5 равен 25
+The square of the number 2 is 4
+The square of the number 5 is 25
 
 </sample-output>
 
@@ -249,19 +249,19 @@ squared(5)
 
 ```python
 def hello(name):
-    if name == "Елена":
-        print("Привет", name)
+    if name == "Emily":
+        print("Hello", name)
     else:
-        print("Здравствуй", name)
+        print("Hi", name)
 
-hello("Елена")
-hello("Марк")
+hello("Emily")
+hello("Mark")
 ```
 
 <sample-output>
 
-Привет Елена
-Здравствуй Марк
+Hello Emily
+Hi Mark
 
 </sample-output>
 
@@ -270,7 +270,7 @@ hello("Марк")
 ```python
 def sum(x, y):
     result = x + y
-    print(f"Сумма аргументов {x} и {y} равна {result}")
+    print(f"The sum of the arguments {x} and {y} is {result}")
 
 sum(1, 2)
 sum(5, 24)
@@ -278,8 +278,8 @@ sum(5, 24)
 
 <sample-output>
 
-Сумма аргументов 1 и 2 равна 3
-Сумма аргументов 5 и 24 равна 29
+The sum of the arguments 1 and 2 is 3
+The sum of the arguments 5 and 24 is 29
 
 </sample-output>
 
@@ -298,8 +298,8 @@ sum(x + y, 10)
 
 <sample-output>
 
-Сумма аргументов 1 и 2 равна 3
-Сумма аргументов 130 и 10 равна 140
+The sum of the arguments 1 and 2 is 3
+The sum of the arguments 130 and 10 is 140
 
 </sample-output>
 
@@ -317,21 +317,21 @@ sum(x + y, 10)
 Ниже приведён пример функции, которая использует глобальную переменную "по ошибке":
 
 ```python
-# это глобальная переменная
-name = "Бетти"
+# this is a global variable
+name = "Betty"
 
 def hello(given_name):
-    # использование глобальной переменной вместо параметра по ошибке
-    print("Привет", name)
+    # using the global variable instead of the parameter by mistake
+    print("Hello", name)
 
-hello("Стив")
-hello("Бетти")
+hello("Steve")
+hello("Betty")
 ```
 
 <sample-output>
 
-Привет Бетти
-Привет Бетти
+Hello Betty
+Hello Betty
 
 </sample-output>
 
@@ -360,25 +360,25 @@ mean(10, 1, 1)
 Пожалуйста, напишите функцию с именем `print_many_times(text, times)`, которая принимает строку и целое число как аргументы. Аргумент-целое число указывает, сколько раз должна быть выведена строка-аргумент:
 
 ```python
-print_many_times("привет", 5)
+print_many_times("hi", 5)
 
 print()
 
-text = "Все Питоны, кроме одного, взрослеют"
+text = "All Pythons, except one, grow up"
 times = 3
 print_many_times(text, times)
 ```
 <sample-output>
 
-привет
-привет
-привет
-привет
-привет
+hi
+hi
+hi
+hi
+hi
 
-Все Питоны, кроме одного, взрослеют
-Все Питоны, кроме одного, взрослеют
-Все Питоны, кроме одного, взрослеют
+All Pythons, except one, grow up.
+All Pythons, except one, grow up.
+All Pythons, except one, grow up.
 
 </sample-output>
 

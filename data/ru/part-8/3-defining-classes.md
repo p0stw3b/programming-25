@@ -19,8 +19,8 @@ hidden: false
 Класс определяется с помощью ключевого слова `class`. Синтаксис следующий:
 
 ```python
-class ИмяКласса:
-    # определение класса идет здесь
+class NameOfClass:
+    # class defition goes here
 ```
 
 Классы обычно именуются в _PascalCase_, также известном как _UpperCamelCase_. Это означает, что все слова в имени класса пишутся вместе, без пробелов, и каждое слово начинается с заглавной буквы. Следующие имена классов следуют этому соглашению:
@@ -50,7 +50,7 @@ class BankAccount:
     pass
 
 peters_account = BankAccount()
-peters_account.owner = "Петр Питон"
+peters_account.owner = "Peter Python"
 peters_account.balance = 5.0
 
 print(peters_account.owner)
@@ -59,7 +59,7 @@ print(peters_account.balance)
 
 <sample-output>
 
-Петр Питон
+Peter Python
 5.0
 
 </sample-output>
@@ -70,8 +70,8 @@ print(peters_account.balance)
 account = BankAccount()
 account.balance = 155.50
 
-print(account.balance) # Это относится к атрибуту данных balance, прикрепленному к account
-print(balance) # ЭТО ВЫЗЫВАЕТ ОШИБКУ, поскольку нет такой независимой переменной, и отсутствует ссылка на объект
+print(account.balance) # This refers to the data attribute balance attached to the account
+print(balance) # THIS CAUSES AN ERROR, as there is no such independent variable available, and the object reference is missing
 ```
 
 ## Добавление конструктора
@@ -85,14 +85,14 @@ class BankAccount:
     pass
 
 peters_account = BankAccount()
-peters_account.owner = "Петр"
+peters_account.owner = "Peter"
 peters_account.balance = 1400
 
 paulas_account = BankAccount()
-paulas_account.owner = "Паула"
+paulas_account.owner = "Paula"
 
 print(peters_account.balance)
-print(paulas_account.balance) # ЭТО ВЫЗЫВАЕТ ОШИБКУ
+print(paulas_account.balance) # THIS CAUSES AN ERROR
 ```
 
 Итак, вместо объявления атрибутов после создания каждого экземпляра класса, обычно лучшая идея - инициализировать значения атрибутов при вызове конструктора класса. Поскольку определение класса `BankAccount` в настоящее время является просто скелетом, метод конструктора неявно предполагается интерпретатором Python, но возможно определить свои собственные методы конструктора, и именно это мы сейчас и сделаем.
@@ -104,7 +104,7 @@ print(paulas_account.balance) # ЭТО ВЫЗЫВАЕТ ОШИБКУ
 ```python
 class BankAccount:
 
-    # Конструктор
+    # The constructor
     def __init__(self, balance: float, owner: str):
         self.balance = balance
         self.owner = owner
@@ -127,15 +127,15 @@ class BankAccount:
 ```python
 class BankAccount:
 
-    # Конструктор
+    # The constructor
     def __init__(self, balance: float, owner: str):
         self.balance = balance
         self.owner = owner
 
-# При вызове метода не должно быть дано аргумента для параметра self
-# Python автоматически присваивает значение для self
-peters_account = BankAccount(100, "Петр Питон")
-paulas_account = BankAccount(20000, "Паула Питонс")
+# As the method is called, no argument should be given for the self parameter
+# Python assigns the value for self automatically
+peters_account = BankAccount(100, "Peter Python")
+paulas_account = BankAccount(20000, "Paula Pythons")
 
 print(peters_account.balance)
 print(paulas_account.balance)
@@ -155,19 +155,19 @@ print(paulas_account.balance)
 ```python
 class BankAccount:
 
-    # Конструктор
+    # The constructor
     def __init__(self, balance: float, owner: str):
         self.balance = balance
         self.owner = owner
 
-peters_account = BankAccount(100, "Петр Питон")
+peters_account = BankAccount(100, "Peter Python")
 print(peters_account.balance)
 
-# Изменяем баланс на 1500
+# Change the balance to 1500
 peters_account.balance = 1500
 print(peters_account.balance)
 
-# Добавляем 2000 к балансу
+# Add 2000 to the balance
 peters_account.balance += 2000
 print(peters_account.balance)
 ```
@@ -193,10 +193,10 @@ class LotteryDraw:
         self.numbers = numbers
 
 
-# Создаем новый объект LotteryDraw
+# Create a new LotteryDraw object
 round1 = LotteryDraw(1, date(2021, 1, 2), [1,4,8,12,13,14,33])
 
-# Выводим информацию
+# Tulostetaan tiedot
 print(round1.round_week)
 print(round1.round_date)
 
@@ -227,17 +227,17 @@ for number in round1.numbers:
 Ваш класс должен работать вот так:
 
 ```python
-python = Book("Fluent Python", "Лучано Рамальо", "программирование", 2015)
-everest = Book("Высокие приключения", "Эдмунд Хиллари", "автобиография", 1956)
+python = Book("Fluent Python", "Luciano Ramalho", "programming", 2015)
+everest = Book("High Adventure", "Edmund Hillary", "autobiography", 1956)
 
-print(f"{python.author}: {python.name} ({python.year})")
-print(f"Жанр книги {everest.name} - это {everest.genre}")
+print(f"{python.author}: {python.name} ({python.year})")
+print(f"The genre of the book {everest.name} is {everest.genre}")
 ```
 
 <sample-output>
 
-Лучано Рамальо: Fluent Python (2015)
-Жанр книги Высокие приключения - это автобиография
+Luciano Ramalho: Fluent Python (2015)
+The genre of the book High Adventure is autobiography
 
 </sample-output>
 
@@ -271,16 +271,16 @@ print(f"Жанр книги {everest.name} - это {everest.genre}")
 Объекты, сформированные из ваших собственных определений классов, не отличаются от любых других объектов Python. Они могут передаваться как аргументы и возвращаемые значения, точно как любой другой объект. Мы могли бы, например, написать некоторые вспомогательные функции для работы с банковскими счетами:
 
 ```python
-# эта функция создает новый объект банковского счета и возвращает его
+# this function creates a new bank account object and returns it
 def open_account(name: str):
     new_account =  BankAccount(0, name)
     return new_account
 
-# эта функция добавляет сумму, переданную как аргумент, к балансу банковского счета, также переданного как аргумент
+# this function adds the amount passed as an argument to the balance of the bank account also passed as an argument
 def deposit_money_on_account(account: BankAccount, amount: int):
     account.balance += amount
 
-peters_account = open_account("Петр Питон")
+peters_account = open_account("Peter Python")
 print(peters_account.balance)
 
 deposit_money_on_account(peters_account, 500)
@@ -304,7 +304,7 @@ print(peters_account.balance)
 Пример использования функции:
 
 ```python
-fluffy = new_pet("Пушистик", "собака", 2017)
+fluffy = new_pet("Fluffy", "dog", 2017)
 print(fluffy.name)
 print(fluffy.species)
 print(fluffy.year_of_birth)
@@ -312,8 +312,8 @@ print(fluffy.year_of_birth)
 
 <sample-output>
 
-Пушистик
-собака
+Fluffy
+dog
 2017
 
 </sample-output>
@@ -325,9 +325,9 @@ print(fluffy.year_of_birth)
 Напишите функцию с именем `older_book(book1: Book, book2: Book)`, которая принимает два объекта типа `Book` в качестве аргументов. Функция должна вывести сообщение с деталями той, которая старше. Она должна вывести другое сообщение, если две книги были написаны в одном году. Пожалуйста, посмотрите примеры ниже.
 
 ```python
-python = Book("Fluent Python", "Лучано Рамальо", "программирование", 2015)
-everest = Book("Высокие приключения", "Эдмунд Хиллари", "автобиография", 1956)
-norma = Book("Норма", "Софи Оксанен", "детектив", 2015)
+python = Book("Fluent Python", "Luciano Ramalho", "programming", 2015)
+everest = Book("High Adventure", "Edmund Hillary", "autobiography", 1956)
+norma = Book("Norma", "Sofi Oksanen", "crime", 2015)
 
 older_book(python, everest)
 older_book(python, norma)
@@ -335,8 +335,8 @@ older_book(python, norma)
 
 <sample-output>
 
-Высокие приключения старше, была опубликована в 1956
-Fluent Python и Норма были опубликованы в 2015
+High Adventure is older, it was published in 1956
+Fluent Python and Norma were published in 2015
 
 </sample-output>
 
@@ -349,22 +349,22 @@ Fluent Python и Норма были опубликованы в 2015
 Функция должна вернуть _новый_ список, который содержит книги с желаемым жанром из исходного списка. Пожалуйста, посмотрите примеры ниже.
 
 ```python
-python = Book("Fluent Python", "Лучано Рамальо", "программирование", 2015)
-everest = Book("Высокие приключения", "Эдмунд Хиллари", "автобиография", 1956)
-norma = Book("Норма", "Софи Оксанен", "детектив", 2015)
+python = Book("Fluent Python", "Luciano Ramalho", "programming", 2015)
+everest = Book("High Adventure", "Edmund Hillary", "autobiography", 1956)
+norma = Book("Norma", "Sofi Oksanen", "crime", 2015)
 
-books = [python, everest, norma, Book("Снеговик", "Ю Несбё", "детектив", 2007)]
+books = [python, everest, norma, Book("The Snowman", "Jo Nesbø", "crime", 2007)]
 
-print("Книги детективного жанра:")
-for book in books_of_genre(books, "детектив"):
-    print(f"{book.author}: {book.name}")
+print("Books in the crime genre:")
+for book in books_of_genre(books, "crime"):
+    print(f"{book.author}: {book.name}")
 ```
 
 <sample-output>
 
-Книги детективного жанра:
-Софи Оксанен: Норма
-Ю Несбё: Снеговик
+Books in the crime genre:
+Sofi Oksanen: Norma
+Jo Nesbø: The Snowman
 
 </sample-output>
 

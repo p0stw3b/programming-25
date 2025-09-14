@@ -40,7 +40,7 @@ str_list = ["123","-10", "23", "98", "0", "-110"]
 
 integers = map(lambda x : int(x), str_list)
 
-print(integers) # это говорит нам о типе объекта, с которым мы имеем дело
+print(integers) # this tells us the type of object we're dealing with
 
 for number in integers:
     print(number)
@@ -114,13 +114,13 @@ def capitalize(my_string: str):
 
 test_list = ["first", "second", "third", "fourth"]
 
-# сохранить возвращаемое значение функции map
+# store the return value from the map function
 capitalized = map(capitalize, test_list)
 
 for word in capitalized:
   print(word)
 
-print("вывести то же самое снова:")
+print("print the same again:")
 for word in capitalized:
   print(word)
 ```
@@ -133,7 +133,7 @@ First
 Second
 Third
 Fourth
-вывести то же самое снова:
+print the same again:
 
 </sample-output>
 
@@ -144,13 +144,13 @@ Fourth
 ```python
 test_list = ["first", "second", "third", "fourth"]
 
-# преобразовать возвращаемое значение функции map в список
+# convert the return value of the map function into a list
 capitalized = list(map(capitalize, test_list))
 
 for word in capitalized:
   print(word)
 
-print("вывести то же самое снова:")
+print("print the same again:")
 for word in capitalized:
   print(word)
 ```
@@ -161,7 +161,7 @@ First
 Second
 Third
 Fourth
-вывести то же самое снова:
+print the same again:
 First
 Second
 Third
@@ -242,7 +242,7 @@ print(attempt)
 Peter Python
 Introduction to Programming
 5
-Peter Python, оценка за курс Introduction to Programming 5
+Peter Python, grade for the course Introduction to Programming 5
 
 </sample-output>
 
@@ -339,13 +339,13 @@ for number in even_numbers:
 
 ```python
 class Fish:
-    """ Класс моделирует рыбу определённого вида и веса """
+    """ The class models a fish of a certain species and weight """
     def __init__(self, species: str, weight: int):
         self.species = species
         self.weight = weight
 
     def __repr__(self):
-        return f"{self.species} ({self.weight} г.)"
+        return f"{self.species} ({self.weight} g.)"
 
 if __name__ == "__main__":
     f1 = Fish("Pike", 1870)
@@ -364,9 +364,9 @@ if __name__ == "__main__":
 
 <sample-output>
 
-Pike (1870 г.)
-Pike (3410 г.)
-Cod (2449 г.)
+Pike (1870 g.)
+Pike (3410 g.)
+Cod (2449 g.)
 
 </sample-output>
 
@@ -394,20 +394,20 @@ over_a_kilo = filter(lambda fish : fish.weight >= 1000, fishes)
 for fish in over_a_kilo:
     print(fish)
 
-print("вывести то же самое снова:")
+print("print the same again:")
 
-for fish in over_a_kilo:
-    print(fish)
+for Fish in over_a_kilo:
+    print(Fish)
 ```
 
 Это выведет следующее:
 
 <sample-output>
 
-Pike (1870 г.)
-Pike (3410 г.)
-Cod (2449 г.)
-вывести то же самое снова:
+Pike (1870 g.)
+Pike (3410 g.)
+Cod (2449 g.)
+print the same again:
 
 </sample-output>
 
@@ -416,7 +416,7 @@ Cod (2449 г.)
 ```python
 fishes = [f1, f2, f3, f4, f5]
 
-# преобразовать возвращаемое значение функции filter в список
+# convert the return value of the filter function into a list
 over_a_kilo = list(filter(lambda fish : fish.weight >= 1000, fishes))
 ```
 
@@ -439,8 +439,8 @@ for attempt in accepted([s1, s2, s3]):
 
 <sample-output>
 
-Peter Python, оценка за курс Introduction to Programming 3
-Olivia C. Objective, оценка за курс Introduction to Programming 5
+Peter Python, grade for the course Introduction to Programming 3
+Olivia C. Objective grade for the course Introduction to Programming 5
 
 </sample-output>
 
@@ -462,9 +462,9 @@ for attempt in attempts_with_grade([s1, s2, s3, s4], 3):
 
 <sample-output>
 
-Peter Python, оценка за курс Introduction to Programming 3
-Peter Python, оценка за курс Introduction to AI 3
-Olivia C. Objective, оценка за курс Data Structures and Algorithms 3
+Peter Python, grade for the course Introduction to Programming 3
+Peter Python, grade for the course Introduction to AI 3
+Olivia C. Objective, grade for the course Data Structures and Algorithms 3
 
 </sample-output>
 
@@ -536,10 +536,10 @@ from functools import reduce
 
 my_list = [2, 3, 1, 5]
 
-# вспомогательная функция для reduce, добавляет одно значение к текущей свёрнутой сумме
+# a helper function for reduce, adds one value to the current reduced sum
 def sum_helper(reduced_sum, item):
-  print(f"свёрнутая сумма сейчас {reduced_sum}, следующий элемент {item}")
-  # новая свёрнутая сумма - это старая сумма + следующий элемент
+  print(f"the reduced sum is now {reduced_sum}, next item is {item}")
+  # the new reduced sum is the old sum + the next item
   return reduced_sum + item
 
 sum_of_numbers = reduce(sum_helper, my_list, 0)
@@ -551,10 +551,10 @@ print(sum_of_numbers)
 
 <sample-output>
 
-свёрнутая сумма сейчас 0, следующий элемент 2
-свёрнутая сумма сейчас 2, следующий элемент 3
-свёрнутая сумма сейчас 5, следующий элемент 1
-свёрнутая сумма сейчас 6, следующий элемент 5
+the reduced sum is now 0, next item is 2
+the reduced sum is now 2, next item is 3
+the reduced sum is now 5, next item is 1
+the reduced sum is now 6, next item is 5
 11
 
 </sample-output>
@@ -614,7 +614,7 @@ def balance_sum_helper(balance_sum, account):
 
 balances_total = reduce(balance_sum_helper, accounts, 0)
 
-print("Общая сумма банковских балансов:")
+print("The total of the bank's balances:")
 print(balances_total)
 ```
 
@@ -622,7 +622,7 @@ print(balances_total)
 
 <sample-output>
 
-Общая сумма банковских балансов:
+The total of the bank's balances:
 1005001
 
 </sample-output>
@@ -678,7 +678,7 @@ print(attempt.grade)
 
 <sample-output>
 
-Data Structures and Algorithms (10 кр) оценка 3
+Data Structures and Algorithms (10 cr) grade 3
 Data Structures and Algorithms
 10
 3

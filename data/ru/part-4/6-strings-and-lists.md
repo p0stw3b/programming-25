@@ -61,13 +61,13 @@ eepa
 Если мы пропустим любой из индексов, оператор по умолчанию включит всё. Среди прочего, это позволяет нам написать очень короткую программу для обращения строки:
 
 ```python
-my_string = input("Пожалуйста, введите строку: ")
+my_string = input("Please type in a string: ")
 print(my_string[::-1])
 ```
 
 <sample-output>
 
-Пожалуйста, введите строку: **exemplary**
+Please type in a string: **exemplary**
 yralpmexe
 
 </sample-output>
@@ -83,30 +83,30 @@ yralpmexe
 
 ```python
 def print_reversed(names: list):
-    # использование глобальной переменной вместо параметра по случайности
+    # using the global variable instead of the parameter by accident
     i = len(name_list) - 1
     while i >= 0:
         print(name_list[i])
         i -= 1
 
-# здесь присваивается глобальная переменная
-name_list = ["Стив", "Жан", "Катерина", "Пол"]
+# here the global variable is assigned
+name_list = ["Steve", "Jean", "Katherine", "Paul"]
 print_reversed(name_list)
 print()
-print_reversed(["Хьюи", "Дьюи", "Луи"])
+print_reversed(["Huey", "Dewey", "Louie"])
 ```
 
 <sample-output>
 
-Пол
-Катерина
-Жан
-Стив
+Paul
+Katherine
+Jean
+Steve
 
-Пол
-Катерина
-Жан
-Стив
+Paul
+Katherine
+Jean
+Steve
 
 </sample-output>
 
@@ -116,19 +116,19 @@ print_reversed(["Хьюи", "Дьюи", "Луи"])
 
 ```python
 def print_reversed(names: list):
-    # использование глобальной переменной вместо параметра по случайности
+    # using the global variable instead of the parameter by accident
     i = len(name_list) - 1
     while i>=0:
         print(name_list[i])
         i -= 1
 
-# Весь код для тестирования функции должен быть в этом блоке
+# All the code for testing the function should be within this block
 if __name__ == "__main__":
-    # здесь присваивается глобальная переменная
-    name_list = ["Стив", "Жан", "Катерина", "Пол"]
+    # here the global variable is assigned
+    name_list = ["Steve", "Jean", "Katherine", "Paul"]
     print_reversed(name_list)
     print()
-    print_reversed(["Хьюи", "Дьюи", "Луи"])
+    print_reversed(["Huey", "Dewey", "Louie"])
 ```
 
 Обратите внимание, что глобальная переменная теперь присваивается в блоке `if`.
@@ -201,8 +201,8 @@ my_string = my_string + "!"
 Метод `count` подсчитывает количество раз, когда указанный элемент или подстрока встречается в цели. Метод работает одинаково как со строками, так и со списками:
 
 ```python
-my_string = "Сколько дерева бросил бы сурок, если бы сурок мог бросать дерево"
-print(my_string.count("су"))
+my_string = "How much wood would a woodchuck chuck if a woodchuck could chuck wood"
+print(my_string.count("ch"))
 
 my_list = [1,2,3,1,4,5,1,6]
 print(my_list.count(1))
@@ -210,7 +210,7 @@ print(my_list.count(1))
 
 <sample-output>
 
-2
+5
 3
 
 </sample-output>
@@ -220,59 +220,59 @@ print(my_list.count(1))
 Метод `replace` создаёт новую строку, где указанная подстрока заменяется другой строкой:
 
 ```python
-my_string = "Привет там"
-new_string = my_string.replace("Привет", "Хэй")
+my_string = "Hi there"
+new_string = my_string.replace("Hi", "Hey")
 print(new_string)
 ```
 
 <sample-output>
 
-Хэй там
+Hey there
 
 </sample-output>
 
 Метод заменит все вхождения подстроки:
 
 ```python
-sentence = "шейла продаёт морские раковины на морском берегу"
-print(sentence.replace("мор", "МОР"))
+sentence = "sheila sells seashells on the seashore"
+print(sentence.replace("she", "SHE"))
 ```
 
 <sample-output>
 
-шейла продаёт МОРские раковины на МОРском берегу
+SHEila sells seaSHElls on the seashore
 
 </sample-output>
 
 При использовании метода `replace` типичная ошибка - забыть, что строки неизменяемы:
 
 ```python
-my_string = "Python это весело"
+my_string = "Python is fun"
 
-# Заменяет подстроку, но не сохраняет результат...
+# Replaces the substring but doesn't store the result...
 my_string.replace("Python", "Java")
 print(my_string)
 ```
 
 <sample-output>
 
-Python это весело
+Python is fun
 
 </sample-output>
 
 Если старая строка больше не нужна, новая строка может быть присвоена той же переменной:
 
 ```python
-my_string = "Python это весело"
+my_string = "Python is fun"
 
-# Заменяет подстроку и сохраняет результат в той же переменной
+# Replaces the substring and stores the result in the same variable
 my_string = my_string.replace("Python", "Java")
 print(my_string)
 ```
 
 <sample-output>
 
-Java это весело
+Java is fun
 
 </sample-output>
 
@@ -394,7 +394,7 @@ print(longest_series_of_neighbours(my_list))
 ```python
 def main():
     points = []
-    # ваш код программы идёт здесь
+    # your program code goes here
 
 main()
 ```
@@ -402,18 +402,18 @@ main()
 Теперь вспомогательные функции могут быть протестированы без запуска основной функции:
 
 ```python
-# вспомогательная функция для определения оценки на основе количества баллов
+# helper function for determining the grade based on the amount of points
 def grade(points):
-    # больше кода
+    # more code
 
 def main():
     all_points = []
-    # ваш код программы идёт здесь
+    # your program code goes here
 
-# закомментировать основную функцию
+# comment out the main function
 #main()
 
-# протестировать вспомогательную функцию
+# test the helper function
 student_points = 35
 result = grade(student_points)
 print(result)
@@ -428,25 +428,25 @@ print(result)
 
 ```python
 def input_from_user(how_many: int):
-    print(f"Пожалуйста, введите {how_many} чисел:")
+    print(f"Please type in {how_many} numbers:")
     numbers = []
 
     for i in range(how_many):
-        number = int(input(f"Число {i+1}: "))
+        number = int(input(f"Number {i+1}: "))
         numbers.append(number)
 
     return numbers
 
 def print_result(numbers: list):
-    print("Числа: ")
+    print("The numbers are: ")
     for number in numbers:
         print(number)
 
 def analyze(numbers: list):
     mean = sum(numbers) / len(numbers)
-    return f"Всего {len(numbers)} чисел, среднее {mean}, наименьшее {min(numbers)}, наибольшее {max(numbers)}"
+    return f"There are altogether {len(numbers)} numbers, the mean is {mean}, the smallest is {min(numbers)} and the greatest is {max(numbers)}"
 
-# "основная функция", использующая эти функции
+# the "main function" using these functions
 inputs = input_from_user(5)
 print_result(inputs)
 analysis_result = analyze(inputs)
@@ -457,19 +457,19 @@ print(analysis_result)
 
 <sample-output>
 
-Пожалуйста, введите 5 чисел:
-Число 1: **10**
-Число 2: **34**
-Число 3: **-32**
-Число 4: **99**
-Число 5: **-53**
-Числа:
+Please type in 5 numbers:
+Number 1: **10**
+Number 2: **34**
+Number 3: **-32**
+Number 4: **99**
+Number 5: **-53**
+The numbers are:
 10
 34
 -32
 99
 -53
-Всего 5 чисел, среднее 11.6, наименьшее -53, наибольшее 99
+There are altogether 5 numbers, the mean is 11.6, the smallest is -53 and the greatest is 99
 
 </sample-output>
 
@@ -484,7 +484,7 @@ print(analysis_result)
 Вы также могли бы отделить неявную основную функцию в примере выше в её собственную функцию. Тогда переменная `inputs` больше не была бы глобальной переменной, а вместо этого локальной переменной внутри функции `main`:
 
 ```python
-# ваша основная функция идёт здесь
+# your main function goes here
 def main():
     inputs = input_from_user(5)
     print_result(inputs)
@@ -492,7 +492,7 @@ def main():
 
     print(analysis_result)
 
-# запустить основную функцию
+# run the main function
 main()
 ```
 
@@ -510,12 +510,12 @@ main()
 
 <sample-output>
 
-Экзаменационные баллы и выполненные упражнения: **15 87**
-Экзаменационные баллы и выполненные упражнения: **10 55**
-Экзаменационные баллы и выполненные упражнения: **11 40**
-Экзаменационные баллы и выполненные упражнения: **4 17**
-Экзаменационные баллы и выполненные упражнения:
-Статистика:
+Exam points and exercises completed: **15 87**
+Exam points and exercises completed: **10 55**
+Exam points and exercises completed: **11 40**
+Exam points and exercises completed: **4 17**
+Exam points and exercises completed:
+Statistics:
 
 </sample-output>
 
@@ -541,10 +541,10 @@ main()
 <sample-output>
 
 <pre>
-Статистика:
-Средние баллы: 14.5
-Процент прохождения: 75.0
-Распределение оценок:
+Statistics:
+Points average: 14.5
+Pass percentage: 75.0
+Grade distribution:
   5:
   4:
   3: *
@@ -565,7 +565,7 @@ main()
 
 <sample-output>
 
-Экзаменационные баллы и выполненные упражнения: **15 87**
+Exam points and exercises completed: **15 87**
 
 </sample-output>
 

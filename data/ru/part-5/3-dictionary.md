@@ -48,26 +48,26 @@ monkey
 После определения словаря мы также можем использовать его с пользовательским вводом:
 
 ```python
-word = input("Пожалуйста, введите слово: ")
+word = input("Please type in a word: ")
 if word in my_dictionary:
-    print("Перевод: ", my_dictionary[word])
+    print("Translation: ", my_dictionary[word])
 else:
-    print("Слово не найдено")
+    print("Word not found")
 ```
 
 Обратите внимание на использование оператора `in` выше. Когда он используется с переменной типа словарь, он проверяет, находится ли первый операнд среди ключей, хранящихся в словаре. При разных входных данных эта программа может вывести следующее:
 
 <sample-output>
 
-Пожалуйста, введите слово: **apina**
-Перевод: monkey
+Please type in a word: **apina**
+Translation: monkey
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите слово: **pöllö**
-Слово не найдено
+Please type in a word: **pöllö**
+Word not found
 
 </sample-output>
 
@@ -187,18 +187,18 @@ my_dictionary["banaani"] = "banana"
 my_dictionary["cembalo"] = "harpsichord"
 
 for key in my_dictionary:
-    print("ключ:", key)
-    print("значение:", my_dictionary[key])
+    print("key:", key)
+    print("value:", my_dictionary[key])
 ```
 
 <sample-output>
 
-ключ: apina
-значение: monkey
-ключ: banaani
-значение: banana
-ключ: cembalo
-значение: harpsichord
+key: apina
+value: monkey
+key: banaani
+value: banana
+key: cembalo
+value: harpsichord
 
 </sample-output>
 
@@ -207,8 +207,8 @@ for key in my_dictionary:
 ```python
 
 for key, value in my_dictionary.items():
-    print("ключ:", key)
-    print("значение:", value)
+    print("key:", key)
+    print("value:", value)
 ```
 
 В примерах выше вы могли заметить, что ключи обрабатываются в том же порядке, в котором они были добавлены в словарь. Поскольку ключи обрабатываются на основе хеш-значения, порядок обычно не должен иметь значения в приложениях. Фактически, во многих старых версиях Python порядок не гарантированно соответствует времени вставки.
@@ -233,14 +233,14 @@ word_list = [
 def counts(my_list):
     words = {}
     for word in my_list:
-        # если слова еще нет в словаре, инициализируем значение нулем
+        # if the word is not yet in the dictionary, initialize the value to zero
         if word not in words:
             words[word] = 0
-        # увеличиваем значение
+        # increment the value
         words[word] += 1
     return words
 
-# вызываем функцию
+# call the function
 print(counts(word_list))
 ```
 
@@ -259,17 +259,17 @@ def categorize_by_initial(my_list):
     groups = {}
     for word in my_list:
         initial = word[0]
-        # инициализируем новый список, когда буква встречается впервые
+        # initialize a new list when the letter is first encountered
         if initial not in groups:
             groups[initial] = []
-        # добавляем слово в соответствующий список
+        # add the word to the appropriate list
         groups[initial].append(word)
     return groups
 
 groups = categorize_by_initial(word_list)
 
 for key, value in groups.items():
-    print(f"слова, начинающиеся с {key}:")
+    print(f"words beginning with {key}:")
     for word in value:
         print(word)
 ```
@@ -277,30 +277,30 @@ for key, value in groups.items():
 
 <sample-output>
 
-слова, начинающиеся с b:
+words beginning with b:
 banana
 beer
 butter
 beer
 butter
 beer
-слова, начинающиеся с m:
+words beginning with m:
 milk
 margarine
-слова, начинающиеся с c:
+words beginning with c:
 cheese
 cucumber
 cheese
 chocolate
-слова, начинающиеся с s:
+words beginning with s:
 sourmilk
 sausage
 sausage
 sourmilk
 sourmilk
-слова, начинающиеся с j:
+words beginning with j:
 juice
-слова, начинающиеся с t:
+words beginning with t:
 tomato
 
 </sample-output>
@@ -344,29 +344,29 @@ y *
 
 <sample-output>
 
-команда (1 поиск, 2 добавить, 3 выйти): **2**
-имя: **peter**
-номер: **040-5466745**
-ок!
-команда (1 поиск, 2 добавить, 3 выйти): **2**
-имя: **emily**
-номер: **045-1212344**
-ок!
-команда (1 поиск, 2 добавить, 3 выйти): **1**
-имя: **peter**
+command (1 search, 2 add, 3 quit): **2**
+name: **peter**
+number: **040-5466745**
+ok!
+command (1 search, 2 add, 3 quit): **2**
+name: **emily**
+number: **045-1212344**
+ok!
+command (1 search, 2 add, 3 quit): **1**
+name: **peter**
 040-5466745
-команда (1 поиск, 2 добавить, 3 выйти): **1**
-имя: **mary**
-нет номера
-команда (1 поиск, 2 добавить, 3 выйти): **2**
-имя: **peter**
-номер: **09-22223333**
-ок!
-команда (1 поиск, 2 добавить, 3 выйти): **1**
-имя: **peter**
+command (1 search, 2 add, 3 quit): **1**
+name: **mary**
+no number
+command (1 search, 2 add, 3 quit): **2**
+name: **peter**
+number: **09-22223333**
+ok!
+command (1 search, 2 add, 3 quit): **1**
+name: **peter**
 09-22223333
-команда (1 поиск, 2 добавить, 3 выйти): **3**
-выход...
+command (1 search, 2 add, 3 quit): **3**
+quitting...
 
 </sample-output>
 
@@ -382,36 +382,36 @@ y *
 
 <sample-output>
 
-команда (1 поиск, 2 добавить, 3 выйти): **2**
-имя: **peter**
-номер: **040-5466745**
-ок!
-команда (1 поиск, 2 добавить, 3 выйти): **2**
-имя: **emily**
-номер: **045-1212344**
-ок!
-команда (1 поиск, 2 добавить, 3 выйти): **1**
-имя: **peter**
+command (1 search, 2 add, 3 quit): **2**
+name: **peter**
+number: **040-5466745**
+ok!
+command (1 search, 2 add, 3 quit): **2**
+name: **emily**
+number: **045-1212344**
+ok!
+command (1 search, 2 add, 3 quit): **1**
+name: **peter**
 040-5466745
-команда (1 поиск, 2 добавить, 3 выйти): **1**
-имя: **mary**
-нет номера
-команда (1 поиск, 2 добавить, 3 выйти): **2**
-имя: **peter**
-номер: **09-22223333**
-ок!
-команда (1 поиск, 2 добавить, 3 выйти): **1**
-имя: **peter**
+command (1 search, 2 add, 3 quit): **1**
+name: **mary**
+no number
+command (1 search, 2 add, 3 quit): **2**
+name: **peter**
+number: **09-22223333**
+ok!
+command (1 search, 2 add, 3 quit): **1**
+name: **peter**
 040-5466745
 09-22223333
-команда (1 поиск, 2 добавить, 3 выйти): **3**
-выход...
+command (1 search, 2 add, 3 quit): **3**
+quitting...
 
 </programming-exercise>
 
-## Удаление ключей и значений из словаря
+## Removing keys and values from a dictionary
 
-Естественно, также возможно удалять пары ключ-значение из словаря. Есть два способа достичь этого. Первый - команда `del`:
+It is naturally possible to also remove key-value pairs from the dictionary. There are two ways to accomplish this. The first is the command `del`:
 
 ```python
 staff = {"Alan": "lecturer", "Emily": "professor", "David": "lecturer"}
@@ -449,9 +449,9 @@ KeyError: 'Paul'
 staff = {"Alan": "lecturer", "Emily": "professor", "David": "lecturer"}
 if "Paul" in staff:
   del staff["Paul"]
-  print("Удалено")
+  print("Deleted")
 else:
-  print("Этот человек не является сотрудником")
+  print("This person is not a staff member")
 ```
 
 Другой способ удалить записи в словаре - метод `pop`:
@@ -460,13 +460,13 @@ else:
 staff = {"Alan": "lecturer", "Emily": "professor", "David": "lecturer"}
 deleted = staff.pop("David")
 print(staff)
-print(deleted, "удален")
+print(deleted, "deleted")
 ```
 
 <sample-output>
 
 {'Alan': 'lecturer', 'Emily': 'professor'}
-lecturer удален
+lecturer deleted
 
 </sample-output>
 
@@ -478,14 +478,14 @@ lecturer удален
 staff = {"Alan": "lecturer", "Emily": "professor", "David": "lecturer"}
 deleted = staff.pop("Paul", None)
 if deleted == None:
-  print("Этот человек не является сотрудником")
+  print("This person is not a staff member")
 else:
-  print(deleted, "удален")
+  print(deleted, "deleted")
 ```
 
 <sample-output>
 
-Этот человек не является сотрудником
+This person is not a staff member
 
 </sample-output>
 
@@ -605,7 +605,7 @@ combined_height = 0
 for person in people:
     combined_height += person["height"]
 
-print("Средний рост составляет", combined_height / len(people))
+print("The average height is", combined_height / len(people))
 ```
 
 <sample-output>
@@ -613,7 +613,7 @@ print("Средний рост составляет", combined_height / len(peop
 Pippa Python
 Peter Pythons
 Pedro Python
-Средний рост составляет 173.0
+The average height is 173.0
 
 </sample-output>
 

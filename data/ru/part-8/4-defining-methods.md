@@ -17,7 +17,7 @@ hidden: false
 Классы, которые содержат только атрибуты данных, не очень отличаются от словарей. Ниже вы найдете два способа моделирования банковского счета: сначала с определением класса, а затем с использованием словаря.
 
 ```python
-# Пример 1: банковский счет с определением класса
+# Example 1: bank account with class definition
 class BankAccount:
 
     def __init__(self, account_number: str, owner: str, balance: float, annual_interest: float):
@@ -26,12 +26,12 @@ class BankAccount:
         self.balance = balance
         self.annual_interest = annual_interest
 
-peters_account = BankAccount("12345-678", "Петр Питон", 1500.0, 0.015)
+peters_account = BankAccount("12345-678", "Peter Python", 1500.0, 0.015)
 ```
 
 ```python
-# Пример 2: банковский счет со словарем
-peters_account = {"account_number": "12345-678", "owner": "Петр Питон", "balance": 1500.0, "annual_interest": 0.015}
+# Example 2: bank account with dictionary
+peters_account = {"account_number": "12345-678", "owner": "Peter Python", "balance": 1500.0, "annual_interest": 0.015}
 ```
 
 Со словарем реализация намного короче и прямолинейнее. Однако с классом структура более "тесно связана", так что мы можем ожидать, что все объекты `BankAccount` будут структурно похожими. Класс также имеет имя. На класс `BankAccount` ссылаются при создании нового банковского счета, и тип объекта - `BankAccount`, а не `dict`.
@@ -53,12 +53,12 @@ class BankAccount:
         self.balance = balance
         self.annual_interest = annual_interest
 
-    # Этот метод добавляет годовой процент к балансу счета
+    # This method adds the annual interest to the balance of the account
     def add_interest(self):
         self.balance += self.balance * self.annual_interest
 
 
-peters_account = BankAccount("12345-678", "Петр Питон", 1500.0, 0.015)
+peters_account = BankAccount("12345-678", "Peter Python", 1500.0, 0.015)
 peters_account.add_interest()
 print(peters_account.balance)
 ```
@@ -74,17 +74,17 @@ print(peters_account.balance)
 Давайте посмотрим, как это работает, когда мы создали несколько экземпляров класса:
 
 ```python
-# Класс BankAccount определен в предыдущем примере
+# The class BankAccount is defined in the previous example
 
-peters_account = BankAccount("12345-678", "Петр Питон", 1500.0, 0.015)
-paulas_account = BankAccount("99999-999", "Паула Питонен", 1500.0, 0.05)
-pippas_account = BankAccount("1111-222", "Пиппа Программист", 1500.0, 0.001)
+peters_account = BankAccount("12345-678", "Peter Python", 1500.0, 0.015)
+paulas_account = BankAccount("99999-999", "Paula Pythonen", 1500.0, 0.05)
+pippas_account = BankAccount("1111-222", "Pippa Programmer", 1500.0, 0.001)
 
-# Добавляем процент на счета Петра и Паулы, но не на счет Пиппы
+# Add interest on Peter's and Paula's accounts, but not on Pippa's
 peters_account.add_interest()
 paulas_account.add_interest()
 
-# Выводим все балансы счетов
+# Print all account balances
 print(peters_account.balance)
 print(paulas_account.balance)
 print(pippas_account.balance)
@@ -115,12 +115,12 @@ class BankAccount:
         self.balance = balance
         self.annual_interest = annual_interest
 
-    # Этот метод добавляет годовой процент к балансу счета
+    # This method adds the annual interest to the balance of the account
     def add_interest(self):
         self.balance += self.balance * self.annual_interest
 
-    # Этот метод "снимает" деньги со счета
-    # Если снятие успешно, метод возвращает True, иначе False
+    # This method "withdraws" money from the account
+    # If the withdrawal is successful the method returns True, and False otherwise
     def withdraw(self, amount: float):
         if amount <= self.balance:
             self.balance -= amount
@@ -128,24 +128,24 @@ class BankAccount:
 
         return False
 
-peters_account = BankAccount("12345-678", "Петр Питон", 1500.0, 0.015)
+peters_account = BankAccount("12345-678", "Peter Python", 1500.0, 0.015)
 
 if peters_account.withdraw(1000):
-    print("Снятие прошло успешно, баланс теперь", peters_account.balance)
+    print("The withdrawal was successful, the balance is now", peters_account.balance)
 else:
-    print("Снятие неуспешно, баланс недостаточен")
+    print("The withdrawal was unsuccessful, the balance is insufficient")
 
-# Попробуем снова
+# Yritetään uudestaan
 if peters_account.withdraw(1000):
-    print("Снятие прошло успешно, баланс теперь", peters_account.balance)
+    print("The withdrawal was successful, the balance is now", peters_account.balance)
 else:
-    print("Снятие неуспешно, баланс недостаточен")
+    print("The withdrawal was unsuccessful, the balance is insufficient")
 ```
 
 <sample-output>
 
-Снятие прошло успешно, баланс теперь 500.0
-Снятие неуспешно, баланс недостаточен
+The withdrawal was successful, the balance is now 500.0
+The withdrawal was unsuccessful, the balance is insufficient
 
 </sample-output>
 
@@ -154,24 +154,24 @@ else:
 Добавление метода автоматически не скрывает атрибут. Даже несмотря на то, что определение класса `BankAccount` содержит метод `withdraw` для снятия денег, клиентский код все еще может обращаться и изменять атрибут `balance` напрямую:
 
 ```python
-peters_account = BankAccount("12345-678", "Петр Питон", 1500.0, 0.015)
+peters_account = BankAccount("12345-678", "Peter Python", 1500.0, 0.015)
 
-# Попытка снять 2000
+# Attempt to withdraw 2000
 if peters_account.withdraw(2000):
-    print("Снятие прошло успешно, баланс теперь", peters_account.balance)
+    print("The withdrawal was successful, the balance is now", peters_account.balance)
 else:
-    print("Снятие неуспешно, баланс недостаточен")
+    print("The withdrawal was unsuccessful, the balance is insufficient")
 
-    # "Принудительно" снимаем 2000
+    # "Force" the withdrawal of 2000
     peters_account.balance -= 2000
 
-print("Баланс теперь:", peters_account.balance)
+print("The balance is now:", peters_account.balance)
 ```
 
 <sample-output>
 
-Снятие неуспешно, баланс недостаточен
-Баланс теперь: -500.0
+The withdrawal was unsuccessful, the balance is insufficient
+The balance is now: -500.0
 
 </sample-output>
 
@@ -189,12 +189,12 @@ class DecreasingCounter:
         self.value = initial_value
 
     def print_value(self):
-        print("значение:", self.value)
+        print("value:", self.value)
 
     def decrease(self):
         pass
 
-    # определите остальные ваши методы здесь
+    # define the rest of your methods here
 ```
 
 Класс теперь может использоваться, как показано ниже, и должен производить следующий вывод после завершения первой части упражнения:
@@ -210,9 +210,9 @@ counter.print_value()
 
 <sample-output>
 
-значение: 10
-значение: 9
-значение: 8
+value: 10
+value: 9
+value: 8
 
 </sample-output>
 
@@ -238,10 +238,10 @@ counter.print_value()
 
 <sample-output>
 
-значение: 2
-значение: 1
-значение: 0
-значение: 0
+value: 2
+value: 1
+value: 0
+value: 0
 
 </sample-output>
 
@@ -258,8 +258,8 @@ counter.print_value()
 
 <sample-output>
 
-значение: 100
-значение: 0
+value: 100
+value: 0
 
 </sample-output>
 
@@ -280,8 +280,8 @@ counter.print_value()
 
 <sample-output>
 
-значение: 51
-значение: 55
+value: 51
+value: 55
 
 </sample-output>
 
@@ -295,7 +295,7 @@ from datetime import date
 class PersonalBest:
 
     def __init__(self, player: str, day: int, month: int, year: int, points: int):
-        # Значения по умолчанию
+        # Default values
         self.player = ""
         self.date_of_pb = date(1900, 1, 1)
         self.points = 0
@@ -309,41 +309,41 @@ class PersonalBest:
         if self.points_ok(points):
             self.points = points
 
-    # Вспомогательные методы для проверки корректности аргументов
+    # Helper methods to check the arguments are valid
     def name_ok(self, name: str):
-        return len(name) >= 2 # Имя должно быть минимум два символа
+        return len(name) >= 2 # Name should be at least two characters long
 
     def date_ok(self, day, month, year):
         try:
             date(year, month, day)
             return True
         except:
-            # исключение вызывается, если аргументы некорректны
+            # an exception is raised if the arguments are not valid
             return False
 
     def points_ok(self, points):
         return points >= 0
 
 if __name__ == "__main__":
-    result1 = PersonalBest("Петр", 1, 11, 2020, 235)
+    result1 = PersonalBest("Peter", 1, 11, 2020, 235)
     print(result1.points)
     print(result1.player)
     print(result1.date_of_pb)
 
-    # Дата была некорректной
-    result2 = PersonalBest("Паула", 4, 13, 2019, 4555)
+    # The date was not valid
+    result2 = PersonalBest("Paula", 4, 13, 2019, 4555)
     print(result2.points)
     print(result2.player)
-    print(result2.date_of_pb) # Выводит значение по умолчанию 1900-01-01
+    print(result2.date_of_pb) # Tulostaa oletusarvon 1900-01-01
 ```
 
 <sample-output>
 
 235
-Петр
+Peter
 2020-11-01
 4555
-Паула
+Paula
 1900-01-01
 
 </sample-output>
@@ -363,17 +363,17 @@ class BonusCard:
         self.balance = balance
 
     def add_bonus(self):
-        # Переменная bonus ниже является локальной переменной.
-        # Она не является атрибутом данных объекта.
-        # К ней нельзя обращаться напрямую через объект.
+        # The variable bonus below is a local variable.
+        # It is not a data attribute of the object.
+        # It can not be accessed directly through the object.
         bonus = self.balance * 0.25
         self.balance += bonus
 
     def add_superbonus(self):
-        # Переменная superbonus также является локальной переменной.
-        # Обычно вспомогательные переменные являются локальными переменными, потому что
-        # нет необходимости обращаться к ним из других
-        # методов в классе или напрямую через объект.
+        # The superbonus variable is also a local variable.
+        # Usually helper variables are local variables because
+        # there is no need to access them from the other
+        # methods in the class or directly through an object.
         superbonus = self.balance * 0.5
         self.balance += superbonus
 
@@ -395,21 +395,21 @@ class BonusCard:
 
 ```python
 if __name__ == "__main__":
-    peter = Person("Петр Питонс")
+    peter = Person("Peter Pythons")
     print(peter.return_first_name())
     print(peter.return_last_name())
 
-    paula = Person("Паула Питоннен")
+    paula = Person("Paula Pythonnen")
     print(paula.return_first_name())
     print(paula.return_last_name())
 ```
 
 <sample-output>
 
-Петр
-Питонс
-Паула
-Питоннен
+Peter
+Pythons
+Paula
+Pythonnen
 
 </sample-output>
 
@@ -449,12 +449,12 @@ stats.add_number(3)
 stats.add_number(5)
 stats.add_number(1)
 stats.add_number(2)
-print("Чисел добавлено:", stats.count_numbers())
+print("Numbers added:", stats.count_numbers())
 ```
 
 <sample-output>
 
-Чисел добавлено: 4
+Numbers added: 4
 
 </sample-output>
 
@@ -471,16 +471,16 @@ stats.add_number(3)
 stats.add_number(5)
 stats.add_number(1)
 stats.add_number(2)
-print("Чисел добавлено:", stats.count_numbers())
-print("Сумма чисел:", stats.get_sum())
-print("Среднее чисел:", stats.average())
+print("Numbers added:", stats.count_numbers())
+print("Sum of numbers:", stats.get_sum())
+print("Mean of numbers:", stats.average())
 ```
 
 <sample-output>
 
-Чисел добавлено: 4
-Сумма чисел: 11
-Среднее чисел: 2.75
+Numbers added: 4
+Sum of numbers: 11
+Mean of numbers: 2.75
 
 </sample-output>
 
@@ -496,14 +496,14 @@ print("Среднее чисел:", stats.average())
 
 <sample-output>
 
-Пожалуйста, введите целые числа:
+Please type in integer numbers:
 **4**
 **2**
 **5**
 **2**
 **-1**
-Сумма чисел: 13
-Среднее чисел: 3.25
+Sum of numbers: 13
+Mean of numbers: 3.25
 
 </sample-output>
 
@@ -519,16 +519,16 @@ print("Среднее чисел:", stats.average())
 
 <sample-output>
 
-Пожалуйста, введите целые числа:
+Please type in integer numbers:
 **4**
 **2**
 **5**
 **2**
 **-1**
-Сумма чисел: 13
-Среднее чисел: 3.25
-Сумма четных чисел: 8
-Сумма нечетных чисел: 5
+Sum of numbers: 13
+Mean of numbers: 3.25
+Sum of even numbers: 8
+Sum of odd numbers: 5
 
 </sample-output>
 

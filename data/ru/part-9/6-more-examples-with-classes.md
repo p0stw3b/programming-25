@@ -19,22 +19,22 @@ hidden: false
 import math
 
 class Point:
-    """ Класс представляет точку в двумерном пространстве """
+    """ The class represents a point in two-dimensional space """
 
     def __init__(self, x: float, y: float):
-        # Эти атрибуты публичны, потому что любое значение приемлемо для x и y
+        # These attributes are public because any value is acceptable for x and y
         self.x = x
         self.y = y
 
-    # Этот метод класса возвращает новую точку в начале координат (0, 0)
-    # Возможно вернуть новый экземпляр класса изнутри класса
+    # This class method returns a new Point at origo (0, 0)
+    # It is possible to return a new instance of the class from within the class
     @classmethod
     def origo(cls):
         return Point(0, 0)
 
-    # Этот метод класса создает новую точку на основе существующей точки
-    # Исходная точка может быть отражена по любой или обеим осям x и y
-    # Например, точка (1, 3), отраженная по оси x, становится (1, -3)
+    # This class method creates a new Point based on an existing Point
+    # The original Point can be mirrored on either or both of the x and y axes
+    # For example, the Point (1, 3) mirrored on the x-axis is (1, -3)
     @classmethod
     def mirrored(cls, point: "Point", mirror_x: bool, mirror_y: bool):
         x = point.x
@@ -51,19 +51,19 @@ class Point:
 
 
 class Line:
-    """ Класс представляет отрезок в двумерном пространстве """
+    """ The class represents a line segment in two-dimensional space """
 
     def __init__(self, beginning: Point, end: Point):
-        # Эти атрибуты публичны, потому что любые две точки приемлемы
+        # These attributes are public because any two Points are acceptable
         self.beginning = beginning
         self.end = end
 
-    # Этот метод использует теорему Пифагора для вычисления длины отрезка
+    # This method uses the Pythagorean theorem to calculate the length of the line segment
     def length(self):
         sum_of_squares = (self.end.x - self.beginning.x) ** 2 + (self.end.y - self.beginning.y) ** 2
         return math.sqrt(sum_of_squares)
 
-    # Этот метод возвращает точку в середине отрезка
+    # This method returns the Point in the middle of the line segment
     def centre_point(self):
         centre_x = (self.beginning.x + self.end.x) / 2
         centre_y = (self.beginning.y + self.end.y) / 2
@@ -112,18 +112,18 @@ print(line)
 
 ```python
 class Student:
-    """ Этот класс моделирует студента """
+    """ This class models a student """
 
     def __init__(self, name: str, student_number: str, credits: int = 0, notes: str = ""):
-        # вызов метода сеттера для атрибута name
+        # calling the setter method for the name attribute
         self.name = name
 
         if len(student_number) < 5:
-            raise ValueError("Номер студента должен иметь не менее пяти символов")
+            raise ValueError("A student number should have at least five characters")
 
         self.__student_number = student_number
 
-        # вызов метода сеттера для атрибута credits
+        # calling the setter method for the credits attribute
         self.credits = credits
 
         self.__notes = notes
@@ -137,7 +137,7 @@ class Student:
         if name != "":
             self.__name = name
         else:
-            raise ValueError("Имя не может быть пустой строкой")
+            raise ValueError("The name cannot be an empty string")
 
     @property
     def student_number(self):
@@ -152,7 +152,7 @@ class Student:
         if op >= 0:
             self.__credits = op
         else:
-            raise ValueError("Количество учебных кредитов не может быть меньше нуля")
+            raise ValueError("The number of study credits cannot be below zero")
 
     @property
     def notes(self):
@@ -163,44 +163,44 @@ class Student:
         self.__notes = notes
 
     def summary(self):
-        print(f"Студент {self.__name} ({self.student_number}):")
-        print(f"- кредиты: {self.__credits}")
-        print(f"- заметки: {self.notes}")
+        print(f"Student {self.__name} ({self.student_number}):")
+        print(f"- credits: {self.__credits}")
+        print(f"- notes: {self.notes}")
 ```
 
 ```python
-# Передача только имени и номера студента в качестве аргументов в конструктор
-student1 = Student("Салли Студент", "12345")
+# Passing only the name and the student number as arguments to the constructor
+student1 = Student("Sally Student", "12345")
 student1.summary()
 
-# Передача имени, номера студента и количества учебных кредитов
-student2 = Student("Сэсси Студент", "54321", 25)
+# Passing the name, the student number and the number of study credits
+student2 = Student("Sassy Student", "54321", 25)
 student2.summary()
 
-# Передача значений для всех параметров
-student3 = Student("Сол Студент", "99999", 140, "дополнительное время на экзамене")
+# Passing values for all the parameters
+student3 = Student("Saul Student", "99999", 140, "extra time in exam")
 student3.summary()
 
-# Передача значения для заметок, но не для учебных кредитов
-# Примечание: параметр должен быть назван теперь, когда аргументы не в порядке
-student4 = Student("Сэнди Студент", "98765", notes="отсутствовал в учебном году 20-21")
+# Passing a value for notes, but not for study credits
+# NB: the parameter must be named now that the arguments are not in order
+student4 = Student("Sandy Student", "98765", notes="absent in academic year 20-21")
 student4.summary()
 ```
 
 <sample-output>
 
-Студент Салли Студент (12345):
-- кредиты: 0
-- заметки:
-Студент Сэсси Студент (54321):
-- кредиты: 25
-- заметки:
-Студент Сол Студент (99999):
-- кредиты: 140
-- заметки: дополнительное время на экзамене
-Студент Сэнди Студент (98765):
-- кредиты: 0
-- заметки: отсутствовал в учебном году 20-21
+Student Sally Student (12345):
+- credits: 0
+- notes:
+Student Sassy Student (54321):
+- credits: 25
+- notes:
+Student Saul Student (99999):
+- credits: 140
+- notes: extra time in exam
+Student Sandy Student (98765):
+- credits: 0
+- notes: absent in academic year 20-21
 
 </sample-output>
 
@@ -219,11 +219,11 @@ class Student:
 ```
 
 ```python
-student1 = Student("Салли Студент")
-student2 = Student("Сэсси Студент")
+student1 = Student("Sally Student")
+student2 = Student("Sassy Student")
 
-student1.add_course("ОП")
-student1.add_course("АП")
+student1.add_course("ItP")
+student1.add_course("ACiP")
 
 print(student1.completed_courses)
 print(student2.completed_courses)
@@ -231,8 +231,8 @@ print(student2.completed_courses)
 
 <sample-output>
 
-['ОП', 'АП']
-['ОП', 'АП']
+['ItP', 'ACiP']
+['ItP', 'ACiP']
 
 </sample-output>
 
@@ -240,8 +240,8 @@ print(student2.completed_courses)
 
 ```python
 courses = []
-student1 = Student("Салли Студент", courses)
-student2 = Student("Сэсси Студент", courses)
+student1 = Student("Sally Student", courses)
+student2 = Student("Sassy Student", courses)
 ```
 
 Значения по умолчанию параметров никогда не должны быть экземплярами более сложных, изменяемых структур данных, таких как списки. Проблему можно обойти, внеся следующие изменения в конструктор класса `Student`:
@@ -260,11 +260,11 @@ class Student:
 ```
 
 ```python
-student1 = Student("Салли Студент")
-student2 = Student("Сэсси Студент")
+student1 = Student("Sally Student")
+student2 = Student("Sassy Student")
 
-student1.add_course("ОП")
-student1.add_course("АП")
+student1.add_course("ItP")
+student1.add_course("ACiP")
 
 print(student1.completed_courses)
 print(student2.completed_courses)
@@ -272,7 +272,7 @@ print(student2.completed_courses)
 
 <sample-output>
 
-['ОП', 'АП']
+['ItP', 'ACiP']
 []
 
 </sample-output>
@@ -298,21 +298,21 @@ print(student2.completed_courses)
 book = Item("ABC Book", 2)
 phone = Item("Nokia 3210", 1)
 
-print("Название книги:", book.name())
-print("Вес книги:", book.weight())
+print("Name of the book:", book.name())
+print("Weight of the book:", book.weight())
 
-print("Книга:", book)
-print("Телефон:", phone)
+print("Book:", book)
+print("Phone:", phone)
 ```
 
 Ваша программа должна вывести это:
 
 <sample-output>
 
-Название книги: ABC Book
-Вес книги: 2
-Книга: ABC Book (2 kg)
-Телефон: Nokia 3210 (1 kg)
+Name of the book: ABC Book
+Weight of the book: 2
+Book: ABC Book (2 kg)
+Phone: Nokia 3210 (1 kg)
 
 </sample-output>
 
@@ -402,21 +402,21 @@ suitcase.add_item(book)
 suitcase.add_item(phone)
 suitcase.add_item(brick)
 
-print("Чемодан содержит следующие предметы:")
+print("The suitcase contains the following items:")
 suitcase.print_items()
 combined_weight = suitcase.weight()
-print(f"Общий вес: {combined_weight} kg")
+print(f"Combined weight: {combined_weight} kg")
 ```
 
 Выполнение приведенной выше программы должно вывести это:
 
 <sample-output>
 
-Чемодан содержит следующие предметы:
+The suitcase contains the following items:
 ABC Book (2 kg)
 Nokia 3210 (1 kg)
 Brick (4 kg)
-Общий вес: 7 kg
+Combined weight: 7 kg
 
 </sample-output>
 
@@ -439,14 +439,14 @@ suitcase.add_item(phone)
 suitcase.add_item(brick)
 
 heaviest = suitcase.heaviest_item()
-print(f"Самый тяжелый предмет: {heaviest}")
+print(f"The heaviest item: {heaviest}")
 ```
 
 Выполнение приведенной выше программы должно вывести это:
 
 <sample-output>
 
-Самый тяжелый предмет: Brick (4 kg)
+The heaviest item: Brick (4 kg)
 
 </sample-output>
 
@@ -514,7 +514,7 @@ cargo_hold = CargoHold(1000)
 cargo_hold.add_suitcase(adas_suitcase)
 cargo_hold.add_suitcase(peters_suitcase)
 
-print("Чемоданы в грузовом отсеке содержат следующие предметы:")
+print("The suitcases in the cargo hold contain the following items:")
 cargo_hold.print_items()
 ```
 
@@ -522,7 +522,7 @@ cargo_hold.print_items()
 
 <sample-output>
 
-Чемоданы в грузовом отсеке содержат следующие предметы:
+The suitcases in the cargo hold contain the following items:
 ABC Book (2 kg)
 Nokia 3210 (1 kg)
 Brick (4 kg)

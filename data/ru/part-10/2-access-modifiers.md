@@ -18,10 +18,10 @@ hidden: false
 ```python
 
 class Notebook:
-    """ Notebook хранит заметки в строковом формате """
+    """ A Notebook stores notes in string format """
 
     def __init__(self):
-        # приватный атрибут
+        # private attribute
         self.__notes = []
 
     def add_note(self, note):
@@ -39,16 +39,16 @@ class Notebook:
 
 ```python
 class NotebookPro(Notebook):
-    """ Лучший Notebook с функциональностью поиска """
+    """ A better Notebook with search functionality """
     def __init__(self):
-        # Это нормально, конструктор публичный несмотря на подчеркивания
+        # This is OK, the constructor is public despite the underscores
         super().__init__()
 
-    # Это вызывает ошибку
+    # This causes an error
     def find_notes(self, search_term):
         found = []
-        # атрибут __notes приватный
-        # производный класс не может получить к нему прямой доступ
+        # the attribute __notes is private
+        # the derived class can't access it directly
         for note in self.__notes:
             if search_term in note:
                 found.append(note)
@@ -84,10 +84,10 @@ def __init__(self):
 
 ```python
 class Notebook:
-    """ Notebook хранит заметки в строковом формате """
+    """ A Notebook stores notes in string format """
 
     def __init__(self):
-        # защищенный атрибут
+        # protected attribute
         self._notes = []
 
     def add_note(self, note):
@@ -100,12 +100,12 @@ class Notebook:
         return ",".join(self._notes)
 
 class NotebookPro(Notebook):
-    """ Лучший Notebook с функциональностью поиска """
+    """ A better Notebook with search functionality """
     def __init__(self):
-        # Это нормально, конструктор публичный несмотря на подчеркивания
+        # This is OK, the constructor is public despite the underscores
         super().__init__()
 
-    # Это работает, защищенный атрибут доступен производному классу
+    # This works, the protected attribute is accessible to the derived class
     def find_notes(self, search_term):
         found = []
         for note in self._notes:
@@ -145,25 +145,25 @@ class Footballer(Person):
 
     def __init__(self, name: str, nickname: str, position: str):
         super().__init__(name)
-        # метод доступен, поскольку он защищен в базовом классе
+        # the method is available as it is protected in the base class
         self.__nickname = self._capitalize_initials(nickname)
         self.__position = position
 
     def __repr__(self):
-        r =  f"Футболист - имя: {self._name}, прозвище: {self.__nickname}"
-        r += f", позиция: {self.__position}"
+        r =  f"Footballer - name: {self._name}, nickname: {self.__nickname}"
+        r += f", position: {self.__position}"
         return r
 
-# Тестируем классы
+# Test the classes
 if __name__ == "__main__":
-    jp = Footballer("петр питонс", "пайпер", "нападающий")
+    jp = Footballer("peter pythons", "pyper", "forward")
     print(jp)
 
 ```
 
 <sample-output>
 
-Футболист - имя: Петр Питонс, прозвище: Пайпер, позиция: нападающий
+Footballer - name: Peter Pythons, nickname: Pyper, position: forward
 
 </sample-output>
 
@@ -183,9 +183,9 @@ if __name__ == "__main__":
 Пример класса в действии:
 
 ```python
-superperson = SuperHero("SuperPerson", "Суперскорость, суперсила")
-invisible = SuperHero("Invisible Inca", "Невидимость")
-revengers = SuperGroup("Мстители", "Изумрудный город")
+superperson = SuperHero("SuperPerson", "Superspeed, superstrength")
+invisible = SuperHero("Invisible Inca", "Invisibility")
+revengers = SuperGroup("Revengers", "Emerald City")
 
 revengers.add_member(superperson)
 revengers.add_member(invisible)
@@ -194,10 +194,10 @@ revengers.print_group()
 
 <sample-output>
 
-Мстители, Изумрудный город
-Члены:
-SuperPerson, суперспособности: Суперскорость, суперсила
-Invisible Inca, суперспособности: Невидимость
+Revengers, Emerald City
+Members:
+SuperPerson, superpowers: Superspeed, superstrength
+Invisible Inca, superpowers: Invisibility
 
 </sample-output>
 
@@ -229,24 +229,24 @@ Invisible Inca, суперспособности: Невидимость
 
 ```python
 diminuendo = SecretMagicPotion("Diminuendo maximus", "hocuspocus")
-diminuendo.add_ingredient("Поганка", 1.5, "hocuspocus")
-diminuendo.add_ingredient("Волшебный песок", 3.0, "hocuspocus")
-diminuendo.add_ingredient("Икра лягушки", 4.0, "hocuspocus")
+diminuendo.add_ingredient("Toadstool", 1.5, "hocuspocus")
+diminuendo.add_ingredient("Magic sand", 3.0, "hocuspocus")
+diminuendo.add_ingredient("Frogspawn", 4.0, "hocuspocus")
 diminuendo.print_recipe("hocuspocus")
 
-diminuendo.print_recipe("pocushocus") # НЕВЕРНЫЙ пароль!
+diminuendo.print_recipe("pocushocus") # WRONG password!
 ```
 
 <sample-output>
 
 Diminuendo maximus:
-Поганка 1.5 грамм
-Волшебный песок 3.0 грамм
-Икра лягушки 4.0 грамм
+Toadstool 1.5 grams
+Magic sand 3.0 grams
+Frogspawn 4.0 grams
 Traceback (most recent call last):
   File "secret_magic_potion.py", line 98, in <module>
-    raise ValueError("Неверный пароль!")
-ValueError: Неверный пароль!
+    raise ValueError("Wrong password!")
+ValueError: Wrong password!
 
 </sample-output>
 

@@ -21,43 +21,43 @@ hidden: false
 Ту же функциональность можно достичь без команды `break`, используя подходящее условие. Две программы ниже просят пользователя ввести числа и вычисляют сумму чисел до тех пор, пока пользователь не введёт -1.
 
 ```python
-# 1-я версия с использованием команды break
+# 1st version using the break command
 
 sum = 0
 
 while True:
-    number = int(input("Пожалуйста, введите число, -1 для выхода: "))
+    number = int(input("Please type in a number, -1 to exit: "))
     if number == -1:
         break
     sum += number
 
-print (f"Сумма равна {sum}")
+print (f"The sum is {sum}")
 ```
 
 ```python
-# 2-я версия без команды break
+# 2nd version without the break command
 
 sum = 0
 number = 0
 
 while number != -1:
-    number = int(input("Пожалуйста, введите число, -1 для выхода: "))
+    number = int(input("Please type in a number, -1 to exit: "))
     if number != -1:
         sum += number
 
-print (f"Сумма равна {sum}")
+print (f"The sum is {sum}")
 ```
 
 Обе программы выводят одно и то же с одинаковыми входными данными, например:
 
 <sample-output>
 
-Пожалуйста, введите число, -1 для выхода: **2**
-Пожалуйста, введите число, -1 для выхода: **4**
-Пожалуйста, введите число, -1 для выхода: **5**
-Пожалуйста, введите число, -1 для выхода: **3**
-Пожалуйста, введите число, -1 для выхода: **-1**
-Сумма равна 14
+Please type in a number, -1 to exit: **2**
+Please type in a number, -1 to exit: **4**
+Please type in a number, -1 to exit: **5**
+Please type in a number, -1 to exit: **3**
+Please type in a number, -1 to exit: **-1**
+The sum is 14
 
 </sample-output>
 
@@ -69,34 +69,34 @@ print (f"Сумма равна {sum}")
 sum = 0
 
 while sum <= 100:
-    number = int(input("Пожалуйста, введите число, -1 для выхода: "))
+    number = int(input("Please type in a number, -1 to exit: "))
     if number == -1:
         break
     sum += number
 
-print (f"Сумма равна {sum}")
+print (f"The sum is {sum}")
 ```
 
 Некоторые примеры выполнения программы:
 
 <sample-output>
 
-Пожалуйста, введите число, -1 для выхода: **15**
-Пожалуйста, введите число, -1 для выхода: **8**
-Пожалуйста, введите число, -1 для выхода: **21**
-Пожалуйста, введите число, -1 для выхода: **-1**
-Сумма равна 44
+Please type in a number, -1 to exit: **15**
+Please type in a number, -1 to exit: **8**
+Please type in a number, -1 to exit: **21**
+Please type in a number, -1 to exit: **-1**
+The sum is 44
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число, -1 для выхода: **15**
-Пожалуйста, введите число, -1 для выхода: **8**
-Пожалуйста, введите число, -1 для выхода: **21**
-Пожалуйста, введите число, -1 для выхода: **45**
-Пожалуйста, введите число, -1 для выхода: **17**
-Сумма равна 106
+Please type in a number, -1 to exit: **15**
+Please type in a number, -1 to exit: **8**
+Please type in a number, -1 to exit: **21**
+Please type in a number, -1 to exit: **45**
+Please type in a number, -1 to exit: **17**
+The sum is 106
 
 </sample-output>
 
@@ -108,14 +108,14 @@ print (f"Сумма равна {sum}")
 sum = 0
 
 while True:
-    number = int(input("Пожалуйста, введите число, -1 для выхода: "))
+    number = int(input("Please type in a number, -1 to exit: "))
     if number == -1:
         break
     sum += number
     if sum > 100:
         break
 
-print (f"Сумма равна {sum}")
+print (f"The sum is {sum}")
 ```
 ## Команда continue
 
@@ -129,24 +129,24 @@ print (f"Сумма равна {sum}")
 sum = 0
 
 while True:
-    number = int(input("Пожалуйста, введите число, -1 для выхода: "))
+    number = int(input("Please type in a number, -1 to exit: "))
     if number == -1:
         break
     if number >= 10:
         continue
     sum += number
 
-print (f"Сумма равна {sum}")
+print (f"The sum is {sum}")
 ```
 
 <sample-output>
 
-Пожалуйста, введите число, -1 для выхода: **4**
-Пожалуйста, введите число, -1 для выхода: **7**
-Пожалуйста, введите число, -1 для выхода: **99**
-Пожалуйста, введите число, -1 для выхода: **5**
-Пожалуйста, введите число, -1 для выхода: **-1**
-Сумма равна 16
+Please type in a number, -1 to exit: **4**
+Please type in a number, -1 to exit: **7**
+Please type in a number, -1 to exit: **99**
+Please type in a number, -1 to exit: **5**
+Please type in a number, -1 to exit: **-1**
+The sum is 16
 
 </sample-output>
 
@@ -156,7 +156,7 @@ print (f"Сумма равна {sum}")
 
 ```python
 while True:
-    number = int(input("Пожалуйста, введите число: "))
+    number = int(input("Please type in a number: "))
     if number == -1:
         break
     while number > 0:
@@ -166,23 +166,61 @@ while True:
 
 <sample-output>
 
-Пожалуйста, введите число: **4**
+Please type in a number: **4**
 4
 3
 2
 1
-Пожалуйста, введите число: **3**
+Please type in a number: **3**
 3
 2
 1
-Пожалуйста, введите число: **6**
+Please type in a number: **6**
 6
 5
 4
 3
 2
 1
-Пожалуйста, введите число: **-1**
+Please type in a number: **-1**
+
+</Sample-output>
+
+When there are nested loops, `break` and `continue` commands only affect the innermost loop which they are a part of. The previous example could also be written like this:
+
+```python
+while True:
+    number = int(input("Please type in a number: "))
+    if number == -1:
+        break
+    while True:
+        if number <= 0:
+            break
+        print(number)
+        number -= 1
+```
+
+Here the latter `break` command only stops the innermost loop, which is used to print the numbers. 
+
+## More helper variables with loops
+
+We've already used helper variables, which increase or decrease with every iteration of a loop, many times before, so the following program should look quite familiar in structure. The program prints out all even numbers above zero until it reaches a limit set by the user:
+
+```python
+limit = int(input("Please type in a number: "))
+i = 0
+while i < limit:
+    print(i)
+    i += 2
+```
+
+<sample-output>
+
+Please type in a number: **8**
+0
+2
+4
+6
 
 </sample-output>
 
@@ -190,7 +228,7 @@ while True:
 
 ```python
 while True:
-    number = int(input("Пожалуйста, введите число: "))
+    number = int(input("Please type in a number: "))
     if number == -1:
         break
     while True:
@@ -207,7 +245,7 @@ while True:
 Мы уже много раз использовали вспомогательные переменные, которые увеличиваются или уменьшаются с каждой итерацией цикла, поэтому следующая программа должна показаться довольно знакомой по структуре. Программа выводит все чётные числа больше нуля до предела, установленного пользователем:
 
 ```python
-limit = int(input("Пожалуйста, введите число: "))
+limit = int(input("Please type in a number: "))
 i = 0
 while i < limit:
     print(i)
@@ -216,11 +254,12 @@ while i < limit:
 
 <sample-output>
 
-Пожалуйста, введите число: **8**
+Please type in a number: **5**
+0 1 2 3 4
+0 1 2 3
+0 1 2
+0 1
 0
-2
-4
-6
 
 </sample-output>
 
@@ -229,7 +268,7 @@ while i < limit:
 Использование вложенных циклов иногда требует отдельной вспомогательной переменной для внутреннего цикла. Программа ниже выводит "числовую пирамиду" на основе числа, данного пользователем:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 while number > 0:
     i = 0
     while i < number:
@@ -241,12 +280,11 @@ while number > 0:
 
 <sample-output>
 
-Пожалуйста, введите число: **5**
-0 1 2 3 4
-0 1 2 3
-0 1 2
-0 1
-0
+Please type in a number: 2
+1 x 1 = 1
+1 x 2 = 2
+2 x 1 = 2
+2 x 2 = 4
 
 </sample-output>
 
@@ -264,17 +302,7 @@ while number > 0:
 
 <sample-output>
 
-Пожалуйста, введите число: 2
-1 x 1 = 1
-1 x 2 = 2
-2 x 1 = 2
-2 x 2 = 4
-
-</sample-output>
-
-<sample-output>
-
-Пожалуйста, введите число: 3
+Please type in a number: 3
 1 x 1 = 1
 1 x 2 = 2
 1 x 3 = 3
@@ -284,6 +312,18 @@ while number > 0:
 3 x 1 = 3
 3 x 2 = 6
 3 x 3 = 9
+
+</sample-output>
+
+<sample-output>
+
+Please type in a sentence: **Humpty Dumpty sat on a wall**
+H
+D
+s
+o
+a
+w
 
 </sample-output>
 
@@ -298,12 +338,12 @@ while number > 0:
 
 <sample-output>
 
-Пожалуйста, введите предложение: **Шалтай Болтай сидел на стене**
-Ш
-Б
-с
-н
-с
+Please type in a number: **3**
+The factorial of the number 3 is 6
+Please type in a number: **4**
+The factorial of the number 4 is 24
+Please type in a number: **-1**
+Thanks and bye!
 
 </sample-output>
 
@@ -319,21 +359,21 @@ while number > 0:
 
 <sample-output>
 
-Пожалуйста, введите число: **3**
-Факториал числа 3 равен 6
-Пожалуйста, введите число: **4**
-Факториал числа 4 равен 24
-Пожалуйста, введите число: **-1**
-Спасибо и до свидания!
+Please type in a number: **1**
+The factorial of the number 1 is 1
+Please type in a number: **0**
+Thanks and bye!
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите число: **1**
-Факториал числа 1 равен 1
-Пожалуйста, введите число: **0**
-Спасибо и до свидания!
+Please type in a number: **5**
+2
+1
+4
+3
+5
 
 </sample-output>
 
@@ -345,24 +385,24 @@ while number > 0:
 
 <sample-output>
 
-Пожалуйста, введите число: **5**
-2
-1
-4
-3
-5
-
-</sample-output>
-
-<sample-output>
-
-Пожалуйста, введите число: **6**
+Please type in a number: **6**
 2
 1
 4
 3
 6
 5
+
+</sample-output>
+
+<sample-output>
+
+Please type in a number: **5**
+1
+5
+2
+4
+3
 
 </sample-output>
 
@@ -374,12 +414,13 @@ while number > 0:
 
 <sample-output>
 
-Пожалуйста, введите число: **5**
+Please type in a number: **6**
 1
-5
+6
 2
-4
+5
 3
+4
 
 </sample-output>
 

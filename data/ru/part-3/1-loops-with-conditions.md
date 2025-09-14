@@ -30,7 +30,7 @@ hidden: false
 В предыдущем разделе мы научились использовать цикл `while True` для повторения фрагментов кода. В этой конструкции условие цикла — `True`, поэтому условие выполняется каждый раз. Нам нужно было каждый раз явно выходить из цикла, чтобы избежать бесконечного цикла. Например:
 
 ```python
-# Печатаем числа, пока переменная a не станет равна 5
+# Print numbers until the variable a equals 5
 a = 1
 while True:
     print(a)
@@ -51,8 +51,8 @@ while True:
 Конечно, условие не всегда должно быть `True`, вместо этого в качестве условия можно использовать любое логическое выражение. Общая структура оператора `while` выглядит следующим образом:
 
 ```python
-while <условие>:
-    <блок>
+while <condition>:
+    <block>
 ```
 
 Идея здесь заключается в том, что выполнение идёт туда и обратно, проверяя, истинно ли условие, и выполняя код внутри блока снова и снова. Если условие в какой-то момент становится ложным, выполнение программы продолжается со строки после блока `while`.
@@ -62,27 +62,27 @@ while <условие>:
 В следующем цикле у нас есть условие `number < 10`. Блок внутри цикла выполняется, только если переменная number меньше 10.
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 while number < 10:
     print(number)
     number += 1
 
-print("Выполнение завершено.")
+print("Execution finished.")
 ```
 
 Это может вывести:
 
 <sample-output>
 
-Пожалуйста, введите число: **4**
+Please type in a number: **4**
 4
 5
 6
 7
 8
 9
-Выполнение завершено.
+Execution finished.
 
 </sample-output>
 
@@ -90,8 +90,8 @@ print("Выполнение завершено.")
 
 <sample-output>
 
-Пожалуйста, введите число: **12**
-Выполнение завершено.
+Please type in a number: **12**
+Execution finished.
 
 </sample-output>
 
@@ -105,17 +105,17 @@ _Инициализация_ относится к установке начал
 
 <!--- это здесь на случай, если следующее изображение нужно обновить
 ```python
-# Запрашиваем у пользователя число
-number = int(input("Пожалуйста, введите число: "))
+# Ask the user for a number
+number = int(input("Please type in a number: "))
 
-# Повторяем, пока число меньше 10
+# Repeat while the number is less than 10
 while number < 10:
 
-    # Выводим и увеличиваем
+    # Print out and increment
     print(number)
     number += 1
 
-print("Выполнение завершено.")
+print("Execution finished.")
 ```
 -->
 <img src="../../part-3/3_1_2.png">
@@ -128,7 +128,7 @@ number = 1
 while number < 10:
     print(number)
 
-print("Выполнение завершено.")
+print("Execution finished.")
 ```
 
 Здесь значение переменной `number` никогда не изменяется. Программа зависает в бесконечном цикле, и один и тот же фрагмент кода повторяется снова и снова, пока пользователь не остановит выполнение, например, нажав `Control` + `C`:
@@ -140,7 +140,7 @@ print("Выполнение завершено.")
 1
 1
 1
-(продолжается до бесконечности...)
+(continued ad infinitum...)
 
 </sample-output>
 
@@ -155,7 +155,7 @@ print("Выполнение завершено.")
 4
 6
 8
-и т.д...
+etc...
 </sample-output>
 
 </in-browser-programming-exercise>
@@ -166,25 +166,25 @@ print("Выполнение завершено.")
 В программе ниже есть синтаксические проблемы:
 
 ```python
-print("Вы готовы?")
-number = int(input("Пожалуйста, введите число: "))
+print("Are you ready?")
+number = int(input("Please type in a number: "))
 while number = 0:
 print(number)
-print("Поехали!")
+print("Now!")
 ```
 
 Пожалуйста, исправьте её так, чтобы она выводила следующее:
 
 <sample-output>
 
-Вы готовы?
-Пожалуйста, введите число: **5**
+Are you ready?
+Please type in a number: **5**
 5
 4
 3
 2
 1
-Поехали!
+Now!
 
 </sample-output>
 
@@ -198,7 +198,7 @@ print("Поехали!")
 Любое логическое выражение или их комбинация является допустимым условием в цикле. Например, следующая программа выводит каждое третье число, но только пока число меньше 100 и не делится на 5:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 while number < 100 and number % 5 != 0:
     print(number)
@@ -209,7 +209,7 @@ while number < 100 and number % 5 != 0:
 
 <sample-output>
 
-Пожалуйста, введите число: **28**
+Please type in a number: **28**
 28
 31
 34
@@ -219,7 +219,7 @@ while number < 100 and number % 5 != 0:
 
 <sample-output>
 
-Пожалуйста, введите число: **96**
+Please type in a number: **96**
 96
 99
 
@@ -230,7 +230,7 @@ while number < 100 and number % 5 != 0:
 Всякий раз, когда вы пишете цикл, вы должны убедиться, что выполнение цикла всегда когда-то закончится. Следующая программа либо завершается, либо нет, в зависимости от входных данных:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 while number != 10:
     print(number)
@@ -241,7 +241,7 @@ while number != 10:
 
 <sample-output>
 
-Пожалуйста, введите число: **4**
+Please type in a number: **4**
 4
 6
 8
@@ -256,7 +256,7 @@ while number != 10:
 
 <sample-output>
 
-Верхний предел: **5**
+Upper limit: **5**
 1
 2
 3
@@ -273,10 +273,10 @@ while number != 10:
 Представьте, что вы пишете какую-то более сложную программу, например, как в следующем упражнении _Степени двойки_. Первые попытки могут выглядеть так:
 
 ```python
-limit = int(input("Верхний предел:"))
+limit = int(input("Upper limit:"))
 number = 1
 while number == limit:
-   # больше кода
+   # more code
 ```
 
 Здесь программа начинается с чтения входных данных и продолжается с наброском цикла и попыткой создать условие.
@@ -288,22 +288,22 @@ while number == limit:
 Один из способов обойти это — "жёстко закодировать" входные данные во время тестирования:
 
 ```python
-# давайте жёстко закодируем входное значение для тестирования
-limit = 8 # int(input("Верхний предел"))
+# let's hard-code the input value for testing
+limit = 8 # int(input("Upper limit"))
 number = 1
 while number == limit:
-   # больше кода 
+   # more code 
 ```
 Когда программа работает с одним жёстко закодированным входом, легко протестировать её с другими жёстко закодированными входными данными. Когда она работает правильно во всех случаях, её можно протестировать с вводом от пользователя.
 
 Этот трюк работает со многими тестами, которыми оцениваются упражнения в этом курсе. Если тест говорит вам, что программа работает неправильно, когда входные данные, скажем, 42, этот ввод можно жёстко закодировать в программу, пока вы ищете источник ошибки:
 
 ```python
-# тест сказал, что программа работает неправильно, когда ввод равен 42
-limit = 42 # int(input("Верхний предел"))
+# the test said the program works incorrectly when the input is 42
+limit = 42 # int(input("Upper limit"))
 number = 1
 while number == limit:
-   # больше кода
+   # more code
 ```
 
 Отладка с помощью операторов print упоминалась несколько раз в [предыдущей части](/ru/part-2) курса. Программы, которые вас просят написать, будут становиться всё сложнее по мере прохождения курса. Количество отладки, которую вам придётся делать, вероятно, увеличится соответственно. Распространённые причины ошибок заключаются в условиях, которые завершают циклы; они могут работать правильно для одних входных данных и не работать для других, и не всегда очевидно, почему так происходит.
@@ -332,7 +332,7 @@ while number == limit:
 
 <sample-output>
 
-Верхний предел: **8**
+Upper limit: **8**
 1
 2
 4
@@ -342,7 +342,7 @@ while number == limit:
 
 <sample-output>
 
-Верхний предел: **20**
+Upper limit: **20**
 1
 2
 4
@@ -353,7 +353,7 @@ while number == limit:
 
 <sample-output>
 
-Верхний предел: **100**
+Upper limit: **100**
 1
 2
 4
@@ -376,8 +376,8 @@ while number == limit:
 
 <sample-output>
 
-Верхний предел: **27**
-Основание: **3**
+Upper limit: **27**
+Base: **3**
 1
 3
 9
@@ -387,8 +387,8 @@ while number == limit:
 
 <sample-output>
 
-Верхний предел: **1234567**
-Основание: **10**
+Upper limit: **1234567**
+Base: **10**
 1
 10
 100
@@ -409,21 +409,21 @@ while number == limit:
 
 <sample-output>
 
-Предел: **2**
+Limit: **2**
 3
 
 </sample-output>
 
 <sample-output>
 
-Предел: **10**
+Limit: **10**
 10
 
 </sample-output>
 
 <sample-output>
 
-Предел: **18**
+Limit: **18**
 21
 
 </sample-output>
@@ -437,25 +437,25 @@ while number == limit:
 В самой [первой неделе курса](/ru/part-1/2-information-from-the-user) мы узнали, что можно "строить" строки из коротких строк с помощью оператора `+`. Например, это допустимый код Python:
 
 ```python
-words = "гордость"
-words = words + ", предрассудки"
-words = words + " и python"
+words = "pride"
+words = words + ", prejudice"
+words = words + " and python"
 
 print(words)
 ```
 
 <sample-output>
 
-гордость, предрассудки и python
+pride, prejudice and python
 
 </sample-output>
 
 Оператор `+=` позволяет нам написать это немного более компактно:
 
 ```python
-words = "гордость"
-words += ", предрассудки"
-words += " и python"
+words = "pride"
+words += ", prejudice"
+words += " and python"
 
 print(words)
 ```
@@ -463,19 +463,19 @@ print(words)
 Это также относится к f-строкам, которые могут пригодиться, если значения, хранящиеся в переменных, нужны как части результирующей строки. Например, это будет работать:
 
 ```python
-course = "Введение в программирование"
+course = "Introduction to Programming"
 grade = 4
 
-verdict = "Вы получили "
-verdict += f"оценку {grade} "
-verdict += f"по курсу {course}"
+verdict = "You have received "
+verdict += f"the grade {grade} "
+verdict += f"from the course {course}"
 
 print(verdict)
 ```
 
 <sample-output>
 
-Вы получили оценку 4 по курсу Введение в программирование
+You have received the grade 4 from the course Introduction to Programming
 
 </sample-output>
 
@@ -489,22 +489,22 @@ print(verdict)
 
 <sample-output>
 
-Предел: **2**
-Последовательная сумма: 1 + 2 = 3
+Limit: **2**
+The consecutive sum: 1 + 2 = 3
 
 </sample-output>
 
 <sample-output>
 
-Предел: **10**
-Последовательная сумма: 1 + 2 + 3 + 4 = 10
+Limit: **10**
+The consecutive sum: 1 + 2 + 3 + 4 = 10
 
 </sample-output>
 
 <sample-output>
 
-Предел: **18**
-Последовательная сумма: 1 + 2 + 3 + 4 + 5 + 6 = 21
+Limit: **18**
+The consecutive sum: 1 + 2 + 3 + 4 + 5 + 6 = 21
 
 </sample-output>
 

@@ -20,17 +20,17 @@ hidden: false
 Например, условие `number >= 5 and number <= 8` определяет, что `number` должно одновременно быть не менее 5 и не более 8. То есть, оно должно быть между 5 и 8.
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 if number >= 5 and number <= 8:
-    print("Число между 5 и 8")
+    print("The number is between 5 and 8")
 ```
 
 Между тем, условие `number < 5 or number > 8` определяет, что `number` должно быть либо меньше 5, либо больше 8. То есть, оно не должно быть в диапазоне от 5 до 8.
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 if number < 5 or number > 8:
-    print("Число не в диапазоне от 5 до 8")
+    print("The number is not within the range of 5 to 8")
 ```
 
 Следующая таблица истинности содержит поведение этих операторов в различных ситуациях:
@@ -52,9 +52,9 @@ False | True
 Приведенный выше пример с _исключенным_ диапазоном от 5 до 8 также можно запрограммировать так:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 if not (number >= 5 and number <= 8):
-    print("Число не в диапазоне от 5 до 8")
+    print("The number is not within the range of 5 to 8")
 ```
 
 Особенно в программировании логические операторы часто называются _булевыми операторами_.
@@ -72,10 +72,10 @@ Python также позволяет упрощенную нотацию для 
 Следующая программа просит пользователя ввести четыре числа. Затем она определяет, какое из четырех является наибольшим, с помощью некоторых условий:
 
 ```python
-n1 = int(input("Число 1: "))
-n2 = int(input("Число 2: "))
-n3 = int(input("Число 3: "))
-n4 = int(input("Число 4: "))
+n1 = int(input("Number 1: "))
+n2 = int(input("Number 2: "))
+n3 = int(input("Number 3: "))
+n4 = int(input("Number 4: "))
 
 if n1 > n2 and n1 > n3 and n1 > n4:
     greatest = n1
@@ -86,16 +86,16 @@ elif n3 > n4:
 else:
     greatest = n4
 
-print(f"{greatest} является наибольшим из чисел.")
+print(f" {greatest} is the greatest of the numbers.")
 ```
 
 <sample-output>
 
-Число 1: **2**
-Число 2: **4**
-Число 3: **1**
-Число 4: **1**
-4 является наибольшим из чисел.
+Number 1: **2**
+Number 2: **4**
+Number 3: **1**
+Number 4: **1**
+4 is the greatest of the numbers.
 
 </sample-output>
 
@@ -109,22 +109,22 @@ print(f"{greatest} является наибольшим из чисел.")
 
 <sample-output>
 
-Сколько вам лет? **13**
-Хорошо, вам 13 лет
+What is your age? **13**
+Ok, you're 13 years old
 
 </sample-output>
 
 <sample-output>
 
-Сколько вам лет? **2**
-Подозреваю, что вы еще не умеете писать...
+What is your age? **2**
+I suspect you can't write quite yet...
 
 </sample-output>
 
 <sample-output>
 
-Сколько вам лет? **-4**
-Это должно быть ошибкой
+What is your age? **-4**
+That must be a mistake
 
 </sample-output>
 
@@ -140,22 +140,22 @@ print(f"{greatest} является наибольшим из чисел.")
 
 <sample-output>
 
-Пожалуйста, введите ваше имя: **Морти**
-Думаю, вы можете быть одним из племянников Микки Мауса.
+Please type in your name: **Morty**
+I think you might be one of Mickey Mouse's nephews.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите ваше имя: **Хьюи**
-Думаю, вы можете быть одним из племянников Дональда Дака.
+Please type in your name: **Huey**
+I think you might be one of Donald Duck's nephews.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите ваше имя: **Кен**
-Вы не племянник никого из известных мне персонажей.
+Please type in your name: **Ken**
+You're not a nephew of any character I know of.
 
 </sample-output>
 
@@ -180,22 +180,22 @@ print(f"{greatest} является наибольшим из чисел.")
 
 <sample-output>
 
-Сколько баллов [0-100]: **37**
-Оценка: неудовлетворительно
+How many points [0-100]: **37**
+Grade: fail
 
 </sample-output>
 
 <sample-output>
 
-Сколько баллов [0-100]: **76**
-Оценка: 3
+How many points [0-100]: **76**
+Grade: 3
 
 </sample-output>
 
 <sample-output>
 
-Сколько баллов [0-100]: **-3**
-Оценка: невозможно!
+How many points [0-100]: **-3**
+Grade: impossible!
 
 </sample-output>
 
@@ -209,27 +209,27 @@ print(f"{greatest} является наибольшим из чисел.")
 
 <sample-output>
 
-Число: **9**
+Number: **9**
 Fizz
 
 </sample-output>
 
 <sample-output>
 
-Число: **7**
+Number: **7**
 
 </sample-output>
 
 <sample-output>
 
-Число: **20**
+Number: **20**
 Buzz
 
 </sample-output>
 
 <sample-output>
 
-Число: **45**
+Number: **45**
 FizzBuzz
 
 </sample-output>
@@ -241,29 +241,29 @@ FizzBuzz
 Условные операторы также могут быть вложены в другие условные операторы. Например, следующая программа проверяет, является ли число больше нуля, а затем является ли оно четным или нечетным:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 if number > 0:
     if number % 2 == 0:
-        print("Число четное")
+        print("The number is even")
     else:
-        print("Число нечетное")
+        print("The number is odd")
 else:
-    print("Число отрицательное или ноль")
+    print("The number is negative or zero")
 ```
 
 Несколько примеров поведения этой программы:
 
 <sample-output>
 
-Пожалуйста, введите число: **3**
-Число нечетное
+Please type in a number: **3**
+The number is odd
 
-Пожалуйста, введите число: **18**
-Число четное
+Please type in a number: **18**
+The number is even
 
-Пожалуйста, введите число: **-4**
-Число отрицательное или ноль
+Please type in a number: **-4**
+The number is negative or zero
 
 </sample-output>
 
@@ -272,14 +272,14 @@ else:
 Тот же результат часто может быть достигнут с использованием либо вложенных условных операторов, либо условий, объединенных с логическими операторами. Пример ниже функционально не отличается от приведенного выше примера в том смысле, что он выведет точно то же самое при тех же входных данных:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 if number > 0 and number % 2 == 0:
-    print("Число четное")
+    print("The number is even")
 elif number > 0 and number % 2 != 0:
-    print("Число нечетное")
+    print("The number is odd")
 else:
-    print("Число отрицательное или ноль")
+    print("The number is negative or zero")
 ```
 
 Ни один подход не является внутренне лучше другого, но в разных ситуациях один или другой может показаться более логичным. В этом конкретном примере большинство людей склонны находить первую версию с вложением более интуитивной.
@@ -294,22 +294,22 @@ else:
 
 <sample-output>
 
-Пожалуйста, введите год: **2011**
-Этот год не високосный.
+Please type in a year: **2011**
+That year is not a leap year.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите год: **2020**
-Этот год високосный.
+Please type in a year: **2020**
+That year is a leap year.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите год: **1800**
-Этот год не високосный.
+Please type in a year: **1800**
+That year is not a leap year.
 
 </sample-output>
 
@@ -325,19 +325,19 @@ else:
 
 <sample-output>
 
-1-я буква: x
-2-я буква: c
-3-я буква: p
-Буква в середине это p
+1st letter: x
+2nd letter: c
+3rd letter: p
+The letter in the middle is p
 
 </sample-output>
 
 <sample-output>
 
-1-я буква: C
-2-я буква: B
-3-я буква: A
-Буква в середине это B
+1st letter: C
+2nd letter: B
+3rd letter: A
+The letter in the middle is B
 
 </sample-output>
 
@@ -366,22 +366,22 @@ else:
 
 <sample-output>
 
-Стоимость подарка: **3500**
-Налога нет!
+Value of gift: **3500**
+No tax!
 
 </sample-output>
 
 <sample-output>
 
-Стоимость подарка: **5000**
-Сумма налога: 100.0 евро
+Value of gift: **5000**
+Amount of tax: 100.0 euros
 
 </sample-output>
 
 <sample-output>
 
-Стоимость подарка: **27500**
-Сумма налога: 1950.0 евро
+Value of gift: **27500**
+Amount of tax: 1950.0 euros
 
 </sample-output>
 

@@ -98,11 +98,11 @@ print(rectangle)
 ```python
 class Rectangle:
 
-    # ...остальная часть класса идет здесь так же, как выше...
+    # ...the rest of the class goes here the same as above...
 
-    # Этот метод возвращает состояние объекта в строковом формате
+    # This method returns the state of the object in string format
     def __str__(self):
-        return f"прямоугольник {self.left_upper} ... {self.right_lower}"
+        return f"rectangle {self.left_upper} ... {self.right_lower}"
 ```
 
 Теперь команда `print` производит что-то более дружественное к пользователю:
@@ -114,7 +114,7 @@ print(rectangle)
 
 <sample-output>
 
-прямоугольник (1, 1) ... (4, 3)
+rectangle (1, 1) ... (4, 3)
 
 </sample-output>
 
@@ -128,7 +128,7 @@ print(str_rep)
 
 <sample-output>
 
-прямоугольник (1, 1) ... (4, 3)
+rectangle (1, 1) ... (4, 3)
 
 </sample-output>
 
@@ -159,11 +159,11 @@ for i in range(3600):
 00:00
 00:01
 00:02
-... много строк выводится
+... many more lines printed out
 00:59
 01:00
 01:01
-... много, много строк выводится
+... many, many more lines printed out
 59:58
 59:59
 00:00
@@ -252,7 +252,7 @@ print(card)
 
 <sample-output>
 
-На балансе 50.0 евро
+The balance is 50.0 euros
 
 </sample-output>
 
@@ -281,9 +281,9 @@ print(card)
 
 <sample-output>
 
-На балансе 50.0 евро
-На балансе 47.4 евро
-На балансе 40.2 евро
+The balance is 50.0 euros
+The balance is 47.4 euros
+The balance is 40.2 euros
 
 </sample-output>
 
@@ -302,9 +302,9 @@ print(card)
 
 <sample-output>
 
-На балансе 4.0 евро
-На балансе 1.4 евро
-На балансе 1.4 евро
+The balance is 4.0 euros
+The balance is 1.4 euros
+The balance is 1.4 euros
 
 </sample-output>
 
@@ -329,10 +329,10 @@ print(card)
 
 <sample-output>
 
-На балансе 10.0 евро
-На балансе 25.0 евро
-На балансе 35.0 евро
-На балансе 235.0 евро
+The balance is 10.0 euros
+The balance is 25.0 euros
+The balance is 35.0 euros
+The balance is 235.0 euros
 
 </sample-output>
 
@@ -346,7 +346,7 @@ card.deposit_money(-10)
 <sample-output>
 
 File "testi.py", line 3, in lunchcard
-ValueError: Вы не можете внести сумму денег меньше нуля
+ValueError: You cannot deposit an amount of money less than zero
 
 </sample-output>
 
@@ -374,19 +374,19 @@ ValueError: Вы не можете внести сумму денег меньш
 ```python
 peters_card = LunchCard(20)
 graces_card = LunchCard(30)
-# остальная часть вашей основной функции
+# the rest of your main function
 ```
 
 Ваша основная функция должна вывести точно следующее:
 
 <sample-output>
 
-Петр: На балансе 15.4 евро
-Грейс: На балансе 27.4 евро
-Петр: На балансе 35.4 евро
-Грейс: На балансе 22.8 евро
-Петр: На балансе 30.2 евро
-Грейс: На балансе 72.8 евро
+Peter: The balance is 15.4 euros
+Grace: The balance is 27.4 euros
+Peter: The balance is 35.4 euros
+Grace: The balance is 22.8 euros
+Peter: The balance is 30.2 euros
+Grace: The balance is 72.8 euros
 
 </sample-output>
 
@@ -406,9 +406,9 @@ class TaskList:
 
     def get_next(self):
         self.tasks.sort()
-        # Метод списка pop удаляет и возвращает последний элемент в списке
+        # The list method pop removes and returns the last item in a list
         task = self.tasks.pop()
-        # Возвращает имя задачи (второй элемент в кортеже)
+        # Return the name of the task (the second item in the tuple)
         return task[1]
 
     def number_of_tasks(self):
@@ -426,13 +426,13 @@ class TaskList:
 
 ```python
 tasks = TaskList()
-tasks.add_task("учеба", 50)
-tasks.add_task("упражнения", 60)
-tasks.add_task("уборка", 10)
+tasks.add_task("studying", 50)
+tasks.add_task("exercise", 60)
+tasks.add_task("cleaning", 10)
 print(tasks.number_of_tasks())
 print(tasks.get_next())
 print(tasks.number_of_tasks())
-tasks.add_task("свидание", 100)
+tasks.add_task("date", 100)
 print(tasks.number_of_tasks())
 print(tasks.get_next())
 print(tasks.get_next())
@@ -444,11 +444,11 @@ print(tasks.number_of_tasks())
 <sample-output>
 
 3
-упражнения
+exercise
 2
 3
-свидание
-учеба
+date
+studying
 1
 0
 
@@ -461,15 +461,15 @@ print(tasks.number_of_tasks())
 Напишите класс с именем `Series` со следующей функциональностью:
 
 ```python
-dexter = Series("Декстер", 8, ["Криминал", "Драма", "Мистика", "Триллер"])
+dexter = Series("Dexter", 8, ["Crime", "Drama", "Mystery", "Thriller"])
 print(dexter)
 ```
 
 <sample-output>
 
-Декстер (8 сезонов)
-жанры: Криминал, Драма, Мистика, Триллер
-нет рейтингов
+Dexter (8 seasons)
+genres: Crime, Drama, Mystery, Thriller
+no ratings
 
 </sample-output>
 
@@ -478,14 +478,14 @@ print(dexter)
 **Подсказка:** когда вам нужно получить строку из списка, содержащего строки, с разделяющим символом по вашему выбору между записями, вы можете использовать метод `join` следующим образом:
 
 ```python
-genre_list = ["Криминал", "Драма", "Мистика", "Триллер"]
+genre_list = ["Crime", "Drama", "Mystery", "Thriller"]
 genre_string = ", ".join(genre_list)
 print(genre_string)
 ```
 
 <sample-output>
 
-Криминал, Драма, Мистика, Триллер
+Crime, Drama, Mystery, Thriller
 
 </sample-output>
 
@@ -494,7 +494,7 @@ print(genre_string)
 Реализуйте метод `rate(rating: int)`, который позволяет добавить рейтинг от 0 до 5 к любому объекту сериала. Вам также нужно будет скорректировать метод `__str__`, чтобы в случае, если есть рейтинги, метод выводил количество добавленных рейтингов и их среднее значение, округленное до одного знака после запятой.
 
 ```python
-dexter = Series("Декстер", 8, ["Криминал", "Драма", "Мистика", "Триллер"])
+dexter = Series("Dexter", 8, ["Crime", "Drama", "Mystery", "Thriller"])
 dexter.rate(4)
 dexter.rate(5)
 dexter.rate(5)
@@ -505,9 +505,9 @@ print(dexter)
 
 <sample-output>
 
-Декстер (8 сезонов)
-жанры: Криминал, Драма, Мистика, Триллер
-5 рейтингов, среднее 3.4 балла
+Dexter (8 seasons)
+genres: Crime, Drama, Mystery, Thriller
+5 ratings, average 3.4 points
 
 </sample-output>
 
@@ -518,33 +518,33 @@ print(dexter)
 Вот пример того, как используются новые методы:
 
 ```python
-s1 = Series("Декстер", 8, ["Криминал", "Драма", "Мистика", "Триллер"])
+s1 = Series("Dexter", 8, ["Crime", "Drama", "Mystery", "Thriller"])
 s1.rate(5)
 
-s2 = Series("Южный Парк", 24, ["Анимация", "Комедия"])
+s2 = Series("South Park", 24, ["Animation", "Comedy"])
 s2.rate(3)
 
-s3 = Series("Друзья", 10, ["Романтика", "Комедия"])
+s3 = Series("Friends", 10, ["Romance", "Comedy"])
 s3.rate(2)
 
 series_list = [s1, s2, s3]
 
-print("минимальная оценка 4.5:")
+print("a minimum grade of 4.5:")
 for series in minimum_grade(4.5, series_list):
     print(series.title)
 
-print("жанр Комедия:")
-for series in includes_genre("Комедия", series_list):
+print("genre Comedy:")
+for series in includes_genre("Comedy", series_list):
     print(series.title)
 ```
 
 <sample-output>
 
-минимальная оценка 4.5:
-Декстер
-жанр Комедия:
-Южный Парк
-Друзья
+a minimum rating of 4.5:
+Dexter
+genre Comedy:
+South Park
+Friends
 
 </sample-output>
 

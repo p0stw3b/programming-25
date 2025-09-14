@@ -46,8 +46,8 @@ while index < len(my_list):
 Идея в том, что цикл `for` берёт элементы в коллекции один за другим и выполняет одинаковые действия с каждым. Программисту не нужно беспокоиться о том, какой элемент обрабатывается в данный момент. Синтаксис цикла for следующий:
 
 ```python
-for <переменная> in <коллекция>:
-    <блок>
+for <variable> in <collection>:
+    <block>
 ```
 
 Цикл `for` берёт элемент из коллекции, присваивает его переменной, обрабатывает блок кода и переходит к следующему элементу. Когда все элементы в коллекции были обработаны, выполнение программы продолжается со строки после цикла.
@@ -78,7 +78,7 @@ for item in my_list:
 Тот же принцип применяется к символам в строке:
 
 ```python
-name = input("Пожалуйста, введите ваше имя: ")
+name = input("Please type in your name: ")
 
 for character in name:
     print(character)
@@ -86,13 +86,12 @@ for character in name:
 
 <sample-output>
 
-Пожалуйста, введите ваше имя: **Грация**
-Г
-р
-а
-ц
-и
-я
+Please type in your name: **Grace**
+G
+r
+a
+c
+e
 
 </sample-output>
 
@@ -104,7 +103,7 @@ for character in name:
 
 <sample-output>
 
-Пожалуйста, введите строку: **Python**
+Please type in a string: **Python**
 P
 *
 y
@@ -201,7 +200,7 @@ for i in range(6, 2, -1):
 
 <sample-output>
 
-Пожалуйста, введите положительное целое число: **4**
+Please type in a positive integer: **4**
 -4
 -3
 -2
@@ -250,10 +249,10 @@ print(numbers)
 До сих пор, когда упражнения просили вас написать функции, шаблоны выглядели так:
 
 ```python
-# Напишите ваше решение здесь
-# Вы можете протестировать вашу функцию, вызвав её в следующем блоке
+# Write your solution here
+# You can test your function by calling it within the following block
 if __name__ == "__main__":
-    sentence = "это был тёмный и бурный питон"
+    sentence = "it was a dark and stormy python"
     print(first_word(sentence))
     print(second_word(sentence))
     print(last_word(sentence))
@@ -321,14 +320,14 @@ print(anagrams("python", "java")) # False
 
 <sample-output>
 
-Пожалуйста, введите палиндром: **python**
-это не палиндром
-Пожалуйста, введите палиндром: **java**
-это не палиндром
-Пожалуйста, введите палиндром: **oddoreven**
-это не палиндром
-Пожалуйста, введите палиндром: **neveroddoreven**
-neveroddoreven - палиндром!
+Please type in a palindrome: **python**
+that wasn't a palindrome
+Please type in a palindrome: **java**
+that wasn't a palindrome
+Please type in a palindrome: **oddoreven**
+that wasn't a palindrome
+Please type in a palindrome: **neveroddoreven**
+neveroddoreven is a palindrome!
 
 </sample-output>
 
@@ -343,12 +342,12 @@ neveroddoreven - палиндром!
 ```python
 my_list = [1, -2, 3, -4, 5]
 result = sum_of_positives(my_list)
-print("Результат равен", result)
+print("The result is", result)
 ```
 
 <sample-output>
 
-Результат равен 9
+The result is 9
 
 </sample-output>
 
@@ -363,14 +362,14 @@ print("Результат равен", result)
 ```python
 my_list = [1, 2, 3, 4, 5]
 new_list = even_numbers(my_list)
-print("исходный", my_list)
-print("новый", new_list)
+print("original", my_list)
+print("new", new_list)
 ```
 
 <sample-output>
 
-исходный [1, 2, 3, 4, 5]
-новый [2, 4]
+original [1, 2, 3, 4, 5]
+new [2, 4]
 
 </sample-output>
 
@@ -408,12 +407,12 @@ print(distinct_numbers(my_list)) # [1, 2, 3]
 Грубый набросок, который ещё не компилируется:
 
 ```python
-best = начальное_значение # Начальное значение зависит от ситуации
+best = initial_value # The initial value depends on the situation
 for item in my_list:
-    if item лучше чем best:
+    if item is better than best:
         best = item
 
-# Теперь мы выяснили лучший!
+# We now have the best one figured out!
 ```
 
 Детали финального программного кода зависят от типа элементов в списке, а также от критериев выбора лучшего (или худшего) элемента. Иногда вам может понадобиться более одной вспомогательной переменной.
@@ -425,14 +424,14 @@ for item in my_list:
 Пожалуйста, напишите функцию с именем `length_of_longest`, которая принимает список строк в качестве аргумента. Функция возвращает длину самой длинной строки.
 
 ```python
-my_list = ["первый", "второй", "четвёртый", "одиннадцатый"]
+my_list = ["first", "second", "fourth", "eleventh"]
 
 result = length_of_longest(my_list)
 print(result)
 ```
 
 ```python
-my_list = ["адель", "марк", "дороти", "тим", "хеди", "ричард"]
+my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
 
 result = length_of_longest(my_list)
 print(result)
@@ -440,7 +439,7 @@ print(result)
 
 <sample-output>
 
-11
+8
 7
 
 </sample-output>
@@ -453,14 +452,14 @@ print(result)
 
 
 ```python
-my_list = ["первый", "второй", "четвёртый", "одиннадцатый"]
+my_list = ["first", "second", "fourth", "eleventh"]
 
 result = shortest(my_list)
 print(result)
 ```
 
 ```python
-my_list = ["адель", "марк", "дороти", "тим", "хеди", "ричард"]
+my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
 
 result = shortest(my_list)
 print(result)
@@ -468,8 +467,8 @@ print(result)
 
 <sample-output>
 
-второй
-тим
+first
+tim
 
 </sample-output>
 
@@ -482,17 +481,17 @@ print(result)
 Порядок строк в возвращаемом списке должен быть таким же, как в исходном.
 
 ```python
-my_list = ["первый", "второй", "четвёртый", "одиннадцатый"]
+my_list = ["first", "second", "fourth", "eleventh"]
 
 result = all_the_longest(my_list)
-print(result) # ['одиннадцатый']
+print(result) # ['eleventh']
 ```
 
 ```python
-my_list = ["адель", "марк", "дороти", "тим", "хеди", "ричард"]
+my_list = ["adele", "mark", "dorothy", "tim", "hedy", "richard"]
 
 result = all_the_longest(my_list)
-print(result) # ['дороти', 'ричард']
+print(result) # ['dorothy', 'richard']
 ```
 
 </programming-exercise>

@@ -146,7 +146,7 @@ Once upon a time there was a python
 
 ```python
 class Country:
-    """ Этот класс моделирует одну страну с населением """
+    """ This class models a single country with population """
     def __init__(self, name: str, population: int):
         self.name = name
         self.population = population
@@ -194,7 +194,7 @@ if __name__ == "__main__":
 
 ```python
 class RunningEvent:
-    """ Класс моделирует событие бегового забега длиной n метров """
+    """ The class models a foot race event of a length of n metres  """
     def __init__(self, length: int, name: str = "no name"):
         self.length = length
         self.name = name
@@ -206,14 +206,14 @@ if __name__ == "__main__":
     lengths = [100, 200, 1500, 3000, 42195]
     events = [RunningEvent(length) for length in lengths]
 
-    # Напечатать все события
+    # Print out all events
     print(events)
 
-    # Выбрать одно из списка и дать ему название
-    marathon = events[-1] # последний элемент в списке
+    # Pick one from the list and give it a name
+    marathon = events[-1] # the last item in the list
     marathon.name = "Marathon"
 
-    # Напечатать всё снова, включая новое название
+    # Print out everything again, including the new name
     print(events)
 ```
 
@@ -240,29 +240,29 @@ class Bookshelf:
     def add_book(self, book: Book):
         self._books.append(book)
 
-    # Это метод инициализации итератора
-    # Переменные итерации должны быть инициализированы здесь
+    # This is the iterator initialization method
+    # The iteration variable(s) should be initialized here
     def __iter__(self):
         self.n = 0
-        # метод возвращает ссылку на сам объект, поскольку
-        # итератор реализован внутри того же определения класса
+        # the method returns a reference to the object itself as 
+        # the iterator is implemented within the same class definition
         return self
 
-    # Этот метод возвращает следующий элемент в объекте
-    # Если все элементы пройдены, вызывается событие StopIteration
+    # This method returns the next item within the object
+    # If all items have been traversed, the StopIteration event is raised
     def __next__(self):
         if self.n < len(self._books):
-            # Выбрать текущий элемент из списка внутри объекта
+            # Select the current item from the list within the object
             book = self._books[self.n]
-            # увеличить счётчик (т.е. переменную итерации) на единицу
+            # increase the counter (i.e. iteration variable) by one
             self.n += 1
-            # вернуть текущий элемент
+            # return the current item
             return book
         else:
-            # Все книги пройдены
+            # All books have been traversed
             raise StopIteration
 
-# Протестировать ваши классы
+# Test your classes
 if __name__ == "__main__":
     b1 = Book("The Life of Python", "Montague Python", 123)
     b2 = Book("The Old Man and the C", "Ernest Hemingjavay", 204)
@@ -273,7 +273,7 @@ if __name__ == "__main__":
     shelf.add_book(b2)
     shelf.add_book(b3)
 
-    # Создать список, содержащий названия всех книг
+    # Create a list containing the names of all books
     book_names = [book.name for book in shelf]
     print(book_names)
 
@@ -296,14 +296,14 @@ my_list.add("apples", 5)
 my_list.add("alcohol free beer", 24)
 my_list.add("pineapple", 1)
 
-print("список покупок содержит как минимум 8 из следующих элементов:")
+print("the shopping list contains at least 8 of the following items:")
 for product in products_in_shopping_list(my_list, 8):
     print(product)
 ```
 
 <sample-output>
 
-список покупок содержит как минимум 8 из следующих элементов:
+the shopping list contains at least 8 of the following items:
 bananas
 alcohol free beer
 
@@ -333,18 +333,18 @@ a6 = RealProperty(25, 1200, 2500, "Countryside mansion")
 
 properties = [a1, a2, a3, a4, a5, a6]
 
-print(f"более дешёвые варианты по сравнению с {a3.description}:")
+print(f"cheaper options when compared to {a3.description}:")
 for item in cheaper_properties(properties, a3):
-    print(f"{item[0].description:35} разность в цене {item[1]} евро")
+    print(f"{item[0].description:35} price difference {item[1]} euros")
 ```
 
 <sample-output>
 
-более дешёвые варианты по сравнению с Three bedrooms in the suburbs:
-Central studio                      разность в цене 107000 евро
-Two bedrooms downtown               разность в цене 35400 евро
-Farm in the middle of nowhere       разность в цене 87500 евро
-Loft in a small town               разность в цене 16500 евро
+cheaper options when compared to Three bedrooms in the suburbs:
+Central studio                                    price difference 107000 euros
+Two bedrooms downtown               price difference 35400 euros
+Farm in the middle of nowhere       price difference 87500 euros
+Loft in a small town                           price difference 16500 euros
 
 </sample-output>
 
@@ -379,7 +379,7 @@ print(char_counts)
 
 ```python
 def factorial(n: int):
-    """ Функция вычисляет факториал n! для целых чисел больше нуля """
+    """ The function calculates the factorial n! for integers above zero """
     k = 1
     while n >= 2:
         k *= n

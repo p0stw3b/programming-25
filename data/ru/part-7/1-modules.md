@@ -52,9 +52,9 @@ hidden: false
 ```python
 import math
 
-# Квадратный корень числа 5
+# The square root of the number 5
 print(math.sqrt(5))
-# логарифм по основанию 2 числа 8
+# the base 2 logarithm of the number 8
 print(math.log(8, 2))
 ```
 

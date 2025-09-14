@@ -31,22 +31,22 @@ hidden: false
 Например, когда вы использовали команду `input` для чтения строки от пользователя, вы сохранили строку в переменной, а затем использовали переменную позже в программе:
 
 ```python
-name = input("Как вас зовут? ")
-print("Привет, " + name)
+name = input("What is your name? ")
+print("Hi, " + name)
 ```
 
 <sample-output>
 
-Как вас зовут? **Призрачный**
-Привет, Призрачный
+What is your name? **Ghosty**
+Hi, Ghosty
 
 </sample-output>
 
 Значение, хранящееся в переменной, также может быть определено с использованием других переменных:
 
 ```python
-given_name = "Пол"
-family_name = "Питон"
+given_name = "Paul"
+family_name = "Python"
 
 name = given_name + " " + family_name
 
@@ -55,7 +55,7 @@ print(name)
 
 <sample-output>
 
-Пол Питон
+Paul Python
 
 </sample-output>
 
@@ -68,23 +68,23 @@ print(name)
 Во время выполнения следующей программы переменная `word` будет иметь три различных значения:
 
 ```python
-word = input("Пожалуйста, введите слово: ")
+word = input("Please type in a word: ")
 print(word)
 
-word = input("И еще одно слово: ")
+word = input("And another word: ")
 print(word)
 
-word = "третье"
+word = "third"
 print(word)
 ```
 
 <sample-output>
 
-Пожалуйста, введите слово: **первое**
-первое
-И еще одно слово: **второе**
-второе
-третье
+Please type in a word: **first**
+first
+And another word: **second**
+second
+third
 
 </sample-output>
 
@@ -93,7 +93,7 @@ print(word)
 Новое значение переменной может быть получено из её старого значения. В следующем примере переменной `word` сначала присваивается значение на основе пользовательского ввода. Затем ей присваивается новое значение, которое является старым значением с тремя восклицательными знаками, добавленными в конце.
 
 ```python
-word = input("Пожалуйста, введите слово: ")
+word = input("Please type in a word: ")
 print(word)
 
 word = word + "!!!"
@@ -102,9 +102,9 @@ print(word)
 
 <sample-output>
 
-Пожалуйста, введите слово: **тест**
-тест
-тест!!!
+Please type in a word: **test**
+test
+test!!!
 
 </sample-output>
 
@@ -196,8 +196,8 @@ TypeError: unsupported operand type(s) for /: 'str' and 'int'
 
 ```python
 result = 10 * 25
-# следующая строка вызывает ошибку
-print("Результат равен " + result)
+# the following line produces an error
+print("The result is " + result)
 ```
 
 Программа ничего не выводит, а вместо этого выбрасывает ошибку:
@@ -214,12 +214,12 @@ TypeError: unsupported operand type(s) for +: 'str' and 'int'
 
 ```python
 result = 10 * 25
-print("Результат равен " + str(result))
+print("The result is " + str(result))
 ```
 
 <sample-output>
 
-Результат равен 250
+The result is 250
 
 </sample-output>
 
@@ -227,12 +227,12 @@ print("Результат равен " + str(result))
 
 ```python
 result = 10 * 25
-print("Результат равен", result)
+print("The result is", result)
 ```
 
 <sample-output>
 
-Результат равен 250
+The result is 250
 
 </sample-output>
 
@@ -246,48 +246,48 @@ print("Результат равен", result)
 
 ```python
 result = 10 * 25
-print(f"Результат равен {result}")
+print(f"The result is {result}")
 ```
 
 Давайте разберем это. В самом начале строки, которую мы выводим, стоит символ _f_. Это говорит Python, что далее следует f-строка. Внутри строки, заключенное в фигурные скобки, находится имя переменной `result`. Значение, которое она содержит, становится частью выводимой строки. Вывод точно такой же, как в предыдущих примерах:
 
 <sample-output>
 
-Результат равен 250
+The result is 250
 
 </sample-output>
 
 Одна f-строка может содержать несколько переменных. Например, этот код
 
 ```python
-name = "Марк"
+name = "Mark"
 age = 37
-city = "Пало-Альто"
-print(f"Привет {name}, вам {age} лет. Вы живете в {city}.")
+city = "Palo Alto"
+print(f"Hi {name}, you are {age} years old. You live in {city}.")
 ```
 
 выводит это:
 
 <sample-output>
 
-Привет Марк, вам 37 лет. Вы живете в Пало-Альто.
+Hi Mark, you are 37 years old. You live in Palo Alto.
 
 </sample-output>
 
 Создать вывод точно как этот, используя запятую в команде `print`, сложно. Например, эта программа
 
 ```python
-name = "Марк"
+name = "Mark"
 age = 37
-city = "Пало-Альто"
-print("Привет", name, ", вам", age, "лет. Вы живете в", city, ".")
+city = "Palo Alto"
+print("Hi", name, ", you are", age, "years old. You live in", city, ".")
 ```
 
 выводит следующее:
 
 <sample-output>
 
-Привет Марк , вам 37 лет. Вы живете в Пало-Альто .
+Hi Mark , you are 37 years old. You live in Palo Alto .
 
 </sample-output>
 
@@ -306,23 +306,23 @@ print("Привет", name, ", вам", age, "лет. Вы живете в", cit
 Ваш друг работает над приложением для соискателей работы. Она отправляет вам этот фрагмент кода:
 
 ```python
-name = "Тим Тестер"
+name = "Tim Tester"
 age = 20
 skill1 = "python"
-level1 = "начинающий"
+level1 = "beginner"
 skill2 = "java"
-level2 = "ветеран"
-skill3 = "программирование"
-level3 = "полупрофессионал"
+level2 = "veteran"
+skill3 = "programming"
+level3 = "semiprofessional"
 lower = 2000
 upper = 3000
 
-print("меня зовут ", name, " , мне ", age, "лет")
-print("мои навыки")
+print("my name is ", name, " , I am ", age, "years old")
+print("my skills are")
 print("- ", skill1, " (", level1, ")")
 print("- ", skill2, " (", level2, ")")
 print("- ", skill3, " (", level3, " )")
-print("Я ищу работу с зарплатой", lower, "-", upper, "евро в месяц")
+print("I am looking for a job with a salary of", lower, "-", upper, "euros per month")
 ```
 
 Программа должна выводить _точно_ следующее:
@@ -330,14 +330,14 @@ print("Я ищу работу с зарплатой", lower, "-", upper, "евр
 <sample-output>
 
 <pre>
-меня зовут Тим Тестер, мне 20 лет
+my name is Tim Tester, I am 20 years old
 
-мои навыки
- - python (начинающий)
- - java (ветеран)
- - программирование (полупрофессионал)
+my skills are
+ - python (beginner)
+ - java (veteran)
+ - programming (semiprofessional)
 
-Я ищу работу с зарплатой 2000-3000 евро в месяц
+I am looking for a job with a salary of 2000-3000 euros per month
 </pre>
 
 </sample-output>
@@ -366,12 +366,12 @@ number2 = -1.25
 number3 = 3.62
 
 mean = (number1 + number2 + number3) / 3
-print(f"Среднее: {mean}")
+print(f"Mean: {mean}")
 ```
 
 <sample-output>
 
-Среднее: 1.6233333333333333
+Mean: 1.6233333333333333
 
 </sample-output>
 
@@ -422,13 +422,13 @@ y = 9
 Например:
 
 ```python
-print("Привет ", end="")
-print("там!")
+print("Hi ", end="")
+print("there!")
 ```
 
 <sample-output>
 
-Привет там!
+Hi there!
 
 </sample-output>
 

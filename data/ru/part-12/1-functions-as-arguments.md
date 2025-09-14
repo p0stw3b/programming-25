@@ -47,13 +47,13 @@ for product in products:
 
 ```python
 def order_by_price(item: tuple):
-    # Вернуть цену, которая является вторым элементом в кортеже
+    # Return the price, which is the second item within the tuple
     return item[1]
 
 if __name__ == "__main__":
     products = [("banana", 5.95), ("apple", 3.95), ("orange", 4.50), ("watermelon", 4.95)]
 
-    # Используем функцию order_by_price для сортировки
+    # Use the function order_by_price for sorting
     products.sort(key=order_by_price)
 
     for product in products:
@@ -81,16 +81,16 @@ if __name__ == "__main__":
 
 ```python
 def order_by_price(item: tuple):
-    # Вывести элемент
-    print(f"Вызов функции: order_by_price({item})")
+    # Print the item
+    print(f"Function call: order_by_price({item})")
 
-    # Вернуть цену, которая является вторым элементом в кортеже
+    # Return the price, which is the second item within the tuple
     return item[1]
 
 
 products = [("banana", 5.95), ("apple", 3.95), ("orange", 4.50), ("watermelon", 4.95)]
 
-# Используем функцию order_by_price для сортировки
+# Use the function order_by_price for sorting
 products.sort(key=order_by_price)
 
 for product in products:
@@ -99,10 +99,10 @@ for product in products:
 
 <sample-output>
 
-Вызов функции: order_by_price(('banana', 5.95))
-Вызов функции: order_by_price(('apple', 3.95))
-Вызов функции: order_by_price(('orange', 4.5))
-Вызов функции: order_by_price(('watermelon', 4.95))
+Function call: order_by_price(('banana', 5.95))
+Function call: order_by_price(('apple', 3.95))
+Function call: order_by_price(('orange', 4.5))
+Function call: order_by_price(('watermelon', 4.95))
 ('apple', 3.95)
 ('orange', 4.5)
 ('watermelon', 4.95)
@@ -127,7 +127,7 @@ def order_by_price(item: tuple):
     return item[1]
 
 def sort_by_price(items: list):
-    # используем функцию order_by_price здесь
+    # use the order_by_price function here
     return sorted(items, key=order_by_price)
 
 products = [("banana", 5.95), ("apple", 3.95), ("orange", 4.50), ("watermelon", 4.95)]
@@ -140,7 +140,7 @@ for product in sort_by_price(products):
 
 ```python
 def sort_by_price(items: list):
-    # вспомогательная функция определена внутри функции
+    # helper function defined within the function
     def order_by_price(item: tuple):
         return item[1]
 
@@ -157,14 +157,14 @@ def sort_by_price(items: list):
 products = [("banana", 5.95, 12), ("apple", 3.95, 3), ("orange", 4.50, 2), ("watermelon", 4.95, 22)]
 
 for product in sort_by_remaining_stock(products):
-    print(f"{product[0]} {product[2]} шт")
+    print(f"{product[0]} {product[2]} pcs")
 ```
 
 <sample-output>
-orange 2 шт
-apple 3 шт
-banana 12 шт
-watermelon 22 шт
+orange 2 pcs
+apple 3 pcs
+banana 12 pcs
+watermelon 22 pcs
 </sample-output>
 
 </programming-exercise>
@@ -179,13 +179,13 @@ watermelon 22 шт
 shows = [{ "name": "Dexter", "rating" : 8.6, "seasons":9 }, { "name": "Friends", "rating" : 8.9, "seasons":10 },  { "name": "Simpsons", "rating" : 8.7, "seasons":32 }  ]
 
 for show in sort_by_seasons(shows):
-    print(f"{show['name']} {show['seasons']} сезонов")
+    print(f"{show['name']} {show['seasons']} seasons")
 ```
 
 <sample-output>
-Dexter 9 сезонов
-Friends 10 сезонов
-Simpsons 32 сезонов
+Dexter 9 seasons
+Friends 10 seasons
+Simpsons 32 seasons
 </sample-output>
 
 </programming-exercise>
@@ -197,14 +197,14 @@ Simpsons 32 сезонов
 ```python
 shows = [{ "name": "Dexter", "rating" : 8.6, "seasons":9 }, { "name": "Friends", "rating" : 8.9, "seasons":10 },  { "name": "Simpsons", "rating" : 8.7, "seasons":32 }  ]
 
-print("Рейтинг согласно IMDB")
+print("Rating according to IMDB")
 for show in sort_by_ratings(shows):
     print(f"{show['name']}  {show['rating']}")
 ```
 
 <sample-output>
 
-Рейтинг согласно IMDB
+Rating according to IMDB
 Friends 8.9
 Simpsons 8.7
 Dexter 8.6
@@ -219,14 +219,14 @@ Dexter 8.6
 
 ```python
 class Student:
-    """ Класс моделирует одного студента """
+    """ The class models a single student """
     def __init__(self, name: str, id: str, credits: int):
         self.name = name
         self.id = id
         self.credits = credits
 
     def __str__(self):
-        return f"{self.name} ({self.id}), {self.credits} кр."
+        return f"{self.name} ({self.id}), {self.credits} cr."
 
 
 def by_id(item: Student):
@@ -243,28 +243,28 @@ if __name__ == "__main__":
 
     students = [o1, o2, o3]
 
-    print("Сортировка по id:")
+    print("Sort by id:")
     for student in sorted(students, key=by_id):
         print(student)
 
     print()
 
-    print("Сортировка по кредитам:")
+    print("Sort by credits:")
     for student in sorted(students, key=by_credits):
         print(student)
 ```
 
 <sample-output>
 
-Сортировка по id:
-Archie (a123), 220 кр.
-Anna (a999), 131 кр.
-Marvin (m321), 210 кр.
+Sort by id:
+Archie (a123), 220 cr.
+Anna (a999), 131 cr.
+Marvin (m321), 210 cr.
 
-Сортировка по кредитам:
-Anna (a999), 131 кр.
-Marvin (m321), 210 кр.
-Archie (a123), 220 кр.
+Sort by credits:
+Anna (a999), 131 cr.
+Marvin (m321), 210 cr.
+Archie (a123), 220 cr.
 
 </sample-output>
 
@@ -287,8 +287,8 @@ print(route3.name, route3.length, route3.grade)
 
 <sample-output>
 
-Edge, длина 38 метров, категория 6A+
-Smooth operator, длина 11 метров, категория 7A
+Edge, length 38 metres, grade 6A+
+Smooth operator, length 11 metres, grade 7A
 Synchro 14 8C+
 
 </sample-output>
@@ -313,10 +313,10 @@ for route in sort_by_length(routes):
 
 <sample-output>
 
-Edge, длина 38 метров, категория 6A+
-Synchro, длина 14 метров, категория 8C+
-Small steps, длина 12 метров, категория 6A+
-Smooth operator, длина 11 метров, категория 7A
+Edge, length 38 metres, grade 6A+
+Synchro, length 14 metres, grade 8C+
+Small steps, length 12 metres, grade 6A+
+Smooth operator, length 11 metres, grade 7A
 
 </sample-output>
 
@@ -339,10 +339,10 @@ for route in sort_by_difficulty(routes):
 
 <sample-output>
 
-Synchro, длина 14 метров, категория 8C+
-Smooth operator, длина 11 метров, категория 7A
-Edge, длина 38 метров, категория 6A+
-Small steps, длина 12 метров, категория 6A+
+Synchro, length 14 metres, grade 8C+
+Smooth operator, length 11 metres, grade 7A
+Edge, length 38 metres, grade 6A+
+Small steps, length 12 metres, grade 6A+
 
 </sample-output>
 
@@ -387,9 +387,9 @@ print(ca3.hardest_route())
 
 <sample-output>
 
-Olhava, 3 маршрута, сложнейший 6B
+Olhava, 3 routes, hardest 6B
 Nalkkila slab 4
-Smooth operator, длина 11 метров, категория 7A
+Smooth operator, length 9 metres, grade 7A
 
 </sample-output>
 
@@ -398,7 +398,7 @@ Smooth operator, длина 11 метров, категория 7A
 Напишите функцию `sort_by_number_of_routes`, которая сортирует зоны скалолазания в порядке возрастания на основе количества маршрутов в каждой из них.
 
 ```python
-# ca1, ca2 и ca3 объявлены как выше
+# ca1, ca2 and ca3 declared as above
 areas = [ca1, ca2, ca3]
 for area in sort_by_number_of_routes(areas):
     print(area)
@@ -407,9 +407,9 @@ for area in sort_by_number_of_routes(areas):
 
 <sample-output>
 
-Nummi, 1 маршрутов, сложнейший 8C+
-Olhava, 3 маршрута, сложнейший 6B
-Nalkkila slab, 4 маршрута, сложнейший 7A
+Nummi, 1 routes, hardest 8C+
+Olhava, 3 routes, hardest 6B
+Nalkkila slab, 4 routes, hardest 7A
 
 </sample-output>
 
@@ -418,7 +418,7 @@ Nalkkila slab, 4 маршрута, сложнейший 7A
 Напишите функцию `sort_by_most_difficult`, которая сортирует зоны скалолазания в _убывающем_ порядке на основе самого сложного маршрута в каждой зоне.
 
 ```python
-# ca1, ca2 и ca3 объявлены как выше
+# ca1, ca2 and ca3 declared as above
 areas = [ca1, ca2, ca3]
 for area in sort_by_most_difficult(areas):
     print(area)
@@ -426,9 +426,9 @@ for area in sort_by_most_difficult(areas):
 
 <sample-output>
 
-Nummi, 1 маршрутов, сложнейший 8C+
-Nalkkila slab, 4 маршрута, сложнейший 7A
-Olhava, 3 маршрута, сложнейший 6B
+Nummi, 1 routes, hardest 8C+
+Nalkkila slab, 4 routes, hardest 7A
+Olhava, 3 routes, hardest 6B
 
 </sample-output>
 
@@ -447,7 +447,7 @@ Olhava, 3 маршрута, сложнейший 6B
 ```python
 products = [("banana", 5.95), ("apple", 3.95), ("orange", 4.50), ("watermelon", 4.95)]
 
-# Функция создается "на лету" с лямбда-выражением:
+# Function is created "on the fly" with a lambda expression:
 products.sort(key=lambda item: item[1])
 
 for product in products:
@@ -521,7 +521,7 @@ Minnie
 ```python
 
 class Recording:
-    """ Класс моделирует одну аудиозапись """
+    """ The class models a single audio recording """
     def __init__(self, name: str, performer: str, year: int, runtime: int):
         self.name = name
         self.performer = performer
@@ -530,7 +530,7 @@ class Recording:
 
 
     def __str__(self):
-        return f"{self.name} ({self.performer}), {self.year}. {self.runtime} мин."
+        return f"{self.name} ({self.performer}), {self.year}. {self.runtime} min."
 
 if __name__ == "__main__":
     r1 = Recording("Nevermind", "Nirvana", 1991, 43)
@@ -540,19 +540,19 @@ if __name__ == "__main__":
     recordings = [r1, r2, r3]
 
 
-    print("Самая старая запись:")
+    print("The oldest recording:")
     print(min(recordings, key=lambda rec: rec.year))
 
-    print("Самая длинная запись:")
+    print("The longest recording:")
     print(max(recordings, key=lambda rec: rec.runtime))
 ```
 
 <sample-output>
 
-Самая старая запись:
-Let It Be (Beatles), 1969. 35 мин.
-Самая длинная запись:
-Joshua Tree (U2), 1986. 50 мин.
+The oldest recording:
+Let It Be (Beatles), 1969. 35 min.
+The longest recording:
+U2 (Joshua Tree), 1986. 50 min.
 
 </sample-output>
 
@@ -619,9 +619,9 @@ BallPlayer(name=Donald Quack, number=4, goals=3, passes=9, minutes=12)
 Мы установили выше, что можно передать ссылку на функцию в качестве аргумента другой функции. Чтобы завершить этот раздел, давайте напишем нашу собственную функцию, которая принимает функцию в качестве аргумента.
 
 ```python
-# тип подсказки "callable" относится к функции
+# the type hint "callable" refers to a function
 def perform_operation(operation: callable):
-    # Вызвать функцию, которая была передана как аргумент
+    # Call the function which was passed as an argument
     return operation(10, 5)
 
 def my_sum(a: int, b: int):
@@ -654,24 +654,24 @@ if __name__ == "__main__":
 def copy_lines(source_file: str, target_file: str, criterion= lambda x: True):
     with open(source_file) as source, open(target_file, "w") as target:
         for line in source:
-            # Удалить пробелы с начала и конца строки
+            # Remove any whitespace from beginning and end of line
             line = line.strip()
 
             if criterion(line):
                 target.write(line + "\n")
 
-# Несколько примеров
+# Some examples
 if __name__ == "__main__":
-    # Если третий параметр не задан, копировать все строки
+    # If the third parameter is not given, copy all lines
     copy_lines("first.txt", "second.txt")
 
-    # Копировать все непустые строки
+    # Copy all non-empty lines
     copy_lines("first.txt", "second.txt", lambda line: len(line) > 0)
 
-    # Копировать все строки, которые содержат слово "Python"
+    # Copy all lines which contain the word "Python"
     copy_lines("first.txt", "second.txt", lambda line: "Python" in line)
 
-    # Копировать все строки, которые не заканчиваются точкой
+    # Copy all lines which do not end in a full stop
     copy_lines("first.txt", "second.txt", lambda line: line[-1] != ".")
 ```
 

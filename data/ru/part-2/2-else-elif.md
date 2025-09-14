@@ -17,13 +17,13 @@ hidden: false
 Давайте посмотрим на программу, которая просит пользователя ввести число, а затем выводит различные сообщения в зависимости от того, является ли число отрицательным, положительным или равным нулю:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 if number < 0:
-    print("Число отрицательное")
+    print("The number is negative")
 
 if number >= 0:
-    print("Число положительное или ноль")
+    print("The number is positive or zero")
 ```
 
 Это выглядит немного неуклюже и повторяюще. Мы всегда хотим выполнить только один из блоков `if`, потому что ввод всегда будет либо меньше нуля, либо равен нулю или больше. То есть, либо `number < 0`, либо `number >= 0` истинно, но никогда оба одновременно. Итак, первый условный оператор фактически содержит все, что нам здесь нужно. Если он истинный, число отрицательное. Если он ложный, число равно нулю или положительное.
@@ -33,12 +33,12 @@ if number >= 0:
 Предыдущий пример переписанный:
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 if number < 0:
-    print("Число отрицательное")
+    print("The number is negative")
 else:
-    print("Число положительное или ноль")
+    print("The number is positive or zero")
 ```
 
 При использовании конструкции if-else одна и точно одна из ветвей всегда будет выполнена. Следующая картинка иллюстрирует структуру:
@@ -50,46 +50,46 @@ else:
 Следующий пример проверяет, является ли число, данное пользователем, четным или нет. Четность можно проверить с помощью оператора взятия остатка `%`, который дает остаток от операции целочисленного деления. При делении на два, если остаток равен нулю, число четное. Иначе число нечетное.
 
 ```python
-number = int(input("Пожалуйста, введите число: "))
+number = int(input("Please type in a number: "))
 
 if number % 2 == 0:
-    print("Число четное")
+    print("The number is even")
 else:
-    print("Число нечетное")
+    print("The number is odd")
 ```
 
 <sample-output>
 
-Пожалуйста, введите число: **5**
-Число нечетное
+Please type in a number: **5**
+The number is odd
 
 </sample-output>
 
 Еще один пример со сравнением строк:
 
 ```python
-correct = "котенок"
-password = input("Пожалуйста, введите пароль: ")
+correct = "kittycat"
+password = input("Please type in the password: ")
 
 if password == correct:
-    print("Добро пожаловать")
+    print("Welcome")
 else:
-    print("Доступ запрещен")
+    print("No admittance")
 ```
 
 С двумя различными вводами это должно вывести:
 
 <sample-output>
 
-Пожалуйста, введите пароль: **котенок**
-Добро пожаловать
+Please type in the password: **kittycat**
+Welcome
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите пароль: **обезьяна**
-Доступ запрещен
+Please type in the password: **monkey**
+No admittance
 
 </sample-output>
 
@@ -102,16 +102,16 @@ else:
 
 <sample-output>
 
-Сколько вам лет? **12**
-Вы не совершеннолетний!
+How old are you? **12**
+You are not of age!
 
 </sample-output>
 
 
 <sample-output>
 
-Сколько вам лет? **32**
-Вы совершеннолетний!
+How old are you? **32**
+You are of age!
 
 </sample-output>
 
@@ -128,40 +128,40 @@ else:
 Давайте посмотрим на программу, которая определяет победителя матча:
 
 ```python
-goals_home = int(input("Голы домашней команды: "))
-goals_away = int(input("Голы гостевой команды: "))
+goals_home = int(input("Home goals scored: "))
+goals_away = int(input("Away goals scored: "))
 
 if goals_home > goals_away:
-    print("Домашняя команда победила!")
+    print("The home team won!")
 elif goals_away > goals_home:
-    print("Гостевая команда победила!")
+    print("The away team won!")
 else:
-    print("Ничья!")
+    print("It's a tie!")
 ```
 
 Эта программа может вывести три различных утверждения при различных входных данных:
 
 <sample-output>
 
-Голы домашней команды: **4**
-Голы гостевой команды: **2**
-Домашняя команда победила!
+Home goals scored: **4**
+Away goals scored: **2**
+The home team won!
 
 </sample-output>
 
 <sample-output>
 
-Голы домашней команды: **0**
-Голы гостевой команды: **6**
-Гостевая команда победила!
+Home goals scored: **0**
+Away goals scored: **6**
+The away team won!
 
 </sample-output>
 
 <sample-output>
 
-Голы домашней команды: **3**
-Голы гостевой команды: **3**
-Ничья!
+Home goals scored: **3**
+Away goals scored: **3**
+It's a tie!
 
 </sample-output>
 
@@ -170,25 +170,25 @@ else:
 Это также действительный условный оператор:
 
 ```python
-print("Календарь праздников")
-date = input("Какая сегодня дата? ")
+print("Holiday calendar")
+date = input("What is the date today? ")
 
-if date == "26 дек":
-    print("Это день подарков")
-elif date == "31 дек":
-    print("Это канун Нового года")
-elif date == "1 янв":
-    print("Это Новый год")
+if date == "Dec 26":
+    print("It's Boxing Day")
+elif date == "Dec 31":
+    print("It's Hogmanay")
+elif date == "Jan 1":
+    print("It's New Year's Day")
 
-print("Спасибо и до свидания.")
+print("Thanks and bye.")
 ```
 
 <sample-output>
 
-Календарь праздников
-Какая сегодня дата? **31 дек**
-Это канун Нового года
-Спасибо и до свидания.
+Holiday calendar
+What is the date today? **Dec 31**
+It's Hogmanay
+Thanks and bye.
 
 </sample-output>
 
@@ -196,9 +196,9 @@ print("Спасибо и до свидания.")
 
 <sample-output>
 
-Календарь праздников
-Какая сегодня дата? **25 дек**
-Спасибо и до свидания.
+Holiday calendar
+What is the date today? **Dec 25**
+Thanks and bye.
 
 </sample-output>
 
@@ -210,25 +210,25 @@ print("Спасибо и до свидания.")
 
 <sample-output>
 
-Пожалуйста, введите первое число: **5**
-Пожалуйста, введите другое число: **3**
-Большее число: 5
+Please type in the first number: **5**
+Please type in another number: **3**
+The greater number was: 5
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите первое число: **5**
-Пожалуйста, введите другое число: **8**
-Большее число: 8
+Please type in the first number: **5**
+Please type in another number: **8**
+The greater number was: 8
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите первое число: **5**
-Пожалуйста, введите другое число: **5**
-Числа равны!
+Please type in the first number: **5**
+Please type in another number: **5**
+The numbers are equal!
 
 </sample-output>
 
@@ -243,25 +243,25 @@ print("Спасибо и до свидания.")
 
 <sample-output>
 
-Человек 1:
-Имя: **Алан**
-Возраст: **26**
-Человек 2:
-Имя: **Ада**
-Возраст: **27**
-Старший это Ада
+Person 1:
+Name: **Alan**
+Age: **26**
+Person 2:
+Name: **Ada**
+Age: **27**
+The elder is Ada
 
 </sample-output>
 
 <sample-output>
 
-Человек 1:
-Имя: **Билл**
-Возраст: **1**
-Человек 2:
-Имя: **Жан**
-Возраст: **1**
-Билл и Жан одного возраста
+Person 1:
+Name: **Bill**
+Age: **1**
+Person 2:
+Name: **Jean**
+Age: **1**
+Bill and Jean are the same age
 
 </sample-output>
 
@@ -281,25 +281,25 @@ print("Спасибо и до свидания.")
 
 <sample-output>
 
-Пожалуйста, введите 1-е слово: **автомобиль**
-Пожалуйста, введите 2-е слово: **скутер**
-скутер идет последним по алфавиту.
+Please type in the 1st word: **car**
+Please type in the 2nd word: **scooter**
+scooter comes alphabetically last.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите 1-е слово: **яблоко**
-Пожалуйста, введите 2-е слово: **банан**
-яблоко идет последним по алфавиту.
+Please type in the 1st word: **zorro**
+Please type in the 2nd word: **batman**
+zorro comes alphabetically last.
 
 </sample-output>
 
 <sample-output>
 
-Пожалуйста, введите 1-е слово: **питон**
-Пожалуйста, введите 2-е слово: **питон**
-Вы дали одно и то же слово дважды.
+Please type in the 1st word: **python**
+Please type in the 2nd word: **python**
+You gave the same word twice.
 
 </sample-output>
 

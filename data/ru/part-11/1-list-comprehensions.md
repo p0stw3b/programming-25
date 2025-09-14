@@ -69,7 +69,7 @@ print(numbers_multiplied)
 
 ```python
 def factorial(n: int):
-    """ Функция вычисляет факториал n! для целых чисел больше нуля """
+    """ The function calculates the factorial n! for integers above zero """
     k = 1
     while n >= 2:
         k *= n
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
 ```python
 def factorial(n: int):
-    """ Функция вычисляет факториал n! для целых чисел больше нуля """
+    """ The function calculates the factorial n! for integers above zero """
     k = 1
     while n >= 2:
         k *= n
@@ -282,7 +282,7 @@ print(even_items)
 
 ```python
 def factorial(n: int):
-    """ Функция вычисляет факториал n! для целых чисел больше нуля """
+    """ The function calculates the factorial n! for integers above zero """
     k = 1
     while n >= 2:
         k *= n
@@ -305,7 +305,7 @@ if __name__ == "__main__":
 
 ```python
 def factorial(n: int):
-    """ Функция вычисляет факториал n! для целых чисел больше нуля """
+    """ The function calculates the factorial n! for integers above zero """
     k = 1
     while n >= 2:
         k *= n
@@ -314,7 +314,7 @@ def factorial(n: int):
 
 if __name__ == "__main__":
     numbers = [-2, 3, 2, 1, 4, -10, 5, 1, 6]
-    # имя переменной сокращено здесь, чтобы это было легче читать
+    # the variable name abbreviated here so that this would be easier to read
     factorials = [(n, factorial(n)) for n in numbers if n > 0 and n % 2 == 0]
     print(factorials)
 ```
@@ -393,8 +393,8 @@ orange
 В качестве освежения темы, если нам нужно было напечатать большее из двух чисел, и мы хотели использовать только один оператор print, мы могли бы уместить всё это в одну строку:
 
 ```python
-number1 = int(input("Введите число 1:"))
-number2 = int(input("Введите число 2:"))
+number1 = int(input("Type in number 1:"))
+number2 = int(input("Type in number 2:"))
 print (number1 if number1 > number2 else number2)
 ```
 
@@ -426,7 +426,7 @@ print(abs_vals)
 
 ```python
 def string_lengths(my_list: list):
-    """ Функция возвращает длины строк в новом списке """
+    """ The function returns the lengths of strings in a new list """
     return [len(item) if type(item) == str else -1 for item in my_list]
 
 if __name__ == "__main__":

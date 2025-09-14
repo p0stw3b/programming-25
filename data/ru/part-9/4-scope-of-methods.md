@@ -26,18 +26,18 @@ class Recipient:
         if self.__check_email(email):
             self.__email = email
         else:
-            raise ValueError("Адрес электронной почты недействителен")
+            raise ValueError("The email address is not valid")
 
     def __check_email(self, email: str):
-        # Простая проверка: адрес должен содержать более 5 символов 
-        # и содержать точку и символ @
+        # A simple check: the address must be over 5 characters long 
+        # and contain a dot and an @ character
         return len(email) > 5 and "." in email and "@" in email
 ```
 
 Попытка вызвать приватный метод напрямую вызывает ошибку:
 
 ```python
-peter = Recipient("Петр Емайлер", "peter@example.com")
+peter = Recipient("Peter Emailer", "peter@example.com")
 peter.__check_email("someone@example.com")
 ```
 
@@ -56,11 +56,11 @@ class Recipient:
         if self.__check_email(email):
             self.__email = email
         else:
-            raise ValueError("Адрес электронной почты недействителен")
+            raise ValueError("The email address is not valid")
 
     def __check_email(self, email: str):
-        # Простая проверка: адрес должен содержать более 5 символов 
-        # и содержать точку и символ @
+        # A simple check: the address must be over 5 characters long 
+        # and contain a dot and an @ character
         return len(email) > 5 and "." in email and "@" in email
 
     @property
@@ -72,7 +72,7 @@ class Recipient:
         if self.__check_email(email):
             self.__email = email
         else:
-            raise ValueError("Адрес электронной почты недействителен")
+            raise ValueError("The email address is not valid")
 ```
 
 <text-box variant="info" name="Область видимости и пространство имен в Python">
@@ -100,17 +100,17 @@ class DeckOfCards:
 
     def __reset_deck(self):
         self.__deck = []
-        # Добавляем все 52 карты в колоду
-        suits = ["пики", "червы", "трефы", "бубны"]
+        # Add all 52 cards to the deck
+        suits = ["spades", "hearts", "clubs", "diamonds"]
         for suit in suits:
             for number in range(1, 14):
                 self.__deck.append((suit, number))
-        # Тасуем колоду
+        # Shuffle the deck
         shuffle(self.__deck)
 
     def deal(self, number_of_cards: int):
         hand = []
-        # Перемещаем верхние карты колоды в руку
+        # Move the top cards in the deck to the hand
         for i in range(number_of_cards):
             hand.append(self.__deck.pop())
         return hand
@@ -130,8 +130,8 @@ print(hand2)
 
 <sample-output>
 
-[('пики', 7), ('пики', 11), ('червы', 7), ('бубны', 3), ('пики', 4)]
-[('трефы', 8), ('пики', 12), ('бубны', 13), ('трефы', 11), ('пики', 10)]
+[('spades', 7), ('spades', 11), ('hearts', 7), ('diamonds', 3), ('spades', 4)]
+[('clubs', 8), ('spades', 12), ('diamonds', 13), ('clubs', 11), ('spades', 10)]
 
 </sample-output>
 

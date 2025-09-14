@@ -24,7 +24,7 @@ hidden: false
 
 ```python
 with open("new_file.txt", "w") as my_file:
-    # код для записи чего-то в файл
+    # code to write something to the file
 ```
 
 **Примечание: если файл уже существует, все содержимое будет перезаписано**. Стоит быть очень осторожным при создании новых файлов.
@@ -33,7 +33,7 @@ with open("new_file.txt", "w") as my_file:
 
 ```python
 with open("new_file.txt", "w") as my_file:
-    my_file.write("Привет!")
+    my_file.write("Hello there!")
 ```
 
 Когда вы выполняете программу, новый файл с именем `new_file.txt` появляется в директории. Содержимое будет выглядеть так:
@@ -48,9 +48,9 @@ with open("new_file.txt", "w") as my_file:
 
 ```python
 with open("new_file.txt", "w") as my_file:
-    my_file.write("Привет!")
-    my_file.write("Это вторая строка")
-    my_file.write("Это последняя строка")
+    my_file.write("Hello there!")
+    my_file.write("This is the second line")
+    my_file.write("This is the last line")
 ```
 
 приведет к файлу с таким содержимым:
@@ -65,9 +65,9 @@ with open("new_file.txt", "w") as my_file:
 
 ```python
 with open("new_file.txt", "w") as my_file:
-    my_file.write("Привет!\n")
-    my_file.write("Это вторая строка\n")
-    my_file.write("Это последняя строка\n")
+    my_file.write("Hello there!\n")
+    my_file.write("This is the second line\n")
+    my_file.write("This is the last line\n")
 ```
 
 Теперь содержимое `new_file.txt` будет выглядеть так:
@@ -86,8 +86,8 @@ with open("new_file.txt", "w") as my_file:
 
 <sample-output>
 
-Кому мне это подписать: **Ada**
-Где сохранить: **inscribed.txt**
+Whom should I sign this to: **Ada**
+Where shall I save it: **inscribed.txt**
 
 </sample-output>
 
@@ -113,19 +113,19 @@ Hi Ada, we hope you enjoy learning Python with us! Best, Mooc.fi Team
 
 ```python
 with open("new_file.txt", "a") as my_file:
-    my_file.write("Это 4-я строка\n")
-    my_file.write("И еще одна строка.\n")
+    my_file.write("This is the 4th line\n")
+    my_file.write("And yet another line.\n")
 ```
 
 После выполнения этой программы содержимое файла будет выглядеть так:
 
 <sample-output>
 
-Привет!
-Это вторая строка
-Это последняя строка
-Это 4-я строка
-И еще одна строка.
+Hello there!
+This is the second line
+This is the last line
+This is the 4th line
+And yet another line.
 
 </sample-output>
 
@@ -143,28 +143,28 @@ with open("new_file.txt", "a") as my_file:
 
 <sample-output>
 
-1 - добавить запись, 2 - читать записи, 0 - выйти
-Функция: **1**
-Запись в дневнике: **Сегодня я ел кашу**
-Дневник сохранен
+1 - add an entry, 2 - read entries, 0 - quit
+Function: **1**
+Diary entry: **Today I ate porridge**
+Diary saved
 
-1 - добавить запись, 2 - читать записи, 0 - выйти
-Функция: **2**
-Записи:
-Сегодня я ел кашу
-1 - добавить запись, 2 - читать записи, 0 - выйти
-Функция: **1**
-Запись в дневнике: **Вечером я ходил в сауну**
-Дневник сохранен
+1 - add an entry, 2 - read entries, 0 - quit
+Function: **2**
+Entries:
+Today I ate porridge
+1 - add an entry, 2 - read entries, 0 - quit
+Function: **1**
+Diary entry: **I went to the sauna in the evening**
+Diary saved
 
-1 - добавить запись, 2 - читать записи, 0 - выйти
-Функция: **2**
-Записи:
-Сегодня я ел кашу
-Вечером я ходил в сауну
-1 - добавить запись, 2 - читать записи, 0 - выйти
-Функция: **0**
-До свидания!
+1 - add an entry, 2 - read entries, 0 - quit
+Function: **2**
+Entries:
+Today I ate porridge
+I went to the sauna in the evening
+1 - add an entry, 2 - read entries, 0 - quit
+Function: **0**
+Bye now!
 
 </sample-output>
 
@@ -172,14 +172,14 @@ with open("new_file.txt", "a") as my_file:
 
 <sample-output>
 
-1 - добавить запись, 2 - читать записи, 0 - выйти
-Функция: **2**
-Записи:
-Сегодня я ел кашу
-Вечером я ходил в сауну
-1 - добавить запись, 2 - читать записи, 0 - выйти
-Функция: **0**
-До свидания!
+1 - add an entry, 2 - read entries, 0 - quit
+Function: **2**
+Entries:
+Today I ate porridge
+I went to the sauna in the evening
+1 - add an entry, 2 - read entries, 0 - quit
+Function: **0**
+Bye now!
 
 </sample-output>
 
@@ -263,7 +263,7 @@ open('file_to_be_cleared.txt', 'w').close()
 Вы также можете полностью удалить файл. Нам нужно будет попросить помощи у операционной системы для достижения этого:
 
 ```python
-# команда для удаления файлов находится в модуле os
+# the command to delete files is in the os module
 import os
 
 os.remove("unnecessary_file.csv")
@@ -493,11 +493,11 @@ liisa virtanen                35        8         14        22        3
 
 <sample-output>
 
-Информация о студентах: **students1.csv**
-Выполненные упражнения: **exercises1.csv**
-Баллы за экзамен: **exam_points1.csv**
-Информация о курсе: **course1.txt**
-Результаты записаны в файлы results.txt и results.csv
+Student information: **students1.csv**
+Exercises completed: **exercises1.csv**
+Exam points: **exam_points1.csv**
+Course information: **course1.txt**
+Results written to files results.txt and results.csv
 
 </sample-output>
 
@@ -549,37 +549,37 @@ print(find_words("*vokes"))
 
 <sample-output>
 
-1 - Добавить слово, 2 - Поиск, 3 - Выйти
-Функция: **1**
-Слово на финском: **auto**
-Слово на английском: **car**
-Запись словаря добавлена
-1 - Добавить слово, 2 - Поиск, 3 - Выйти
-Функция: **1**
-Слово на финском: **roska**
-Слово на английском: **garbage**
-Запись словаря добавлена
-1 - Добавить слово, 2 - Поиск, 3 - Выйти
-Функция: **1**
-Слово на финском: **laukku**
-Слово на английском: **bag**
-Запись словаря добавлена
-1 - Добавить слово, 2 - Поиск, 3 - Выйти
-Функция: **2**
-Поисковый запрос: **bag**
+1 - Add word, 2 - Search, 3 - Quit
+Function: **1**
+The word in Finnish: **auto**
+The word in English: **car**
+Dictionary entry added
+1 - Add word, 2 - Search, 3 - Quit
+Function: **1**
+The word in Finnish: **roska**
+The word in English: **garbage**
+Dictionary entry added
+1 - Add word, 2 - Search, 3 - Quit
+Function: **1**
+The word in Finnish: **laukku**
+The word in English: **bag**
+Dictionary entry added
+1 - Add word, 2 - Search, 3 - Quit
+Function: **2**
+Search term: **bag**
 roska - garbage
 laukku - bag
-1 - Добавить слово, 2 - Поиск, 3 - Выйти
-Функция: **2**
-Поисковый запрос: **car**
+1 - Add word, 2 - Search, 3 - Quit
+Function: **2**
+Search term: **car**
 auto - car
-1 - Добавить слово, 2 - Поиск, 3 - Выйти
-Функция: **2**
-Поисковый запрос: **laukku**
+1 - Add word, 2 - Search, 3 - Quit
+Function: **2**
+Search term: **laukku**
 laukku - bag
-1 - Добавить слово, 2 - Поиск, 3 - Выйти
-Функция: **3**
-До свидания!
+1 - Add word, 2 - Search, 3 - Quit
+Function: **3**
+Bye!
 
 </sample-output>
 

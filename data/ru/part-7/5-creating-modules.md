@@ -56,17 +56,17 @@ seashore
 ```python
 from words import first_word, last_word
 
-sentence = input("Пожалуйста, введите предложение: ")
+sentence = input("Please type in a sentence: ")
 
-print("Первое слово было: " + first_word(sentence))
-print("Последнее слово было: " + last_word(sentence))
+print("The first word was: " + first_word(sentence))
+print("The last word was: " + last_word(sentence))
 ```
 
 <sample-output>
 
-Пожалуйста, введите предложение: **Python is a swell programming language**
-Первое слово было: Python
-Последнее слово было: language
+Please type in a sentence: **Python is a swell programming language**
+The first word was: Python
+The last word was: language
 
 </sample-output>
 
@@ -145,7 +145,7 @@ def number_of_words(my_string: str) -> int:
     return len(parts)
 
 if __name__ == "__main__":
-    # тестирование функциональности
+    # testing functionality
     print(first_word("This is a test"))
     print(last_word("Here we are still testing"))
     print(number_of_words("One two three four five"))

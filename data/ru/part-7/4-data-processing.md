@@ -236,26 +236,26 @@ sudo "./Install Certificates.command
 ```python
 import urllib.request
 import json
-import ssl # добавьте эту библиотеку в раздел импорта
+import ssl # add this library to your import section
 
 def retrieve_all():
-    # добавьте следующую строку в начало всех ваших функций
+    # add the following line to the beginning of all your functions
     context = ssl._create_unverified_context()
-    # остальная часть вашей функции
+    # the rest of your function
 ```
 
 Еще один потенциальный обходной путь:
 
  ```python
 import urllib.request
-import certifi # добавьте эту библиотеку в раздел импорта
+import certifi # add this library to your import section
 import json
 
 def retrieve_all():
     address = "https://studies.cs.helsinki.fi/stats-mock/api/courses"
-    # добавьте второй аргумент к вызову функции
+    # add a second argument to the function call
     request = urllib.request.urlopen(address, cafile=certifi.where())
-    # остальная часть вашей функции
+    # the rest of your function
 ```
 
 #### Получение данных для одного курса

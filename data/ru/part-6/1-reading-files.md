@@ -83,19 +83,19 @@ with open("example.txt") as new_file:
     for line in new_file:
         line = line.replace("\n", "")
         count += 1
-        print("Строка", count, line)
+        print("Line", count, line)
         length = len(line)
         total_length += length
 
-print("Общая длина строк:", total_length)
+print("Total length of lines:", total_length)
 ```
 
 <sample-output>
 
-Строка 1 Hello there!
-Строка 2 This example file contains three lines of text.
-Строка 3 This is the last line.
-Общая длина строк: 81
+Line 1 Hello there!
+Line 2 This example file contains three lines of text.
+Line 3 This is the last line.
+Total length of lines: 81
 
 </sample-output>
 
@@ -198,18 +198,18 @@ with open("grades.csv") as new_file:
         parts = line.split(";")
         name = parts[0]
         grades = parts[1:]
-        print("Имя:", name)
-        print("Оценки:", grades)
+        print("Name:", name)
+        print("Grades:", grades)
 ```
 
 <sample-output>
 
-Имя: Paul
-Оценки: ['5', '4', '5', '3', '4', '5', '5', '4', '2', '4']
-Имя: Beth
-Оценки: ['3', '4', '2', '4', '4', '2', '3', '1', '3', '3']
-Имя: Ruth
-Оценки: ['4', '5', '5', '4', '5', '5', '4', '5', '4', '4']
+Name: Paul
+Grades: ['5', '4', '5', '3', '4', '5', '5', '4', '2', '4']
+Name: Beth
+Grades: ['3', '4', '2', '4', '4', '2', '3', '1', '3', '3']
+Name: Ruth
+Grades: ['4', '5', '5', '4', '5', '5', '4', '5', '4', '4']
 
 </sample-output>
 
@@ -271,12 +271,12 @@ Alice;58;Paris
 
 ```python
 with open("people.csv") as new_file:
-    # выводим имена
+    # print out the names
     for line in new_file:
         parts = line.split(";")
-        print("Имя:", parts[0])
+        print("Name:", parts[0])
 
-    # найдем самого старшего
+    # find the oldest
     age_of_oldest = -1
     for line in new_file:
         parts = line.split(";")
@@ -285,14 +285,14 @@ with open("people.csv") as new_file:
         if age > age_of_oldest:
             age_of_oldest = age
             oldest = name
-    print("самый старший", oldest)
+    print("the oldest is", oldest)
 ```
 
 Выполнение этого приведет к довольно загадочному сообщению об ошибке:
 
 ```python
 Traceback (most recent call last):
-    print("самый старший", oldest)
+    print("the oldest is"; oldest)
 UnboundLocalError: local variable 'oldest' referenced before assignment
 ```
 
@@ -302,13 +302,13 @@ UnboundLocalError: local variable 'oldest' referenced before assignment
 
 ```python
 with open("people.csv") as new_file:
-    # выводим имена
+    # print out the names
     for line in new_file:
         parts = line.split(";")
-        print("Имя:", parts[0])
+        print("Name:", parts[0])
 
 with open("people.csv") as new_file:
-    # найдем самого старшего
+    # find the oldest
     age_of_oldest = -1
     for line in new_file:
         parts = line.split(";")
@@ -317,24 +317,24 @@ with open("people.csv") as new_file:
         if age > age_of_oldest:
             age_of_oldest = age
             oldest = name
-    print("самый старший", oldest)
+    print("the oldest is", oldest)
 ```
 
 Хотя приведенный выше код будет работать, он содержит ненужное повторение. Обычно лучше прочитать файл только один раз и сохранить его содержимое в подходящем формате для дальнейшей обработки:
 
 ```python
 people = []
-# читаем содержимое файла и сохраняем его в списке
+# read the contents of the file and store it in a list
 with open("people.csv") as new_file:
     for line in new_file:
         parts = line.split(";")
         people.append((parts[0], int(parts[1]), parts[2]))
 
-# выводим имена
+# print out the names
 for person in people:
-    print("Имя:", person[0])
+    print("Name:", person[0])
 
-# найдем самого старшего
+# find the oldest
 age_of_oldest = -1
 for person in people:
     name = person[0]
@@ -342,7 +342,7 @@ for person in people:
     if age > age_of_oldest:
         age_of_oldest = age
         oldest = name
-print("самый старший", oldest)
+print("the oldest is", oldest)
 ```
 
 ## Дополнительная обработка CSV-файлов
@@ -385,14 +385,14 @@ print(grades)
 for name, grade_list in grades.items():
     best = max(grade_list)
     average = sum(grade_list) / len(grade_list)
-    print(f"{name}: лучшая оценка {best}, среднее {average:.2f}")
+    print(f"{name}: best grade {best}, average {average:.2f}")
 ```
 
 <sample-output>
 
-Paul: лучшая оценка 5, среднее 4.10
-Beth: лучшая оценка 4, среднее 2.90
-Ruth: лучшая оценка 5, среднее 4.50
+Paul: best grade 5, average 4.10
+Beth: best grade 4, average 2.90
+Ruth: best grade 5, average 4.50
 
 </sample-output>
 
@@ -418,7 +418,7 @@ last_names = []
 with open("people.csv") as new_file:
     for line in new_file:
         parts = line.split(";")
-        # игнорируем строку заголовка
+        # ignore the header line
         if parts[0] == "first":
             continue
         last_names.append(parts[1])
@@ -456,7 +456,7 @@ with open("people.csv") as new_file:
     for line in new_file:
         parts = line.split(';')
         if parts[0] == "first":
-            continue # это была строка заголовка, поэтому она игнорируется
+            continue # this was the header line, so it is ignored
         last_names.append(parts[1].strip())
 print(last_names)
 ```
@@ -504,7 +504,7 @@ pic;salary;bonus
 <sample-output>
 
 <pre>
-доходы:
+incomes:
 Pekka Mikkola    3300 euros
 Liisa Marttinen  4350 euros
 Arto Vihavainen  2500 euros
@@ -533,7 +533,7 @@ with open("salaries.csv") as new_file:
             continue
         salaries[parts[0]] = int(parts[1]) +int(parts[2])
 
-print("доходы:")
+print("incomes:")
 
 for pic, name in names.items():
     if pic in salaries:
@@ -592,8 +592,8 @@ id;e1;e2;e3;e4;e5;e6;e7
 
 <sample-output>
 
-Информация о студентах: **students1.csv**
-Выполненные упражнения: **exercises1.csv**
+Student information: **students1.csv**
+Exercises completed: **exercises1.csv**
 pekka peloton 21
 jaana javanainen 27
 liisa virtanen 35
@@ -604,11 +604,11 @@ liisa virtanen 35
 
 ```python
 if False:
-    # это никогда не выполняется
-    student_info = input("Информация о студентах: ")
-    exercise_data = input("Выполненные упражнения: ")
+    # this is never executed
+    student_info = input("Student information: ")
+    exercise_data = input("Exercises completed: ")
 else:
-    # жестко закодированный ввод
+    # hard-coded input
     student_info = "students1.csv"
     exercise_data = "exercises1.csv"
 ```
@@ -620,10 +620,10 @@ else:
 ```python
 
 if True:
-    student_info = input("Информация о студентах: ")
-    exercise_data = input("Выполненные упражнения: ")
+    student_info = input("Student information: ")
+    exercise_data = input("Exercises completed: ")
 else:
-    # теперь это ветка False, и никогда не выполняется
+    # now this is the False branch, and is never executed
     student_info = "students1.csv"
     exercise_data = "exercises1.csv"
 ```
@@ -653,9 +653,9 @@ id;e1;e2;e3
 
 <sample-output>
 
-Информация о студентах: **students1.csv**
-Выполненные упражнения: **exercises1.csv**
-Баллы за экзамен: **exam_points1.csv**
+Student information: **students1.csv**
+Exercises completed: **exercises1.csv**
+Exam points: **exam_points1.csv**
 pekka peloton 0
 jaana javanainen 1
 liisa virtanen 3
@@ -685,9 +685,9 @@ liisa virtanen 3
 
 <sample-output>
 
-Информация о студентах: **students1.csv**
-Выполненные упражнения: **exercises1.csv**
-Баллы за экзамен: **exam_points1.csv**
+Student information: **students1.csv**
+Exercises completed: **exercises1.csv**
+Exam points: **exam_points1.csv**
 <pre>
 name                          exec_nbr  exec_pts. exm_pts.  tot_pts.  grade
 pekka peloton                 21        5         9         14        0
@@ -749,7 +749,7 @@ print(f"{number:<10}continues")
 
 <sample-output>
 
-Напишите текст: **We use ptython to make a spell checker**
+Write text: **We use ptython to make a spell checker**
 <pre>
 We use *ptython* to make a spell checker
 </pre>
@@ -758,7 +758,7 @@ We use *ptython* to make a spell checker
 
 <sample-output>
 
-Напишите текст: **This is acually a good and usefull program**
+Write text: **This is acually a good and usefull program**
 <pre>
 This is *acually* good and *usefull* program
 </pre>
@@ -926,7 +926,7 @@ Longitude;Latitude;FID;name;total_slot;operative;id
 Расстояние вычисляется с использованием теоремы Пифагора. Коэффициенты умножения ниже - приблизительные значения для преобразования широт и долгот в расстояния в километрах в регионе Хельсинки.
 
 ```python
-# нам понадобится функция sqrt из модуля math
+# we will need the function sqrt from the math module 
 import math
 
 x_km = (longitude1 - longitude2) * 55.26
